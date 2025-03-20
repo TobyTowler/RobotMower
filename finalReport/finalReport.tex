@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  FINAL REPORT - A TEMPLATE
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[final]{cmpreport_02}
+
+
+% Some package I am using. You may not need them
+%
+\usepackage{rotating}
+\usepackage{subfloat}
+\usepackage{color}
+\usepackage{pdfpages}
+
+%\setkeys{Gin}{draft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Fill in the fields with:
+%
+%  your project title
+%  your name
+%  your registration number
+%  your supervisor's name
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Robot Mower Mapping and Pathing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% The author's name is ignored if the following command 
+% is not present in the document
+%
+% Before submitting a PDF of your final report to the 
+% project database you may comment out the command
+% if you are worried about lack of anonimity.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Toby Towler}
+
+\registration{100395626}
+\supervisor{Edwin Ren}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Fill in the field with your module code.
+% this should be:
+%
+% for BIS project module   -> CMP-6012Y
+% for CS project module    -> CMP-6013Y
+% for MComp project module -> CMP-7043Y
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ccode{6013}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Comment out if confidential report.
+% The command should be used if the project is subjected 
+% to a Non Disclosure Agreement.
+%
+% Three examples of the use of the \confidential command. 
+% Please ask your supervisor what confidential statement 
+% should be used, if appropriate.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\confidential{}
+
+%\confidential{The contents of this report remain confidential for two years and should not be discussed or disclosed to any third party without the prior written permission from the School of Computing Sciences, the University of East Anglia}
+
+%\confidential{The information contained in this document is confidential, privileged and only for the information of the intended recipient and may not be used, published or redistributed without the prior written consent of FruitName Ltd}
+
+\summary{
+The abstract of your report summarises your entire work () in no more than half a page. It should include the context of your work including its main objective, what methods you employed, how you implemented these, what the outcomes were and a final statement as a conclusion. It should not contain acronyms, abbreviations, elements of a literature review (though a statement of related work is permissible if it is crucial to your work) or future work. The abstract should be written when everything else has been written up and the project is finished!
+}
+
+\acknowledgements{
+This section is used to acknowledge support and would typically include your supervisor, other staff, family and friends, etc. that supported you throughout the course of your project.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% If you do want a list of figures and a list of tables
+% to appear after the table of contents then comment this line.
+% THIS IS NOT ADVISED THOUGH AS IT COUNTS FOR YOUR 40 PAGES!
+%
+% Note that the class file contains code to avoid
+% producing an empty list section (e.g list of figures) if the 
+% list is empty (i.e. no figure in document).
+%
+% The command also prevents inserting a list of figures or tables 
+% anywhere else in the document
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\nolist
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Comment out if you want your list of figures and list of
+% tables on one page instead of two or more pages, in particular 
+% if the lists do not fit on a single page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\onePageLists
+
+
+\begin{document}
+
+\section{Introduction}
+
+This section is a "must have" in the report. It should not be longer than a couple of pages but has to  clearly present the problem statement and main objective or aim of the project, followed by the potential solutions and the specific objectives that are part of them. Use a subsection for your main objective and another subsection to specify your sub-objectives in a bullet-pointed list. You may wish to put a MoSCoW at the end of this section (or in the appendix), if appropriate, but if you do so then make sure it matches your objectives and you do come back to it in the final section that briefly discusses and concludes your work.
+
+\section{Background}
+
+Another section that is essential and should keep its title as is! Although you could perhaps call it ``Literature Review'' instead, this is not advisable as at this stage of your project we do not expect an extensive literature review since this was already done in the second formative assignment. The rationale is simply because you will lose valuable pages that could be used better in the next two sections that will cover the preparation and implementation of actual work done. So just provide the context in which your project operates here, and then provide a brief overview of similar work that is directly relevant to yours. Try to avoid blatant copying and pasting from the formative literature review as it is bound to read awkwardly.
+
+\section{Methodology}
+
+This is my preferred title for the section that follows the background but it may not work for all types of projects, in particular if your methodology is more related to planning and/or design. Either way, this section falls in the scope of \textbf{preparing your project} for action and where you list all the \textbf{methods, algorithms, tools, plans and designs} that you will need later on, as discussed in the next section. As also outlined in the project portfolio brief, one or more of the following is what would be covered in this section:
+
+\begin{itemize}
+	\item \textbf{Methodology: } Explanation (and justification) of methods, algorithms (typically written in pseudo-code), mathematical or statistical models, technologies etc.\ that you will implement as part of your project. These may come from other sources (e.g.\ the literature, Github, etc.) or be your own creation. Note that it should not cover methods that you will not use! If these are worthwhile mentioning then briefly discuss them in the Background section instead.
+	\item \textbf{Design: } Design of experiments, design of a survey or design of a system that consists of multiple components e.g. software (use preliminary diagrams to describe the design) or a physical manifestation such as an embedded system, a robot, etc.
+	\item \textbf{Plan(ning): } Gathering of data, description of experiments (experimental plan), testing and evaluation planning. Experiments could be in the fields of data science, machine learning, signal processing, graphics, etc. Evaluation metrics could include performance speed, accuracy, relevance, etc. Although evaluation is part of the next section, evaluation \textbf{metrics} should be explained here.
+\end{itemize}
+
+\section{Implementation and Evaluation}
+
+Could be a section each for implementation and evaluation if this suits you better or you could use subsections instead. The difference between this section and the previous "Methodology" section is that this one covers "action" or in other words your active contributions to the project. These may include:
+\begin{itemize}
+	\item Implementation of programming code: Describe your final code architecture using for example (UML) diagrams and code snippets. Make sure that code snippet (figure) captions are self-explanatory which means that you should not have to consult the text body to understand what is shown in the figure. Many code snippets of the same kind should end up in an appendix instead.
+	\item Results from experiments run, including testing (user and software). Use figures and tables with self-explanatory captions (see earlier statement). Multiple figures and tables that cover several pages should be put in an appendix.
+	\item Analysis of results: Discuss your experimental and/or test findings in depth. Compare them against other studies and/or benchmarks, and point out limitations of your work (that could be due to limited time) and elaborate on scope for improvement.
+\end{itemize}
+
+\section{Conclusion and Future Work}
+
+Another essential section that should keep its title as suggested. Briefly discuss your main findings, outcomes, results; what worked and what could have been done differently. Then summarise your work in a concluding statement by comparing your outcomes against the main and sub-objectives and/or MoSCoW requirements (if used) and suggest potential future work that could be done if more time would be available.
+
+
+\clearpage
+
+\bibliography{reportbib}
+
+\appendix
+\clearpage
+\section{Producing tables, figures, etc.} \label{sec2}
+Please refer to the original template for different ways of formatting tables \cite{PCTut5}, figures, code snippets and pseudo code for algorithms. Make sure the caption of each of these is self-explanatory which means that you should be able to understand the figure, what's in the table, what the code is about, etc. without having to consult the text where they are referenced from.
+
+\end{document}
+
