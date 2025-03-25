@@ -109,7 +109,10 @@ The abstract of your report summarises your entire work () in no more than half 
 \section{Introduction}
 
 % \subsection{Main Objective}
-The robot mower is an already existing project developed by previous masters students from the University of East Anglia. However, it still has areas that can be improved. One of these areas is the way the Robot covers an area in the real world in order to complete its task.
+The robot mower is an already existing project developed by previous masters students from the University of East Anglia.
+The previous students developed a system which required the user to draw around an image of a map to generate an outline for a path to be generated. The robot then used GPS to determine its position
+
+However, it still has areas that can be improved. One of these areas is the way the Robot covers an area in the real world in order to complete its task.
 More specifically, the map generation and path planning. These aspects have been the key focuses of my project, I have broken these down into 3 key goals:
 \begin{enumerate}
 	\item Basic map generation
@@ -127,21 +130,21 @@ Another section that is essential and should keep its title as is! Although you 
 \section{Methodology}
 
 \subsection{Map Generation}
-For the basic map generation, a simple shape generation algorithm which takes k points should suffice. As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed. 
+For the basic map generation, a simple shape generation algorithm which takes k points should suffice. As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
 This program should also be able to create n obstacles within the main field, such areas would represent obstructions in the mowers desired path, for example trees or telephone poles in the real world.
 This means we need a function with 2 parameters:
 
 \begin{itemize}
-    \item K, number of angles in the outer field
-    \item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3-8 corners staying inline with the complexity of the rest of the field without being unreasonably over engineered.
+	\item K, number of angles in the outer field
+	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3-8 corners staying inline with the complexity of the rest of the field without being unreasonably over engineered.
 \end{itemize}
 
 This leads us to an algorithm similar to the one below:
 
 
 \begin{figure}[h!]
-\caption{Algorithm for Generating Shapes with k Corners}
-\begin{verbatim}
+	\caption{Algorithm for Generating Shapes with k Corners}
+	\begin{verbatim}
 GenerateShape(k, n):
     points = []
     angleIncrement = 2π/k
