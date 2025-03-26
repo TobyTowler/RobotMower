@@ -1,6 +1,5 @@
-import fields2cover as f2c
 import math
-from aerialPathing import load_csv_points, genField, drawCell
+from utils import load_csv_points, genField, drawCell, save_points_to_csv
 
 
 def rotateMap(points, gps):
@@ -67,7 +66,11 @@ def main():
     drawCell(field)
     drawCell(gpsField)
 
-    drawCell(genField(rotateMap(points, gps)))
+    newPoints = rotateMap(points, gps)
+
+    drawCell(genField(newPoints))
+
+    save_points_to_csv(newPoints, "rotatedField")
 
 
 if __name__ == "__main__":
