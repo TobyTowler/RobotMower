@@ -1,5 +1,6 @@
 import math
 from utils import load_csv_points, genField, drawCell, save_points_to_csv
+import geopy.distance
 
 """
 get shape
@@ -87,10 +88,14 @@ def scaleMap(map, gps):
     ratio points
     """
 
-    gpsLineLength = getLineLength([gps[0:2]])
-    mapLineLength = getLineLength([map[0:2]])
-    scale = gpsLineLength / mapLineLength
+    gpsList = gps[:2]
+    gpsMeters = geopy.distance.geodesic(gpsList[0], gpsList[1]).m
 
+    # gpsLineLength = getLineLength([gps[0:2]])
+    mapLineLength = getLineLength([map[0:2]])
+
+    scale = gpsMeters / mapLineLength
+    print(scale)
     scaledMap = []
 
     pass
@@ -102,14 +107,16 @@ def main():
     # path = "coords/AdobeGold_golf_course_outline.csv"
     gps = load_csv_points(gpsPath, reverse=True)
     points = load_csv_points(path)
+
+    scaleMap(points, gps)
     field = genField(points)
     gpsField = genField(gps)
-    drawCell(field)
-    drawCell(gpsField)
+    # drawCell(field)
+    # drawCell(gpsField)
 
     newPoints = rotateMap(points, gps)
 
-    drawCell(genField(newPoints))
+    # drawCell(genField(newPoints))
 
     save_points_to_csv(newPoints, "rotatedField")
 
