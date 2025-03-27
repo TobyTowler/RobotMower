@@ -3,8 +3,6 @@ import csv
 
 
 def genField(csv_points):
-    # Load the CSV data
-
     ring = f2c.LinearRing()
     for p in csv_points:
         print(p)
@@ -19,15 +17,18 @@ def genField(csv_points):
     return cells
 
 
-def load_csv_points(path):
+def load_csv_points(path, reverse=False):
     points = []
     with open(path, "r") as csvfile:
-        reader = csv.reader(csvfile)  # noqa: F821
+        reader = csv.reader(csvfile)
+
         # Skip the header line
         next(reader)
         for row in reader:
-            # Extract coordinates from columns 1 and 2 (x and y)
-            point_id, x, y = int(row[0]), float(row[1]), float(row[2])
+            if reverse:
+                point_id, y, x = int(row[0]), float(row[1]), float(row[2])
+            else:
+                point_id, x, y = int(row[0]), float(row[1]), float(row[2])
             points.append((x, y))
     return points
 

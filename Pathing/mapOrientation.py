@@ -59,7 +59,7 @@ def main():
     path = "coords/garden2.csv"
     gpsPath = "gps/garden.csv"
     # path = "coords/AdobeGold_golf_course_outline.csv"
-    gps = load_csv_points(gpsPath)
+    gps = load_csv_points(gpsPath, True)
     points = load_csv_points(path)
     field = genField(points)
     gpsField = genField(gps)
