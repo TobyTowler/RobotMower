@@ -17,6 +17,7 @@ def genField(csv_points):
     return cells
 
 
+# Possibly need to change reverse to be in drawCell
 def load_csv_points(path, reverse=False):
     points = []
     with open(path, "r") as csvfile:
@@ -65,3 +66,7 @@ def drawCell(arr):
     for i in arr:
         f2c.Visualizer.plot(i)
     f2c.Visualizer.show()
+
+
+def getRobotCoords():
+    return [2, 4]

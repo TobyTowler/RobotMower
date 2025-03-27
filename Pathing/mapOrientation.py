@@ -1,15 +1,23 @@
 import math
 from utils import load_csv_points, genField, drawCell, save_points_to_csv
 
+"""
+get shape
+get gps
+
+sheer shape to gps
+rotate shape
+scale shape
+transform to gps coordinates
+
+
+"""
+
 
 def rotateMap(points, gps):
     """
     Bearing in radians
     """
-
-    p1 = gps[0]
-    p2 = gps[1]
-    bearing = math.atan2(p2[1] - p1[1], p2[0] - p1[0])
 
     if len(gps) < 2:
         raise ValueError("Need at least 2 GPS coordinates to calculate bearing")
@@ -47,11 +55,52 @@ def rotateMap(points, gps):
     return rotated_points
 
 
+def sheerMap(map):
+    pass
+
+
+def translateMap(map):
+    pass
+
+
+def getLineLength(map: list[float]):
+    """
+    map : array of 2 2d points
+    returns displacement between them
+    """
+    print(map)
+    x1, y1, x2, y2 = map
+    x = abs(x1 - x2)
+    y = abs(y1 - y2)
+    return math.sqrt(x**2 + y**2)
+
+
+def scaleMap(map, gps):
+    """
+    scale = gps line length / map line length
+
+    have x coords
+    get distance
+    scale everything by that
+
+    or
+    ratio points
+    """
+
+    gpsLineLength = getLineLength([gps[0:2]])
+    mapLineLength = getLineLength([map[0:2]])
+    scale = gpsLineLength / mapLineLength
+
+    scaledMap = []
+
+    pass
+
+
 def main():
     path = "coords/garden2.csv"
     gpsPath = "gps/garden.csv"
     # path = "coords/AdobeGold_golf_course_outline.csv"
-    gps = load_csv_points(gpsPath, True)
+    gps = load_csv_points(gpsPath, reverse=True)
     points = load_csv_points(path)
     field = genField(points)
     gpsField = genField(gps)
