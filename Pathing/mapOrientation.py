@@ -11,15 +11,14 @@ rotate shape
 scale shape
 transform to gps coordinates
 
+virtual map
+scale to size
+rotate to angle
 
 """
 
 
-def rotateMap(points, gps):
-    """
-    Bearing in radians
-    """
-
+def getAngle(gps):
     if len(gps) < 2:
         raise ValueError("Need at least 2 GPS coordinates to calculate bearing")
 
@@ -38,9 +37,17 @@ def rotateMap(points, gps):
         lat2_rad
     ) * math.cos(delta_lon)
 
-    bearing_rad = math.atan2(x, y)
+    return math.atan2(x, y)
 
-    rotation_angle = -bearing_rad  # Negative because of different coordinate systems
+
+def rotateMap(points, gps):
+    """
+    Bearing in radians
+    """
+
+    rotation_angle = -(
+        getAngle(gps)
+    )  # Negative because of different coordinate systems
 
     cos_angle = math.cos(rotation_angle)
     sin_angle = math.sin(rotation_angle)
@@ -56,8 +63,15 @@ def rotateMap(points, gps):
     return rotated_points
 
 
-def sheerMap(map):
-    pass
+def sheerMap(map, gps):
+    gpsMeters = geopy.distance.geodesic(gps[0], gps[1]).m
+
+    gpsAngle = getAngle(gps)
+    gpsMapCoords = [map[0], map[1]]
+    mapAngle = getAngle(gpsMapCoords)
+
+    if gpsAngle == mapAngle:
+        return map
 
 
 def translateMap(map):
@@ -83,13 +97,9 @@ def scaleMap(map, gps):
     have x coords
     get distance
     scale everything by that
-
-    or
-    ratio points
     """
 
-    gpsList = gps[:2]
-    gpsMeters = geopy.distance.geodesic(gpsList[0], gpsList[1]).m
+    gpsMeters = geopy.distance.geodesic(gps[0], gps[1]).m
 
     # gpsLineLength = getLineLength([gps[0:2]])
     mapLineLength = getLineLength([map[0][0], map[0][1], map[1][0], map[1][1]])
@@ -103,8 +113,6 @@ def scaleMap(map, gps):
         start = map[p - 1]
         point = map[p]
         newPoint = scaledMap[-1]
-        x = 0
-        y = 0
 
         print("START ", start, "\nPOINT ", point)
 

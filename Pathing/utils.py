@@ -70,3 +70,26 @@ def drawCell(arr):
 
 def getRobotCoords():
     return [2, 4]
+
+
+def genPath(field, mower):
+    const_hl = f2c.HG_Const_gen()
+    no_hl = const_hl.generateHeadlands(field, 3.0 * mower.getWidth())
+
+    # bf = f2c.SG_BruteForce()
+
+    n_swath = f2c.OBJ_NSwath()
+    bf_sw_gen = f2c.SG_BruteForce()
+    swaths_bf_nswath = bf_sw_gen.generateBestSwaths(
+        n_swath, mower.getCovWidth(), no_hl.getGeometry(0)
+    )
+    # swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
+    boustrophedon_sorter = f2c.RP_Boustrophedon()
+    # swaths = boustrophedon_sorter.genSortedSwaths(swaths)
+    swaths = boustrophedon_sorter.genSortedSwaths(swaths_bf_nswath)
+
+    path_planner = f2c.PP_PathPlanning()
+    dubins = f2c.PP_DubinsCurves()
+    path_dubins = path_planner.planPath(mower, swaths, dubins)
+
+    return [field, swaths, no_hl, path_dubins]
