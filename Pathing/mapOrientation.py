@@ -92,31 +92,59 @@ def scaleMap(map, gps):
     gpsMeters = geopy.distance.geodesic(gpsList[0], gpsList[1]).m
 
     # gpsLineLength = getLineLength([gps[0:2]])
-    mapLineLength = getLineLength([map[0:2]])
+    mapLineLength = getLineLength([map[0][0], map[0][1], map[1][0], map[1][1]])
 
+    print("GPS ", gpsMeters, "MAP", mapLineLength)
     scale = gpsMeters / mapLineLength
-    print(scale)
-    scaledMap = []
+    print("SCALE", scale)
+    scaledMap = [map[0]]
 
-    pass
+    for p in range(1, len(map)):
+        start = map[p - 1]
+        point = map[p]
+        newPoint = scaledMap[-1]
+        x = 0
+        y = 0
+
+        print("START ", start, "\nPOINT ", point)
+
+        if start[0] == point[0]:
+            x = newPoint[0]
+        elif start[0] > point[0]:
+            x = newPoint[0] - (abs(start[0] - point[0]) * scale)
+        else:
+            x = newPoint[0] + (abs(start[0] - point[0]) * scale)
+
+        if start[1] == point[1]:
+            y = newPoint[1]
+        elif start[1] > point[1]:
+            y = newPoint[1] - (abs(start[1] - point[1]) * scale)
+        else:
+            y = newPoint[1] + (abs(start[1] - point[1]) * scale)
+        scaledMap.append([x, y])
+
+    return scaledMap
 
 
 def main():
-    path = "coords/garden2.csv"
+    path = "coords/garden.csv"
     gpsPath = "gps/garden.csv"
     # path = "coords/AdobeGold_golf_course_outline.csv"
     gps = load_csv_points(gpsPath, reverse=True)
     points = load_csv_points(path)
 
-    scaleMap(points, gps)
     field = genField(points)
     gpsField = genField(gps)
-    # drawCell(field)
+    drawCell(field)
     # drawCell(gpsField)
 
     newPoints = rotateMap(points, gps)
 
     # drawCell(genField(newPoints))
+
+    scaledPoints = scaleMap(points, gps)
+    scaledField = genField(scaledPoints)
+    drawCell(scaledField)
 
     save_points_to_csv(newPoints, "rotatedField")
 
