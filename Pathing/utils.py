@@ -51,10 +51,8 @@ def save_points_to_csv(points, filename):
         filename (str): Name of the file to save the points to
     """
     with open("fields/" + filename + ".csv", "w") as file:
-        # Write header
         file.write("point_id,x,y\n")
 
-        # Write points with IDs
         for i, point in enumerate(points, 1):  # Start IDs from 1
             x, y = point
             file.write(f"{i},{x},{y}\n")
