@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.11.11)  25 MAR 2025 10:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  31 MAR 2025 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -852,39 +852,61 @@ File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks41
 \c@AM@survey=\count370
 \AM@templatesizebox=\box84
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+\@float@every@algorithm=\toks42
+\c@algorithm=\count371
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count372
+\c@ALG@rem=\count373
+\c@ALG@nested=\count374
+\ALG@tlm=\skip92
+\ALG@thistlm=\skip93
+\c@ALG@Lnr=\count375
+\c@ALG@blocknr=\count376
+\c@ALG@storecount=\count377
+\c@ALG@tmpcounter=\count378
+\ALG@tmplength=\skip94
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 107.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 121.
  (./finalReport.aux)
 \openout1 = `finalReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-Package scrbase Info: activating english \abstractname on input line 107.
-Package scrbase Info: activating english \partname on input line 107.
-Package scrbase Info: activating english \figurename on input line 107.
-Package scrbase Info: activating english \tablename on input line 107.
-Package scrbase Info: activating english \contentsname on input line 107.
-Package scrbase Info: activating english \listfigurename on input line 107.
-Package scrbase Info: activating english \listtablename on input line 107.
-Package scrbase Info: activating english \refname on input line 107.
-Package scrbase Info: activating english \indexname on input line 107.
-Package tocbasic Info: usage of `tocbibind' detected on input line 107.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+Package scrbase Info: activating english \abstractname on input line 121.
+Package scrbase Info: activating english \partname on input line 121.
+Package scrbase Info: activating english \figurename on input line 121.
+Package scrbase Info: activating english \tablename on input line 121.
+Package scrbase Info: activating english \contentsname on input line 121.
+Package scrbase Info: activating english \listfigurename on input line 121.
+Package scrbase Info: activating english \listtablename on input line 121.
+Package scrbase Info: activating english \refname on input line 121.
+Package scrbase Info: activating english \indexname on input line 121.
+Package tocbasic Info: usage of `tocbibind' detected on input line 121.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -922,24 +944,24 @@ Package tocbasic Info: usage of `tocbibind' detected on input line 107.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count371
+\scratchcounter=\count379
 \scratchdimen=\dimen308
 \scratchbox=\box85
-\nofMPsegments=\count372
-\nofMParguments=\count373
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count374
+\nofMPsegments=\count380
+\nofMParguments=\count381
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count382
 \MPscratchDim=\dimen309
-\MPnumerator=\count375
-\makeMPintoPDFobject=\count376
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count383
+\makeMPintoPDFobject=\count384
+\everyMPtoPDFconversion=\toks44
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 107.
+Package hyperref Info: Link coloring OFF on input line 121.
  (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write4
 \openout4 = `finalReport.out'.
@@ -951,12 +973,12 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 107.
+(scrartcl)           before \begin{document} on input line 121.
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count377
+\BKM@id=\count385
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: rotating package is loaded.
@@ -965,7 +987,7 @@ Package caption Info: End \AtBeginDocument code.
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 107.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 121.
  (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -1010,23 +1032,23 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <uealogo.png, id=7, 112.9821pt x 53.4798pt>
 File: uealogo.png Graphic file (type png)
 <use uealogo.png>
-Package pdftex.def Info: uealogo.png  used on input line 107.
+Package pdftex.def Info: uealogo.png  used on input line 121.
 (pdftex.def)             Requested size: 85.35826pt x 40.40596pt.
  [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./uealogo.png>]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 107.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 121.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 107.
+(Font)              scaled to size 10.79993pt on input line 121.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 107.
+(Font)              scaled to size 10.79993pt on input line 121.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 107.
+(Font)              scaled to size 15.55188pt on input line 121.
  [2
 
 ] (./finalReport.toc
@@ -1060,59 +1082,36 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@toc=\write5
 \openout5 = `finalReport.toc'.
 
- [3] (./finalReport.lof)
-\tf@lof=\write6
-\openout6 = `finalReport.lof'.
-
- [4]
+ [3]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 129.
- [5]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 135.
+(Font)              scaled to size 12.9599pt on input line 148.
+ [4]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 154.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 144.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 160.
+ [5] [6] [7] (./finalReport.bbl) [8
 
-./finalReport.tex:163: LaTeX Error: Unicode character π (U+03C0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.163 \end{verbatim}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[6] [7] [8] (./finalReport.bbl) [9
-
-] [10
+] [9
 
 ] (./finalReport.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34914 strings out of 476034
- 765822 string characters out of 5792853
- 1861388 words of memory out of 6000000
- 54792 multiletter control sequences out of 15000+600000
- 547102 words of font info for 72 fonts, out of 8000000 for 9000
+ 35462 strings out of 476034
+ 774835 string characters out of 5792854
+ 1863388 words of memory out of 6000000
+ 55328 multiletter control sequences out of 15000+600000
+ 562290 words of font info for 84 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  122i,17n,120p,10662b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (10 pages, 91078 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on finalReport.pdf (9 pages, 110187 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2025/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2023/Fedora 40)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: finalReport.aux
 The style file: apalike.bst
 Database file #1: reportbib.bib
-You've used 2 entries,
+You've used 3 entries,
             1935 wiz_defined-function locations,
-            484 strings with 3930 characters,
-and the built_in function-call counts, 657 in all, are:
-= -- 66
-> -- 20
+            492 strings with 4149 characters,
+and the built_in function-call counts, 1144 in all, are:
+= -- 110
+> -- 48
 < -- 2
-+ -- 6
-- -- 6
-* -- 52
-:= -- 122
-add.period$ -- 5
-call.type$ -- 2
-change.case$ -- 13
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 24
-empty$ -- 46
-format.name$ -- 10
-if$ -- 123
++ -- 16
+- -- 16
+* -- 101
+:= -- 208
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 23
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 38
+empty$ -- 77
+format.name$ -- 21
+if$ -- 215
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 12
-num.names$ -- 6
-pop$ -- 8
+missing$ -- 2
+newline$ -- 17
+num.names$ -- 9
+pop$ -- 16
 preamble$ -- 1
-purify$ -- 13
+purify$ -- 23
 quote$ -- 0
-skip$ -- 21
+skip$ -- 31
 stack$ -- 0
-substring$ -- 49
-swap$ -- 1
+substring$ -- 85
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
+type$ -- 18
 warning$ -- 0
-while$ -- 6
+while$ -- 9
 width$ -- 0
-write$ -- 25
+write$ -- 38

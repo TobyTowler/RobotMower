@@ -12,6 +12,20 @@
 \usepackage{subfloat}
 \usepackage{color}
 \usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+
+\newenvironment{boxedalgorithm}{%
+  \begin{mdframed}[hidealllines=false,linewidth=0.5pt]
+  \captionsetup{type=algorithm}
+}{%
+  \end{mdframed}
+}
+
 
 %\setkeys{Gin}{draft}
 
@@ -110,7 +124,9 @@ The abstract of your report summarises your entire work () in no more than half 
 
 % \subsection{Main Objective}
 The robot mower is an already existing project developed by previous masters students from the University of East Anglia.
-The previous students developed a system which required the user to draw around an image of a map to generate an outline for a path to be generated. The robot then used GPS to determine its position
+Physically, the mower has 2 tracks on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{doi:10.1126/scirobotics.abm6074}.
+Sensor wise, the robot is equipped with a GPS chip that was upgraded to RTK chip, 4G dongle and lidar.
+The existing code base was mostly written in python with very small amounts of C++.
 
 However, it still has areas that can be improved. One of these areas is the way the Robot covers an area in the real world in order to complete its task.
 More specifically, the map generation and path planning. These aspects have been the key focuses of my project, I have broken these down into 3 key goals:
@@ -140,31 +156,30 @@ This means we need a function with 2 parameters:
 \end{itemize}
 
 This leads us to an algorithm similar to the one below:
-
-
-\begin{figure}[h!]
+\begin{algorithm}[H]
 	\caption{Algorithm for Generating Shapes with k Corners}
-	\begin{verbatim}
-GenerateShape(k, n):
-    points = []
-    angleIncrement = 2π/k
-    radius = 1
-    center = (0, 0)
-    
-    for i = 0 to k-1:
-        angle = i * angleIncrement
-        x = center.x + radius * cos(angle)
-        y = center.y + radius * sin(angle)
-        points.append((x, y))
-    
-    shape = CreatePolygon(points)
-    
-    if n > 1:
-        GenerateShape(k, n-1)
-        
-    return shape
-\end{verbatim}
-\end{figure}
+	\begin{algorithmic}[1]
+		\Function{$GenShape$}{$k, n$}
+		\State $\text{points} \gets []$
+		\State $\text{angleIncrement} \gets 2\pi/k$
+		\State $\text{radius} \gets 1$
+		\State $\text{center} \gets (0, 0)$
+		\For{$i \gets 0$ \textbf{ to } $k-1$}
+		\State $\text{angle} \gets i \cdot \text{angleIncrement}$
+		\State $x \gets \text{center.x} + \text{radius} \cdot \cos(\text{angle})$
+		\State $y \gets \text{center.y} + \text{radius} \cdot \sin(\text{angle})$
+		\State $\text{points.append}(x, y)$
+		\EndFor
+		\State $\text{shape} \gets \text{CreatePolygon(points)}$
+		\If{$n > 1$}
+		\State \Call{GenShape}{$k$, $n-1$}
+		\EndIf
+		\State \Return $\text{shape}$
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+
 
 \subsection{Complete Coverage Path Planning}
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
