@@ -122,19 +122,23 @@ The abstract of your report summarises your entire work () in no more than half 
 
 \section{Introduction}
 
-% \subsection{Main Objective}
 The robot mower is an already existing project developed by previous masters students from the University of East Anglia.
-Physically, the mower has 2 tracks on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{doi:10.1126/scirobotics.abm6074}.
-Sensor wise, the robot is equipped with a GPS chip that was upgraded to RTK chip, 4G dongle and lidar.
+Physically, the mower has 2 tracks for movement on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{doi:10.1126/scirobotics.abm6074}.
+Sensor wise, the robot is equipped with a 4G dongle, lidar and a GPS chip that was upgraded to an RTK chip in this iteration of the project.
 The existing code base was mostly written in python with very small amounts of C++.
+Because of this, all of my code will be written in python to slot into existing code without issue.
 
-However, it still has areas that can be improved. One of these areas is the way the Robot covers an area in the real world in order to complete its task.
-More specifically, the map generation and path planning. These aspects have been the key focuses of my project, I have broken these down into 3 key goals:
+My contribution to this project this year will be, regarding the overall movement and guidance of the robot.
+For ease of planning, I have broken this down into 3 sections:
 \begin{enumerate}
 	\item Basic map generation
 	\item complete coverage path planning
 	\item map generation from an aerial image
 \end{enumerate}
+
+These sections are all modular meaning they can be developed, tested and function independently but still easily be integrated together for the final product.
+The specified use case of the robot will now be to cut golf courses, this is particularly relevant to the aerial map generation section of my work which will likely use a machine learning model and require relevant training data, while the other sections are not concerned with a real world use case as their algorithms will work be able to tweaked for any applicable use case of this robot.
+
 
 
 
@@ -146,7 +150,11 @@ Another section that is essential and should keep its title as is! Although you 
 \section{Methodology}
 
 \subsection{Map Generation}
-For the basic map generation, a simple shape generation algorithm which takes k points should suffice. As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
+For the basic map generation, a simple shape generation algorithm should suffice.
+The algorithm should also take two parameters, K then number of angles in the desired shape and N, the number of "obstacles" in the field.
+
+"Obstacles" can be thougt to represent real world obstructions for example trees or telephone poles in a real field.
+As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
 This program should also be able to create n obstacles within the main field, such areas would represent obstructions in the mowers desired path, for example trees or telephone poles in the real world.
 This means we need a function with 2 parameters:
 
@@ -155,34 +163,43 @@ This means we need a function with 2 parameters:
 	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3-8 corners staying inline with the complexity of the rest of the field without being unreasonably over engineered.
 \end{itemize}
 
-This leads us to an algorithm similar to the one below:
-\begin{algorithm}[H]
-	\caption{Algorithm for Generating Shapes with k Corners}
-	\begin{algorithmic}[1]
-		\Function{$GenShape$}{$k, n$}
-		\State $\text{points} \gets []$
-		\State $\text{angleIncrement} \gets 2\pi/k$
-		\State $\text{radius} \gets 1$
-		\State $\text{center} \gets (0, 0)$
-		\For{$i \gets 0$ \textbf{ to } $k-1$}
-		\State $\text{angle} \gets i \cdot \text{angleIncrement}$
-		\State $x \gets \text{center.x} + \text{radius} \cdot \cos(\text{angle})$
-		\State $y \gets \text{center.y} + \text{radius} \cdot \sin(\text{angle})$
-		\State $\text{points.append}(x, y)$
-		\EndFor
-		\State $\text{shape} \gets \text{CreatePolygon(points)}$
-		\If{$n > 1$}
-		\State \Call{GenShape}{$k$, $n-1$}
-		\EndIf
-		\State \Return $\text{shape}$
-		\EndFunction
-	\end{algorithmic}
-\end{algorithm}
-
+% This leads us to an algorithm similar to the one below:
+% \begin{algorithm}[H]
+% 	\caption{Algorithm for Generating Shapes with k Corners}
+% 	\begin{algorithmic}
+% 		\Function{$GenShape$}{$k, n$}
+% 		\State $\text{points} \gets []$
+% 		\State $\text{angleIncrement} \gets 2\pi/k$
+% 		\State $\text{radius} \gets 1$
+% 		\State $\text{center} \gets (0, 0)$
+% 		\For{$i \gets 0$ \textbf{ to } $k-1$}
+% 		\State $\text{angle} \gets i \cdot \text{angleIncrement}$
+% 		\State $x \gets \text{center.x} + \text{radius} \cdot \cos(\text{angle})$
+% 		\State $y \gets \text{center.y} + \text{radius} \cdot \sin(\text{angle})$
+% 		\State $\text{points.append}(x, y)$
+% 		\EndFor
+% 		\State $\text{shape} \gets \text{CreatePolygon(points)}$
+% 		\If{$n > 1$}
+% 		\State \Call{GenShape}{$k$, $n-1$}
+% 		\EndIf
+% 		\State \Return $\text{shape}$
+% 		\EndFunction
+% 	\end{algorithmic}
+% \end{algorithm}
+%
 
 
 \subsection{Complete Coverage Path Planning}
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
+
+
+\subsubsection{Robot sizing}
+\subsubsection{Headland Generation}
+\subsubsection{Swath Generation}
+\subsubsection{Route Planning}
+\subsubsection{Path Planning}
+\subsubsection{Cell Decomposition}
+
 
 
 
@@ -213,8 +230,105 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \appendix
 \clearpage
-\section{Producing tables, figures, etc.} \label{sec2}
-Please refer to the original template for different ways of formatting tables \cite{PCTut5}, figures, code snippets and pseudo code for algorithms. Make sure the caption of each of these is self-explanatory which means that you should be able to understand the figure, what's in the table, what the code is about, etc. without having to consult the text where they are referenced from.
+
+\section{Map Generation}
+
+\begin{algorithm}
+	\caption{Point Class Definition}
+	\label{mg:point class}
+	\begin{algorithmic}[1]
+		\Procedure{class Point}{}
+		\State $X \gets -1$ \Comment{X-coordinate initialized to -1}
+		\State $Y \gets -1$ \Comment{Y-coordinate initialized to -1}
+		\State $angle \gets -10$ \Comment{Angle initialized to -10}
+
+		\Procedure{Constructor}{$x$, $y$}
+		\State $this.X \gets x$
+		\State $this.Y \gets y$
+		\State $this.angle \gets -10$ \Comment{Default angle value}
+		\EndProcedure
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+	\caption{Generate random points}
+	\label{mg:genPoints}
+	\begin{algorithmic}[1]
+		\Function{GenPoints}{$num$, $P$, $size$}
+		\State $points \gets []$
+		\For{$i \gets 0$ \textbf{to} $num - 1$}
+		\State $randX \gets \text{random\_integer}(P.X + 1, P.X + size)$
+		\State $randY \gets \text{random\_integer}(P.Y + 1, P.Y + size)$
+		\State $points.\text{append}(\text{Point}(randX, randY))$
+		\EndFor
+		\State \Return $points$
+		\EndFunction
+
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+
+\begin{algorithm}
+	\caption{Sort points by polar angle to origin}
+	\label{mg:sortPoints}
+	\begin{algorithmic}[1]
+		\Function{SortPoints}{$points$, $origin$}
+		\State $hull \gets [origin]$
+		\State Sort $points$ by Y-coordinate
+		\For{$i \gets 0$ \textbf{to} $\text{length}(points) - 1$}
+		\State $points[i].angle \gets$ \Call{CalcAngle}{$origin$, $points[i]$}
+		\EndFor
+		\State Sort $points$ by angle
+		\State Append $points$ to $hull$
+		\State \Return $hull$
+		\EndFunction
+
+
+
+	\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+	\caption{Main function}
+	\label{mg:main}
+	\begin{algorithmic}[1]
+		\Function{Main}{}
+		\State $hull \gets []$
+		\State $origin \gets \text{Point}(20, 20)$
+		\State $field \gets$ \Call{GenPoints}{$20$, $origin$, $400$}
+		\State $hull.\text{append}($\Call{SortPoints}{$field$, $origin$}$)$
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{Main function with holes in shape}
+	\label{mg:mainWithHoles}
+	\begin{algorithmic}[1]
+		\Procedure{Main}{}
+		\State $hull \gets$ empty list
+
+		\State $origin \gets \text{Point}(20, 20)$
+		\State $field \gets \text{GenPoints}(20, origin, 400)$
+		\State add $\text{SortPoints}(field, origin)$ to $hull$
+
+		\State $hole1Base \gets \text{Point}(100, 100)$
+		\State $hole1Points \gets \text{GenPoints}(5, hole1Base, 50)$
+		\State add $\text{SortPoints}(hole1Points, hole1Base)$ to $hull$
+
+		\State $hole2Base \gets \text{Point}(150, 50)$
+		\State $hole2Points \gets \text{GenPoints}(3, hole2Base, 30)$
+		\State add $\text{SortPoints}(hole2Points, hole2Base)$ to $hull$
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
 
 \end{document}
 
