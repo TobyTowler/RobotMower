@@ -14,17 +14,11 @@
 \usepackage{pdfpages}
 \usepackage{natbib}
 \usepackage{float}
+\usepackage{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
 
-
-\newenvironment{boxedalgorithm}{%
-  \begin{mdframed}[hidealllines=false,linewidth=0.5pt]
-  \captionsetup{type=algorithm}
-}{%
-  \end{mdframed}
-}
 
 
 %\setkeys{Gin}{draft}
@@ -143,17 +137,15 @@ The specified use case of the robot will now be to cut golf courses, this is par
 
 
 
-\section{Background}
+\section{Background and Related Work}
 
 Another section that is essential and should keep its title as is! Although you could perhaps call it ``Literature Review'' instead, this is not advisable as at this stage of your project we do not expect an extensive literature review since this was already done in the second formative assignment. The rationale is simply because you will lose valuable pages that could be used better in the next two sections that will cover the preparation and implementation of actual work done. So just provide the context in which your project operates here, and then provide a brief overview of similar work that is directly relevant to yours. Try to avoid blatant copying and pasting from the formative literature review as it is bound to read awkwardly.
 
-\section{Methodology}
+\section{System Design}
 
 \subsection{Map Generation}
-For the basic map generation, a simple shape generation algorithm should suffice.
-The algorithm should also take two parameters, K then number of angles in the desired shape and N, the number of "obstacles" in the field.
-
-"Obstacles" can be thougt to represent real world obstructions for example trees or telephone poles in a real field.
+Map generation is an important part of testing this system, it is important to test on all scenarios that may occur in the real world.
+For this reason, random or parameter based map generation is very necessary to garuntee success in every environment.
 As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
 This program should also be able to create n obstacles within the main field, such areas would represent obstructions in the mowers desired path, for example trees or telephone poles in the real world.
 This means we need a function with 2 parameters:
@@ -163,34 +155,28 @@ This means we need a function with 2 parameters:
 	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3-8 corners staying inline with the complexity of the rest of the field without being unreasonably over engineered.
 \end{itemize}
 
-% This leads us to an algorithm similar to the one below:
-% \begin{algorithm}[H]
-% 	\caption{Algorithm for Generating Shapes with k Corners}
-% 	\begin{algorithmic}
-% 		\Function{$GenShape$}{$k, n$}
-% 		\State $\text{points} \gets []$
-% 		\State $\text{angleIncrement} \gets 2\pi/k$
-% 		\State $\text{radius} \gets 1$
-% 		\State $\text{center} \gets (0, 0)$
-% 		\For{$i \gets 0$ \textbf{ to } $k-1$}
-% 		\State $\text{angle} \gets i \cdot \text{angleIncrement}$
-% 		\State $x \gets \text{center.x} + \text{radius} \cdot \cos(\text{angle})$
-% 		\State $y \gets \text{center.y} + \text{radius} \cdot \sin(\text{angle})$
-% 		\State $\text{points.append}(x, y)$
-% 		\EndFor
-% 		\State $\text{shape} \gets \text{CreatePolygon(points)}$
-% 		\If{$n > 1$}
-% 		\State \Call{GenShape}{$k$, $n-1$}
-% 		\EndIf
-% 		\State \Return $\text{shape}$
-% 		\EndFunction
-% 	\end{algorithmic}
-% \end{algorithm}
-%
 
+\subsubsection{Corners}
+The number and bydistance between corners could be thought to represnt complexity of a shape.
+The number of corners in a shape 
+\subsubsection{Obstacles}
+Obstacles or holes, can be thougt to represent real world obstructions for example trees or telephone poles in a real field.
+Generation of obstacles can be completed using the same function as the outer field generation, simply with different parameters.
+The algorithm \ref{mg:genPoints} takes 3 parameters, number of points in the shape, an origin point and the range new points.
+This allows for variable size, positioning and complexity.
+
+
+\subsubsection{Graham Scan}
+The Graham Scan \citep{graham1927efficient} is an algorithm to find convex hulls, that is from a set of points the outline which contains all inner points.
+This algorithm does this by sorting the points by their polar angle to the lowest point, since this is always in the hull.
+There is then further calculations based on the angle between adjacent points to omit inner points from the outline, however for this use case that is not necessary since all points will be vertexes in a field.
+For this reason, the algorithm used is not strictly a Graham Scan but rather heavily based on the first stage, as shown in \ref{mg:sortPoints}
+Using this algorithm allows for consistent outlining of any set of points with no crossovers or intersections
 
 \subsection{Complete Coverage Path Planning}
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
+For this module, I have used the Fields2Cover library \cite{fields2cover}, this libary is open source.
+During the course of this project, i contributed to his library, fixing a bug during the build process. 
 
 
 \subsubsection{Robot sizing}
@@ -205,21 +191,33 @@ Complete coverage path planning(CCPP) is "the task of determining a path that pa
 
 
 
-
 \subsection{Aerial Map Generation}
+Previously, for the user to plot a custom map or an translate a real world area to the robot, they would have to trace around an image manually. 
+A great increase in usability and user experience would be to automate this labourious and time consuming task.
+Such a way to do this is with a machine learning model detecting the outlines of the desired area.
+
+\subsubsection{Algorithmic Approaches}
+\subsubsection{Machine Learning Approach}
+\subsubsection{Data Set}
+\subsubsection{Training}
 
 
+\section{Performance Evaluation}
+%
+% Could be a section each for implementation and evaluation if this suits you better or you could use subsections instead. The difference between this section and the previous "Methodology" section is that this one covers "action" or in other words your active contributions to the project. These may include:
+% \begin{itemize}
+% 	\item Implementation of programming code: Describe your final code architecture using for example (UML) diagrams and code snippets. Make sure that code snippet (figure) captions are self-explanatory which means that you should not have to consult the text body to understand what is shown in the figure. Many code snippets of the same kind should end up in an appendix instead.
+% 	\item Results from experiments run, including testing (user and software). Use figures and tables with self-explanatory captions (see earlier statement). Multiple figures and tables that cover several pages should be put in an appendix.
+% 	\item Analysis of results: Discuss your experimental and/or test findings in depth. Compare them against other studies and/or benchmarks, and point out limitations of your work (that could be due to limited time) and elaborate on scope for improvement.
+% \end{itemize}
 
-\section{Implementation and Evaluation}
+\subsection{Map Generation}
+\subsection{Complete Coverage Path Planning}
+\subsection{Aerail Map Generation}
 
-Could be a section each for implementation and evaluation if this suits you better or you could use subsections instead. The difference between this section and the previous "Methodology" section is that this one covers "action" or in other words your active contributions to the project. These may include:
-\begin{itemize}
-	\item Implementation of programming code: Describe your final code architecture using for example (UML) diagrams and code snippets. Make sure that code snippet (figure) captions are self-explanatory which means that you should not have to consult the text body to understand what is shown in the figure. Many code snippets of the same kind should end up in an appendix instead.
-	\item Results from experiments run, including testing (user and software). Use figures and tables with self-explanatory captions (see earlier statement). Multiple figures and tables that cover several pages should be put in an appendix.
-	\item Analysis of results: Discuss your experimental and/or test findings in depth. Compare them against other studies and/or benchmarks, and point out limitations of your work (that could be due to limited time) and elaborate on scope for improvement.
-\end{itemize}
 
 \section{Conclusion and Future Work}
+
 
 Another essential section that should keep its title as suggested. Briefly discuss your main findings, outcomes, results; what worked and what could have been done differently. Then summarise your work in a concluding statement by comparing your outcomes against the main and sub-objectives and/or MoSCoW requirements (if used) and suggest potential future work that could be done if more time would be available.
 

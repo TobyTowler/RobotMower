@@ -5,6 +5,11 @@ Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.
 \newblock {\em Science Robotics}, 7(66):eabm6074.
 
+\bibitem[Team, 2023]{fields2cover}
+Team, F. (2023).
+\newblock Fields2cover: Mission planning for agricultural vehicles.
+\newblock \url{https://fields2cover.github.io/}.
+
 \bibitem[Zhao and Hwang, 2023]{zhao2023complete}
 Zhao, S. and Hwang, S.-H. (2023).
 \newblock Complete coverage path planning scheme for autonomous navigation ros-based robots.
