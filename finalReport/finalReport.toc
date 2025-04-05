@@ -8,11 +8,11 @@
 \contentsline {subsection}{\numberline {3.2}Complete Coverage Path Planning}{6}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Robot sizing}{6}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Headland Generation}{6}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Swath Generation}{6}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{6}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{6}{subsubsection.3.2.5}%
-\contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{6}{subsubsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{6}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3}Swath Generation}{7}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{7}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{7}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{7}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{7}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{7}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{7}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Data Set}{7}{subsubsection.3.3.3}%
