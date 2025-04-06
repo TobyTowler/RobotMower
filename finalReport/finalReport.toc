@@ -22,6 +22,6 @@
 \contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{7}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{7}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Conclusion and Future Work}{7}{section.5}%
-\contentsline {section}{References}{8}{section*.4}%
-\contentsline {section}{\numberline {A}Map Generation}{9}{appendix.A}%
+\contentsline {section}{References}{9}{section*.4}%
+\contentsline {section}{\numberline {A}Map Generation}{10}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

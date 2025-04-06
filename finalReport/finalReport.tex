@@ -158,7 +158,7 @@ This means we need a function with 2 parameters:
 
 \subsubsection{Corners}
 The number and bydistance between corners could be thought to represnt complexity of a shape.
-The number of corners in a shape 
+The number of corners in a shape
 \subsubsection{Obstacles}
 Obstacles or holes, can be thougt to represent real world obstructions for example trees or telephone poles in a real field.
 Generation of obstacles can be completed using the same function as the outer field generation, simply with different parameters.
@@ -176,19 +176,21 @@ Using this algorithm allows for consistent outlining of any set of points with n
 \subsection{Complete Coverage Path Planning}
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
 For this module, I have used the Fields2Cover library \cite{fields2cover}, this libary is open source.
-During the course of this project, i contributed to his library, fixing a bug during the build process. 
+During the course of this project, i contributed to his library, fixing a bug during the build process.
+The library splits the task up into several sub tasks.
 
 
 \subsubsection{Robot sizing}
-Robot sizing has 2 important factors, track width - how wide the machine itself is and blade width - how wide the utility object is.
-For farming equiptment the utility object is usually larger than the vehicle, for example a combine harvester's wheels being narrower than blade, however for this project the blade is within the tracks. 
+Robot sizing has 2 important factors, track width, how wide the machine itself is, and blade width, how wide the utility object is.
+For farming equiptment the utility object is usually larger than the vehicle, for example a combine harvester's wheels being narrower than blade, however for this project the blade is within the tracks.
 For this reason the functions will compute slightly differently to its probable intended use case as the tracks are likely to overlap however this should not cause an issue and all outputs should function as needed.
 
-The robot is 
+The robot is 22cm wide from outer edge to edge and the gap between the tracks is 17cm, with a track width of roughly 2.5cm.
+
 
 \subsubsection{Headland Generation}
-Headlands are the area in which a vehicle turns, think of the rough edges of a crop field.
-Although this is not strictly needed, the robot could turn 
+Headlands are the area in which a vehicle turns, think of the rough edges of a crop field, these exist so that agricultural vehicles do not trample their crops when turning.
+Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch.
 
 
 
@@ -203,7 +205,7 @@ Although this is not strictly needed, the robot could turn
 
 
 \subsection{Aerial Map Generation}
-Previously, for the user to plot a custom map or an translate a real world area to the robot, they would have to trace around an image manually. 
+Previously, for the user to plot a custom map or an translate a real world area to the robot, they would have to trace around an image manually.
 A great increase in usability and user experience would be to automate this labourious and time consuming task.
 Such a way to do this is with a machine learning model detecting the outlines of the desired area.
 
