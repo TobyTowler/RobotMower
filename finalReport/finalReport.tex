@@ -190,12 +190,35 @@ The robot is 22cm wide from outer edge to edge and the gap between the tracks is
 
 \subsubsection{Headland Generation}
 Headlands are the area in which a vehicle turns, think of the rough edges of a crop field, these exist so that agricultural vehicles do not trample their crops when turning.
-Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch.
+Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch
+Headlands are also generated around obstacles to allow for suitable turning area around the obstacles if needed, this servers as an area to do a "U-turn", effictively the same as reaching the end of the field.
+
+KEEPGOING
 
 
 
 \subsubsection{Swath Generation}
+Swaths are the individual straight lines that make up the complete path,
+they are often parallel to each other but this can vary depending on how the shape of the field is segmented into smaller shapes however they will always be parallel while in the same sub area.
+There are 2 ways of determining the optimal angle; the sum of the lengths of all swaths, or the number of swaths, where lower is better for each.
+Both of these have pros and cons, for example lower total length offers better time effiency assuming a near constant travel speed while lower swath count gives reduced turning movements which can be better if turning requires a slower speed or other complexities.
+Similarly, lower sum length of course means less distance travelled and usually less fuel/energy consumed, however the opposite can be true if the acceleration and deceleration causes greater energy consumption compared to constant velocity.
+Swaths are generated within the bounds of the headlands to allow for independent handling of the turning and connection of swaths regardless of the rest of the generation process.
+To find the best angle, each angle is tested and compared. This brute force approach could be considered slow, but it is all the library offers and could be taken into consideration in a future release.
+
 \subsubsection{Route Planning}
+A route is the order in which swaths will be covered.
+These can be sorted in a number of a ways:
+
+\begin{itemize}
+	\item{Shortest route to cover all swaths, order depends on field}
+	\item{Boustrophen order, a zigzag like pattern covering swaths in order (1,2,3...)}
+	\item{Snake order, Similar to Boustrophen but skipping 1 swath each time (1,3,5...)}
+	\item{Spiral order, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
+	\item{Custom order, user defined}
+\end{itemize}
+
+
 \subsubsection{Path Planning}
 \subsubsection{Cell Decomposition}
 
