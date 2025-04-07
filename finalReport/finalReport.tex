@@ -145,22 +145,25 @@ Another section that is essential and should keep its title as is! Although you 
 
 \subsection{Map Generation}
 Map generation is an important part of testing this system, it is important to test on all scenarios that may occur in the real world.
-For this reason, random or parameter based map generation is very necessary to garuntee success in every environment.
+For this reason, random or parameter based map generation is very necessary to guarantee success in every environment.
 As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
 This program should also be able to create n obstacles within the main field, such areas would represent obstructions in the mowers desired path, for example trees or telephone poles in the real world.
 This means we need a function with 2 parameters:
 
 \begin{itemize}
 	\item K, number of angles in the outer field
-	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3-8 corners staying inline with the complexity of the rest of the field without being unreasonably over engineered.
+	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3–8 corners staying inline with the complexity of the rest of the field without being unreasonably overengineered.
 \end{itemize}
 
 
 \subsubsection{Corners}
-The number and bydistance between corners could be thought to represnt complexity of a shape.
+The number and distance between corners could be thought to represent complexity of a shape.
 The number of corners in a shape
+
+KEEPGOING
+
 \subsubsection{Obstacles}
-Obstacles or holes, can be thougt to represent real world obstructions for example trees or telephone poles in a real field.
+Obstacles or holes, can be thought to represent real world obstructions for example trees or telephone poles in a real field.
 Generation of obstacles can be completed using the same function as the outer field generation, simply with different parameters.
 The algorithm \ref{mg:genPoints} takes 3 parameters, number of points in the shape, an origin point and the range new points.
 This allows for variable size, positioning and complexity.
@@ -175,15 +178,18 @@ Using this algorithm allows for consistent outlining of any set of points with n
 
 \subsection{Complete Coverage Path Planning}
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
-For this module, I have used the Fields2Cover library \cite{fields2cover}, this libary is open source.
-During the course of this project, i contributed to his library, fixing a bug during the build process.
-The library splits the task up into several sub tasks.
+For this module, I have used the Fields2Cover library \cite{fields2cover}, this library is open source.
+During the course of this project, I contributed to his library, fixing a bug during the build process.
+The library splits the task up into several sub-tasks.
 
 
-\subsubsection{Robot sizing}
+\subsubsection{Robot Configuration}
 Robot sizing has 2 important factors, track width, how wide the machine itself is, and blade width, how wide the utility object is.
-For farming equiptment the utility object is usually larger than the vehicle, for example a combine harvester's wheels being narrower than blade, however for this project the blade is within the tracks.
+For farming equipment the utility object is usually larger than the vehicle, for example a combine harvester's wheels being narrower than blade, however for this project the blade is within the tracks.
 For this reason the functions will compute slightly differently to its probable intended use case as the tracks are likely to overlap however this should not cause an issue and all outputs should function as needed.
+
+The robot has 2 more parameters regarding its turning circle, these are minimum turning radius and maximum differential curvature.
+Both of these are important when calculating a path for the robot to follow as they ensure the robot can easily follow the path.
 
 The robot is 22cm wide from outer edge to edge and the gap between the tracks is 17cm, with a track width of roughly 2.5cm.
 
@@ -191,7 +197,7 @@ The robot is 22cm wide from outer edge to edge and the gap between the tracks is
 \subsubsection{Headland Generation}
 Headlands are the area in which a vehicle turns, think of the rough edges of a crop field, these exist so that agricultural vehicles do not trample their crops when turning.
 Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch
-Headlands are also generated around obstacles to allow for suitable turning area around the obstacles if needed, this servers as an area to do a "U-turn", effictively the same as reaching the end of the field.
+Headlands are also generated around obstacles to allow for suitable turning area around the obstacles if needed, this serves as an area to do a "U-turn", effectively the same as reaching the end of the field.
 
 KEEPGOING
 
@@ -199,27 +205,41 @@ KEEPGOING
 
 \subsubsection{Swath Generation}
 Swaths are the individual straight lines that make up the complete path,
-they are often parallel to each other but this can vary depending on how the shape of the field is segmented into smaller shapes however they will always be parallel while in the same sub area.
+they are often parallel to each other, but this can vary depending on how the shape of the field is segmented into smaller shapes however they will always be parallel while in the same sub area.
 There are 2 ways of determining the optimal angle; the sum of the lengths of all swaths, or the number of swaths, where lower is better for each.
-Both of these have pros and cons, for example lower total length offers better time effiency assuming a near constant travel speed while lower swath count gives reduced turning movements which can be better if turning requires a slower speed or other complexities.
+Both of these have pros and cons, for example lower total length offers better time efficiency assuming a near constant travel speed while lower swath count gives reduced turning movements which can be better if turning requires a slower speed or other complexities.
 Similarly, lower sum length of course means less distance travelled and usually less fuel/energy consumed, however the opposite can be true if the acceleration and deceleration causes greater energy consumption compared to constant velocity.
 Swaths are generated within the bounds of the headlands to allow for independent handling of the turning and connection of swaths regardless of the rest of the generation process.
 To find the best angle, each angle is tested and compared. This brute force approach could be considered slow, but it is all the library offers and could be taken into consideration in a future release.
 
 \subsubsection{Route Planning}
 A route is the order in which swaths will be covered.
-These can be sorted in a number of a ways:
+These can be sorted in a number of ways:
 
 \begin{itemize}
 	\item{Shortest route to cover all swaths, order depends on field}
-	\item{Boustrophen order, a zigzag like pattern covering swaths in order (1,2,3...)}
-	\item{Snake order, Similar to Boustrophen but skipping 1 swath each time (1,3,5...)}
+	\item{Boustrophedon order, a zigzag like pattern covering swaths in order (1,2,3...)}
+	\item{Snake order, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
 	\item{Spiral order, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
 	\item{Custom order, user defined}
 \end{itemize}
 
 
+KEEPGOING
+
 \subsubsection{Path Planning}
+Path planning refers to the connection of all swaths in route order.
+There are a couple of ways the to link neighbouring swaths, these are the Dubins curve and Reeds-Shepp curve.
+
+% \begin{itemize}
+% 	\item{Dubins Curve}
+% 	\item{Reeds-Shepp curve}
+% \end{itemize}
+
+Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 is the robots ability to move backwards.
+Reeds-Shepp allows backwards movement
+
+
 \subsubsection{Cell Decomposition}
 
 

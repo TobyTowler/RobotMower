@@ -6,22 +6,22 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Obstacles}{5}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Graham Scan}{6}{subsubsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.2}Complete Coverage Path Planning}{6}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Robot sizing}{6}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Headland Generation}{6}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Robot Configuration}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Headland Generation}{7}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Swath Generation}{7}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{7}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{8}{subsubsection.3.2.4}%
 \contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{8}{subsubsection.3.2.5}%
 \contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{8}{subsubsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{8}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{8}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{8}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Data Set}{8}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Training}{8}{subsubsection.3.3.4}%
-\contentsline {section}{\numberline {4}Performance Evaluation}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map Generation}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion and Future Work}{8}{section.5}%
-\contentsline {section}{References}{9}{section*.4}%
-\contentsline {section}{\numberline {A}Map Generation}{10}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{9}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{9}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Data Set}{9}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Training}{9}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Performance Evaluation}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Map Generation}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion and Future Work}{9}{section.5}%
+\contentsline {section}{References}{10}{section*.4}%
+\contentsline {section}{\numberline {A}Map Generation}{11}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
