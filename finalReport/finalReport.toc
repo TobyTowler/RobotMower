@@ -15,7 +15,6 @@
 \contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{9}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{10}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{11}{subsubsection.3.3.2}%
-\contentsline {paragraph}{\nonumberline Data Set}{11}{paragraph*.6}%
 \contentsline {subsubsection}{\numberline {3.3.3}Data Set}{12}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Training}{12}{subsubsection.3.3.4}%
 \contentsline {section}{\numberline {4}Performance Evaluation}{12}{section.4}%
@@ -23,7 +22,7 @@
 \contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{12}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{12}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Conclusion and Future Work}{12}{section.5}%
-\contentsline {section}{References}{13}{section*.7}%
+\contentsline {section}{References}{13}{section*.5}%
 \contentsline {section}{\numberline {A}Map Generation}{14}{appendix.A}%
 \contentsline {section}{\numberline {B}Aerial Mapping}{16}{appendix.B}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
