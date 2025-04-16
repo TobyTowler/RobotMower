@@ -1,5 +1,16 @@
 \begin{thebibliography}{}
 
+\bibitem[Bradski et~al., 2023]{opencv_library}
+Bradski, G., Kaehler, A., and Pisarevsky, V. (2023).
+\newblock Opencv: Open source computer vision library.
+\newblock \url{https://opencv.org/}.
+\newblock Accessed: 2025-04-13.
+
+\bibitem[Canny, 1986]{canny1986computational}
+Canny, J. (1986).
+\newblock A computational approach to edge detection.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, PAMI-8(6):679--698.
+
 \bibitem[Graham, 1972]{graham1972efficient}
 Graham, R.~L. (1972).
 \newblock An efficient algorithm for determining the convex hull of a finite planar set.

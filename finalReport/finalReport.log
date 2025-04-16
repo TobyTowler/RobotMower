@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  16 APR 2025 12:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  16 APR 2025 17:30
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,60 +1082,69 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@toc=\write5
 \openout5 = `finalReport.toc'.
 
- [3] [4]
+ [3] (./finalReport.lof)
+\tf@lof=\write6
+\openout6 = `finalReport.lof'.
+
+ [4] [5]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 146.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 154.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5] [6] [7] [8]
-./finalReport.tex:279: Missing $ inserted.
-<inserted text> 
-                $
-l.279 low_
-          threshold and high_threshold: The thresholds for edge classification
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./finalReport.tex:281: Missing $ inserted.
-<inserted text> 
-                $
-l.281 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (57.54207pt too wide) in paragraph at lines 278--281
-\OML/ztmcm/m/it/12 Thethresholdsforedgeclassificationmask \OT1/ztmcm/m/n/12 : \OML/ztmcm/m/it/12 Optionalmasktolimittheregionwhereedgesaredetected$ 
- []
-
-[9] [10] (./finalReport.bbl
+) [6] [7] [8] [9] [10] [11] [12] (./finalReport.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 16.
-) [11
+(Font)              scaled to size 10.79993pt on input line 6.
+) [13
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 317.
- [12
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 321.
 
-] [13] (./finalReport.aux)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14
+
+]
+
+LaTeX Warning: Text page 15 contains only floats.
+
+[15]
+<./images/openCvCannyExample.jpg, id=184, 451.6875pt x 150.5625pt>
+File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
+<use ./images/openCvCannyExample.jpg>
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 411.
+(pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
+<./images/openCvCannyGolfCourse.png, id=187, 803.0pt x 580.1675pt>
+File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
+<use ./images/openCvCannyGolfCourse.png>
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 419.
+(pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
+ [16
+
+ <./images/openCvCannyExample.jpg> <./images/openCVCannyGolfCourse.png>] (./finalReport.aux)
 Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35527 strings out of 476034
- 776044 string characters out of 5792854
+ 35577 strings out of 476034
+ 777170 string characters out of 5792854
  1869388 words of memory out of 6000000
- 55363 multiletter control sequences out of 15000+600000
- 567170 words of font info for 89 fonts, out of 8000000 for 9000
+ 55397 multiletter control sequences out of 15000+600000
+ 565306 words of font info for 86 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  122i,18n,120p,10662b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (13 pages, 129059 bytes).
+Output written on finalReport.pdf (16 pages, 1062015 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 332 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 

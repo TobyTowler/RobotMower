@@ -253,31 +253,35 @@ For example, the outline is only as accurate as the user's mouse placement, like
 Automating this labourious and time consuming task would positively increase user experience and usability, this can be done using algorithmic and machine learning approaches.
 
 \subsubsection{Algorithmic Approaches}
-There are several algorithmic methods that try to achieve this task from several different librarys.
+There are several algorithmic methods that try to achieve this task from several different librarys. A popular library for image processing is scikit-image.
 
-Scikit-image's Canny edge detection implementation follows the classic Canny algorithm developed by John F. Canny in 1986. The algorithm works through several steps to detect edges in images:
+OpenCV's Canny edge detection implementation \cite{opencv_library} follows the classic algorithm developed by Canny \cite{canny1986computational}.
+The algorithm works through several steps to detect edges in images:
+\begin{itemize}
+	\item Gaussian Blur: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
+	\item Gradient Calculation: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
+	\item Non-maximum Suppression: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
+	\item Double Thresholding: The algorithm applies two thresholds:
+	      \begin{itemize}
+		      \item High threshold: Pixels above this are considered "strong" edges
+		      \item Low threshold: Pixels between low and high are considered "weak" edges
+	      \end{itemize}
+	\item Edge Tracking by Hysteresis: Finally, weak edges that are connected to strong edges are kept, while isolated weak edges are discarded. This helps ensure that the detected edges are continuous.
+\end{itemize}
+This approach works very well for high contrast images, particularly those black and white~\ref{am:cannyexample}. The clear separation between foreground and background elements allows the algorithm to detect distinct gradient changes and create clean, continuous edge lines.
 
-Gaussian Blur: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
-Gradient Calculation: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
+As for the similarly coloured golf course images, it can often find the outlines but they are made up of many smaller lines~\ref{am:CannyGolfCourse}. This fragmentation occurs because the subtle color transitions between different areas of the golf course (like fairways, roughs, and greens) create weaker gradient signals that may fall inconsistently above or below the detection thresholds.
 
-Computes the gradient magnitude (strength of edge)
-Computes the gradient direction
+It may appear there is a simple solution to this problem; join the connected lines into one, however this proves to be rather problematic in itself for a number of reasons:
+\begin{enumerate}
+	\item The desired line does not form a complete shape - Gaps in the detected edges mean that even sophisticated line-joining algorithms may fail to connect all segments belonging to a single boundary
 
+	\item The line is connected to other lines outside the desired shape - Many detected edges from shadows, texture variations, or other regions of the golf course can intersect with the boundary edges required to be isolated, creating unwanted connection points
 
-Non-maximum Suppression: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
-Double Thresholding: The algorithm applies two thresholds:
+	\item Once lines are connected, it is impossible to tell which collection of lines is needed - Without prior knowledge of the expected shape or additional contextual information, there's no reliable way to determine which edge segments represent meaningful boundaries, like the edge of a green compared to an outline of trees or a rough area.
+\end{enumerate}
 
-High threshold: Pixels above this are considered "strong" edges
-Low threshold: Pixels between low and high are considered "weak" edges
-
-
-Edge Tracking by Hysteresis: Finally, weak edges that are connected to strong edges are kept, while isolated weak edges are discarded. This helps ensure that the detected edges are continuous.
-
-In scikit-image, the function skimage.feature.canny() implements this algorithm with parameters for:
-
-sigma: The standard deviation of the Gaussian filter
-low_threshold and high_threshold: The thresholds for edge classification
-mask: Optional mask to limit the region where edges are detected
+All of these means use of canny edge detection can often cause more problems than it solves, while it may have more accurate outlines in places, they may be connected to unwanted areas, Or they may not be complete and still require further user input to chose a selection or finish a shape.
 
 \subsubsection{Machine Learning Approach}
 \subsubsection{Data Set}
@@ -313,7 +317,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \section{Map Generation}
 
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Point Class Definition}
 	\label{mg:point class}
 	\begin{algorithmic}[1]
@@ -321,7 +325,6 @@ Another essential section that should keep its title as suggested. Briefly discu
 		\State $X \gets -1$ \Comment{X-coordinate initialized to -1}
 		\State $Y \gets -1$ \Comment{Y-coordinate initialized to -1}
 		\State $angle \gets -10$ \Comment{Angle initialized to -10}
-
 		\Procedure{Constructor}{$x$, $y$}
 		\State $this.X \gets x$
 		\State $this.Y \gets y$
@@ -331,8 +334,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\end{algorithmic}
 \end{algorithm}
 
-
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Generate random points}
 	\label{mg:genPoints}
 	\begin{algorithmic}[1]
@@ -345,14 +347,10 @@ Another essential section that should keep its title as suggested. Briefly discu
 		\EndFor
 		\State \Return $points$
 		\EndFunction
-
 	\end{algorithmic}
 \end{algorithm}
 
-
-
-
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Sort points by polar angle to origin}
 	\label{mg:sortPoints}
 	\begin{algorithmic}[1]
@@ -366,14 +364,10 @@ Another essential section that should keep its title as suggested. Briefly discu
 		\State Append $points$ to $hull$
 		\State \Return $hull$
 		\EndFunction
-
-
-
 	\end{algorithmic}
 \end{algorithm}
 
-
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Main function}
 	\label{mg:main}
 	\begin{algorithmic}[1]
@@ -386,7 +380,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Main function with holes in shape}
 	\label{mg:mainWithHoles}
 	\begin{algorithmic}[1]
@@ -409,6 +403,23 @@ Another essential section that should keep its title as suggested. Briefly discu
 \end{algorithm}
 
 
+\clearpage
+\section{Aerial Mapping}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/openCvCannyExample.jpg}
+	\caption{Opencv example of canny detection, source \cite{opencv_library} docs}
+	\label{am:cannyexample}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/openCvCannyGolfCourse.png}
+	\caption{OpenCV canny edge detection on an image of a golf course}
+	\label{am:CannyGolfCourse}
+\end{figure}
 
 \end{document}
 
