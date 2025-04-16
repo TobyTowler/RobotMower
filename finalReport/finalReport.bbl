@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Graham, 1972]{graham1972efficient}
+Graham, R.~L. (1972).
+\newblock An efficient algorithm for determining the convex hull of a finite planar set.
+\newblock {\em Information Processing Letters}, 1(4):132--133.
+
 \bibitem[Macenski et~al., 2022]{doi:10.1126/scirobotics.abm6074}
 Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.

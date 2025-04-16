@@ -14,14 +14,14 @@
 \contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{8}{subsubsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{8}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{9}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{9}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Data Set}{9}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Training}{9}{subsubsection.3.3.4}%
-\contentsline {section}{\numberline {4}Performance Evaluation}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map Generation}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{9}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion and Future Work}{9}{section.5}%
-\contentsline {section}{References}{10}{section*.4}%
-\contentsline {section}{\numberline {A}Map Generation}{11}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{10}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Data Set}{10}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Training}{10}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Performance Evaluation}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Map Generation}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{10}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion and Future Work}{10}{section.5}%
+\contentsline {section}{References}{11}{section*.4}%
+\contentsline {section}{\numberline {A}Map Generation}{12}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -170,7 +170,7 @@ This allows for variable size, positioning and complexity.
 
 
 \subsubsection{Graham Scan}
-The Graham Scan \citep{graham1927efficient} is an algorithm to find convex hulls, that is from a set of points the outline which contains all inner points.
+The Graham Scan \citep{graham1972efficient} is an algorithm to find convex hulls, that is from a set of points the outline which contains all inner points.
 This algorithm does this by sorting the points by their polar angle to the lowest point, since this is always in the hull.
 There is then further calculations based on the angle between adjacent points to omit inner points from the outline, however for this use case that is not necessary since all points will be vertexes in a field.
 For this reason, the algorithm used is not strictly a Graham Scan but rather heavily based on the first stage, as shown in \ref{mg:sortPoints}
@@ -248,13 +248,37 @@ Reeds-Shepp allows backwards movement
 
 
 \subsection{Aerial Map Generation}
-Previously, for the program to take in a real world map from an image of the real world, the user would have to upload the picture and manually trace the outline, this has several problems.
-For one, the outline is only as accurate as the user's mouse placement, likely skipping some smaller corners to save time or due to inability to be accurate to the needed degree.
-
-Automating this labourious and time consuming task would positively increase user experience and usability
-This can be done using an algorithmic and machine learning approaches
+Previously, for the program to take in a real world map from an image of the real world, the user would have to upload the picture and manually trace the outline, this could cause some problems.
+For example, the outline is only as accurate as the user's mouse placement, likely skipping some smaller corners to save time or due to inability to be accurate to the necessary degree.
+Automating this labourious and time consuming task would positively increase user experience and usability, this can be done using algorithmic and machine learning approaches.
 
 \subsubsection{Algorithmic Approaches}
+There are several algorithmic methods that try to achieve this task from several different librarys.
+
+Scikit-image's Canny edge detection implementation follows the classic Canny algorithm developed by John F. Canny in 1986. The algorithm works through several steps to detect edges in images:
+
+Gaussian Blur: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
+Gradient Calculation: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
+
+Computes the gradient magnitude (strength of edge)
+Computes the gradient direction
+
+
+Non-maximum Suppression: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
+Double Thresholding: The algorithm applies two thresholds:
+
+High threshold: Pixels above this are considered "strong" edges
+Low threshold: Pixels between low and high are considered "weak" edges
+
+
+Edge Tracking by Hysteresis: Finally, weak edges that are connected to strong edges are kept, while isolated weak edges are discarded. This helps ensure that the detected edges are continuous.
+
+In scikit-image, the function skimage.feature.canny() implements this algorithm with parameters for:
+
+sigma: The standard deviation of the Gaussian filter
+low_threshold and high_threshold: The thresholds for edge classification
+mask: Optional mask to limit the region where edges are detected
+
 \subsubsection{Machine Learning Approach}
 \subsubsection{Data Set}
 \subsubsection{Training}
