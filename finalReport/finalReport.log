@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  16 APR 2025 17:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  16 APR 2025 18:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1098,7 +1098,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 ) [13
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 321.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 324.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1116,15 +1116,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 15 contains only floats.
 
 [15]
-<./images/openCvCannyExample.jpg, id=184, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=186, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 411.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 414.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=187, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=189, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 419.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 422.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
  [16
 
@@ -1133,18 +1133,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35577 strings out of 476034
- 777170 string characters out of 5792854
+ 35589 strings out of 476034
+ 777584 string characters out of 5792854
  1869388 words of memory out of 6000000
- 55397 multiletter control sequences out of 15000+600000
+ 55407 multiletter control sequences out of 15000+600000
  565306 words of font info for 86 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  122i,18n,120p,10662b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (16 pages, 1062015 bytes).
+Output written on finalReport.pdf (16 pages, 1062272 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 334 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
