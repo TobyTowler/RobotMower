@@ -21,6 +21,11 @@ Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.
 \newblock {\em Science Robotics}, 7(66):eabm6074.
 
+\bibitem[Paszke et~al., 2019]{paszke2019pytorch}
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., and Chintala, S. (2019).
+\newblock Pytorch: An imperative style, high-performance deep learning library.
+\newblock In Wallach, H., Larochelle, H., Beygelzimer, A., d\textquotesingle Alch\'{e}-Buc, F., Fox, E., and Garnett, R., editors, {\em Advances in Neural Information Processing Systems 32}, pages 8024--8035. Curran Associates, Inc.
+
 \bibitem[Team, 2023]{fields2cover}
 Team, F. (2023).
 \newblock Fields2cover: Mission planning for agricultural vehicles.
