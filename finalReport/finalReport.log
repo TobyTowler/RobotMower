@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  23 APR 2025 15:18
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.31)  20 APR 2025 16:50
+>>>>>>> cd66559 (misc)
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,7 +1149,23 @@ Overfull \hbox (51.79347pt too wide) in paragraph at lines 320--321
 [13] (./finalReport.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 10.79993pt on input line 6.
+<<<<<<< HEAD
 )
+=======
+) [13
+
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 369.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+>>>>>>> cd66559 (misc)
 
 [14
 
@@ -1175,12 +1195,20 @@ LaTeX Warning: Text page 16 contains only floats.
 <./images/openCvCannyExample.jpg, id=201, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
+<<<<<<< HEAD
 Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 443.
+=======
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 459.
+>>>>>>> cd66559 (misc)
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
 <./images/openCvCannyGolfCourse.png, id=204, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
+<<<<<<< HEAD
 Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 451.
+=======
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 467.
+>>>>>>> cd66559 (misc)
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
 <./images/AdobeGolf_visualisation.png, id=205, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
@@ -1214,6 +1242,7 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  37512 strings out of 475171
  818450 string characters out of 5767095
  1307319 words of memory out of 5000000
@@ -1223,6 +1252,17 @@ Here is how much of TeX's memory you used:
  122i,18n,121p,10962b,1199s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on finalReport.pdf (18 pages, 2559865 bytes).
+=======
+ 35577 strings out of 476034
+ 777170 string characters out of 5792854
+ 1869388 words of memory out of 6000000
+ 55397 multiletter control sequences out of 15000+600000
+ 565306 words of font info for 86 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 122i,18n,120p,10662b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on finalReport.pdf (16 pages, 1062574 bytes).
+>>>>>>> cd66559 (misc)
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)
  311 compressed objects within 4 object streams

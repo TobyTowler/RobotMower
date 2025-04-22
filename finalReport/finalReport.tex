@@ -302,11 +302,11 @@ A custom data set was needed, or at least custom annotations of the plain images
 Pytorch has several training parameters each with their own effect on the outcome. Some foundational hyperparameters are:
 
 \begin{itemize}
-    \item{Batch size}
-    \item{Image size}
-    \item{In channels}
-    \item{Learning rate}
-    \item{Number of classes}
+	\item{Batch size}
+	\item{Image size}
+	\item{In channels}
+	\item{Learning rate}
+	\item{Number of classes}
 \end{itemize}
 
 Foundational hyperparameters include batch size $\text{BATCH\_SIZE} = 4$, input resolution $\text{IMAGE\_SIZE} = (256, 256)$, RGB channels $\text{IN\_CHANNELS} = 3$, learning rate $\text{LEARNING\_RATE} = 1 \times 10^{-3}$, and number of segmentation classes $\text{NUM\_CLASSES} = 6$. To address class imbalance, each class receives a distinct weight $\text{CLASS\_WEIGHTS} = [0.5, 1.0, 2.0, 2.5, 2.0, 1.5]$, with higher weights assigned to less frequent classes.
@@ -330,10 +330,55 @@ Dataset partitioning allocates 70\% for training, 20\% for validation, and 10\% 
 % \end{itemize}
 
 \subsection{Map Generation}
+
+y axis - run time
+x axis - number of corners
+
+y axis - memory usage
+x axis - number of corners
+
+y axis - run time
+x axis - range of plottable points(0-100, 0-500)
+
+y axis - memory usage
+x axis - range of points
+
 \subsection{Complete Coverage Path Planning}
+
+y axis - memory usage
+x axis - map size
+
+y axis - run time
+x axis - map size
+
+y axis - memory usage
+x axis - route planning method
+
+y axis - run time
+x axis - route planning method
+
+y axis - memory usage
+x axis - map shape (cornes, sqaure vs star shape etc)
+
+y axis - run time
+x axis - map shape
+
 \subsection{Aerail Map Generation}
 
+y axis - accuracy
+x axis - image size
 
+y axis - accuracy
+x axis - image resolution
+
+y axis - accuracy
+x axis - training data size
+
+y axis - accuracy
+x axis - training epochs
+
+y axis - precision
+x axis - recall
 \section{Conclusion and Future Work}
 
 
@@ -441,7 +486,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./images/openCvCannyExample.jpg}
-    \caption{Opencv example of canny detection, source \citep{opencv_library} docs}
+	\caption{Opencv example of canny detection, source \citep{opencv_library} docs}
 	\label{am:cannyexample}
 \end{figure}
 
