@@ -177,8 +177,8 @@ For this reason, the algorithm used is not strictly a Graham Scan but rather hea
 Using this algorithm allows for consistent outlining of any set of points with no crossovers or intersections
 
 \subsection{Complete Coverage Path Planning}
-Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \cite{zhao2023complete}
-For this module, I have used the Fields2Cover library \cite{fields2cover}, this library is open source.
+Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \citep{zhao2023complete}
+For this module, I have used the Fields2Cover library \citep{fields2cover}, this library is open source.
 During the course of this project, I contributed to his library, fixing a bug during the build process.
 The library splits the task up into several sub-tasks.
 
@@ -255,7 +255,7 @@ Automating this labourious and time consuming task would positively increase use
 \subsubsection{Algorithmic Approaches}
 There are several algorithmic methods that try to achieve this task from several different librarys. A popular library for image processing is scikit-image.
 
-OpenCV's Canny edge detection implementation \cite{opencv_library} follows the classic algorithm developed by Canny \cite{canny1986computational}.
+OpenCV's Canny edge detection implementation \citep{opencv_library} follows the classic algorithm developed by Canny \citep{canny1986computational}.
 The algorithm works through several steps to detect edges in images:
 \begin{itemize}
 	\item Gaussian Blur: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
@@ -284,13 +284,15 @@ All of these means use of canny edge detection can often cause more problems tha
 
 \subsubsection{Machine Learning Approach}
 Another possible solution to this problem is to use a machine learning network to predict the areas of the golf course instead.
-Creating a machine learning model to outline the course area could have a variety of use cases on top of just mowing the chosen areas.
-PyTorch \cite{paszke2019pytorch} is an open-source machine learning library developed by Facebook's AI Research lab (FAIR) that has become one of the most popular frameworks for deep learning research and applications. 
+PyTorch \citep{paszke2019pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
+It was developed to show that usability and speed can both be present in a python implementation of machine learning making it the perfect tool for this task.
 
 
 
 
 \subsubsection{Data Set}
+The only orthophoto data set publicly available is the danish golf course data set, but it lacks quality and consistency, meaning it is not very useful for complete segmentation of a golf course.
+A custom data set was needed, or at least custom annotations of the plain images from the Danish data set.
 \subsubsection{Training}
 
 
@@ -415,7 +417,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./images/openCvCannyExample.jpg}
-	\caption{Opencv example of canny detection, source \cite{opencv_library} docs}
+    \caption{Opencv example of canny detection, source \citep{opencv_library} docs}
 	\label{am:cannyexample}
 \end{figure}
 
