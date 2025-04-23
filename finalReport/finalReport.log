@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  23 APR 2025 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  23 APR 2025 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1124,71 +1124,88 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [10]
 
 [11]
+Overfull \hbox (8.31992pt too wide) in paragraph at lines 312--313
+[] \OT1/ztmcm/m/n/12 = 1 \OMS/ztmcm/m/n/12 ^^B \OT1/ztmcm/m/n/12 10[]$\T1/ptm/m/n/12 , and num-ber of seg-men-ta-tion classes $[] \OT1/ztmcm/m/n/12 =
+ []
 
-[12] (./finalReport.bbl
+
+Overfull \hbox (7.30586pt too wide) in paragraph at lines 312--313
+\OT1/ztmcm/m/n/12 6$\T1/ptm/m/n/12 . To ad-dress class im-bal-ance, each class re-ceives a dis-tinct weight $[] \OT1/ztmcm/m/n/12 =
+ []
+
+
+
+[12]
+Overfull \hbox (51.79347pt too wide) in paragraph at lines 320--321
+\T1/ptm/m/n/12 ev-ery quar-ter epoch ($[] \OT1/ztmcm/m/n/12 = 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 25$\T1/ptm/m/n/12 ) us-ing half the val-i-da-tion data ($[] \OT1/ztmcm/m/n/12 =
+ []
+
+
+
+[13] (./finalReport.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 10.79993pt on input line 6.
 )
 
-[13
-
-]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 335.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 [14
 
 ]
-
-LaTeX Warning: Text page 15 contains only floats.
-
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 353.
 
 
-[15]
-<./images/openCvCannyExample.jpg, id=195, 451.6875pt x 150.5625pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[15
+
+]
+
+LaTeX Warning: Text page 16 contains only floats.
+
+
+
+[16]
+<./images/openCvCannyExample.jpg, id=201, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 425.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 443.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=198, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=204, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 433.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 451.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
-<./images/AdobeGolf_visualisation.png, id=199, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=205, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 440.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 458.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=200, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=206, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 447.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 465.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[16
+[17
 
  <./images/openCvCannyExample.jpg> <./images/openCVCannyGolfCourse.png>]
 
-[17 <./images/AdobeGolf_visualisation.png> <./images/overheadGolfCourse_visualisation.png>] (./finalReport.aux)
+[18 <./images/AdobeGolf_visualisation.png> <./images/overheadGolfCourse_visualisation.png>] (./finalReport.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1197,18 +1214,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37503 strings out of 475171
- 818398 string characters out of 5767095
+ 37512 strings out of 475171
+ 818450 string characters out of 5767095
  1307319 words of memory out of 5000000
  59872 multiletter control sequences out of 15000+600000
- 611856 words of font info for 90 fonts, out of 8000000 for 9000
+ 615850 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1199s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (17 pages, 2547106 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on finalReport.pdf (18 pages, 2559865 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
- 302 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

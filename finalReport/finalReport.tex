@@ -299,9 +299,27 @@ Upon testing the data, it produced faulty results including both true negative a
 
 A custom data set was needed, or at least custom annotations of the plain images from the Danish data set since the raw images from the data set are still good quality, high resolution images and are suitable for training purposes with correct annotations
 \subsubsection{Training}
-Pytorch has several training parameters each with their own effect on the outcome
+Pytorch has several training parameters each with their own effect on the outcome. Some foundational hyperparameters are:
 
+\begin{itemize}
+    \item{Batch size}
+    \item{Image size}
+    \item{In channels}
+    \item{Learning rate}
+    \item{Number of classes}
+\end{itemize}
 
+Foundational hyperparameters include batch size $\text{BATCH\_SIZE} = 4$, input resolution $\text{IMAGE\_SIZE} = (256, 256)$, RGB channels $\text{IN\_CHANNELS} = 3$, learning rate $\text{LEARNING\_RATE} = 1 \times 10^{-3}$, and number of segmentation classes $\text{NUM\_CLASSES} = 6$. To address class imbalance, each class receives a distinct weight $\text{CLASS\_WEIGHTS} = [0.5, 1.0, 2.0, 2.5, 2.0, 1.5]$, with higher weights assigned to less frequent classes.
+
+Data augmentation enhances the model's robustness with random horizontal and vertical flips (probability $P = 0.5$ for each), random rotations $\theta \sim \mathcal{U}(-20^{\circ}, 20^{\circ})$ with $P = 0.5$, color jitter transformations for brightness, contrast, and saturation $\sim \mathcal{U}(0.8, 1.2)$ with $P = 0.5$, and random crops to 80\% of original size with $P = 0.5$.
+
+The network architecture follows an enhanced UNet design with an encoder channel progression $[3 \rightarrow 24 \rightarrow 48 \rightarrow 96]$, bottleneck channels $192$, and symmetric decoder. Memory efficiency is achieved through depthwise separable convolutions (kernel size $3 \times 3$, padding $1$, groups equal to input channels) and squeeze-excitation blocks with reduction ratio $4$.
+
+For optimization, the model employs a combined loss function $\mathcal{L}_{\text{total}} = 0.7 \cdot \mathcal{L}_{\text{CE}} + 0.3 \cdot \mathcal{L}_{\text{Dice}}$, where $\mathcal{L}_{\text{Dice}} = 1 - \frac{2 \cdot \text{intersection} + 1.0}{\text{union} + 1.0}$. Training utilizes the AdamW optimizer with learning rate $\eta = 1 \times 10^{-3}$ and weight decay $\lambda = 1 \times 10^{-4}$. A OneCycleLR scheduler manages learning rate progression with parameters $\text{pct\_start} = 0.1$, $\text{div\_factor} = 10$, $\text{final\_div\_factor} = 100$, and $\text{three\_phase} = \text{True}$.
+
+The PyTorch Lightning trainer configuration includes $\text{max\_epochs} = 100$, mixed precision training ($\text{precision} = \text{``16-mixed''}$), gradient clipping ($\text{gradient\_clip\_val} = 0.5$), gradient accumulation ($\text{accumulate\_grad\_batches} = 2$), and validation metrics checked every quarter epoch ($\text{val\_check\_interval} = 0.25$) using half the validation data ($\text{limit\_val\_batches} = 0.5$). Early stopping monitors validation IoU with patience of 15 epochs, while the model checkpoint system saves the top 2 models based on validation performance.
+
+Dataset partitioning allocates 70\% for training, 20\% for validation, and 10\% for testing. Full-resolution inference processes images in patches of size 256 with 50\% overlap, employing test-time augmentation by averaging predictions from the original image and its horizontal and vertical flips for improved robustness.
 \section{Performance Evaluation}
 %
 % Could be a section each for implementation and evaluation if this suits you better or you could use subsections instead. The difference between this section and the previous "Methodology" section is that this one covers "action" or in other words your active contributions to the project. These may include:
