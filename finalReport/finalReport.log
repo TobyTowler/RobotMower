@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  22 APR 2025 20:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  23 APR 2025 14:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,6 +848,19 @@ File: pppdftex.def 2025/01/30 v0.6e Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks42
 \c@AM@survey=\count382
 \AM@templatesizebox=\box85
+) (/usr/share/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
 ) (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
 \@float@every@algorithm=\toks43
@@ -871,38 +884,38 @@ Package: algpseudocode
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 115.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 116.
  (./finalReport.aux)
 \openout1 = `finalReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-Package scrbase Info: activating english \abstractname on input line 115.
-Package scrbase Info: activating english \partname on input line 115.
-Package scrbase Info: activating english \figurename on input line 115.
-Package scrbase Info: activating english \tablename on input line 115.
-Package scrbase Info: activating english \contentsname on input line 115.
-Package scrbase Info: activating english \listfigurename on input line 115.
-Package scrbase Info: activating english \listtablename on input line 115.
-Package scrbase Info: activating english \refname on input line 115.
-Package scrbase Info: activating english \indexname on input line 115.
-Package tocbasic Info: usage of `tocbibind' detected on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+Package scrbase Info: activating english \abstractname on input line 116.
+Package scrbase Info: activating english \partname on input line 116.
+Package scrbase Info: activating english \figurename on input line 116.
+Package scrbase Info: activating english \tablename on input line 116.
+Package scrbase Info: activating english \contentsname on input line 116.
+Package scrbase Info: activating english \listfigurename on input line 116.
+Package scrbase Info: activating english \listtablename on input line 116.
+Package scrbase Info: activating english \refname on input line 116.
+Package scrbase Info: activating english \indexname on input line 116.
+Package tocbasic Info: usage of `tocbibind' detected on input line 116.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -957,7 +970,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 115.
+Package hyperref Info: Link coloring OFF on input line 116.
  (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write4
 \openout4 = `finalReport.out'.
@@ -969,7 +982,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 115.
+(scrartcl)           before \begin{document} on input line 116.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -983,7 +996,7 @@ Package caption Info: End \AtBeginDocument code.
  (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 115.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 116.
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -1028,7 +1041,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <uealogo.png, id=7, 112.9821pt x 53.4798pt>
 File: uealogo.png Graphic file (type png)
 <use uealogo.png>
-Package pdftex.def Info: uealogo.png  used on input line 115.
+Package pdftex.def Info: uealogo.png  used on input line 116.
 (pdftex.def)             Requested size: 85.35826pt x 40.40596pt.
 
 
@@ -1037,16 +1050,16 @@ Package pdftex.def Info: uealogo.png  used on input line 115.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./uealogo.png>]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 115.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 116.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 115.
+(Font)              scaled to size 10.79993pt on input line 116.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 115.
+(Font)              scaled to size 10.79993pt on input line 116.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 115.
+(Font)              scaled to size 15.55188pt on input line 116.
 
 
 [2
@@ -1094,8 +1107,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 [5]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 146.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 154.
+(Font)              scaled to size 12.9599pt on input line 147.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 155.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -1120,7 +1133,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 [13
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 329.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 335.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1142,21 +1155,40 @@ LaTeX Warning: Text page 15 contains only floats.
 
 
 [15]
-<./images/openCvCannyExample.jpg, id=187, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=195, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 419.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 425.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=190, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=198, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 427.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 433.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
+<./images/AdobeGolf_visualisation.png, id=199, 867.24pt x 722.7pt>
+File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
+<use ./images/AdobeGolf_visualisation.png>
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 440.
+(pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images/overheadGolfCourse_visualisation.png, id=200, 867.24pt x 722.7pt>
+File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
+<use ./images/overheadGolfCourse_visualisation.png>
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 447.
+(pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 
 [16
 
- <./images/openCvCannyExample.jpg> <./images/openCVCannyGolfCourse.png>] (./finalReport.aux)
+ <./images/openCvCannyExample.jpg> <./images/openCVCannyGolfCourse.png>]
+
+[17 <./images/AdobeGolf_visualisation.png> <./images/overheadGolfCourse_visualisation.png>] (./finalReport.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1165,18 +1197,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35869 strings out of 475171
- 779845 string characters out of 5767095
- 1262823 words of memory out of 5000000
- 58245 multiletter control sequences out of 15000+600000
+ 37503 strings out of 475171
+ 818398 string characters out of 5767095
+ 1307319 words of memory out of 5000000
+ 59872 multiletter control sequences out of 15000+600000
  611856 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1199s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (16 pages, 1091684 bytes).
+Output written on finalReport.pdf (17 pages, 2547106 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

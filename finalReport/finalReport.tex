@@ -12,6 +12,7 @@
 \usepackage{subfloat}
 \usepackage{color}
 \usepackage{pdfpages}
+\usepackage{cleveref}
 \usepackage{natbib}
 \usepackage{float}
 \usepackage{hyperref}
@@ -268,9 +269,9 @@ The algorithm works through several steps to detect edges in images:
 	      \end{itemize}
 	\item Edge Tracking by Hysteresis: Finally, weak edges that are connected to strong edges are kept, while isolated weak edges are discarded. This helps ensure that the detected edges are continuous.
 \end{itemize}
-This approach works very well for high contrast images, particularly those black and white~\ref{am:cannyexample}. The clear separation between foreground and background elements allows the algorithm to detect distinct gradient changes and create clean, continuous edge lines.
+This approach works very well for high contrast images, particularly those black and white~\Cref{am:cannyexample}. The clear separation between foreground and background elements allows the algorithm to detect distinct gradient changes and create clean, continuous edge lines.
 
-As for the similarly coloured golf course images, it can often find the outlines but they are made up of many smaller lines~\ref{am:CannyGolfCourse}. This fragmentation occurs because the subtle color transitions between different areas of the golf course (like fairways, roughs, and greens) create weaker gradient signals that may fall inconsistently above or below the detection thresholds.
+As for the similarly coloured golf course images, it can often find the outlines but they are made up of many smaller lines~\Cref{am:CannyGolfCourse}. This fragmentation occurs because the subtle color transitions between different areas of the golf course (like fairways, roughs, and greens) create weaker gradient signals that may fall inconsistently above or below the detection thresholds.
 
 It may appear there is a simple solution to this problem; join the connected lines into one, however this proves to be rather problematic in itself for a number of reasons:
 \begin{enumerate}
@@ -291,9 +292,14 @@ It was developed to show that usability and speed can both be present in a pytho
 
 
 \subsubsection{Data Set}
-The only orthophoto data set publicly available is the danish golf course data set, but it lacks quality and consistency, meaning it is not very useful for complete segmentation of a golf course.
-A custom data set was needed, or at least custom annotations of the plain images from the Danish data set.
+A models training data needs to be closely related to its real world input data, for the Robot Mower that is satelite images or orthophotos from above the desired mowing area.
+Training data also needs to be clearly and consistently annotated to producde accurate, reliable results in practice.
+The only orthophoto data set publicly available is the danish golf course data set, but it lacks quality and consistency; the outlines do not cover the whole area of single sections and often are missing entirely.
+Upon testing the data, it produced faulty results including both true negative and false positives. ~\Crefrange{am:AGDanish}{am:ohGCDanish}
+
+A custom data set was needed, or at least custom annotations of the plain images from the Danish data set since the raw images from the data set are still good quality, high resolution images and are suitable for training purposes with correct annotations
 \subsubsection{Training}
+Pytorch has several training parameters each with their own effect on the outcome
 
 
 \section{Performance Evaluation}
@@ -429,5 +435,18 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\label{am:CannyGolfCourse}
 \end{figure}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/AdobeGolf_visualisation.png}
+	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
+	\label{am:AGDanish}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/overheadGolfCourse_visualisation.png}
+	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
+	\label{am:ohGCDanish}
+\end{figure}
 \end{document}
 

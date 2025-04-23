@@ -310,6 +310,8 @@ INPUT /usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 INPUT /usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/cleveref/cleveref.sty
+INPUT /usr/share/texmf-dist/tex/latex/cleveref/cleveref.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
@@ -468,6 +470,16 @@ INPUT ./images/openCVCannyGolfCourse.png
 INPUT ./images/openCVCannyGolfCourse.png
 INPUT ./images/openCVCannyGolfCourse.png
 INPUT ./images/openCVCannyGolfCourse.png
+INPUT ./images/AdobeGolf_visualisation.png
+INPUT ./images/AdobeGolf_visualisation.png
+INPUT ./images/AdobeGolf_visualisation.png
+INPUT ./images/AdobeGolf_visualisation.png
+INPUT ./images/AdobeGolf_visualisation.png
+INPUT ./images/overheadGolfCourse_visualisation.png
+INPUT ./images/overheadGolfCourse_visualisation.png
+INPUT ./images/overheadGolfCourse_visualisation.png
+INPUT ./images/overheadGolfCourse_visualisation.png
+INPUT ./images/overheadGolfCourse_visualisation.png
 INPUT finalReport.aux
 INPUT ./finalReport.out
 INPUT ./finalReport.out
