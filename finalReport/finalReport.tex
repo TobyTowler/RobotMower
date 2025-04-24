@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  FINAL REPORT - A TEMPLATE
+%  FINAL REPORT - Robot Mower
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[final]{cmpreport_02}
@@ -110,7 +110,7 @@ The abstract of your report summarises your entire work () in no more than half 
 % if the lists do not fit on a single page.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\onePageLists
+% \onePageLists
 
 
 \begin{document}
@@ -274,6 +274,7 @@ This approach works very well for high contrast images, particularly those black
 As for the similarly coloured golf course images, it can often find the outlines but they are made up of many smaller lines~\Cref{am:CannyGolfCourse}. This fragmentation occurs because the subtle color transitions between different areas of the golf course (like fairways, roughs, and greens) create weaker gradient signals that may fall inconsistently above or below the detection thresholds.
 
 It may appear there is a simple solution to this problem; join the connected lines into one, however this proves to be rather problematic in itself for a number of reasons:
+
 \begin{enumerate}
 	\item The desired line does not form a complete shape - Gaps in the detected edges mean that even sophisticated line-joining algorithms may fail to connect all segments belonging to a single boundary
 
@@ -288,9 +289,6 @@ Another possible solution to this problem is to use a machine learning network t
 PyTorch \citep{paszke2019pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
 It was developed to show that usability and speed can both be present in a python implementation of machine learning making it the perfect tool for this task.
 
-
-
-
 \subsubsection{Data Set}
 A models training data needs to be closely related to its real world input data, for the Robot Mower that is satelite images or orthophotos from above the desired mowing area.
 Training data also needs to be clearly and consistently annotated to producde accurate, reliable results in practice.
@@ -302,14 +300,16 @@ A custom data set was needed, or at least custom annotations of the plain images
 Pytorch has several training parameters each with their own effect on the outcome. Some foundational hyperparameters are:
 
 \begin{itemize}
-	\item{Batch size}
-	\item{Image size}
-	\item{In channels}
-	\item{Learning rate}
-	\item{Number of classes}
+	\item{Batch size, determines how many samples are at once, this is mainly limited by available memory}
+	\item{Image size, the dimensions of the image, impacting detail perception and processing requirements}
+	\item{In channels, depth of input data(RGB vs grayscale)}
+	\item{Learning rate, how fast weights are updated during training}
+	\item{Number of classes, the amount of classes the model can pick from}
 \end{itemize}
 
-Foundational hyperparameters include batch size $\text{BATCH\_SIZE} = 4$, input resolution $\text{IMAGE\_SIZE} = (256, 256)$, RGB channels $\text{IN\_CHANNELS} = 3$, learning rate $\text{LEARNING\_RATE} = 1 \times 10^{-3}$, and number of segmentation classes $\text{NUM\_CLASSES} = 6$. To address class imbalance, each class receives a distinct weight $\text{CLASS\_WEIGHTS} = [0.5, 1.0, 2.0, 2.5, 2.0, 1.5]$, with higher weights assigned to less frequent classes.
+% Batch size determines how many samples are processed simultaneously, directly affecting training speed and memory consumption. Image size refers to the height and width dimensions of input images, which impacts model detail perception and computational requirements. In channels represent the depth of input data (3 for RGB images, 1 for grayscale), defining the initial layer's input dimensions. The learning rate controls how quickly model weights are updated during training, with higher values enabling faster learning but potentially overshooting optimal solutions. Finally, the number of classes specifies the output dimension for classification tasks, determining how many different categories the model can predict.
+
+% Foundational hyperparameters include batch size $\text{BATCH\_SIZE} = 4$, input resolution $\text{IMAGE\_SIZE} = (256, 256)$, RGB channels $\text{IN\_CHANNELS} = 3$, learning rate $\text{LEARNING\_RATE} = 1 \times 10^{-3}$, and number of segmentation classes $\text{NUM\_CLASSES} = 6$. To address class imbalance, each class receives a distinct weight $\text{CLASS\_WEIGHTS} = [0.5, 1.0, 2.0, 2.5, 2.0, 1.5]$, with higher weights assigned to less frequent classes.
 
 Data augmentation enhances the model's robustness with random horizontal and vertical flips (probability $P = 0.5$ for each), random rotations $\theta \sim \mathcal{U}(-20^{\circ}, 20^{\circ})$ with $P = 0.5$, color jitter transformations for brightness, contrast, and saturation $\sim \mathcal{U}(0.8, 1.2)$ with $P = 0.5$, and random crops to 80\% of original size with $P = 0.5$.
 
