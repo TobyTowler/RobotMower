@@ -10,6 +10,7 @@
 %
 \usepackage{rotating}
 \usepackage{subfloat}
+\usepackage{todonotes}
 \usepackage{color}
 \usepackage{pdfpages}
 \usepackage{cleveref}
@@ -226,7 +227,7 @@ These can be sorted in a number of ways:
 \end{itemize}
 
 
-KEEPGOING
+\todo{KEEPGOING}
 
 \subsubsection{Path Planning}
 Path planning refers to the connection of all swaths in route order.
@@ -300,16 +301,19 @@ A custom data set was needed, or at least custom annotations of the plain images
 Pytorch has several training parameters each with their own effect on the outcome. Some foundational hyperparameters are:
 
 \begin{itemize}
-	\item{Batch size, determines how many samples are at once, this is mainly limited by available memory}
-	\item{Image size, the dimensions of the image, impacting detail perception and processing requirements}
-	\item{In channels, depth of input data(RGB vs grayscale)}
-	\item{Learning rate, how fast weights are updated during training}
-	\item{Number of classes, the amount of classes the model can pick from}
+	\item{\textbf{Batch size}, determines how many samples are at once, this is mainly limited by available memory}
+	\item{\textbf{Image size}, the dimensions of the image, impacting detail perception and processing requirements}
+	\item{\textbf{In channels}, depth of input data(RGB vs grayscale)}
+	\item{\textbf{Learning rate}, how fast weights are updated during training}
+	\item{\textbf{Number of classes}, the amount of classes the model can pick from}
 \end{itemize}
+There are a few other options needed in the configuration of the model:
 
 % Batch size determines how many samples are processed simultaneously, directly affecting training speed and memory consumption. Image size refers to the height and width dimensions of input images, which impacts model detail perception and computational requirements. In channels represent the depth of input data (3 for RGB images, 1 for grayscale), defining the initial layer's input dimensions. The learning rate controls how quickly model weights are updated during training, with higher values enabling faster learning but potentially overshooting optimal solutions. Finally, the number of classes specifies the output dimension for classification tasks, determining how many different categories the model can predict.
 
 % Foundational hyperparameters include batch size $\text{BATCH\_SIZE} = 4$, input resolution $\text{IMAGE\_SIZE} = (256, 256)$, RGB channels $\text{IN\_CHANNELS} = 3$, learning rate $\text{LEARNING\_RATE} = 1 \times 10^{-3}$, and number of segmentation classes $\text{NUM\_CLASSES} = 6$. To address class imbalance, each class receives a distinct weight $\text{CLASS\_WEIGHTS} = [0.5, 1.0, 2.0, 2.5, 2.0, 1.5]$, with higher weights assigned to less frequent classes.
+
+\textbf{Class weights} are distinctly assigned to each class, higher weights are given to less frequent classes to help balance the less frequent outputs.
 
 Data augmentation enhances the model's robustness with random horizontal and vertical flips (probability $P = 0.5$ for each), random rotations $\theta \sim \mathcal{U}(-20^{\circ}, 20^{\circ})$ with $P = 0.5$, color jitter transformations for brightness, contrast, and saturation $\sim \mathcal{U}(0.8, 1.2)$ with $P = 0.5$, and random crops to 80\% of original size with $P = 0.5$.
 
@@ -320,14 +324,11 @@ For optimization, the model employs a combined loss function $\mathcal{L}_{\text
 The PyTorch Lightning trainer configuration includes $\text{max\_epochs} = 100$, mixed precision training ($\text{precision} = \text{``16-mixed''}$), gradient clipping ($\text{gradient\_clip\_val} = 0.5$), gradient accumulation ($\text{accumulate\_grad\_batches} = 2$), and validation metrics checked every quarter epoch ($\text{val\_check\_interval} = 0.25$) using half the validation data ($\text{limit\_val\_batches} = 0.5$). Early stopping monitors validation IoU with patience of 15 epochs, while the model checkpoint system saves the top 2 models based on validation performance.
 
 Dataset partitioning allocates 70\% for training, 20\% for validation, and 10\% for testing. Full-resolution inference processes images in patches of size 256 with 50\% overlap, employing test-time augmentation by averaging predictions from the original image and its horizontal and vertical flips for improved robustness.
+
+\todo{Random forest or not?}
+To ensure consistent training and results, the data set is split up into sections; 70\% for training, 20\% for validation and 10\% for testing.
+Constant validation helps to make sure that the model is constantly improving, tweaking the hyperparameters and make modelling decisions.
 \section{Performance Evaluation}
-%
-% Could be a section each for implementation and evaluation if this suits you better or you could use subsections instead. The difference between this section and the previous "Methodology" section is that this one covers "action" or in other words your active contributions to the project. These may include:
-% \begin{itemize}
-% 	\item Implementation of programming code: Describe your final code architecture using for example (UML) diagrams and code snippets. Make sure that code snippet (figure) captions are self-explanatory which means that you should not have to consult the text body to understand what is shown in the figure. Many code snippets of the same kind should end up in an appendix instead.
-% 	\item Results from experiments run, including testing (user and software). Use figures and tables with self-explanatory captions (see earlier statement). Multiple figures and tables that cover several pages should be put in an appendix.
-% 	\item Analysis of results: Discuss your experimental and/or test findings in depth. Compare them against other studies and/or benchmarks, and point out limitations of your work (that could be due to limited time) and elaborate on scope for improvement.
-% \end{itemize}
 
 \subsection{Map Generation}
 

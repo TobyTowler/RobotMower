@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.4.24)  24 APR 2025 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.4.24)  24 APR 2025 19:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -819,21 +819,34 @@ Package subfloat Warning: Numbers of floats not counted:
 (subfloat)                Please switch on countmax or remove the code using
 (subfloat)                the counter then..
 
-) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2023/01/31 v1.1.6 Todonotes source and documentation.
+Package: todonotes 2023/01/31
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
+)
+\XKV@depth=\count365
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count365
-\calc@Bcount=\count366
+\calc@Acount=\count366
+\calc@Bcount=\count367
 \calc@Adimen=\dimen301
 \calc@Bdimen=\dimen302
 \calc@Askip=\skip89
 \calc@Bskip=\skip90
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count367
+\calc@Ccount=\count368
 \calc@Cskip=\skip91
-) (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+)
+\c@@todonotes@numberoftodonotes=\count369
+) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
+ (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
 \ESO@tempdima=\dimen303
 \ESO@tempdimb=\dimen304
@@ -844,13 +857,13 @@ Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
  (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count368
+\pdfpages@includegraphics@status=\count370
 \AM@pagebox=\box83
-\AM@global@opts=\toks39
-\AM@pagecnt=\count369
-\AM@toc@title=\toks40
-\AM@lof@heading=\toks41
-\c@AM@survey=\count370
+\AM@global@opts=\toks41
+\AM@pagecnt=\count371
+\AM@toc@title=\toks42
+\AM@lof@heading=\toks43
+\c@AM@survey=\count372
 \AM@templatesizebox=\box84
 ) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -867,59 +880,59 @@ LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
-\@float@every@algorithm=\toks42
-\c@algorithm=\count371
+\@float@every@algorithm=\toks44
+\c@algorithm=\count373
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count372
-\c@ALG@rem=\count373
-\c@ALG@nested=\count374
+\c@ALG@line=\count374
+\c@ALG@rem=\count375
+\c@ALG@nested=\count376
 \ALG@tlm=\skip92
 \ALG@thistlm=\skip93
-\c@ALG@Lnr=\count375
-\c@ALG@blocknr=\count376
-\c@ALG@storecount=\count377
-\c@ALG@tmpcounter=\count378
+\c@ALG@Lnr=\count377
+\c@ALG@blocknr=\count378
+\c@ALG@storecount=\count379
+\c@ALG@tmpcounter=\count380
 \ALG@tmplength=\skip94
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 116.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 117.
  (./finalReport.aux)
 \openout1 = `finalReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-Package scrbase Info: activating english \abstractname on input line 116.
-Package scrbase Info: activating english \partname on input line 116.
-Package scrbase Info: activating english \figurename on input line 116.
-Package scrbase Info: activating english \tablename on input line 116.
-Package scrbase Info: activating english \contentsname on input line 116.
-Package scrbase Info: activating english \listfigurename on input line 116.
-Package scrbase Info: activating english \listtablename on input line 116.
-Package scrbase Info: activating english \refname on input line 116.
-Package scrbase Info: activating english \indexname on input line 116.
-Package tocbasic Info: usage of `tocbibind' detected on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+Package scrbase Info: activating english \abstractname on input line 117.
+Package scrbase Info: activating english \partname on input line 117.
+Package scrbase Info: activating english \figurename on input line 117.
+Package scrbase Info: activating english \tablename on input line 117.
+Package scrbase Info: activating english \contentsname on input line 117.
+Package scrbase Info: activating english \listfigurename on input line 117.
+Package scrbase Info: activating english \listtablename on input line 117.
+Package scrbase Info: activating english \refname on input line 117.
+Package scrbase Info: activating english \indexname on input line 117.
+Package tocbasic Info: usage of `tocbibind' detected on input line 117.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -957,24 +970,24 @@ Package tocbasic Info: usage of `tocbibind' detected on input line 116.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count379
+\scratchcounter=\count381
 \scratchdimen=\dimen308
 \scratchbox=\box85
-\nofMPsegments=\count380
-\nofMParguments=\count381
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count382
+\nofMPsegments=\count382
+\nofMParguments=\count383
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count384
 \MPscratchDim=\dimen309
-\MPnumerator=\count383
-\makeMPintoPDFobject=\count384
-\everyMPtoPDFconversion=\toks44
+\MPnumerator=\count385
+\makeMPintoPDFobject=\count386
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 117.
  (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write4
 \openout4 = `finalReport.out'.
@@ -986,12 +999,12 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 116.
+(scrartcl)           before \begin{document} on input line 117.
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count385
+\BKM@id=\count387
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: rotating package is loaded.
@@ -1000,8 +1013,12 @@ Package caption Info: End \AtBeginDocument code.
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 116.
- (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 117.
+
+
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 117.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
 Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
@@ -1045,23 +1062,23 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <uealogo.png, id=7, 112.9821pt x 53.4798pt>
 File: uealogo.png Graphic file (type png)
 <use uealogo.png>
-Package pdftex.def Info: uealogo.png  used on input line 116.
+Package pdftex.def Info: uealogo.png  used on input line 117.
 (pdftex.def)             Requested size: 85.35826pt x 40.40596pt.
  [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./uealogo.png>]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 116.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 117.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 116.
+(Font)              scaled to size 10.79993pt on input line 117.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 116.
+(Font)              scaled to size 10.79993pt on input line 117.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 116.
+(Font)              scaled to size 15.55188pt on input line 117.
  [2
 
 ] (./finalReport.toc
@@ -1101,22 +1118,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
  [4] [5]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 147.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 155.
+(Font)              scaled to size 12.9599pt on input line 148.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 156.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [6] [7] [8] [9] [10] [11]
-Overfull \hbox (51.79347pt too wide) in paragraph at lines 320--321
+) [6] [7] [8]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 230.
+
+Overfull \hbox (29.68484pt too wide) in paragraph at lines 230--230
+[][][]\T1/ptm/m/n/12 KEEPGOING[]  
+ []
+
+
+Overfull \hbox (29.68484pt too wide) in paragraph at lines 230--230
+[][][]\T1/ptm/m/n/12 KEEPGOING[]  
+ []
+
+[9] [10] [11] [12]
+Overfull \hbox (51.79347pt too wide) in paragraph at lines 324--325
 \T1/ptm/m/n/12 ev-ery quar-ter epoch ($[] \OT1/ztmcm/m/n/12 = 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 25$\T1/ptm/m/n/12 ) us-ing half the val-i-da-tion data ($[] \OT1/ztmcm/m/n/12 =
  []
 
-[12] [13] [14] (./finalReport.bbl
+
+Overfull \hbox (1.70093pt too wide) in paragraph at lines 328--328
+[][][]\T1/ptm/m/n/12 Random 
+ []
+
+
+Overfull \hbox (1.70093pt too wide) in paragraph at lines 328--328
+[][][]\T1/ptm/m/n/12 Random 
+ []
+
+[13] [14] (./finalReport.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 10.79993pt on input line 6.
 ) [15
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 398.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 399.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1134,29 +1173,29 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 17 contains only floats.
 
 [17]
-<./images/openCvCannyExample.jpg, id=205, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=207, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 488.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 489.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=208, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=210, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 496.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 497.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
-<./images/AdobeGolf_visualisation.png, id=209, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=211, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 503.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 504.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=210, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=212, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 510.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 511.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1168,18 +1207,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37220 strings out of 476034
- 815740 string characters out of 5792854
- 1869388 words of memory out of 6000000
- 57020 multiletter control sequences out of 15000+600000
+ 37809 strings out of 476034
+ 828374 string characters out of 5792854
+ 1871388 words of memory out of 6000000
+ 57593 multiletter control sequences out of 15000+600000
  569300 words of font info for 94 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 122i,18n,120p,10662b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,18n,120p,10662b,1101s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (19 pages, 2530830 bytes).
+Output written on finalReport.pdf (19 pages, 2533296 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
