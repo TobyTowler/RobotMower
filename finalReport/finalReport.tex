@@ -329,17 +329,30 @@ Dataset partitioning allocates 70\% for training, 20\% for validation, and 10\% 
 To ensure consistent training and results, the data set is split up into sections; 70\% for training, 20\% for validation and 10\% for testing.
 Constant validation helps to make sure that the model is constantly improving, tweaking the hyperparameters and make modelling decisions.
 \section{Performance Evaluation}
+Performance is a key part of user experience therefore is crucial to the real world performance of this product.
+Performance is this case can be broken down into 2 key metrics:
+
+\begin{itemize}
+    \item{\textbf{Run time}: how long the process takes to complete in real time}
+    \item{\textbf{Memory Usage}: How much system memory the process uses both average and maximum}
+\end{itemize}
 
 \subsection{Map Generation}
+BASELINE
+10 points 0-400 range
 
 y axis - run time
 x axis - number of corners
+NUMBER OF POINTS x = [5, 10, 15, 20, 25, 30, 35]
+range 0 - 400
 
 y axis - memory usage
 x axis - number of corners
 
 y axis - run time
 x axis - range of plottable points(0-100, 0-500)
+NUMBER OF POINTS 10
+    RAnge x = [50, 200, 400, 600, 800, 1000, 1200, 1400]
 
 y axis - memory usage
 x axis - range of points

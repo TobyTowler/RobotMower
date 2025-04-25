@@ -1,4 +1,4 @@
-import fields2cover as f2c
+# import fields2cover as f2c
 import random
 import math
 import turtle
@@ -86,17 +86,17 @@ def draw_outline(points):
 def main():
     hull = []
 
-    origin = Point(20, 20)
-    field = genPoints(20, origin, 400)
+    origin = Point(2, 2)
+    field = genPoints(5, origin, 400)
     hull.append(sortPoints(field, origin))
 
-    hole1Base = Point(100, 100)
-    hole1Points = genPoints(5, hole1Base, 50)
-    hull.append(sortPoints(hole1Points, hole1Base))
-
-    hole2Base = Point(150, 50)
-    hole2Points = genPoints(3, hole2Base, 30)
-    hull.append(sortPoints(hole2Points, hole2Base))
+    # hole1Base = Point(100, 100)
+    # hole1Points = genPoints(5, hole1Base, 50)
+    # hull.append(sortPoints(hole1Points, hole1Base))
+    #
+    # hole2Base = Point(150, 50)
+    # hole2Points = genPoints(3, hole2Base, 30)
+    # hull.append(sortPoints(hole2Points, hole2Base))
     #
     # map = []
     # for i in hull:
@@ -116,6 +116,5 @@ def main():
     draw_outline(hull)
 
 
-cellMainField = f2c.Cell()
-allCells = f2c.Cell()
-main()
+if __name__ == "__main__":
+    main()

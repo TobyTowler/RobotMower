@@ -1,0 +1,50 @@
+import time
+import matplotlib.pyplot as plt
+import statistics
+import Mapping as m
+
+
+def main():
+    # x = [5, 10, 15, 20, 25, 30, 35]
+    # x = [50, 200, 400, 600, 800, 1000, 1200, 1400]
+    x = [0, 1, 5, 10, 15, 20, 50, 75, 100]
+    times = []
+
+    hull = []
+    for i in x:
+        thisTimes = []
+        for j in range(5):
+            startTime = time.perf_counter()
+            origin = m.Point(2, 2)
+            # field = m.genPoints(10, origin, i) #Range
+            # field = m.genPoints(i, origin, 400) #Points
+            field = m.genPoints(10, origin, 400)
+            hull.append(m.sortPoints(field, origin))
+
+            for y in range(i):  # holes
+                hole1Base = m.Point(100, 100)
+                hole1Points = m.genPoints(5, hole1Base, 50)
+                hull.append(m.sortPoints(hole1Points, hole1Base))
+
+            endTime = time.perf_counter()
+            thisTimes.append((endTime - startTime) * 1000)
+
+        times.append(statistics.mean(thisTimes))
+
+    plt.figure(figsize=(8, 6))
+    plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
+
+    # plt.xlabel("Range on points")
+    plt.xlabel("Number of holes")
+    plt.ylabel("Execution Time (milliseconds)")
+    plt.title("Performance of map generation algorithm compared to number of holes")
+    # plt.title("Performance of map generation algorithm compared to number of points")
+
+    plt.grid(True, linestyle="--", alpha=0.7)
+
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()
