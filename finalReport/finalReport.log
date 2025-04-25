@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.4.24)  24 APR 2025 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.4.24)  25 APR 2025 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,6 +1123,10 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 15
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [6] [7] [8]
+Overfull \hbox (8.68973pt too wide) in paragraph at lines 224--225
+[]\T1/ptm/b/n/12 Snake or-der, Sim-i-lar to Bous-tro-phe-don but skip-ping 1 swath each time (1,3,5...) 
+ []
+
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 230.
 
 Overfull \hbox (29.68484pt too wide) in paragraph at lines 230--230
@@ -1215,7 +1219,7 @@ Here is how much of TeX's memory you used:
  1137 hyphenation exceptions out of 8191
  122i,18n,120p,10662b,1101s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (19 pages, 2533296 bytes).
+Output written on finalReport.pdf (19 pages, 2535693 bytes).
 PDF statistics:
  375 PDF objects out of 1000 (max. 8388607)
  319 compressed objects within 4 object streams

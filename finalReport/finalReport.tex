@@ -153,8 +153,8 @@ This program should also be able to create n obstacles within the main field, su
 This means we need a function with 2 parameters:
 
 \begin{itemize}
-	\item K, number of angles in the outer field
-	\item N, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3–8 corners staying inline with the complexity of the rest of the field without being unreasonably overengineered.
+	\item \textbf{K}, number of angles in the outer field
+	\item \textbf{N}, number of obstacles within the field, since it would not be sensible to take a parameter for the number of corners for every hole, we can generate them randomly assuming 3–8 corners staying inline with the complexity of the rest of the field without being unreasonably overengineered.
 \end{itemize}
 
 
@@ -219,11 +219,11 @@ A route is the order in which swaths will be covered.
 These can be sorted in a number of ways:
 
 \begin{itemize}
-	\item{Shortest route to cover all swaths, order depends on field}
-	\item{Boustrophedon order, a zigzag like pattern covering swaths in order (1,2,3...)}
-	\item{Snake order, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
-	\item{Spiral order, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
-	\item{Custom order, user defined}
+	\item{\textbf{Shortest route} to cover all swaths, order depends on field}
+	\item\textbf{{Boustrophedon order}, a zigzag like pattern covering swaths in order (1,2,3...)}
+	\item\textbf{{Snake order}, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
+	\item\textbf{{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
+	\item\textbf{{Custom order}, user defined}
 \end{itemize}
 
 
@@ -260,10 +260,10 @@ There are several algorithmic methods that try to achieve this task from several
 OpenCV's Canny edge detection implementation \citep{opencv_library} follows the classic algorithm developed by Canny \citep{canny1986computational}.
 The algorithm works through several steps to detect edges in images:
 \begin{itemize}
-	\item Gaussian Blur: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
-	\item Gradient Calculation: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
-	\item Non-maximum Suppression: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
-	\item Double Thresholding: The algorithm applies two thresholds:
+	\item \textbf{Gaussian Blur}: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
+	\item \textbf{Gradient Calculation}: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
+	\item \textbf{Non-maximum Suppression}: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
+	\item \textbf{Double Thresholding}: The algorithm applies two thresholds:
 	      \begin{itemize}
 		      \item High threshold: Pixels above this are considered "strong" edges
 		      \item Low threshold: Pixels between low and high are considered "weak" edges
