@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex finalReport"] 1745682853.62698 "finalReport.aux" "finalReport.bbl" "finalReport" 1745682856.29127 0
+["bibtex finalReport"] 1745689549.84296 "finalReport.aux" "finalReport.bbl" "finalReport" 1745689552.79223 0
   "./reportbib.bib" 1744903839.89793 3039 41b6326f8a7c5656e6b0ce2014982510 ""
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1742685315 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "finalReport.aux" 1745682856.14601 19999 84f36f6b2ddf604f822f34a8e50b0ec3 "pdflatex"
+  "finalReport.aux" 1745689552.64483 21238 fa51cfb3479e5098ee5b37f7119359b7 "pdflatex"
   (generated)
   "finalReport.bbl"
   "finalReport.blg"
   (rewritten before read)
-["pdflatex"] 1745682853.66761 "finalReport.tex" "finalReport.pdf" "finalReport" 1745682856.29142 0
+["pdflatex"] 1745689549.90093 "finalReport.tex" "finalReport.pdf" "finalReport" 1745689552.79238 0
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1742685315 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1742685315 4484 b828043cbd581d289d955903c1339981 ""
@@ -248,17 +248,21 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742991339 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1742991310 2008241 e93febbe8ca80feb2b202f883b4aca41 ""
   "cmpreport_02.cls" 1742581251.67394 17624 591d37f2cd08cd551733c25dadaa5671 ""
-  "finalReport.aux" 1745682856.14601 19999 84f36f6b2ddf604f822f34a8e50b0ec3 "pdflatex"
-  "finalReport.bbl" 1745682853.66147 2006 7a35177ce7cc4795c9f901f708e392e8 "bibtex finalReport"
-  "finalReport.lof" 1745682856.14848 1469 fbb8bd9b1f33e73f23e1a73a683cd2a2 "pdflatex"
-  "finalReport.out" 1745682854.65529 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "finalReport.tex" 1745682849.154 34093 b67afcbf09678e8a22361082746d244d ""
-  "finalReport.toc" 1745682856.14848 3296 28f5e4a369086aa0b9e7f86ad0c031b9 "pdflatex"
+  "finalReport.aux" 1745689552.64483 21238 fa51cfb3479e5098ee5b37f7119359b7 "pdflatex"
+  "finalReport.bbl" 1745689549.89381 2006 7a35177ce7cc4795c9f901f708e392e8 "bibtex finalReport"
+  "finalReport.lof" 1745689552.64783 1950 4a9845429d59d10cc5be354f667a5c65 "pdflatex"
+  "finalReport.out" 1745689550.91818 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "finalReport.tex" 1745689545.04705 37035 8e459a99bb4a186eca5971c9d48a3e3b ""
+  "finalReport.toc" 1745689552.64783 3296 25a09df2f7541c43430a1bd6b1dcf167 "pdflatex"
   "images/AdobeGolf_visualisation.png" 1745414287.42235 745396 14d7df503398a9ca449ece52bc564a44 ""
-  "images/mapGenBaselineRT.png" 1745675128.39565 47892 603288f77bfc8ca808a3922977cffc8b ""
-  "images/mapGenHolesRT.png" 1745681160.20829 47510 e9e78825ce3c2552a369da68c5d50cac ""
-  "images/mapGenPointsRT.png" 1745678369.99539 51570 7e798bfc54b48b6d56701a03f15b6607 ""
-  "images/mapGenRangeRT.png" 1745615592.77522 54246 e6bcd026b52260dba27dccea22610040 ""
+  "images/mapGenBaselineMem.png" 1745686181.29996 41670 8decbf5b210a745b0091752299bf6704 ""
+  "images/mapGenBaselineRT.png" 1745686651.56299 40620 0c193cc5bc0c696982ee35c136be759b ""
+  "images/mapGenHolesMem.png" 1745686048.71829 54040 1b61de7490f5e1ff1945738113979a6d ""
+  "images/mapGenHolesRT.png" 1745686413.34157 47190 26e24621b0483909fc27188c34a68dae ""
+  "images/mapGenPointsMem.png" 1745685990.25803 49161 17c02a68674e76ed9e8a79f28e365410 ""
+  "images/mapGenPointsRT.png" 1745686980.77002 51415 25774d0b8f26112ba7e38e7457878c15 ""
+  "images/mapGenRangeMem.png" 1745688228.26657 47850 96110c0565b4a5d8e5f46dd615e9f6ed ""
+  "images/mapGenRangeRT.png" 1745686538.34518 43636 20212ad1e79ad7119362a36c80e52d37 ""
   "images/openCVCannyGolfCourse.png" 1744902895.48384 1014214 813fc06d06bbdd12763d94a26d8dbae2 ""
   "images/openCvCannyExample.jpg" 1744902895.48384 14876 f63d84e4fdd5e0ea14d442f970f1c775 ""
   "images/overheadGolfCourse_visualisation.png" 1745414351.64032 635570 f33402c872c28eee0fc9b2d906a5c4c1 ""

@@ -23,18 +23,18 @@
 \contentsline {paragraph}{\nonumberline BaseLine}{15}{paragraph*.8}%
 \contentsline {paragraph}{\nonumberline Number of points}{15}{paragraph*.10}%
 \contentsline {paragraph}{\nonumberline Range of points}{15}{paragraph*.12}%
-\contentsline {paragraph}{\nonumberline Number of holes}{15}{paragraph*.14}%
+\contentsline {paragraph}{\nonumberline Number of holes}{16}{paragraph*.14}%
 \contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{16}{subsubsection.4.1.2}%
 \contentsline {paragraph}{\nonumberline Baseline}{16}{paragraph*.16}%
 \contentsline {paragraph}{\nonumberline Number of points}{16}{paragraph*.18}%
 \contentsline {paragraph}{\nonumberline Range of points}{16}{paragraph*.20}%
-\contentsline {paragraph}{\nonumberline Number of holes}{16}{paragraph*.22}%
-\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{16}{subsection.4.2}%
+\contentsline {paragraph}{\nonumberline Number of holes}{17}{paragraph*.22}%
+\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{17}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{17}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion and Future Work}{17}{section.5}%
-\contentsline {section}{References}{18}{section*.23}%
-\contentsline {section}{\numberline {A}Map Generation}{19}{appendix.A}%
-\contentsline {section}{\numberline {B}Aerial Mapping}{21}{appendix.B}%
-\contentsline {section}{\numberline {C}Performance and Evaluation}{21}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Mapping}{21}{subsection.C.1}%
+\contentsline {section}{\numberline {5}Conclusion and Future Work}{18}{section.5}%
+\contentsline {section}{References}{19}{section*.23}%
+\contentsline {section}{\numberline {A}Map Generation}{20}{appendix.A}%
+\contentsline {section}{\numberline {B}Aerial Mapping}{22}{appendix.B}%
+\contentsline {section}{\numberline {C}Performance and Evaluation}{22}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Mapping}{22}{subsection.C.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

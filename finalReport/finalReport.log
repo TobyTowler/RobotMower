@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  26 APR 2025 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  26 APR 2025 18:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -898,14 +898,7 @@ Package: algpseudocode
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 117.
- (./finalReport.aux
-
-LaTeX Warning: Label `am:ohGCDanish' multiply defined.
-
-
-LaTeX Warning: Label `am:ohGCDanish@cref' multiply defined.
-
-)
+ (./finalReport.aux)
 \openout1 = `finalReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
@@ -1123,7 +1116,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 
-[4] (./finalReport.lof)
+[4] (./finalReport.lof
+Overfull \hbox (1.8634pt too wide) in paragraph at lines 11--11
+ [][] [][]\T1/ptm/m/n/12 Memory us-age of map gen-er-a-tion al-go-rith with 10 points, vari-able range, 
+ []
+
+)
 \tf@lof=\write6
 \openout6 = `finalReport.lof'.
 
@@ -1190,143 +1188,172 @@ Overfull \hbox (1.70093pt too wide) in paragraph at lines 328--328
 
 [16]
 
-[17] (./finalReport.bbl
+[17]
+
+[18] (./finalReport.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 10.79993pt on input line 6.
 )
 
-[18
-
-]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 454.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 [19
 
 ]
-
-LaTeX Warning: Text page 20 contains only floats.
-
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 474.
 
 
-[20]
-<./images/openCvCannyExample.jpg, id=264, 451.6875pt x 150.5625pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[20
+
+]
+
+LaTeX Warning: Text page 21 contains only floats.
+
+
+
+[21]
+<./images/openCvCannyExample.jpg, id=281, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 544.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 564.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=267, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=284, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 552.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 572.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
-<./images/AdobeGolf_visualisation.png, id=268, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=285, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 559.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 579.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=269, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=286, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 566.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 586.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenBaselineRT.png, id=270, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselineRT.png, id=287, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselineRT.png Graphic file (type png)
 <use ./images/mapGenBaselineRT.png>
-Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 577.
+Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 597.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenPointsRT.png, id=271, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsRT.png, id=288, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsRT.png Graphic file (type png)
 <use ./images/mapGenPointsRT.png>
-Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 593.
+Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 613.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenRangeRT.png, id=272, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeRT.png, id=289, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeRT.png Graphic file (type png)
 <use ./images/mapGenRangeRT.png>
-Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 601.
+Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 621.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenHolesRT.png, id=273, 691.6239pt x 726.3135pt>
+<./images/mapGenHolesRT.png, id=290, 691.6239pt x 726.3135pt>
 File: ./images/mapGenHolesRT.png Graphic file (type png)
 <use ./images/mapGenHolesRT.png>
-Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 608.
+Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 628.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: ./images/mapGenPointsRT.png Graphic file (type png)
-<use ./images/mapGenPointsRT.png>
-Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 615.
+<./images/mapGenBaselineMem.png, id=291, 691.6239pt x 726.3135pt>
+File: ./images/mapGenBaselineMem.png Graphic file (type png)
+<use ./images/mapGenBaselineMem.png>
+Package pdftex.def Info: ./images/mapGenBaselineMem.png  used on input line 635.
+(pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images/mapGenPointsMem.png, id=292, 691.6239pt x 726.3135pt>
+File: ./images/mapGenPointsMem.png Graphic file (type png)
+<use ./images/mapGenPointsMem.png>
+Package pdftex.def Info: ./images/mapGenPointsMem.png  used on input line 642.
+(pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images/mapGenRangeMem.png, id=293, 691.6239pt x 726.3135pt>
+File: ./images/mapGenRangeMem.png Graphic file (type png)
+<use ./images/mapGenRangeMem.png>
+Package pdftex.def Info: ./images/mapGenRangeMem.png  used on input line 649.
+(pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images/mapGenHolesMem.png, id=294, 691.6239pt x 726.3135pt>
+File: ./images/mapGenHolesMem.png Graphic file (type png)
+<use ./images/mapGenHolesMem.png>
+Package pdftex.def Info: ./images/mapGenHolesMem.png  used on input line 656.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[21
+[22
 
  <./images/openCvCannyExample.jpg> <./images/openCVCannyGolfCourse.png>]
 
-[22 <./images/AdobeGolf_visualisation.png> <./images/overheadGolfCourse_visualisation.png>]
+[23 <./images/AdobeGolf_visualisation.png> <./images/overheadGolfCourse_visualisation.png>]
 
-[23 <./images/mapGenBaselineRT.png>]
+[24 <./images/mapGenBaselineRT.png>]
 
-[24 <./images/mapGenPointsRT.png>]
+[25 <./images/mapGenPointsRT.png>]
 
-[25 <./images/mapGenRangeRT.png>]
+[26 <./images/mapGenRangeRT.png>]
 
-[26 <./images/mapGenHolesRT.png>]
+[27 <./images/mapGenHolesRT.png>]
 
-[27] (./finalReport.aux)
+[28 <./images/mapGenBaselineMem.png>]
+
+[29 <./images/mapGenPointsMem.png>]
+
+[30 <./images/mapGenRangeMem.png>]
+
+[31 <./images/mapGenHolesMem.png>] (./finalReport.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38181 strings out of 475171
- 832698 string characters out of 5767095
+ 38224 strings out of 475171
+ 833909 string characters out of 5767095
  1320440 words of memory out of 5000000
- 60491 multiletter control sequences out of 15000+600000
+ 60527 multiletter control sequences out of 15000+600000
  615850 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (27 pages, 2717331 bytes).
+Output written on finalReport.pdf (31 pages, 2846879 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 404 compressed objects within 5 object streams
- 108 named destinations out of 1000 (max. 500000)
- 306 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 518 PDF objects out of 1000 (max. 8388607)
+ 433 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 

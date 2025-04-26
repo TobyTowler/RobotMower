@@ -340,17 +340,20 @@ Performance in this case can be broken down into 2 key metrics:
 Both of these can be measured in python consistently and reliably, meaning the code can be directly tested in the same file without needing system usage or other programs that may have their own overheads.
 Each module will be run with different parameters to see how they impact performance which then will be run 5 times,
 these 5 results will then be averaged and plotted against the chosen parameter providing clear graphs to visualise any impact varying inputs may have on the products performance.
-A baseline run will be provided using set parameters and run 10 times to show any outliers.
+A baseline run will be provided using set parameters and run 10 times to show a good default.
 
-Run time will be measured in milleseconds and track the total execution time from start to finish.
+Run time will be measured in milleseconds and track the total execution time from start to finish. 
+The tool used to measure exectuion time  is the \textbf{time} library and its \textbf{perf\_counter} function.
+This is accurate to nanoseconds and causes negligable difference in runtime.
 
 Memory Usage will be measured in MB and track the average and peak memory usage during the runtime of the program.
+Peak memory usage is tracked using the \textbf{tracemalloc} library.
+This library tracks the peak memory usage of the code exectuion.
 
-For reference, these benchmarks were taken on a Ryzen5 5600X with 16GB of R.A.M. at 3200 MT/s.
+For reference, these benchmarks were taken on a \textbf{Ryzen5 5600X} with \textbf{16GB} of R.A.M. at \textbf{3200 MT/s}.
 
 \subsection{Map Generation}
 \subsubsection{Run Time}
-
 \paragraph{BaseLine} \
 
 \Cref{PE:mg:baselineRT} represents the baseline and tested with 10 corner points, 0-400 range and 0 holes.
@@ -389,14 +392,31 @@ Whichever of these is the cause, or if it is a combination of all 3, they are al
 
 \paragraph{Baseline} \
 
+\Cref{PE:mg:memBaseline} is a baseline graph to show the memory usage of the map generation process with 10 points, 400 range and 0 holes.
+There memory usage is quite consisten except for the obvious outlier on run 1.
+There is no clear reason for this but it occured on every measurement taken, it is possible it is an issue with the measurement script although unlikely.
+
+
 \paragraph{Number of points} \
+
+\Cref{PE:mg:memPoints} shows the memory usage of the map generation process with variable points, 400 range and 0 holes.
+Points effect memory linearly which make sense as there is contasnt size need for each point.
+The amount of memory needed is very small and is almost guaranteed to be suitable for any computer system even a low end portable micro PC such as a raspberry Pi.
+
 
 \paragraph{Range of points} \
 
+\Cref{PE:mg:memRange} draws the memory usage of the map generation process with 10 points, variable range and 0 holes.
+Increasing the range of points does have a positively correlated effect on memory when compared to the baseline.
+This could be for a number of reasons but essentially comes down to the higher number possible coordinate values.
+That could be the data structure of the point takes more memory to store the greater value, because the random number generation process requires more memory or becuase the sorting algorithm needs to memory to sort the higher values.
+
 \paragraph{Number of holes} \
 
-
-
+\Cref{PE:mg:memHoles} demonstrates the memory usage of the map generation process with 10 points, 400 range and variable holes.
+As mentioned in the runtime section, holes are closely related to points, they effect memory linearly, but at a higher rate than points as they are a collection of points.
+Where memory differs to runtime however, is there are no overheads to having points as holes or a single field, since memory allocation is constant.
+This concludes the number of holes is irrelevant and the number of total points is all that needs to be considered.
 
 
 \subsection{Complete Coverage Path Planning}
@@ -612,14 +632,31 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsRT.png}
-	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
-	\label{am:ohGCDanish}
+	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineMem.png}
+	\caption{Memory usage of map generation algorith with 10 points, 400 range, 0 holes}
+	\label{PE:mg:memBaseline}
 \end{figure}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsMem.png}
+	\caption{Memory usage of map generation algorith with variable points, 400 range, 0 holes}
+    \label{PE:mg:memPoints}
+\end{figure}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenRangeMem.png}
+	\caption{Memory usage of map generation algorith with 10 points, variable range, 0 holes}
+	\label{PE:mg:memRange}
+\end{figure}
 
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenHolesMem.png}
+	\caption{Memory usage of map generation algorith with 10 points, 400 range, variable holes}
+	\label{PE:mg:memHoles}
+\end{figure}
 
 
 
