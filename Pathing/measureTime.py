@@ -5,9 +5,10 @@ import Mapping as m
 
 
 def main():
-    # x = [5, 10, 15, 20, 25, 30, 35]
+    # x = [5, 10, 20, 30, 40, 50, 60, 80, 100, 120, 150, 200]
     # x = [50, 200, 400, 600, 800, 1000, 1200, 1400]
-    x = [0, 1, 5, 10, 15, 20, 50, 75, 100]
+    x = [1, 5, 10, 20, 30, 40, 50, 75, 100, 120, 150, 200]
+    # x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     times = []
 
     hull = []
@@ -17,7 +18,7 @@ def main():
             startTime = time.perf_counter()
             origin = m.Point(2, 2)
             # field = m.genPoints(10, origin, i) #Range
-            # field = m.genPoints(i, origin, 400) #Points
+            # field = m.genPoints(i, origin, 400)  # Points
             field = m.genPoints(10, origin, 400)
             hull.append(m.sortPoints(field, origin))
 
@@ -37,8 +38,8 @@ def main():
     # plt.xlabel("Range on points")
     plt.xlabel("Number of holes")
     plt.ylabel("Execution Time (milliseconds)")
+    # plt.title("Performance of map generation algorithm baseline with 3 holes")
     plt.title("Performance of map generation algorithm compared to number of holes")
-    # plt.title("Performance of map generation algorithm compared to number of points")
 
     plt.grid(True, linestyle="--", alpha=0.7)
 

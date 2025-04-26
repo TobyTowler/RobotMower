@@ -330,32 +330,74 @@ To ensure consistent training and results, the data set is split up into section
 Constant validation helps to make sure that the model is constantly improving, tweaking the hyperparameters and make modelling decisions.
 \section{Performance Evaluation}
 Performance is a key part of user experience therefore is crucial to the real world performance of this product.
-Performance is this case can be broken down into 2 key metrics:
+Performance in this case can be broken down into 2 key metrics:
 
 \begin{itemize}
     \item{\textbf{Run time}: how long the process takes to complete in real time}
-    \item{\textbf{Memory Usage}: How much system memory the process uses both average and maximum}
+    \item{\textbf{Memory Usage}: how much system memory the process uses both average and maximum}
 \end{itemize}
 
+Both of these can be measured in python consistently and reliably, meaning the code can be directly tested in the same file without needing system usage or other programs that may have their own overheads.
+Each module will be run with different parameters to see how they impact performance which then will be run 5 times,
+these 5 results will then be averaged and plotted against the chosen parameter providing clear graphs to visualise any impact varying inputs may have on the products performance.
+A baseline run will be provided using set parameters and run 10 times to show any outliers.
+
+Run time will be measured in milleseconds and track the total execution time from start to finish.
+
+Memory Usage will be measured in MB and track the average and peak memory usage during the runtime of the program.
+
+For reference, these benchmarks were taken on a Ryzen5 5600X with 16GB of R.A.M. at 3200 MT/s.
+
 \subsection{Map Generation}
-BASELINE
-10 points 0-400 range
+\subsubsection{Run Time}
 
-y axis - run time
-x axis - number of corners
-NUMBER OF POINTS x = [5, 10, 15, 20, 25, 30, 35]
-range 0 - 400
+\paragraph{BaseLine} \
 
-y axis - memory usage
-x axis - number of corners
+\Cref{PE:mg:baselineRT} represents the baseline and tested with 10 corner points, 0-400 range and 0 holes.
+The runtime is fairly consistent having a very small range of 0.2 milleseconds, showing a very strong baseline to run further testing on.
 
-y axis - run time
-x axis - range of plottable points(0-100, 0-500)
-NUMBER OF POINTS 10
-    RAnge x = [50, 200, 400, 600, 800, 1000, 1200, 1400]
 
-y axis - memory usage
-x axis - range of points
+\paragraph{Number of points} \
+
+\Cref{PE:mg:points} shows the impact of varying the number of points on runtime.
+The tests were run with a range or 0-400 and 0 holes.
+Clearly points are added in linear respect to execution time but are efficient in doing so, taking around 0.0075 milleseconds per point added.
+Points are added with O(n) complexity
+
+
+\paragraph{Range of points} \
+
+\Cref{PE:mg:range} visualises the time taken when varying limits are placed on the range of points, this can be thought to represent the Physical size of the field.
+These runs were carried out with 10 points and 0 holes.
+There is no clear correlation between the range of points and the run time of the program, the graph closely resembles the baseline, having the same range and very similar bounds at each side.
+The quickest runtime from this test and all baseline runs actually occurs with a range 1200, three times the range in the baseline.
+This is a very good indication on top of everything else that range has no effect on runtime meaing the program should work for any size of field in good time.
+
+\paragraph{Number of holes} \
+
+\Cref{PE:mg:holes} demonstrates how the number of holes translate to runtime.
+The runs were carried out with 10 points in the main field, a range of 400 and 5 points in each hole.
+Similarly to the number of points, the number of holes has a linear effect on runtime, however runtime increaes in larger steps.
+This is likely because in this example, each hole has 5 points and an extra append operation, this is likely why the same number of points generated in the outside field, and in total considering holes differ in runtime.
+For instance, 200 points in a single field takes around 1.5ms but 210 points comprised of 10 in the outer field and 40, 5 point holes just under 2ms.
+This time increase does not line up and could be for a number of reasons such as the additional appending to the array or the random number generation process of the point generation function, or could be the extra overheads from the sorting of the points in each hole.
+Whichever of these is the cause, or if it is a combination of all 3, they are all needed operations so nothing can be done to improve this further, although they whole process still completes in an insignificant amount of time, even with 200 holes it only takes around 9 milleseconds.
+200 holes is likely far more than any real world appliaction would need but still computes in excellent time.
+
+
+\subsubsection{Memory Usage}
+
+\paragraph{Baseline} \
+
+\paragraph{Number of points} \
+
+\paragraph{Range of points} \
+
+\paragraph{Number of holes} \
+
+
+
+
 
 \subsection{Complete Coverage Path Planning}
 
@@ -525,5 +567,64 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
 	\label{am:ohGCDanish}
 \end{figure}
-\end{document}
 
+\section{Performance and Evaluation}
+\subsection{Mapping}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineRT.png}
+	\caption{Performance of the map generation algorithm with 10 points, 400 range, 0 holes}
+	\label{PE:mg:baselineRT}
+\end{figure}
+
+
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineHolesRT.png}
+% 	\caption{Performance of the map generation algorithm with 10 points, 400 range, 3 holes}
+% 	\label{PE:mg:baselineRTHoles}
+% \end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsRT.png}
+	\caption{Performance of the map generation algorithm with variable points, 400 range, 0 holes}
+	\label{PE:mg:points}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenRangeRT.png}
+	\caption{Performance of the map generation algorithm with 10 points, variable range, 0 holes}
+	\label{PE:mg:range}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenHolesRT.png}
+	\caption{Performance of the map generation algorithm with 10 points, 400 range, variable holes}
+	\label{PE:mg:holes}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsRT.png}
+	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
+	\label{am:ohGCDanish}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
