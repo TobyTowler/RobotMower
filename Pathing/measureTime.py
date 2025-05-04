@@ -18,14 +18,14 @@ def main():
             startTime = time.perf_counter()
             origin = m.Point(2, 2)
             # field = m.genPoints(10, origin, i)  # Range
-            field = m.genPoints(i, origin, 400)  # Points
-            # field = m.genPoints(10, origin, 400)
+            # field = m.genPoints(i, origin, 400)  # Points
+            field = m.genPoints(10, origin, 400)
             hull.append(m.sortPoints(field, origin))
 
-            # for y in range(i):  # holes
-            #     hole1Base = m.Point(100, 100)
-            #     hole1Points = m.genPoints(5, hole1Base, 50)
-            #     hull.append(m.sortPoints(hole1Points, hole1Base))
+            for y in range(i):  # holes
+                hole1Base = m.Point(100, 100)
+                hole1Points = m.genPoints(5, hole1Base, 50)
+                hull.append(m.sortPoints(hole1Points, hole1Base))
 
             endTime = time.perf_counter()
             thisTimes.append((endTime - startTime) * 1000)
@@ -36,10 +36,10 @@ def main():
     plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
 
     # plt.xlabel("Range on points")
-    plt.xlabel("Range of Points")
+    plt.xlabel("Number of Holes")
     plt.ylabel("Execution Time (milliseconds)")
     # plt.title("Performance of map generation algorithm baseline with 3 holes")
-    plt.title("Map Generation Runtime vs Range of Points")
+    plt.title("Map Generation Runtime vs Number of Holes")
 
     plt.grid(True, linestyle="--", alpha=0.7)
 

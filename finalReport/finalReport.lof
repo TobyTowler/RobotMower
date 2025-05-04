@@ -2,12 +2,12 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{22}{figure.caption.25}%
 \contentsline {figure}{\numberline {3}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{23}{figure.caption.26}%
 \contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{23}{figure.caption.27}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Performance of the map generation algorithm with 10 points, 400 range, 0 holes}}{24}{figure.caption.28}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Performance of the map generation algorithm with variable points, 400 range, 0 holes}}{25}{figure.caption.29}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Performance of the map generation algorithm with 10 points, variable range, 0 holes}}{26}{figure.caption.30}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Performance of the map generation algorithm with 10 points, 400 range, variable holes}}{27}{figure.caption.31}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{28}{figure.caption.32}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{29}{figure.caption.33}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{30}{figure.caption.34}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{31}{figure.caption.35}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{24}{figure.caption.28}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{24}{figure.caption.29}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{25}{figure.caption.30}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{25}{figure.caption.31}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{26}{figure.caption.32}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{26}{figure.caption.33}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{27}{figure.caption.34}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{27}{figure.caption.35}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

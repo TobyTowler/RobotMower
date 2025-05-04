@@ -219,15 +219,25 @@ A route is the order in which swaths will be covered.
 These can be sorted in a number of ways:
 
 \begin{itemize}
-	\item{\textbf{Shortest route} to cover all swaths, order depends on field}
-	\item\textbf{{Boustrophedon order}, a zigzag like pattern covering swaths in order (1,2,3...)}
-	\item\textbf{{Snake order}, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
-	\item\textbf{{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
-	\item\textbf{{Custom order}, user defined}
+	% \item{\textbf{Shortest route} to cover all swaths, ojkrder depends on field}
+	\item{\textbf{{Boustrophedon order}, a zigzag like pattern covering swaths in order (1,2,3...)}
+	\item{\textbf{Snake order}, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
+    \item{\textbf{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
+	\item{\textbf{Custom order}, user defined}
 \end{itemize}
+While they all ensure complete coverage, each of these has their benefits:
+
+Boustrophedon is the most efficient for rectangular shapes, minimising the number of turns and therefore wasted time and energy.
+
+Snake order is the same as boustrophedon but provides a better solution when turning radius is large or multiple passes are needed to completely cover the area.
+
+\todo{turing circle etc}
 
 
-\todo{KEEPGOING}
+Spiral order can be benificial in irregular or circular areas where back and forth patterns cause a large number of unnecessary turns.
+It also prevents going back over already covered areas which provides greater time efficiency.
+
+Since all of these have their specific use cases it would not make sense to pick one for all appliactions, instead it should be considered for each generation by the user.
 
 \subsubsection{Path Planning}
 Path planning refers to the connection of all swaths in route order.
@@ -594,66 +604,58 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineRT.png}
-	\caption{Performance of the map generation algorithm with 10 points, 400 range, 0 holes}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselineRT.png}
+	\caption{Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}
 	\label{PE:mg:baselineRT}
 \end{figure}
 
 
-% \begin{figure}[h!]
-% 	\centering
-% 	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineHolesRT.png}
-% 	\caption{Performance of the map generation algorithm with 10 points, 400 range, 3 holes}
-% 	\label{PE:mg:baselineRTHoles}
-% \end{figure}
-
-
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsRT.png}
-	\caption{Performance of the map generation algorithm with variable points, 400 range, 0 holes}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsRT.png}
+	\caption{Runtime of the map generation algorithm with variable points, 400 range, 0 holes}
 	\label{PE:mg:points}
 \end{figure}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenRangeRT.png}
-	\caption{Performance of the map generation algorithm with 10 points, variable range, 0 holes}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenRangeRT.png}
+	\caption{Runtime of the map generation algorithm with 10 points, variable range, 0 holes}
 	\label{PE:mg:range}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenHolesRT.png}
-	\caption{Performance of the map generation algorithm with 10 points, 400 range, variable holes}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesRT.png}
+	\caption{Runtime of the map generation algorithm with 10 points, 400 range, variable holes}
 	\label{PE:mg:holes}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenBaselineMem.png}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselineMem.png}
 	\caption{Memory usage of map generation algorith with 10 points, 400 range, 0 holes}
 	\label{PE:mg:memBaseline}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenPointsMem.png}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsMem.png}
 	\caption{Memory usage of map generation algorith with variable points, 400 range, 0 holes}
     \label{PE:mg:memPoints}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenRangeMem.png}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenRangeMem.png}
 	\caption{Memory usage of map generation algorith with 10 points, variable range, 0 holes}
 	\label{PE:mg:memRange}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/mapGenHolesMem.png}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesMem.png}
 	\caption{Memory usage of map generation algorith with 10 points, 400 range, variable holes}
 	\label{PE:mg:memHoles}
 \end{figure}
