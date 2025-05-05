@@ -20,9 +20,10 @@ def main():
 
     bf = f2c.SG_BruteForce()
     swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
-    snake_sorter = f2c.RP_Snake()
-    swaths = snake_sorter.genSortedSwaths(swaths)
-
+    # snake_sorter = f2c.RP_Snake()
+    # swaths = snake_sorter.genSortedSwaths(swaths)
+    boustrophedon_sorter = f2c.RP_Boustrophedon()
+    swaths = boustrophedon_sorter.genSortedSwaths(swaths)
     path_planner = f2c.PP_PathPlanning()
     dubins_cc = f2c.PP_DubinsCurvesCC()
     path_dubins_cc = path_planner.planPath(mower, swaths, dubins_cc)

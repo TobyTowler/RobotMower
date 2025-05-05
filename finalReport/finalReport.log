@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  5 MAY 2025 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  5 MAY 2025 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1147,17 +1147,6 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [8]
 
 [9]
-./finalReport.tex:227: Missing } inserted.
-<inserted text> 
-                }
-l.227 \end{itemize}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 234.
 
 
@@ -1196,12 +1185,12 @@ LaTeX Warning: Reference `PE:p:baseline' on page 1 undefined on input line 436.
 <inserted text> 
                 $
 l.439     \item{\textbf{Area}, 10^
-                                  5m^2 and 6 sides}
+                                  3m^2 and 6 sides}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ./finalReport.tex:439: Extra }, or forgotten $.
-l.439 ...\item{\textbf{Area}, 10^5m^2 and 6 sides}
+l.439 ...\item{\textbf{Area}, 10^3m^2 and 6 sides}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1404,13 +1393,13 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 Here is how much of TeX's memory you used:
  38231 strings out of 475171
  834031 string characters out of 5767095
- 1321440 words of memory out of 5000000
+ 1320440 words of memory out of 5000000
  60531 multiletter control sequences out of 15000+600000
  615850 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (28 pages, 2847186 bytes).
+Output written on finalReport.pdf (28 pages, 2846637 bytes).
 PDF statistics:
  517 PDF objects out of 1000 (max. 8388607)
  435 compressed objects within 5 object streams

@@ -38,7 +38,7 @@ def mowerConfig(width, bladeWidth):
     """All lengths in m"""
 
     mower = f2c.Robot(width, bladeWidth)
-    mower.setMinTurningRadius(0.4)  # m
+    mower.setMinTurningRadius(0.15)  # m
     mower.setMaxDiffCurv(0.1)  # 1/m^2
     return mower
 

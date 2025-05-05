@@ -7,7 +7,11 @@ from utils import mowerConfig, load_csv_points, genField, drawCell
 
 
 def main():
-    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    # x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    x = [
+        1,
+        2,
+    ]
 
     times = []
 
@@ -18,13 +22,13 @@ def main():
             mower = mowerConfig(0.22, 0.15)
 
             rand = f2c.Random(42)
-            field = rand.generateRandField(1e4, 6)
+            field = rand.generateRandField(pow(10, i), 6)
             # hole = rand.generateRandCell(121, 4)
             # # hole1 = hole.getField()
             cell = field.getField()
 
             const_hl = f2c.HG_Const_gen()
-            no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+            no_hl = const_hl.generateHeadlands(cell, 0.45)
 
             bf = f2c.SG_BruteForce()
             swaths = bf.generateSwaths(
@@ -47,10 +51,10 @@ def main():
     plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
 
     # plt.xlabel("Range on points")
-    plt.xlabel("Number of Runs")
+    plt.xlabel("Size of field 10^x")
     plt.ylabel("Execution Time (milliseconds)")
     # plt.title("Performance of map generation algorithm baseline with 3 holes")
-    plt.title("Path Planning Runtime Baseline")
+    plt.title("Path Planning Runtime vs Size of Field")
 
     plt.grid(True, linestyle="--", alpha=0.7)
 
