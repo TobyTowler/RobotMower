@@ -430,6 +430,27 @@ This concludes the number of holes is irrelevant and the number of total points 
 
 
 \subsection{Complete Coverage Path Planning}
+\subsubsection{Runtime}
+\paragraph{Basaeline} \
+
+\Cref{PE:p:baseline} shows a baseline runtime for the fields2cover library generating with:
+
+\begin{itemize}
+    \item{\textbf{Area}, 10^5m^2 and 6 sides}
+    \item{\textbf{Mower size}, 0.22m track wide, 0.15m working width}
+    \item{\textbf{Headland generation}, constant function}
+    \item{\textbf{Swath generation}, brute force}
+    \item{\textbf{Route planning}, boustrophedon order}
+    \item{\textbf{Path planning}, dubins curve}
+    \item{\textbf{Cell decomposition}, none}
+\end{itemize}
+These paremters are all default, the first mentioned or most simplistic to give a stable baseline.
+
+\paragraph{Map Size} \
+
+\Cref{PE:p:setSize} shows how differing field size affects the runtime of algorithm.
+
+
 
 y axis - memory usage
 x axis - map size
@@ -661,7 +682,12 @@ Another essential section that should keep its title as suggested. Briefly discu
 \end{figure}
 
 
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesMem.png}
+	\caption{Runtime of path planning system with }
+    \label{PE:p:setSize}
+\end{figure}
 
 
 
