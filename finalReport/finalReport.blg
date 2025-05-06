@@ -3,44 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: finalReport.aux
 The style file: apalike.bst
 Database file #1: reportbib.bib
-You've used 7 entries,
+Warning--entry type for "ortools" isn't style-file defined
+--line 84 of file reportbib.bib
+Warning--empty year in ortools
+You've used 8 entries,
             1935 wiz_defined-function locations,
-            518 strings with 5299 characters,
-and the built_in function-call counts, 3454 in all, are:
-= -- 323
-> -- 208
-< -- 5
-+ -- 78
-- -- 74
-* -- 316
-:= -- 613
-add.period$ -- 23
-call.type$ -- 7
-change.case$ -- 69
-chr.to.int$ -- 7
-cite$ -- 7
-duplicate$ -- 105
-empty$ -- 198
-format.name$ -- 83
-if$ -- 655
+            522 strings with 5353 characters,
+and the built_in function-call counts, 3729 in all, are:
+= -- 351
+> -- 221
+< -- 6
++ -- 82
+- -- 78
+* -- 335
+:= -- 665
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 76
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 115
+empty$ -- 213
+format.name$ -- 90
+if$ -- 706
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 39
-num.names$ -- 23
-pop$ -- 55
+newline$ -- 43
+num.names$ -- 26
+pop$ -- 62
 preamble$ -- 1
-purify$ -- 69
+purify$ -- 76
 quote$ -- 0
-skip$ -- 85
+skip$ -- 92
 stack$ -- 0
-substring$ -- 227
+substring$ -- 239
 swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
-warning$ -- 0
-while$ -- 25
+type$ -- 48
+warning$ -- 1
+while$ -- 27
 width$ -- 0
-write$ -- 94
+write$ -- 103
+(There were 2 warnings)

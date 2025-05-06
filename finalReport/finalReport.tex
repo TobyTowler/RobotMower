@@ -219,7 +219,7 @@ A route is the order in which swaths will be covered.
 These can be sorted in a number of ways:
 
 \begin{itemize}
-	% \item{\textbf{Shortest route} to cover all swaths, ojkrder depends on field}
+	\item{\textbf{Shortest route} to cover all swaths, order depends on field}
 	\item{\textbf{Boustrophedon order}, a zigzag like pattern covering swaths in order (1,2,3...)}
 	\item{\textbf{Snake order}, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
     \item{\textbf{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
@@ -227,11 +227,12 @@ These can be sorted in a number of ways:
 \end{itemize}
 While they all ensure complete coverage, each of these has their benefits:
 
-Boustrophedon is the most efficient for rectangular shapes, minimising the number of turns and therefore wasted time and energy.
+The shortest route method uses OR-Tools \citep{ortools} to compute the shortest route to cover all swaths, it considers headland paths and is the only method to do so.
+While it will always find the quickest path, it also has the longest computation time due to the extra, sometimes complex mathematics involved.
+
+Boustrophedon is the most efficient for rectangular shapes, traversing swaths in order minimising the number of turns and therefore wasted time and energy.
 
 Snake order is the same as boustrophedon but provides a better solution when turning radius is large or multiple passes are needed to completely cover the area.
-
-\todo{turing circle etc}
 
 
 Spiral order can be benificial in irregular or circular areas where back and forth patterns cause a large number of unnecessary turns.
@@ -241,15 +242,22 @@ Since all of these have their specific use cases it would not make sense to pick
 
 \subsubsection{Path Planning}
 Path planning refers to the connection of all swaths in route order.
-There are a couple of ways the to link neighbouring swaths, these are the Dubins curve and Reeds-Shepp curve.
+There are a couple of ways the to link neighbouring swaths: the Dubins curve and the Reeds-Shepp curve.
 
 % \begin{itemize}
 % 	\item{Dubins Curve}
 % 	\item{Reeds-Shepp curve}
 % \end{itemize}
 
-Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 is the robots ability to move backwards.
-Reeds-Shepp allows backwards movement
+Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 being the robots ability to move backwards.
+Reeds-Shepp allows backwards movement which can be helpful when headlands are not needed, allowing for mowing right to the edges of an area.
+
+There is a derivative of both of these featuring continous curvature, this substitutes a slightly longer path for a wider turning angle but higher average speed. 
+The advantages of continous curvature are mainly for vehicles that have difficulty turning sharply.
+
+However, since the robot moves on tracks, it can turn in place.
+This means the majority of benefits for path planning techniques are invalid, instead the most time is saved by having the shortest path and least angle to turn on the spot.
+So the best method for this use case is likely the Reeds-Shepp as it can work with no headland and produces nearly straight lines for its links between swaths.
 
 
 \subsubsection{Cell Decomposition}

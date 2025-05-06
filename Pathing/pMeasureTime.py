@@ -50,11 +50,11 @@ def main():
     plt.figure(figsize=(8, 6))
     plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
 
-    # plt.xlabel("Range on points")
-    plt.xlabel("Size of field 10^x")
+    plt.xlabel("Number of Runs")
+    # plt.xlabel("Size of field 10^x")
     plt.ylabel("Execution Time (milliseconds)")
-    # plt.title("Performance of map generation algorithm baseline with 3 holes")
-    plt.title("Path Planning Runtime vs Size of Field")
+    plt.title("Path Planning Runtime Baseline")
+    # plt.title("Path Planning Runtime vs Size of Field")
 
     plt.grid(True, linestyle="--", alpha=0.7)
 
