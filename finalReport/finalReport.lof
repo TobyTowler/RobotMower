@@ -1,14 +1,17 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs}}{23}{figure.caption.27}%
-\contentsline {figure}{\numberline {2}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{23}{figure.caption.28}%
-\contentsline {figure}{\numberline {3}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{24}{figure.caption.29}%
-\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{24}{figure.caption.30}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{25}{figure.caption.31}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{25}{figure.caption.32}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{26}{figure.caption.33}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{26}{figure.caption.34}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{27}{figure.caption.35}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{27}{figure.caption.36}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{28}{figure.caption.37}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{28}{figure.caption.38}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with }}{29}{figure.caption.39}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs\relax }}{23}{figure.caption.29}%
+\contentsline {figure}{\numberline {2}{\ignorespaces OpenCV canny edge detection on an image of a golf course\relax }}{23}{figure.caption.30}%
+\contentsline {figure}{\numberline {3}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set\relax }}{24}{figure.caption.31}%
+\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set\relax }}{24}{figure.caption.32}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes\relax }}{25}{figure.caption.33}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes\relax }}{25}{figure.caption.34}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes\relax }}{26}{figure.caption.35}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes\relax }}{26}{figure.caption.36}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes\relax }}{27}{figure.caption.37}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes\relax }}{27}{figure.caption.38}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes\relax }}{28}{figure.caption.39}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes\relax }}{28}{figure.caption.40}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with \relax }}{29}{figure.caption.41}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Runtime of path planning system with \relax }}{29}{figure.caption.42}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Runtime of path planning system with \relax }}{30}{figure.caption.43}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Runtime of path planning system with \relax }}{30}{figure.caption.44}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

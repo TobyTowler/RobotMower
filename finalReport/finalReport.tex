@@ -222,7 +222,7 @@ These can be sorted in a number of ways:
 	\item{\textbf{Shortest route} to cover all swaths, order depends on field}
 	\item{\textbf{Boustrophedon order}, a zigzag like pattern covering swaths in order (1,2,3...)}
 	\item{\textbf{Snake order}, Similar to Boustrophedon but skipping 1 swath each time (1,3,5...)}
-    \item{\textbf{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
+	\item{\textbf{Spiral order}, a spiral pattern around the field, first swath then last (1, n, 2, n-1...)}
 	\item{\textbf{Custom order}, user defined}
 \end{itemize}
 While they all ensure complete coverage, each of these has their benefits:
@@ -252,7 +252,7 @@ There are a couple of ways the to link neighbouring swaths: the Dubins curve and
 Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 being the robots ability to move backwards.
 Reeds-Shepp allows backwards movement which can be helpful when headlands are not needed, allowing for mowing right to the edges of an area.
 
-There is a derivative of both of these featuring continous curvature, this substitutes a slightly longer path for a wider turning angle but higher average speed. 
+There is a derivative of both of these featuring continous curvature, this substitutes a slightly longer path for a wider turning angle but higher average speed.
 The advantages of continous curvature are mainly for vehicles that have difficulty turning sharply.
 
 However, since the robot moves on tracks, it can turn in place.
@@ -351,8 +351,8 @@ Performance is a key part of user experience therefore is crucial to the real wo
 Performance in this case can be broken down into 2 key metrics:
 
 \begin{itemize}
-    \item{\textbf{Run time}: how long the process takes to complete in real time}
-    \item{\textbf{Memory Usage}: how much system memory the process uses both average and maximum}
+	\item{\textbf{Run time}: how long the process takes to complete in real time}
+	\item{\textbf{Memory Usage}: how much system memory the process uses both average and maximum}
 \end{itemize}
 
 Both of these can be measured in python consistently and reliably, meaning the code can be directly tested in the same file without needing system usage or other programs that may have their own overheads.
@@ -360,7 +360,7 @@ Each module will be run with different parameters to see how they impact perform
 these 5 results will then be averaged and plotted against the chosen parameter providing clear graphs to visualise any impact varying inputs may have on the products performance.
 A baseline run will be provided using set parameters and run 10 times to show a good default.
 
-Run time will be measured in milleseconds and track the total execution time from start to finish. 
+Run time will be measured in milleseconds and track the total execution time from start to finish.
 The tool used to measure exectuion time  is the \textbf{time} library and its \textbf{perf\_counter} function.
 This is accurate to nanoseconds and causes negligable difference in runtime.
 
@@ -441,23 +441,29 @@ This concludes the number of holes is irrelevant and the number of total points 
 \subsubsection{Runtime}
 \paragraph{Basaeline} \
 
-\Cref{PE:p:baseline} shows a baseline runtime for the fields2cover library generating with:
+\Cref{PE:p:BaselineRT} shows a baseline runtime for the fields2cover library generating with:
 
 \begin{itemize}
-    \item{\textbf{Area}, 10^3m^2 and 6 sides}
-    \item{\textbf{Mower size}, 0.22m track wide, 0.15m working width}
-    \item{\textbf{Headland generation}, constant function}
-    \item{\textbf{Swath generation}, brute force}
-    \item{\textbf{Route planning}, boustrophedon order}
-    \item{\textbf{Path planning}, dubins curve}
-    \item{\textbf{Cell decomposition}, none}
+	\item{\textbf{Area}, 10^3m^2 and 6 sides}
+	\item{\textbf{Mower size}, 0.22m track wide, 0.15m working width}
+	\item{\textbf{Headland generation}, constant function}
+	\item{\textbf{Swath generation}, brute force}
+	\item{\textbf{Route planning}, boustrophedon order}
+	\item{\textbf{Path planning}, dubins curve}
+	\item{\textbf{Cell decomposition}, none}
 \end{itemize}
 These paremters are all default, the first mentioned or most simplistic to give a stable baseline.
 
 \paragraph{Map Size} \
 
-\Cref{PE:p:setSize} shows how differing field size affects the runtime of algorithm.
+\Cref{PE:p:SizeRT} shows how differing field size affects the runtime of algorithm.
+The graph shows an exponential relationship between the two, this is likely because the
 
+
+
+
+\paragraph{Route Planning Method}
+\Cref{PE:p:RoutePlanningRT} shows how differing field size affects the runtime of algorithm.
 
 y axis - memory usage
 x axis - map size
@@ -473,7 +479,7 @@ y axis - run time
 x axis - route planning method
 
 y axis - memory usage
-x axis - map shape (cornes, sqaure vs star shape etc)
+x axis - number of holes
 
 y axis - run time
 x axis - map shape
@@ -672,7 +678,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsMem.png}
 	\caption{Memory usage of map generation algorith with variable points, 400 range, 0 holes}
-    \label{PE:mg:memPoints}
+	\label{PE:mg:memPoints}
 \end{figure}
 
 \begin{figure}[h!]
@@ -690,14 +696,37 @@ Another essential section that should keep its title as suggested. Briefly discu
 \end{figure}
 
 
+\subsection{Pathing}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesMem.png}
+	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineRT.png}
 	\caption{Runtime of path planning system with }
-    \label{PE:p:setSize}
+	\label{PE:p:BaselineRT}
 \end{figure}
 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:SizeRT}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningRT.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:RoutePlanningRT}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:}
+\end{figure}
 
 
 \end{document}
