@@ -39,28 +39,31 @@ def process_single_run(i, j):
         bf = f2c.SG_BruteForce()
         swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
 
+        boustrophedon_sorter = f2c.RP_Boustrophedon()
+        swaths = boustrophedon_sorter.genSortedSwaths(swaths)
+
         # Sort swaths
 
-        if i == 0:
-            const_hl = f2c.HG_Const_gen()
-            mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
-            no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
-            bf = f2c.SG_BruteForce()
-            swaths = bf.generateSwaths(math.pi / 2.0, mower.getCovWidth(), no_hl)
-            route_planner = f2c.RP_RoutePlannerBase()
-            swaths = route_planner.genRoute(mid_hl, swaths)
-
-        elif i == 1:
-            boustrophedon_sorter = f2c.RP_Boustrophedon()
-            swaths = boustrophedon_sorter.genSortedSwaths(swaths)
-
-        elif i == 2:
-            snake_sorter = f2c.RP_Snake()
-            swaths = snake_sorter.genSortedSwaths(swaths)
-
-        elif i == 3:
-            spiral_sorter = f2c.RP_Spiral(6)
-            swaths = spiral_sorter.genSortedSwaths(swaths)
+        # if i == 0:
+        #     const_hl = f2c.HG_Const_gen()
+        #     mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
+        #     no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+        #     bf = f2c.SG_BruteForce()
+        #     swaths = bf.generateSwaths(math.pi / 2.0, mower.getCovWidth(), no_hl)
+        #     route_planner = f2c.RP_RoutePlannerBase()
+        #     swaths = route_planner.genRoute(mid_hl, swaths)
+        #
+        # elif i == 1:
+        #     boustrophedon_sorter = f2c.RP_Boustrophedon()
+        #     swaths = boustrophedon_sorter.genSortedSwaths(swaths)
+        #
+        # elif i == 2:
+        #     snake_sorter = f2c.RP_Snake()
+        #     swaths = snake_sorter.genSortedSwaths(swaths)
+        #
+        # elif i == 3:
+        #     spiral_sorter = f2c.RP_Spiral(6)
+        #     swaths = spiral_sorter.genSortedSwaths(swaths)
 
         # Plan path
         path_planner = f2c.PP_PathPlanning()

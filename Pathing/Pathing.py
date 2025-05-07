@@ -26,13 +26,14 @@ def main():
     # hole = rand.generateRandCell(121, 4)
     # # hole1 = hole.getField()
     cell = field.getField()
-    print(cell)
+    # print(cell)
     # cell = f2c.Cell()
 
     # cell = fieldConfig21313(6)
 
     const_hl = f2c.HG_Const_gen()
-    no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+    # no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+    no_hl = const_hl.generateHeadlands(cell, 0)
 
     bf = f2c.SG_BruteForce()
     swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
@@ -40,12 +41,13 @@ def main():
     swaths = snake_sorter.genSortedSwaths(swaths)
 
     path_planner = f2c.PP_PathPlanning()
-    dubins_cc = f2c.PP_DubinsCurvesCC()
-    path_dubins_cc = path_planner.planPath(mower, swaths, dubins_cc)
-
-    drawCell([cell, swaths, no_hl, path_dubins_cc])
-    print(cell[0].area())
-    print(path_dubins_cc)
+    # dubins_cc = f2c.PP_DubinsCurvesCC()
+    # path_dubins_cc = path_planner.planPath(mower, swaths, dubins_cc)
+    reeds_shepp_hc = f2c.PP_ReedsSheppCurvesHC()
+    path_reeds_shepp_hc = path_planner.planPath(mower, swaths, reeds_shepp_hc)
+    drawCell([cell, swaths, no_hl, path_reeds_shepp_hc])
+    # print(cell[0].area())
+    # print(path_dubins_cc)
 
 
 #

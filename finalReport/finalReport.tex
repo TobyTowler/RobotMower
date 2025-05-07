@@ -143,6 +143,10 @@ The specified use case of the robot will now be to cut golf courses, this is par
 
 Another section that is essential and should keep its title as is! Although you could perhaps call it ``Literature Review'' instead, this is not advisable as at this stage of your project we do not expect an extensive literature review since this was already done in the second formative assignment. The rationale is simply because you will lose valuable pages that could be used better in the next two sections that will cover the preparation and implementation of actual work done. So just provide the context in which your project operates here, and then provide a brief overview of similar work that is directly relevant to yours. Try to avoid blatant copying and pasting from the formative literature review as it is bound to read awkwardly.
 
+
+
+
+
 \section{System Design}
 
 \subsection{Map Generation}
@@ -160,9 +164,9 @@ This means we need a function with 2 parameters:
 
 \subsubsection{Corners}
 The number and distance between corners could be thought to represent complexity of a shape.
-The number of corners in a shape
+It is important that both the number and placement of corners in a field are variable to simulate all situations that may occur in the real world.
+This leads to robust and intense testing ensuring reliability in practice.
 
-KEEPGOING
 
 \subsubsection{Obstacles}
 Obstacles or holes, can be thought to represent real world obstructions for example trees or telephone poles in a real field.
@@ -198,11 +202,8 @@ The robot is 22cm wide from outer edge to edge and the gap between the tracks is
 
 \subsubsection{Headland Generation}
 Headlands are the area in which a vehicle turns, think of the rough edges of a crop field, these exist so that agricultural vehicles do not trample their crops when turning.
-Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch
-Headlands are also generated around obstacles to allow for suitable turning area around the obstacles if needed, this serves as an area to do a "U-turn", effectively the same as reaching the end of the field.
-
-KEEPGOING
-
+Although for the use case of a golf course this is not strictly needed as there are no "crops" or areas the robot cannot touch, so in this usecase headlands are not necessary.
+Headlands can also generated around obstacles to allow for suitable turning area around the obstacles if needed, this serves as an area to do a "U-turn", effectively the same as reaching the end of the field.
 
 
 \subsubsection{Swath Generation}
@@ -452,37 +453,38 @@ This concludes the number of holes is irrelevant and the number of total points 
 	\item{\textbf{Path planning}, dubins curve}
 	\item{\textbf{Cell decomposition}, none}
 \end{itemize}
-These paremters are all default, the first mentioned or most simplistic to give a stable baseline.
+These paremters are all default, first mentioned or most simplistic to give a stable baseline.
 
 \paragraph{Map Size} \
 
 \Cref{PE:p:SizeRT} shows how differing field size affects the runtime of algorithm.
-The graph shows an exponential relationship between the two, this is likely because the
+The graph shows an exponential relationship between the two, this makes sense because there are a number of components affected by field area:
+
+\begin{itemize}
+    \item{Area calculations}
+    \item{Buffer operations, used to generate headland}
+    \item{Swath generation and optimal angle}
+\end{itemize}
+All of these cause longer runtimes on larger areas, mostly due to the increase of calculation complexity or simply needing more calculations to complete the process.
+The graph shows upto 10^5m^2 which is about the size of 14 football pitches, taking about 8 seconds
+
+\todo{Possibly more}
 
 
 
+\paragraph{Route Planning Method} \
 
-\paragraph{Route Planning Method}
-\Cref{PE:p:RoutePlanningRT} shows how differing field size affects the runtime of algorithm.
+\Cref{PE:p:RoutePlanningRT} shows how different route planning methods impact processing time.
+There is not much difference betwen the 3 known patterns, almost margin of error, but the shortest route method takes much longer.
+This is because, the 3 knowns requrie 0 calculations just simple array indexing in a set order.
+Where as the shortest route method uses a brute force approach and requires vast calculations to find the best sequence, this time increase is also likely to have a non linear affect when paired with larger fields.
 
-y axis - memory usage
-x axis - map size
+\paragraph{Number of Holes} \
 
+\Cref{PE:p:HolesRT} Shows how the number of holes in a field affect the overal run time, this test was conducted on an 80 x 80 square field with a varying number of holes.
+When holes are present, the \textbf{Shortest Route} planning method must be used to connect the isolated swaths that border obstacles and as seen above this going to impact run time on its own, so it is expected that runtime will be longer than before.
+Holes have a linear effect on run time, this makes sense as field generation and swath placement is linear.
 
-y axis - run time
-x axis - map size
-
-y axis - memory usage
-x axis - route planning method
-
-y axis - run time
-x axis - route planning method
-
-y axis - memory usage
-x axis - number of holes
-
-y axis - run time
-x axis - map shape
 
 \subsection{Aerail Map Generation}
 
@@ -723,9 +725,9 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
+	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
 	\caption{Runtime of path planning system with }
-	\label{PE:}
+    \label{PE:p:HolesRT}
 \end{figure}
 
 
