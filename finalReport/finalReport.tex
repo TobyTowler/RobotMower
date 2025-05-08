@@ -461,15 +461,13 @@ These paremters are all default, first mentioned or most simplistic to give a st
 The graph shows an exponential relationship between the two, this makes sense because there are a number of components affected by field area:
 
 \begin{itemize}
-    \item{Area calculations}
-    \item{Buffer operations, used to generate headland}
-    \item{Swath generation and optimal angle}
+	\item{Area calculations}
+	\item{Buffer operations, used to generate headland}
+	\item{Swath generation and optimal angle}
 \end{itemize}
 All of these cause longer runtimes on larger areas, mostly due to the increase of calculation complexity or simply needing more calculations to complete the process.
-The graph shows upto 10^5m^2 which is about the size of 14 football pitches, taking about 8 seconds
-
-\todo{Possibly more}
-
+The graph shows upto 10^5m^2 which is about the size of 14 football pitches, taking about 8 seconds.
+While this is a long time to wait, it is unlikely that the program will have to consider an area this large very often since most input images are going to be close up to capture detail.
 
 
 \paragraph{Route Planning Method} \
@@ -485,6 +483,13 @@ Where as the shortest route method uses a brute force approach and requires vast
 When holes are present, the \textbf{Shortest Route} planning method must be used to connect the isolated swaths that border obstacles and as seen above this going to impact run time on its own, so it is expected that runtime will be longer than before.
 Holes have a linear effect on run time, this makes sense as field generation and swath placement is linear.
 
+
+\subsubsection{Memory Usage}
+
+\paragraph{Baseline}
+\paragraph{Map Size}
+\paragraph{Route Planning Method}
+\paragraph{Number of holes}
 
 \subsection{Aerail Map Generation}
 
@@ -727,8 +732,41 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
 	\caption{Runtime of path planning system with }
-    \label{PE:p:HolesRT}
+	\label{PE:p:HolesRT}
 \end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineMem.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:BaselineMem}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingSizeMem.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:SizeMem}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningMem.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:RoutePlanningMem}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/pathingHolesMem.png}
+	\caption{Runtime of path planning system with }
+	\label{PE:p:HolesMem}
+\end{figure}
+
 
 
 \end{document}
