@@ -142,7 +142,7 @@ def main():
         plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
         plt.xlabel("Number of Holes")
         plt.ylabel("Execution Time (milliseconds)")
-        plt.title("Path Planning Runtime vs Number of Holes")
+        # plt.title("Path Planning Runtime vs Number of Holes")
         plt.grid(True, linestyle="--", alpha=0.7, axis="y")
         plt.xticks(rotation=15)
 

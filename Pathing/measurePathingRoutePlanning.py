@@ -15,7 +15,7 @@ def main():
 
     # x = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
     # x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    x = [1, 2, 3, 4]
+    x = [0, 1, 2, 3]
     times = []
 
     hull = []
@@ -24,57 +24,61 @@ def main():
         for j in range(5):
             startTime = time.perf_counter()
 
-            mower = mowerConfig(0.22, 0.15)
-
-            # Use a fixed seed for stability
-            rand = f2c.Random(42)
-
-            # Use a minimum field size to avoid "Geometry does not contain point 0" error
-            # The library seems to struggle with very small fields
-            field_size = max(pow(10, 3), 2.0)  # Ensure minimum size of 2.0
-
-            # Generate field with more vertices for small fields
-            field = rand.generateRandField(field_size, 6)
-            cell = field.getField()
-
-            # Generate headlands with smaller width for small fields
-            # const_hl = f2c.HG_Const_gen()
-            # Scale headland width based on field size to avoid issues
-            # width_factor = min(
-            #     3.0, max(0.5, 0.5 + i)
-            # )  # Scale from 0.5 to 3.0 based on field size
-            # width_val = width_factor * mower.getWidth()
-            # no_hl = const_hl.generateHeadlands(cell, 3 * mower.getWidth())
-            # mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
-            # Generate swaths with appropriate parameters
-            # bf = f2c.SG_BruteForce()
-            # swaths = bf.generateSwaths(
-            #     math.pi, mower.getCovWidth(), no_hl.getGeometry(0)
-            # )
-
-            # boustrophedon_sorter = f2c.RP_Boustrophedon()
-            # swaths = boustrophedon_sorter.genSortedSwaths(swaths)
-
-            # Sort swaths
-
             if i == 0:
+                rand = f2c.Random(42)
+                mower = mowerConfig(0.22, 0.15)
                 const_hl = f2c.HG_Const_gen()
-                mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
-                no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+                cell = rand.generateRandField(1e3, 6)
+                cells = cell.getField()
+                const_hl = f2c.HG_Const_gen()
+                mid_hl = const_hl.generateHeadlands(cells, 1.5 * mower.getWidth())
+                no_hl = const_hl.generateHeadlands(cells, 3.0 * mower.getWidth())
+
                 bf = f2c.SG_BruteForce()
                 swaths = bf.generateSwaths(math.pi / 2.0, mower.getCovWidth(), no_hl)
                 route_planner = f2c.RP_RoutePlannerBase()
                 swaths = route_planner.genRoute(mid_hl, swaths)
 
             elif i == 1:
+                rand = f2c.Random(42)
+                robot = mowerConfig(0.22, 0.15)
+                const_hl = f2c.HG_Const_gen()
+                field = rand.generateRandField(1e3, 6)
+                cells = field.getField()
+                no_hl = const_hl.generateHeadlands(cells, 3.0 * robot.getWidth())
+                bf = f2c.SG_BruteForce()
+                swaths = bf.generateSwaths(
+                    math.pi, robot.getCovWidth(), no_hl.getGeometry(0)
+                )
+
                 boustrophedon_sorter = f2c.RP_Boustrophedon()
                 swaths = boustrophedon_sorter.genSortedSwaths(swaths)
 
             elif i == 2:
+                rand = f2c.Random(42)
+                robot = mowerConfig(0.22, 0.15)
+                const_hl = f2c.HG_Const_gen()
+                field = rand.generateRandField(1e3, 6)
+                cells = field.getField()
+                no_hl = const_hl.generateHeadlands(cells, 3.0 * robot.getWidth())
+                bf = f2c.SG_BruteForce()
+                swaths = bf.generateSwaths(
+                    math.pi, robot.getCovWidth(), no_hl.getGeometry(0)
+                )
                 snake_sorter = f2c.RP_Snake()
                 swaths = snake_sorter.genSortedSwaths(swaths)
 
             elif i == 3:
+                rand = f2c.Random(42)
+                robot = mowerConfig(0.22, 0.15)
+                const_hl = f2c.HG_Const_gen()
+                field = rand.generateRandField(1e3, 6)
+                cells = field.getField()
+                no_hl = const_hl.generateHeadlands(cells, 3.0 * robot.getWidth())
+                bf = f2c.SG_BruteForce()
+                swaths = bf.generateSwaths(
+                    math.pi, robot.getCovWidth(), no_hl.getGeometry(0)
+                )
                 spiral_sorter = f2c.RP_Spiral(6)
                 swaths = spiral_sorter.genSortedSwaths(swaths)
 
@@ -102,12 +106,23 @@ def main():
         "Spiral Order",
     ]
 
-    # valid_labels = [pathPlanning[i] for i in x]
+    bars = plt.bar(pathPlanning, times, color="blue", alpha=0.7, width=0.6)
 
-    plt.bar(pathPlanning, times, color="blue", alpha=0.7, width=0.6)
+    for bar in bars:
+        height = bar.get_height()
+        plt.gca().annotate(
+            f"{height:.2f}",
+            xy=(bar.get_x() + bar.get_width() / 2, height),
+            xytext=(0, 3),  # 3 points vertical offset
+            textcoords="offset points",
+            ha="center",
+            va="bottom",
+            fontsize=10,
+            fontweight="bold",
+        )
 
     # plt.xlabel("Range on points")
-    plt.xlabel("Area of Field (10^x)m^2")
+    plt.xlabel("Path Planning Method Used")
     plt.ylabel("Execution Time (milliseconds)")
     # plt.title("Performance of map generation algorithm baseline with 3 holes")
     # plt.title("Map Generation Runtime vs Number of Holes")
