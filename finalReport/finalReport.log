@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  9 MAY 2025 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  9 MAY 2025 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -900,14 +900,14 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 117.
  (./finalReport.aux
 
-./finalReport.aux:127: Package natbib Error: Bibliography not compatible with author-year citations.
+./finalReport.aux:129: Package natbib Error: Bibliography not compatible with author-year citations.
 (natbib)                Press <return> to continue in numerical citation style.
 
 See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 ...and\NAT@force@numbers{}\NAT@force@numbers
+l.129 ...and\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -1140,6 +1140,74 @@ Overfull \hbox (1.8634pt too wide) in paragraph at lines 11--11
  [][] [][]\T1/ptm/m/n/12 Memory us-age of map gen-er-a-tion al-go-rith with 10 points, vari-able range, 
  []
 
+./finalReport.lof:13: Missing $ inserted.
+<inserted text> 
+                $
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./finalReport.lof:13: Extra }, or forgotten $.
+<argument> ...urate robot size, constant headland}
+                                                  }\Hy@toclinkend \nobreak {...
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./finalReport.lof:13: Extra }, or forgotten $.
+<argument> ...rate robot size, constant headland}}
+                                                  \Hy@toclinkend \nobreak {\...
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./finalReport.lof:13: Missing $ inserted.
+<inserted text> 
+                $
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./finalReport.lof:13: Missing } inserted.
+<inserted text> 
+                }
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./finalReport.lof:13: Missing } inserted.
+<inserted text> 
+                }
+l.13 ...constant headland}}{30}{figure.caption.51}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (112.80891pt too wide) in paragraph at lines 13--13
+ [][] [][]\T1/ptm/m/n/12 Runtime of path plan-ning sys-tem with 10$[]\OML/ztmcm/m/it/12 m[]area; \OT1/ztmcm/m/n/12 6\OML/ztmcm/m/it/12 corners; accuraterobotsize; constantheadland$[] [][]  
+ []
+
 )
 \tf@lof=\write6
 \openout6 = `finalReport.lof'.
@@ -1169,18 +1237,18 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [12]
 
 [13]
-Overfull \hbox (51.79347pt too wide) in paragraph at lines 343--344
+Overfull \hbox (51.79347pt too wide) in paragraph at lines 348--349
 \T1/ptm/m/n/12 ev-ery quar-ter epoch ($[] \OT1/ztmcm/m/n/12 = 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 25$\T1/ptm/m/n/12 ) us-ing half the val-i-da-tion data ($[] \OT1/ztmcm/m/n/12 =
  []
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 347.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 352.
 
-Overfull \hbox (1.70093pt too wide) in paragraph at lines 347--347
+Overfull \hbox (1.70093pt too wide) in paragraph at lines 352--352
 [][][]\T1/ptm/m/n/12 Random 
  []
 
 
-Overfull \hbox (1.70093pt too wide) in paragraph at lines 347--347
+Overfull \hbox (1.70093pt too wide) in paragraph at lines 352--352
 [][][]\T1/ptm/m/n/12 Random 
  []
 
@@ -1193,16 +1261,16 @@ Overfull \hbox (1.70093pt too wide) in paragraph at lines 347--347
 [16]
 
 [17]
-./finalReport.tex:448: Missing $ inserted.
+./finalReport.tex:453: Missing $ inserted.
 <inserted text> 
                 $
-l.448 	\item{\textbf{Area}, 10^
+l.453 	\item{\textbf{Area}, 10^
                                3m^2 and 6 sides}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./finalReport.tex:448: Extra }, or forgotten $.
-l.448 	\item{\textbf{Area}, 10^3m^2 and 6 sides}
+./finalReport.tex:453: Extra }, or forgotten $.
+l.453 	\item{\textbf{Area}, 10^3m^2 and 6 sides}
                                                 
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1211,29 +1279,29 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-./finalReport.tex:449: LaTeX Error: Command \item invalid in math mode.
+./finalReport.tex:454: LaTeX Error: Command \item invalid in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.449 	\item
+l.454 	\item
             {\textbf{Mower size}, 0.22m track wide, 0.15m working width}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./finalReport.tex:449: Missing $ inserted.
+./finalReport.tex:454: Missing $ inserted.
 <inserted text> 
                 $
-l.449 	\item{
+l.454 	\item{
              \textbf{Mower size}, 0.22m track wide, 0.15m working width}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./finalReport.tex:455: Missing } inserted.
+./finalReport.tex:460: Missing } inserted.
 <inserted text> 
                 }
-l.455 \end{itemize}
+l.460 \end{itemize}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1241,30 +1309,31 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./finalReport.tex:469: Missing $ inserted.
+
+
+[18]
+./finalReport.tex:474: Missing $ inserted.
 <inserted text> 
                 $
-l.469 The graph shows upto 10^
+l.474 The graph shows upto 10^
                               5m^2 which is about the size of 14 football pi...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./finalReport.tex:471: Missing $ inserted.
+./finalReport.tex:476: Missing $ inserted.
 <inserted text> 
                 $
-l.471 
+l.476 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (761.4433pt too wide) in paragraph at lines 468--471
+Overfull \hbox (761.4433pt too wide) in paragraph at lines 473--476
 \T1/ptm/m/n/12 shows upto 10$[]\OML/ztmcm/m/it/12 m[]whichisaboutthesizeof\OT1/ztmcm/m/n/12 14\OML/ztmcm/m/it/12 footballpitches; takingabout\OT1/ztmcm/m/n/12 8\OML/ztmcm/m/it/12 seconds:Whilethisisalongtimetowait; itisunlikelythattheprogramwillhavetoconsideranareathislargeveryoftensincemostinputimagesaregoingtobecloseuptocapturedetail:$ 
  []
 
 
-
-[18]
 
 [19]
 
@@ -1276,7 +1345,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 [21
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 526.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 531.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1298,161 +1367,182 @@ LaTeX Warning: Text page 23 contains only floats.
 
 
 [23]
-<./images/openCvCannyExample.jpg, id=323, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=325, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 616.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 621.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=325, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=327, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 624.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 629.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
-<./images/AdobeGolf_visualisation.png, id=326, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=328, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 631.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 636.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=327, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=329, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 638.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 643.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenBaselineRT.png, id=328, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselineRT.png, id=330, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselineRT.png Graphic file (type png)
 <use ./images/mapGenBaselineRT.png>
-Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 649.
+Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 654.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenPointsRT.png, id=329, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsRT.png, id=331, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsRT.png Graphic file (type png)
 <use ./images/mapGenPointsRT.png>
-Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 657.
+Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 662.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenRangeRT.png, id=330, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeRT.png, id=332, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeRT.png Graphic file (type png)
 <use ./images/mapGenRangeRT.png>
-Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 665.
+Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 670.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenHolesRT.png, id=331, 691.6239pt x 726.3135pt>
+<./images/mapGenHolesRT.png, id=333, 691.6239pt x 726.3135pt>
 File: ./images/mapGenHolesRT.png Graphic file (type png)
 <use ./images/mapGenHolesRT.png>
-Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 673.
+Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 678.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenBaselineMem.png, id=332, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselineMem.png, id=334, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselineMem.png Graphic file (type png)
 <use ./images/mapGenBaselineMem.png>
-Package pdftex.def Info: ./images/mapGenBaselineMem.png  used on input line 680.
+Package pdftex.def Info: ./images/mapGenBaselineMem.png  used on input line 685.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenPointsMem.png, id=333, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsMem.png, id=335, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsMem.png Graphic file (type png)
 <use ./images/mapGenPointsMem.png>
-Package pdftex.def Info: ./images/mapGenPointsMem.png  used on input line 687.
+Package pdftex.def Info: ./images/mapGenPointsMem.png  used on input line 692.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenRangeMem.png, id=334, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeMem.png, id=336, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeMem.png Graphic file (type png)
 <use ./images/mapGenRangeMem.png>
-Package pdftex.def Info: ./images/mapGenRangeMem.png  used on input line 694.
+Package pdftex.def Info: ./images/mapGenRangeMem.png  used on input line 699.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenHolesMem.png, id=335, 691.6239pt x 726.3135pt>
+<./images/mapGenHolesMem.png, id=337, 691.6239pt x 726.3135pt>
 File: ./images/mapGenHolesMem.png Graphic file (type png)
 <use ./images/mapGenHolesMem.png>
-Package pdftex.def Info: ./images/mapGenHolesMem.png  used on input line 701.
+Package pdftex.def Info: ./images/mapGenHolesMem.png  used on input line 706.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingBaseLineRT.png, id=336, 691.6239pt x 726.3135pt>
+<./images/pathingBaseLineRT.png, id=338, 691.6239pt x 726.3135pt>
 File: ./images/pathingBaseLineRT.png Graphic file (type png)
 <use ./images/pathingBaseLineRT.png>
-Package pdftex.def Info: ./images/pathingBaseLineRT.png  used on input line 710.
+Package pdftex.def Info: ./images/pathingBaseLineRT.png  used on input line 715.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
+./finalReport.tex:716: Missing $ inserted.
+<inserted text> 
+                $
+l.716 ..., accurate robot size, constant headland}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./finalReport.tex:716: Missing $ inserted.
+<inserted text> 
+                $
+l.716 ..., accurate robot size, constant headland}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--716
+[][][]|\T1/ptm/m/n/12 Run-time of path plan-ning sys-tem with
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingSizeRt.png, id=337, 691.6239pt x 726.3135pt>
+<./images/pathingSizeRt.png, id=339, 691.6239pt x 726.3135pt>
 File: ./images/pathingSizeRt.png Graphic file (type png)
 <use ./images/pathingSizeRt.png>
-Package pdftex.def Info: ./images/pathingSizeRt.png  used on input line 718.
+Package pdftex.def Info: ./images/pathingSizeRt.png  used on input line 723.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingRoutePlanningRT.png, id=338, 691.6239pt x 726.3135pt>
+<./images/pathingRoutePlanningRT.png, id=340, 691.6239pt x 726.3135pt>
 File: ./images/pathingRoutePlanningRT.png Graphic file (type png)
 <use ./images/pathingRoutePlanningRT.png>
-Package pdftex.def Info: ./images/pathingRoutePlanningRT.png  used on input line 726.
+Package pdftex.def Info: ./images/pathingRoutePlanningRT.png  used on input line 731.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingHolesRT.png, id=339, 691.6239pt x 726.3135pt>
+<./images/pathingHolesRT.png, id=341, 691.6239pt x 726.3135pt>
 File: ./images/pathingHolesRT.png Graphic file (type png)
 <use ./images/pathingHolesRT.png>
-Package pdftex.def Info: ./images/pathingHolesRT.png  used on input line 734.
+Package pdftex.def Info: ./images/pathingHolesRT.png  used on input line 739.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingBaseLineMem.png, id=340, 691.6239pt x 729.2043pt>
+<./images/pathingBaseLineMem.png, id=342, 691.6239pt x 729.2043pt>
 File: ./images/pathingBaseLineMem.png Graphic file (type png)
 <use ./images/pathingBaseLineMem.png>
-Package pdftex.def Info: ./images/pathingBaseLineMem.png  used on input line 742.
+Package pdftex.def Info: ./images/pathingBaseLineMem.png  used on input line 747.
 (pdftex.def)             Requested size: 209.12686pt x 220.48763pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingSizeMem.png, id=341, 691.6239pt x 729.2043pt>
+<./images/pathingSizeMem.png, id=343, 691.6239pt x 729.2043pt>
 File: ./images/pathingSizeMem.png Graphic file (type png)
 <use ./images/pathingSizeMem.png>
-Package pdftex.def Info: ./images/pathingSizeMem.png  used on input line 750.
+Package pdftex.def Info: ./images/pathingSizeMem.png  used on input line 755.
 (pdftex.def)             Requested size: 209.12686pt x 220.48763pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: File `./images/pathingRoutePlanningMem.png' not found on input line 758.
+LaTeX Warning: File `./images/pathingRoutePlanningMem.png' not found on input line 763.
 
 
-./finalReport.tex:758: Package pdftex.def Error: File `./images/pathingRoutePlanningMem.png' not found: using draft setting.
+./finalReport.tex:763: Package pdftex.def Error: File `./images/pathingRoutePlanningMem.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.758 ...th]{./images/pathingRoutePlanningMem.png}
+l.763 ...th]{./images/pathingRoutePlanningMem.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 758.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 763.
 (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1460,16 +1550,16 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: File `./images/pathingHolesMem.png' not found on input line 767.
+LaTeX Warning: File `./images/pathingHolesMem.png' not found on input line 771.
 
 
-./finalReport.tex:767: Package pdftex.def Error: File `./images/pathingHolesMem.png' not found: using draft setting.
+./finalReport.tex:771: Package pdftex.def Error: File `./images/pathingHolesMem.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.767 ...\textwidth]{./images/pathingHolesMem.png}
+l.771 ...\textwidth]{./images/pathingHolesMem.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1508,18 +1598,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38403 strings out of 475171
- 839009 string characters out of 5767095
+ 38405 strings out of 475171
+ 839034 string characters out of 5767095
  1319440 words of memory out of 5000000
- 60672 multiletter control sequences out of 15000+600000
+ 60673 multiletter control sequences out of 15000+600000
  616471 words of font info for 100 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (33 pages, 3064343 bytes).
+Output written on finalReport.pdf (33 pages, 3085251 bytes).
 PDF statistics:
- 589 PDF objects out of 1000 (max. 8388607)
- 488 compressed objects within 5 object streams
- 144 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 596 PDF objects out of 1000 (max. 8388607)
+ 495 compressed objects within 5 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 388 words of extra memory for PDF output out of 10000 (max. 10000000)
 

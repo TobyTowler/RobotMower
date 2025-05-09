@@ -12,15 +12,16 @@
 \contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{9}{subsubsection.3.2.4}%
 \contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{10}{subsubsection.3.2.5}%
 \contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{11}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Final Setup}{11}{subsubsection.3.2.7}%
 \contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{11}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{11}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{13}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Data Set}{13}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Training}{13}{subsubsection.3.3.4}%
 \contentsline {section}{\numberline {4}Performance Evaluation}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map Generation}{15}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{15}{subsubsection.4.1.1}%
-\contentsline {paragraph}{\nonumberline BaseLine}{15}{paragraph*.7}%
+\contentsline {subsection}{\numberline {4.1}Map Generation}{16}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{16}{subsubsection.4.1.1}%
+\contentsline {paragraph}{\nonumberline BaseLine}{16}{paragraph*.7}%
 \contentsline {paragraph}{\nonumberline Number of points}{16}{paragraph*.9}%
 \contentsline {paragraph}{\nonumberline Range of points}{16}{paragraph*.11}%
 \contentsline {paragraph}{\nonumberline Number of holes}{16}{paragraph*.13}%
@@ -40,7 +41,7 @@
 \contentsline {paragraph}{\nonumberline Map Size}{19}{paragraph*.33}%
 \contentsline {paragraph}{\nonumberline Route Planning Method}{19}{paragraph*.35}%
 \contentsline {paragraph}{\nonumberline Number of holes}{19}{paragraph*.37}%
-\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{19}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{20}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Conclusion and Future Work}{20}{section.5}%
 \contentsline {section}{References}{21}{section*.38}%
 \contentsline {section}{\numberline {A}Map Generation}{22}{appendix.A}%

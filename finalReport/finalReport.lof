@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{28}{figure.caption.48}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{29}{figure.caption.49}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{29}{figure.caption.50}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with }}{30}{figure.caption.51}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland}}{30}{figure.caption.51}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Runtime of path planning system with }}{30}{figure.caption.52}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Runtime of path planning system with }}{31}{figure.caption.53}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Runtime of path planning system with }}{31}{figure.caption.54}%
