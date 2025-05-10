@@ -9,7 +9,7 @@
 % Some package I am using. You may not need them
 %
 \usepackage{rotating}
-\usepackage{subfig}
+\usepackage{subfloat}
 \usepackage{todonotes}
 \usepackage{color}
 \usepackage{pdfpages}
@@ -119,7 +119,7 @@ The abstract of your report summarises your entire work () in no more than half 
 \section{Introduction}
 
 The robot mower is an already existing project developed by previous masters students from the University of East Anglia.
-Physically, the mower has 2 tracks for movement on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{ros}.
+Physically, the mower has 2 tracks for movement on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{doi:10.1126/scirobotics.abm6074}.
 Sensor wise, the robot is equipped with a 4G dongle, lidar and a GPS chip that was upgraded to an RTK chip in this iteration of the project.
 The existing code base was mostly written in python with very small amounts of C++.
 Because of this, all of my code will be written in python to slot into existing code without issue.
@@ -141,20 +141,12 @@ The specified use case of the robot will now be to cut golf courses, this is par
 
 \section{Background and Related Work}
 
+Another section that is essential and should keep its title as is! Although you could perhaps call it ``Literature Review'' instead, this is not advisable as at this stage of your project we do not expect an extensive literature review since this was already done in the second formative assignment. The rationale is simply because you will lose valuable pages that could be used better in the next two sections that will cover the preparation and implementation of actual work done. So just provide the context in which your project operates here, and then provide a brief overview of similar work that is directly relevant to yours. Try to avoid blatant copying and pasting from the formative literature review as it is bound to read awkwardly.
+
+
 \subsection{ECOVACS GOAT A3000}
 The GOAT A3000 RTK \citep{goata3000} is a compact self contained lawn mower created by Ecovacs.
-It moves its 46 cm wide body on 4 wheels cutting 33cm wide areas at a time.
-Boundary detection is automated with dual Lidar and AI cameras allowing accuracy within 2cm, several maps and paths can be saved at once.
-This robot allows for complete edge detection covering a whole area with no user input required but can still connect to a mobile app to allow adding, editing, splitting and merging of virtual maps.
-Other options in the mobile app include mowing height, travel speed, obstacle avoidance height and scheduling.
-Many U-shaped paths are joined together to form a grid pattern ensuring all grass is cut.
-
-\subsection{STIHL iMOW 5}
-This robotic lawn mower \citep{imow5} can cover 28cm at once under a 52cm body, also on 4 wheels its physical desigin is similar to the ECOVACS product.
-STIHL also provide a mobile app to connect to the robot, many features are similar with the addition of definable starting points and priority zones.
-Additionaly this product has a rain sensor, since moisture can affect the mowing process the robot can determine if it should mow or not based on preferences by the user.
-It is also equipped with anti theft technology. If the robot detects it is picked up or removed from the desired area it locks all controls and alerts the owner.
-
+It has a cutting width of 22cm, housing width of 40cm, can cover 800m^2\ amd has a maximum speed of 0.5m/s, featuring automated mapping and boundary recognition and AI powered edge mowing precision.
 
 
 
@@ -727,7 +719,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineRT.png}
-	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland}
 	\label{PE:p:BaselineRT}
 \end{figure}
 
@@ -735,7 +727,8 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
-	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with }
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland}
 	\label{PE:p:SizeRT}
 \end{figure}
 
@@ -743,7 +736,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningRT.png}
-	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:RoutePlanningRT}
 \end{figure}
 
@@ -751,7 +744,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
-	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:HolesRT}
 \end{figure}
 
@@ -759,7 +752,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineMem.png}
-	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:BaselineMem}
 \end{figure}
 
@@ -767,7 +760,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingSizeMem.png}
-	\caption{Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:SizeMem}
 \end{figure}
 
@@ -775,7 +768,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningMem.png}
-	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:RoutePlanningMem}
 \end{figure}
 
@@ -783,7 +776,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesMem.png}
-	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
+	\caption{Runtime of path planning system with }
 	\label{PE:p:HolesMem}
 \end{figure}
 

@@ -5,46 +5,48 @@ The style file: apalike.bst
 Database file #1: reportbib.bib
 Warning--entry type for "ortools" isn't style-file defined
 --line 84 of file reportbib.bib
+Warning--empty year in goata3000
 Warning--empty year in ortools
-You've used 8 entries,
+Warning--empty year in imow5
+You've used 10 entries,
             1935 wiz_defined-function locations,
-            522 strings with 5353 characters,
-and the built_in function-call counts, 3729 in all, are:
-= -- 351
-> -- 221
-< -- 6
-+ -- 82
-- -- 78
-* -- 335
-:= -- 665
-add.period$ -- 25
-call.type$ -- 8
-change.case$ -- 76
-chr.to.int$ -- 8
-cite$ -- 9
-duplicate$ -- 115
-empty$ -- 213
-format.name$ -- 90
-if$ -- 706
+            528 strings with 5373 characters,
+and the built_in function-call counts, 4197 in all, are:
+= -- 399
+> -- 235
+< -- 8
++ -- 86
+- -- 82
+* -- 361
+:= -- 757
+add.period$ -- 29
+call.type$ -- 10
+change.case$ -- 88
+chr.to.int$ -- 10
+cite$ -- 13
+duplicate$ -- 135
+empty$ -- 243
+format.name$ -- 96
+if$ -- 792
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 43
-num.names$ -- 26
-pop$ -- 62
+newline$ -- 51
+num.names$ -- 32
+pop$ -- 74
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 88
 quote$ -- 0
-skip$ -- 92
+skip$ -- 106
 stack$ -- 0
-substring$ -- 239
+substring$ -- 263
 swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 1
-while$ -- 27
+type$ -- 60
+warning$ -- 3
+while$ -- 31
 width$ -- 0
-write$ -- 103
-(There were 2 warnings)
+write$ -- 121
+(There were 4 warnings)

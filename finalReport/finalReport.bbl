@@ -11,12 +11,16 @@ Canny, J. (1986).
 \newblock A computational approach to edge detection.
 \newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, PAMI-8(6):679--698.
 
+\bibitem[ECOVACS, ]{goata3000}
+ECOVACS.
+\newblock Goat a3000 lidar.
+
 \bibitem[Graham, 1972]{graham1972efficient}
 Graham, R.~L. (1972).
 \newblock An efficient algorithm for determining the convex hull of a finite planar set.
 \newblock {\em Information Processing Letters}, 1(4):132--133.
 
-\bibitem[Macenski et~al., 2022]{doi:10.1126/scirobotics.abm6074}
+\bibitem[Macenski et~al., 2022]{ros}
 Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.
 \newblock {\em Science Robotics}, 7(66):eabm6074.
@@ -29,6 +33,10 @@ Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, 
 \bibitem[Perron and Furnon, ]{ortools}
 Perron, L. and Furnon, V.
 \newblock Or-tools.
+
+\bibitem[STIHL, ]{imow5}
+STIHL.
+\newblock imow 5.
 
 \bibitem[Team, 2023]{fields2cover}
 Team, F. (2023).
