@@ -19,10 +19,10 @@ def drawCell(arr):
 
 
 def main():
-    mower = mowerConfig(2.0, 5.0)
+    mower = mowerConfig(0.22, 0.15)
 
     rand = f2c.Random(42)
-    field = rand.generateRandField(1e4, 6)
+    field = rand.generateRandField(1e3, 7)
     # hole = rand.generateRandCell(121, 4)
     # # hole1 = hole.getField()
     cell = field.getField()
@@ -32,19 +32,31 @@ def main():
     # cell = fieldConfig21313(6)
 
     const_hl = f2c.HG_Const_gen()
-    # no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
-    no_hl = const_hl.generateHeadlands(cell, 0)
-
+    mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
+    no_hl = const_hl.generateHeadlands(cell, 0 * mower.getWidth())
+    print(const_hl, "\n", mid_hl, "\n", no_hl)
     bf = f2c.SG_BruteForce()
-    swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
-    snake_sorter = f2c.RP_Snake()
-    swaths = snake_sorter.genSortedSwaths(swaths)
+    swaths = bf.generateSwaths(math.pi / 2.0, mower.getCovWidth(), no_hl)
+    # swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), 0)
+    route_planner = f2c.RP_RoutePlannerBase()
+    # route = route_planner.genRoute(0, swaths)
+    route = route_planner.genRoute(mid_hl, swaths)
+    # const_hl = f2c.HG_Const_gen()
+    # no_hl = const_hl.generateHeadlands(cell, 3.0 * mower.getWidth())
+    # bf = f2c.SG_BruteForce()
+    # swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
+    # swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), 0)
+    # boustrophedon_sorter = f2c.RP_Boustrophedon()
+    # route = boustrophedon_sorter.genSortedSwaths(swaths)
+
+    # snake_sorter = f2c.RP_Snake()
+    # route = snake_sorter.genSortedSwaths(swaths)
 
     path_planner = f2c.PP_PathPlanning()
-    # dubins_cc = f2c.PP_DubinsCurvesCC()
+    # # dubins_cc = f2c.PP_DubinsCurvesCC()
     # path_dubins_cc = path_planner.planPath(mower, swaths, dubins_cc)
-    reeds_shepp_hc = f2c.PP_ReedsSheppCurvesHC()
-    path_reeds_shepp_hc = path_planner.planPath(mower, swaths, reeds_shepp_hc)
+    reeds_shepp_hc = f2c.PP_ReedsSheppCurves()
+    path_reeds_shepp_hc = path_planner.planPath(mower, route, reeds_shepp_hc)
     drawCell([cell, swaths, no_hl, path_reeds_shepp_hc])
     # print(cell[0].area())
     # print(path_dubins_cc)

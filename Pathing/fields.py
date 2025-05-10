@@ -1,10 +1,11 @@
 import math
 import fields2cover as f2c
+from utils import mowerConfig
 
 
 # def main():
 def makeHoles(i):
-    robot_c = f2c.Robot(1)
+    # robot_c = f2c.Robot(1)
     # print("####### Tutorial 5.1 Route planning for all swaths ######")
     # i = 1
     # robot_c = f2c.Robot(0.22, 0.15)
@@ -268,7 +269,18 @@ def makeHoles(i):
 
 
 def main():
-    makeHoles(10)
+    mower = mowerConfig(0.22, 0.15)
+
+    cell = makeHoles(3)
+
+    const_hl = f2c.HG_Const_gen()
+    mid_hl_c = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
+    no_hl_c = const_hl.generateHeadlands(cell, 0 * mower.getWidth())
+    bf = f2c.SG_BruteForce()
+    swaths_c = bf.generateSwaths(math.pi / 2.0, mower.getCovWidth(), no_hl_c)
+    route_planner = f2c.RP_RoutePlannerBase()
+    route = route_planner.genRoute(mid_hl_c, swaths_c)
+    # makeHoles(10)
 
 
 if __name__ == "__main__":

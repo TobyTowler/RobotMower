@@ -7,14 +7,15 @@ import math
 import gc
 from fields import makeHoles
 from utils import mowerConfig, load_csv_points, genField, drawCell
+import tracemalloc
 
 
 def process_single_run(i, j):
     """Perform a single timing run safely"""
     try:
-        startTime = time.perf_counter()
+        tracemalloc.start()
 
-        mower = mowerConfig(0.5, 0.8)
+        mower = mowerConfig(0.22, 0.15)
 
         cell = makeHoles(i)
 
@@ -28,15 +29,22 @@ def process_single_run(i, j):
 
         # drawCell([cell, swaths_c, no_hl_c, route])
 
-        endTime = time.perf_counter()
-
         # drawCell([cell, swaths, no_hl, path_dubins_cc])
 
         # Explicitly clean up to avoid memory issues
         del cell, no_hl_c, swaths_c, route
         gc.collect()
 
-        return (endTime - startTime) * 1000
+        current, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+
+        # Force cleanup
+        # del mower, rand, field, cell, const_hl, no_hl, mid_hl, bf, swaths
+        # del boustrophedon_sorter, path_planner, dubins_cc, path_dubins_cc
+        gc.collect()
+
+        return peak / 1024  # KB
+
     except Exception as e:
         print(f"Error processing run {i},{j}: {e}")
         # Force garbage collection
@@ -100,7 +108,7 @@ def main():
 
         plt.scatter(x, times, color="blue", marker="o", s=100, alpha=0.7)
         plt.xlabel("Number of Holes")
-        plt.ylabel("Execution Time (milliseconds)")
+        plt.ylabel("Peak Memory Usage (KB)")
         # plt.title("Path Planning Runtime vs Number of Holes")
         plt.grid(True, linestyle="--", alpha=0.7, axis="y")
         plt.xticks(rotation=15)

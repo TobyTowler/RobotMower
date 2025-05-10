@@ -156,6 +156,8 @@ Additionaly this product has a rain sensor, since moisture can affect the mowing
 It is also equipped with anti theft technology. If the robot detects it is picked up or removed from the desired area it locks all controls and alerts the owner.
 
 
+
+
 \section{System Design}
 
 \subsection{Map Generation}
@@ -386,7 +388,7 @@ Memory Usage will be measured in MB and track the average and peak memory usage 
 Peak memory usage is tracked using the \textbf{tracemalloc} library.
 This library tracks the peak memory usage of the code exectuion.
 
-For reference, these benchmarks were taken on a \textbf{Ryzen5 5600X} with \textbf{16GB} of R.A.M. at \textbf{3200 MT/s} and where relevent \textbf{GeForce RTX 3060 Ti}.
+For reference, these benchmarks were taken on a \textbf{Ryzen5 5600X} with \textbf{16GB} of R.A.M. at \textbf{3200 MT/s}.
 
 \subsection{Map Generation}
 \subsubsection{Run Time}
@@ -462,7 +464,7 @@ This concludes the number of holes is irrelevant and the number of total points 
 \Cref{PE:p:BaselineRT} shows a baseline runtime for the fields2cover library generating with:
 
 \begin{itemize}
-    \item{\textbf{Area}, $10^3\,\text{m}^2$ and 6 sides}
+	\item{\textbf{Area}, 10^3m^2\ and\  6\ sides}
 	\item{\textbf{Mower size}, 0.22m track wide, 0.15m working width}
 	\item{\textbf{Headland generation}, constant function}
 	\item{\textbf{Swath generation}, brute force}
@@ -483,7 +485,7 @@ The graph shows an exponential relationship between the two, this makes sense be
 	\item{Swath generation and optimal angle}
 \end{itemize}
 All of these cause longer runtimes on larger areas, mostly due to the increase of calculation complexity or simply needing more calculations to complete the process.
-The graph shows upto 10^5m^2$ which is about the size of 14 football pitches, taking about 8 seconds.
+The graph shows upto 10^5m^2 which is about the size of 14 football pitches, taking about 8 seconds.
 While this is a long time to wait, it is unlikely that the program will have to consider an area this large very often since most input images are going to be close up to capture detail.
 
 
@@ -725,7 +727,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineRT.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
 	\label{PE:p:BaselineRT}
 \end{figure}
 
@@ -733,7 +735,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
 	\label{PE:p:SizeRT}
 \end{figure}
 
@@ -741,7 +743,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningRT.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
 	\label{PE:p:RoutePlanningRT}
 \end{figure}
 
@@ -749,7 +751,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}
+	\caption{Runtime of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}
 	\label{PE:p:HolesRT}
 \end{figure}
 
@@ -757,7 +759,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
 	\label{PE:p:BaselineMem}
 \end{figure}
 
@@ -773,7 +775,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
 	\label{PE:p:RoutePlanningMem}
 \end{figure}
 
@@ -781,7 +783,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
+	\caption{Memory Usage of path planning system with 10^3m^2 area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
 	\label{PE:p:HolesMem}
 \end{figure}
 

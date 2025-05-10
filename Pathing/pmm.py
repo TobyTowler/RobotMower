@@ -22,14 +22,14 @@ def run_test(i):
     # Your test code here
     mower = mowerConfig(0.22, 0.15)
     rand = f2c.Random(42)
-    field_size = max(pow(10, i), 2.0)
+    # field_size = max(pow(10, i), 2.0)
     # print(field_size)
-    field = rand.generateRandField(field_size, 6)
+    # field = rand.generateRandField(field_size, 6)
+    field = rand.generateRandField(10e3, 6)
     cell = field.getField()
 
     const_hl = f2c.HG_Const_gen()
     no_hl = const_hl.generateHeadlands(cell, 3 * mower.getWidth())
-    mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
 
     bf = f2c.SG_BruteForce()
     swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
@@ -45,7 +45,7 @@ def run_test(i):
     tracemalloc.stop()
 
     # Force cleanup
-    del mower, rand, field, cell, const_hl, no_hl, mid_hl, bf, swaths
+    del mower, rand, field, cell, const_hl, no_hl, bf, swaths
     del boustrophedon_sorter, path_planner, dubins_cc, path_dubins_cc
     gc.collect()
 
@@ -54,31 +54,37 @@ def run_test(i):
 
 def main():
     # x = list(range(1, 12))
-    x = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+    # x = [1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+    x = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     memory_usages = []
-
     for i in x:
         thisMemory = []
-        # Use a process pool to ensure isolation between runs
-        with mp.Pool(processes=1) as pool:
-            for j in range(5):
+        for j in range(5):
+            # Use a process pool to ensure isolation between runs
+            with mp.Pool(processes=1) as pool:
                 memory = pool.apply(run_test, (i,))
                 thisMemory.append(memory)
 
         memory_usages.append(statistics.mean(thisMemory))
 
     # Print results
-    # memory_usages.pop(0)
-    # x.pop(10)
+    memory_usages.pop(0)
+    x.pop(0)
     for xi, avg_memory in zip(x, memory_usages):
         print(f"x = {xi}: average peak memory = {avg_memory:.2f} KB")
 
     # Plotting
-    plt.figure(figsize=(8, 6))
+
+    plt.figure(figsize=(10, 10))
+    plt.rcParams.update({"font.size": 16})
+    plt.rcParams["savefig.directory"] = os.path.expanduser(
+        "~/Programming/RobotMower/finalReport/images/"
+    )
     plt.scatter(x, memory_usages, color="blue", marker="o", s=100, alpha=0.7)
-    plt.xlabel("Area of Field (10^xm^2)")
+    plt.xlabel("Number of Runs")
+    # plt.xlabel("Area of Field (10^xm^2)")
     plt.ylabel("Peak Memory Usage (KB)")
-    plt.title("Path Planning Peak Memory Usage Compared to Size of Field")
+    # plt.title("Path Planning Peak Memory Usage Compared to Size of Field")
     plt.grid(True, linestyle="--", alpha=0.7)
     plt.tight_layout()
     plt.savefig("memory_usage.png")  # Save figure before showing
@@ -87,4 +93,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

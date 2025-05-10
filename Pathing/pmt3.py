@@ -21,24 +21,22 @@ def process_single_run(i, j):
 
         # Use a minimum field size to avoid "Geometry does not contain point 0" error
         # The library seems to struggle with very small fields
-        field_size = max(pow(10, 3), 2.0)  # Ensure minimum size of 2.0
-
+        # field_size = max(pow(10, 3), 2.0)  # Ensure minimum size of 2.0
+        #
         # Generate field with more vertices for small fields
-        field = rand.generateRandField(field_size, 6)
+        # field = rand.generateRandField(field_size, 6)
+        field = rand.generateRandField(10e3, 6)
         cell = field.getField()
 
         # Generate headlands with smaller width for small fields
-        const_hl = f2c.HG_Const_gen()
-        # Scale headland width based on field size to avoid issues
-        # width_factor = min(
-        #     3.0, max(0.5, 0.5 + i)
-        # )  # Scale from 0.5 to 3.0 based on field size
-        # width_val = width_factor * mower.getWidth()
-        no_hl = const_hl.generateHeadlands(cell, 3 * mower.getWidth())
-        mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
+        # const_hl = f2c.HG_Const_gen()
+
+        # no_hl = const_hl.generateHeadlands(cell, 3 * mower.getWidth())
+        # mid_hl = const_hl.generateHeadlands(cell, 1.5 * mower.getWidth())
         # Generate swaths with appropriate parameters
         bf = f2c.SG_BruteForce()
-        swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
+        swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), 0)
+        # swaths = bf.generateSwaths(math.pi, mower.getCovWidth(), no_hl.getGeometry(0))
 
         boustrophedon_sorter = f2c.RP_Boustrophedon()
         swaths = boustrophedon_sorter.genSortedSwaths(swaths)
