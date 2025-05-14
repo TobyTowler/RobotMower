@@ -351,7 +351,31 @@ One prominent issue with this data set, and probably any data golf course image,
 This can cause over prediction of bunkers and greater uncertainty for other classes.
 There are several possible fixes for this the most likely are more data or class weighting.
 
+Doubling the data count caused slightly more consistency while adding class weights was a game changer.
+Class weights adjusted for the less frequent classes like fairways and greens but still not enough for rough as seen in ~\Cref{am:AENoRoughDemoTraining}.
+The lack of rough is likely because in most cases, they are large single annotations unlike the frequent smaller bunkers which are predicted with very low uncertainty.
+Breaking up roughs into smaller sections covering the same area increases the frequency and diversifies the chaerectistics more.
+
 \paragraph{Training} \
+
+Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
+Tracks per-class accuracy to monitor how well rare classes are being learne
+
+transforms - horizontal flipping, colour jitter and rotation
+
+random weight samples > more examples of underrepresented classes - oversample images of these
+
+pretrained backbone maskrcnn_resnet50_fpn
+
+reduces well classified examples to focus on harder cases
+
+80\% training 20\% validation
+
+Train the model with weighted loss
+
+Stops training if validation loss doesn't improve for 15 epochs
+
+Tracks loss and accuracy per class
 
 
 \section{Performance Evaluation}
@@ -670,6 +694,16 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
 	\label{am:ohGCDanish}
 \end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/AENoRoughDemoTraining.png}
+	\caption{Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}
+	\label{am:AENoRoughDemoTraining}
+\end{figure}
+
+
+
 
 \section{Performance and Evaluation}
 \subsection{Mapping}
