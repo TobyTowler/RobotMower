@@ -365,7 +365,7 @@ def main():
             no_improvement_count = 0
 
             # Save best model
-            torch.save(model.state_dict(), "./models/golf_course_model_best.pth")
+            torch.save(model.state_dict(), "./models/golf_course_model_bestFROM1.pth")
             print(f" ← New best model! Improvement: {improvement:.6f}")
         else:
             no_improvement_count += 1
@@ -376,7 +376,7 @@ def main():
         # Save regular checkpoint
         torch.save(
             model.state_dict(),
-            f"./models/checkpoints/golf_course_model_epoch_{epoch + 1}.pth",
+            f"./models/checkpoints/golf_course_model_epoch_{epoch + 1}FROM1.pth",
         )
 
         # Update learning rate
