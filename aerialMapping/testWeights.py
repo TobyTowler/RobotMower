@@ -337,9 +337,9 @@ def main():
 
     # Also process a specific image
     print("\nProcessing individual image...")
-    # test_image = "./imgs/testingdata/overheadGolf1.jpg"
+    test_image = "./imgs/testingdata/AIgenerated.png"
     # test_image = "./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_04_01.jpg"
-    test_image = "./imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg"
+    # test_image = "./imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg"
     result = predict_image(model, test_image, class_names, confidence_threshold=0.6)
     visualize_prediction(
         result, "single_prediction.png", show=True
