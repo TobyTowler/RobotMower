@@ -43,6 +43,10 @@ Team, F. (2023).
 \newblock Fields2cover: Mission planning for agricultural vehicles.
 \newblock \url{https://fields2cover.github.io/}.
 
+\bibitem[wkentaro, ]{labelme}
+wkentaro.
+\newblock lableme.
+
 \bibitem[Zhao and Hwang, 2023]{zhao2023complete}
 Zhao, S. and Hwang, S.-H. (2023).
 \newblock Complete coverage path planning scheme for autonomous navigation ros-based robots.

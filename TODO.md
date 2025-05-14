@@ -1,10 +1,13 @@
+# Ask Edwin
+
+ML Dataset
+PE lay out
+
 # Report
 
-Captions
 Cell decomposition
-Background
+ML stuff
 Future work
-Corners
 Summary
 Abstract
 

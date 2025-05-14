@@ -5,48 +5,54 @@ The style file: apalike.bst
 Database file #1: reportbib.bib
 Warning--entry type for "ortools" isn't style-file defined
 --line 84 of file reportbib.bib
+I was expecting a `,' or a `}'---line 109 of file reportbib.bib
+ :     
+ :     url={https://github.com/wkentaro/labelme?tab=readme-ov-file}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty year in goata3000
 Warning--empty year in ortools
 Warning--empty year in imow5
-You've used 10 entries,
+Warning--empty year in labelme
+You've used 11 entries,
             1935 wiz_defined-function locations,
-            528 strings with 5373 characters,
-and the built_in function-call counts, 4197 in all, are:
-= -- 399
-> -- 235
-< -- 8
-+ -- 86
-- -- 82
-* -- 361
-:= -- 757
-add.period$ -- 29
-call.type$ -- 10
-change.case$ -- 88
-chr.to.int$ -- 10
-cite$ -- 13
-duplicate$ -- 135
-empty$ -- 243
-format.name$ -- 96
-if$ -- 792
+            531 strings with 5395 characters,
+and the built_in function-call counts, 4431 in all, are:
+= -- 423
+> -- 242
+< -- 9
++ -- 88
+- -- 84
+* -- 374
+:= -- 803
+add.period$ -- 31
+call.type$ -- 11
+change.case$ -- 94
+chr.to.int$ -- 11
+cite$ -- 15
+duplicate$ -- 145
+empty$ -- 258
+format.name$ -- 99
+if$ -- 835
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 51
-num.names$ -- 32
-pop$ -- 74
+newline$ -- 55
+num.names$ -- 35
+pop$ -- 80
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 94
 quote$ -- 0
-skip$ -- 106
+skip$ -- 113
 stack$ -- 0
-substring$ -- 263
+substring$ -- 275
 swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 3
-while$ -- 31
+type$ -- 66
+warning$ -- 4
+while$ -- 33
 width$ -- 0
-write$ -- 121
-(There were 4 warnings)
+write$ -- 130
+(There was 1 error message)

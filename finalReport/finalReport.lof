@@ -1,21 +1,21 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs}}{25}{figure.caption.39}%
-\contentsline {figure}{\numberline {2}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{25}{figure.caption.40}%
-\contentsline {figure}{\numberline {3}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{26}{figure.caption.41}%
-\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{26}{figure.caption.42}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{27}{figure.caption.43}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{27}{figure.caption.44}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{28}{figure.caption.45}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{28}{figure.caption.46}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{29}{figure.caption.47}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{29}{figure.caption.48}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{30}{figure.caption.49}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{30}{figure.caption.50}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{31}{figure.caption.51}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{31}{figure.caption.52}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{32}{figure.caption.53}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}}{32}{figure.caption.54}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{33}{figure.caption.55}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{33}{figure.caption.56}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{34}{figure.caption.57}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}}{34}{figure.caption.58}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs}}{25}{figure.caption.44}%
+\contentsline {figure}{\numberline {2}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{25}{figure.caption.45}%
+\contentsline {figure}{\numberline {3}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{26}{figure.caption.46}%
+\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{26}{figure.caption.47}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{27}{figure.caption.48}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{27}{figure.caption.49}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{28}{figure.caption.50}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{28}{figure.caption.51}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{29}{figure.caption.52}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{29}{figure.caption.53}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{30}{figure.caption.54}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{30}{figure.caption.55}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{31}{figure.caption.56}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{31}{figure.caption.57}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{32}{figure.caption.58}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}}{32}{figure.caption.59}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{33}{figure.caption.60}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{33}{figure.caption.61}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{34}{figure.caption.62}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}}{34}{figure.caption.63}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
