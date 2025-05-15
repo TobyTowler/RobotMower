@@ -21,35 +21,35 @@
 \contentsline {paragraph}{\nonumberline Model}{14}{paragraph*.6}%
 \contentsline {paragraph}{\nonumberline Data Set}{15}{paragraph*.8}%
 \contentsline {paragraph}{\nonumberline Training}{16}{paragraph*.10}%
-\contentsline {section}{\numberline {4}Performance Evaluation}{16}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map Generation}{17}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{17}{subsubsection.4.1.1}%
-\contentsline {paragraph}{\nonumberline BaseLine}{17}{paragraph*.12}%
-\contentsline {paragraph}{\nonumberline Number of points}{17}{paragraph*.14}%
-\contentsline {paragraph}{\nonumberline Range of points}{17}{paragraph*.16}%
+\contentsline {section}{\numberline {4}Performance Evaluation}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Map Generation}{18}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{18}{subsubsection.4.1.1}%
+\contentsline {paragraph}{\nonumberline BaseLine}{18}{paragraph*.12}%
+\contentsline {paragraph}{\nonumberline Number of points}{18}{paragraph*.14}%
+\contentsline {paragraph}{\nonumberline Range of points}{18}{paragraph*.16}%
 \contentsline {paragraph}{\nonumberline Number of holes}{18}{paragraph*.18}%
-\contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{18}{subsubsection.4.1.2}%
-\contentsline {paragraph}{\nonumberline Baseline}{18}{paragraph*.20}%
-\contentsline {paragraph}{\nonumberline Number of points}{18}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{19}{subsubsection.4.1.2}%
+\contentsline {paragraph}{\nonumberline Baseline}{19}{paragraph*.20}%
+\contentsline {paragraph}{\nonumberline Number of points}{19}{paragraph*.22}%
 \contentsline {paragraph}{\nonumberline Range of points}{19}{paragraph*.24}%
 \contentsline {paragraph}{\nonumberline Number of holes}{19}{paragraph*.26}%
-\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{19}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Runtime}{19}{subsubsection.4.2.1}%
-\contentsline {paragraph}{\nonumberline Basaeline}{19}{paragraph*.28}%
+\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{20}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Runtime}{20}{subsubsection.4.2.1}%
+\contentsline {paragraph}{\nonumberline Basaeline}{20}{paragraph*.28}%
 \contentsline {paragraph}{\nonumberline Map Size}{20}{paragraph*.30}%
-\contentsline {paragraph}{\nonumberline Route Planning Method}{20}{paragraph*.32}%
-\contentsline {paragraph}{\nonumberline Number of Holes}{20}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline Route Planning Method}{21}{paragraph*.32}%
+\contentsline {paragraph}{\nonumberline Number of Holes}{21}{paragraph*.34}%
 \contentsline {subsubsection}{\numberline {4.2.2}Memory Usage}{21}{subsubsection.4.2.2}%
 \contentsline {paragraph}{\nonumberline Baseline}{21}{paragraph*.36}%
-\contentsline {paragraph}{\nonumberline Map Size}{21}{paragraph*.38}%
-\contentsline {paragraph}{\nonumberline Route Planning Method}{21}{paragraph*.40}%
-\contentsline {paragraph}{\nonumberline Number of holes}{21}{paragraph*.42}%
+\contentsline {paragraph}{\nonumberline Map Size}{22}{paragraph*.38}%
+\contentsline {paragraph}{\nonumberline Route Planning Method}{22}{paragraph*.40}%
+\contentsline {paragraph}{\nonumberline Number of holes}{22}{paragraph*.42}%
 \contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{22}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion and Future Work}{22}{section.5}%
-\contentsline {section}{References}{23}{section*.43}%
-\contentsline {section}{\numberline {A}Map Generation}{24}{appendix.A}%
-\contentsline {section}{\numberline {B}Aerial Mapping}{26}{appendix.B}%
-\contentsline {section}{\numberline {C}Performance and Evaluation}{26}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Mapping}{26}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Pathing}{26}{subsection.C.2}%
+\contentsline {section}{\numberline {5}Conclusion and Future Work}{23}{section.5}%
+\contentsline {section}{References}{24}{section*.43}%
+\contentsline {section}{\numberline {A}Map Generation}{25}{appendix.A}%
+\contentsline {section}{\numberline {B}Aerial Mapping}{27}{appendix.B}%
+\contentsline {section}{\numberline {C}Performance and Evaluation}{27}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Mapping}{27}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Pathing}{27}{subsection.C.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

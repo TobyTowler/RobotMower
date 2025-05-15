@@ -324,9 +324,9 @@ Another possible solution to this problem is to use a machine learning network t
 PyTorch \citep{paszke2019pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
 It was developed to show that usability and speed can both be present in a python implementation of machine learning making it the perfect tool for this task.
 
-\paragraph{Model}
+\paragraph{Model} \
 
-For this specific problem, a Mask R-CNN model is best. 
+For this specific problem, a Mask R-CNN model is best.
 Mask R-CNN models offer strong instance segmentation meaning they are good for outline individual parts of images to within pixels of accuracy and therefore greater accuracy.
 This type of model is ideal for golf courses since they can distinguish between the similarly coloured parts of a golf course e.g. bunkers vs fairway.
 
@@ -347,7 +347,7 @@ Creating this larger, more diverse dataset means custom annotations can be creat
 Labelme \citep{labelme} is an open source python adaptation of an older tool produced originally by MIT allowing users to draw around parts of an image creating boundaries and saving them as a list of points in a \textbf{.JSON} format.
 
 
-One prominent issue with this data set, and probably any data golf course image, is that bunkers are far more common than any other class. 
+One prominent issue with this data set, and probably any data golf course image, is that bunkers are far more common than any other class.
 This can cause over prediction of bunkers and greater uncertainty for other classes.
 There are several possible fixes for this the most likely are more data or class weighting.
 
@@ -356,30 +356,43 @@ Class weights adjusted for the less frequent classes like fairways and greens bu
 The lack of rough is likely because in most cases, they are large single annotations unlike the frequent smaller bunkers which are predicted with very low uncertainty.
 Breaking up roughs into smaller sections covering the same area increases the frequency and diversifies the chaerectistics more.
 
-The model's performance also varied greatly depending on the shade of green in the area. For instance the Danish image above scores well as it shares lots of chaerectistics with the training data but for a golf course in England with darker greens it scores poorly in comparison ~\Cref{am:AEEnglishCourseResult}.
+The model's performance also varied greatly depending on the shade of green in the area. For instance the Danish image above scores well as it shares lots of characteristics with the training data but for a golf course in England with darker greens it scores poorly in comparison ~\Cref{am:AEEnglishCourseResult}.
 
-The fix for this was more diverse training data, the model must understand that different shades can mean the same class is needed.
+The fix for this was more diverse training data, the model must understand that different shades or textures can mean the same class is needed while also being able to distunguish between neighbouring classes.
 
 \paragraph{Training} \
 
 Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
-Tracks per-class accuracy to monitor how well rare classes are being learne
+Each class' statistics are tracked such as number of occurances and total pixel area.
+These values are used to adjust the weighting during training to improve accuracy and reduce uncertainty of each class.
+To account for the less common classes such as water features, images containing these are trained on more often and their weights are boosted to ensure each class is well represented in the learning.
+Boosting exposure to rarer classes like this means the model is well equipped to identify them if they do occur in real world use.
+The accuracy and loss of each class is also taken into consideration to further adjust things if needed.
 
-transforms - horizontal flipping, colour jitter and rotation
+Random transformations are used to increase the robustness of the model, these can happen in a number of ways:
+
+\begin{itemize}
+	\item{Horizontal flipping}
+	\item{Colour jitter}
+	\item{Rotiation}
+\end{itemize}
+Using the same images with slight adjustments increases reliability and should allow the model to work well on images with varying quality but also real world factors like shadowing or sun angle, without needing a great increase in the size of the dataset.
 
 random weight samples > more examples of underrepresented classes - oversample images of these
 
 pretrained backbone maskrcnn_resnet50_fpn
+The training process starts with a pretrained model as a backbone, the maskrcnn_resnet50_fpn model
 
-reduces well classified examples to focus on harder cases
 
-80\% training 20\% validation
 
 Train the model with weighted loss
 
-Stops training if validation loss doesn't improve for 15 epochs
 
-Tracks loss and accuracy per class
+As is typical for maching learning, the dataset is split into 2 parts for each epoch. 80\% for training and 20\% for validation to get a score of the current parameters.
+This approach allows for constant iteration and adjustment on the fly resulting in faster training times and a better final model.
+
+The model uses an early stop method to save more time when possible, as mentioned before the loss of each epoch is tracked if they loss does not improve over a set number of epochs, in this case \textbf{20}.
+This prevents unnecessary training cycles aiming for a set number of epochs.
 
 
 \section{Performance Evaluation}
@@ -481,7 +494,7 @@ This concludes the number of holes is irrelevant and the number of total points 
 \Cref{PE:p:BaselineRT} shows a baseline runtime for the fields2cover library generating with:
 
 \begin{itemize}
-    \item{\textbf{Area}, $10^3\,\text{m}^2$ and 6 sides}
+	\item{\textbf{Area}, $10^3\,\text{m}^2$ and 6 sides}
 	\item{\textbf{Mower size}, 0.22m track wide, 0.15m working width}
 	\item{\textbf{Headland generation}, constant function}
 	\item{\textbf{Swath generation}, brute force}
