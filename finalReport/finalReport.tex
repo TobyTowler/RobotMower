@@ -356,6 +356,10 @@ Class weights adjusted for the less frequent classes like fairways and greens bu
 The lack of rough is likely because in most cases, they are large single annotations unlike the frequent smaller bunkers which are predicted with very low uncertainty.
 Breaking up roughs into smaller sections covering the same area increases the frequency and diversifies the chaerectistics more.
 
+The model's performance also varied greatly depending on the shade of green in the area. For instance the Danish image above scores well as it shares lots of chaerectistics with the training data but for a golf course in England with darker greens it scores poorly in comparison ~\Cref{am:AEEnglishCourseResult}.
+
+The fix for this was more diverse training data, the model must understand that different shades can mean the same class is needed.
+
 \paragraph{Training} \
 
 Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
@@ -702,6 +706,21 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\label{am:AENoRoughDemoTraining}
 \end{figure}
 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/AEEnglishCoursePlain.png}
+	\caption{Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}
+	\label{am:AEEnglishCoursePlain}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/AEEnglishCourseResult.png}
+	\caption{Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}
+	\label{am:AEEnglishCourseResult}
+\end{figure}
 
 
 
