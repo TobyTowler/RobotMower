@@ -9,7 +9,8 @@ Bradski, G., Kaehler, A., and Pisarevsky, V. (2023).
 \bibitem[Canny, 1986]{canny1986computational}
 Canny, J. (1986).
 \newblock A computational approach to edge detection.
-\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, PAMI-8(6):679--698.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  PAMI-8(6):679--698.
 
 \bibitem[ECOVACS, ]{goata3000}
 ECOVACS.
@@ -17,18 +18,23 @@ ECOVACS.
 
 \bibitem[Graham, 1972]{graham1972efficient}
 Graham, R.~L. (1972).
-\newblock An efficient algorithm for determining the convex hull of a finite planar set.
+\newblock An efficient algorithm for determining the convex hull of a finite
+  planar set.
 \newblock {\em Information Processing Letters}, 1(4):132--133.
+
+\bibitem[Lin et~al., 2014]{coco}
+Lin, T.-Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D.,
+  Doll{\'a}r, P., and Zitnick, C.~L. (2014).
+\newblock Microsoft coco: Common objects in context.
 
 \bibitem[Macenski et~al., 2022]{ros}
 Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.
 \newblock {\em Science Robotics}, 7(66):eabm6074.
 
-\bibitem[Paszke et~al., 2019]{paszke2019pytorch}
-Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., and Chintala, S. (2019).
-\newblock Pytorch: An imperative style, high-performance deep learning library.
-\newblock In Wallach, H., Larochelle, H., Beygelzimer, A., d\textquotesingle Alch\'{e}-Buc, F., Fox, E., and Garnett, R., editors, {\em Advances in Neural Information Processing Systems 32}, pages 8024--8035. Curran Associates, Inc.
+\bibitem[Paszke et~al., 2019]{pytorch}
+Paszke, A. et~al. (2019).
+\newblock Pytorch.
 
 \bibitem[Perron and Furnon, ]{ortools}
 Perron, L. and Furnon, V.
@@ -49,7 +55,8 @@ wkentaro.
 
 \bibitem[Zhao and Hwang, 2023]{zhao2023complete}
 Zhao, S. and Hwang, S.-H. (2023).
-\newblock Complete coverage path planning scheme for autonomous navigation ros-based robots.
+\newblock Complete coverage path planning scheme for autonomous navigation
+  ros-based robots.
 \newblock {\em ICT Express}, 9(3):361--366.
 
 \end{thebibliography}

@@ -1,58 +1,52 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Fedora 40)
+This is BibTeX, Version 0.99d (TeX Live 2026/dev/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: finalReport.aux
 The style file: apalike.bst
 Database file #1: reportbib.bib
-Warning--entry type for "ortools" isn't style-file defined
---line 84 of file reportbib.bib
-I was expecting a `,' or a `}'---line 109 of file reportbib.bib
- :     
- :     url={https://github.com/wkentaro/labelme?tab=readme-ov-file}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--empty year in goata3000
+Warning--empty journal in pytorch
 Warning--empty year in ortools
 Warning--empty year in imow5
 Warning--empty year in labelme
-You've used 11 entries,
+You've used 12 entries,
             1935 wiz_defined-function locations,
-            531 strings with 5395 characters,
-and the built_in function-call counts, 4431 in all, are:
-= -- 423
-> -- 242
+            531 strings with 4958 characters,
+and the built_in function-call counts, 3941 in all, are:
+= -- 388
+> -- 170
 < -- 9
-+ -- 88
-- -- 84
-* -- 374
-:= -- 803
++ -- 60
+- -- 56
+* -- 313
+:= -- 732
 add.period$ -- 31
-call.type$ -- 11
-change.case$ -- 94
-chr.to.int$ -- 11
-cite$ -- 15
-duplicate$ -- 145
-empty$ -- 258
-format.name$ -- 99
-if$ -- 835
+call.type$ -- 12
+change.case$ -- 87
+chr.to.int$ -- 12
+cite$ -- 17
+duplicate$ -- 139
+empty$ -- 247
+format.name$ -- 73
+if$ -- 733
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 55
-num.names$ -- 35
-pop$ -- 80
+newline$ -- 58
+num.names$ -- 36
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 87
 quote$ -- 0
-skip$ -- 113
+skip$ -- 109
 stack$ -- 0
-substring$ -- 275
-swap$ -- 16
-text.length$ -- 1
+substring$ -- 247
+swap$ -- 4
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
-warning$ -- 4
-while$ -- 33
+type$ -- 72
+warning$ -- 5
+while$ -- 31
 width$ -- 0
-write$ -- 130
-(There was 1 error message)
+write$ -- 136
+(There were 5 warnings)

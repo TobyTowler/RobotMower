@@ -321,17 +321,14 @@ All of these means use of canny edge detection can often cause more problems tha
 
 \subsubsection{Machine Learning Approach}
 Another possible solution to this problem is to use a machine learning network to predict the areas of the golf course.
-PyTorch \citep{paszke2019pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
+PyTorch \citep{pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
 It was developed to show that usability and speed can both be present in a python implementation of machine learning making it the perfect tool for this task.
 
 \paragraph{Model} \
 
 For this specific problem, a Mask R-CNN model is best.
-Mask R-CNN models offer strong instance segmentation meaning they are good for outline individual parts of images to within pixels of accuracy and therefore greater accuracy.
+Mask R-CNN models offer strong instance segmentation meaning they are good for outline individual parts of images to within pixels of accuracy and therefore greater precision.
 This type of model is ideal for golf courses since they can distinguish between the similarly coloured parts of a golf course e.g. bunkers vs fairway.
-
-
-
 
 \paragraph{Data Set} \
 
@@ -362,10 +359,10 @@ The fix for this was more diverse training data, the model must understand that 
 
 \paragraph{Training} \
 
-Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
-Each class' statistics are tracked such as number of occurances and total pixel area.
-These values are used to adjust the weighting during training to improve accuracy and reduce uncertainty of each class.
-To account for the less common classes such as water features, images containing these are trained on more often and their weights are boosted to ensure each class is well represented in the learning.
+% Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
+Each class' statistics are tracked such as number of occurances and total pixel area, these values are used to adjust the weighting during training to improve accuracy and reduce uncertainty of each class.
+To account for the less common classes such as water features, images containing these are trained on more often with their weights boosted to ensure each class is well represented in the learning.
+Similar weighting is used in the loss function of each class to further emphasise their rarity, this is innacurate prediction of less frequent classes hold a greater penalty than more frequent ones.
 Boosting exposure to rarer classes like this means the model is well equipped to identify them if they do occur in real world use.
 The accuracy and loss of each class is also taken into consideration to further adjust things if needed.
 
@@ -378,15 +375,9 @@ Random transformations are used to increase the robustness of the model, these c
 \end{itemize}
 Using the same images with slight adjustments increases reliability and should allow the model to work well on images with varying quality but also real world factors like shadowing or sun angle, without needing a great increase in the size of the dataset.
 
-random weight samples > more examples of underrepresented classes - oversample images of these
-
-pretrained backbone maskrcnn_resnet50_fpn
-The training process starts with a pretrained model as a backbone, the maskrcnn_resnet50_fpn model
-
-
-
-Train the model with weighted loss
-
+The model starts with PyTorch's \textbf{maskrcnn_resnet50_fpn} architecture with pretrained weights on the COCO \citep{coco} dataset.
+This model serves as a strong backbone as it produces high accuracy in segmentation tasks while simultaneously being able to quickly learn on new domains.
+Its RoIAlign layer features pixel to pixel mapping between input images and masks predictions resulting in much finer boundaries that previous generations.
 
 As is typical for maching learning, the dataset is split into 2 parts for each epoch. 80\% for training and 20\% for validation to get a score of the current parameters.
 This approach allows for constant iteration and adjustment on the fly resulting in faster training times and a better final model.
