@@ -5,8 +5,8 @@ PE lay out
 
 # Report
 
-Cell decomposition
-ML stuff
+- [x] Cell decomposition
+- [-] ML stuff
 Future work
 - [x] Abstract
 
@@ -17,7 +17,7 @@ I am cooked
 
 Finaltesting
 
-mapOrientation / scaling
+- [-] mapOrientation / scaling
 
 ^ Putting it all together.
 

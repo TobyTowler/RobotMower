@@ -15,10 +15,10 @@
 \contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{12}{subsubsection.3.2.5}%
 \contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{12}{subsubsection.3.2.6}%
 \contentsline {subsubsection}{\numberline {3.2.7}Final Setup}{12}{subsubsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{13}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{13}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{14}{subsubsection.3.3.2}%
-\contentsline {paragraph}{\nonumberline Model}{14}{paragraph*.6}%
+\contentsline {paragraph}{\nonumberline Model}{15}{paragraph*.6}%
 \contentsline {paragraph}{\nonumberline Data Set}{15}{paragraph*.8}%
 \contentsline {paragraph}{\nonumberline Training}{16}{paragraph*.10}%
 \contentsline {section}{\numberline {4}Performance Evaluation}{17}{section.4}%
@@ -27,11 +27,11 @@
 \contentsline {paragraph}{\nonumberline BaseLine}{18}{paragraph*.12}%
 \contentsline {paragraph}{\nonumberline Number of points}{18}{paragraph*.14}%
 \contentsline {paragraph}{\nonumberline Range of points}{18}{paragraph*.16}%
-\contentsline {paragraph}{\nonumberline Number of holes}{18}{paragraph*.18}%
+\contentsline {paragraph}{\nonumberline Number of holes}{19}{paragraph*.18}%
 \contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{19}{subsubsection.4.1.2}%
 \contentsline {paragraph}{\nonumberline Baseline}{19}{paragraph*.20}%
 \contentsline {paragraph}{\nonumberline Number of points}{19}{paragraph*.22}%
-\contentsline {paragraph}{\nonumberline Range of points}{19}{paragraph*.24}%
+\contentsline {paragraph}{\nonumberline Range of points}{20}{paragraph*.24}%
 \contentsline {paragraph}{\nonumberline Number of holes}{20}{paragraph*.26}%
 \contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{20}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Runtime}{20}{subsubsection.4.2.1}%
@@ -48,8 +48,9 @@
 \contentsline {section}{\numberline {5}Conclusion and Future Work}{23}{section.5}%
 \contentsline {section}{References}{24}{section*.43}%
 \contentsline {section}{\numberline {A}Map Generation}{25}{appendix.A}%
-\contentsline {section}{\numberline {B}Aerial Mapping}{27}{appendix.B}%
-\contentsline {section}{\numberline {C}Performance and Evaluation}{31}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Mapping}{31}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Pathing}{35}{subsection.C.2}%
+\contentsline {section}{\numberline {B}Complete Coverage Path Planning}{27}{appendix.B}%
+\contentsline {section}{\numberline {C}Aerial Mapping}{27}{appendix.C}%
+\contentsline {section}{\numberline {D}Performance and Evaluation}{31}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Mapping}{31}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}Pathing}{35}{subsection.D.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

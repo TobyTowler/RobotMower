@@ -274,7 +274,9 @@ So the best method for this use case is likely the Reeds-Shepp as it can work wi
 
 
 \subsubsection{Cell Decomposition}
-
+For shapes with unusual shapes, a large "L" shape for example see \Cref{ccpp:cellDecomp}, constant swath angle can be problematic.
+The simple fix for this issue is to treat both sections of fields as separate objects planning coverage optimally for each "straight".
+This method of abstraction is responsible for huge saving in both processing mowing time due to reducing the amount of unnecessary swaths and turns.
 
 \subsubsection{Final Setup}
 
@@ -675,8 +677,17 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\end{algorithmic}
 \end{algorithm}
 
-
 \clearpage
+\section{Complete Coverage Path Planning}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./images/f2cCellDecompL.png}
+	\caption{Example of an L shaped field where cell decomposition is optimal, taken from Fields2Cover docs}
+	\label{ccpp:cellDecomp}
+\end{figure}
+
+% \clearpage
 \section{Aerial Mapping}
 
 \begin{figure}[h!]
@@ -703,14 +714,14 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/overheadGolfCourse_visualisation.png}
+	\includegraphics[width=0.6\textwidth]{./images/overheadGolfCourse_visualisation.png}
 	\caption{An example ouput of pytorch model trained on the Danish Golf Course data set}
 	\label{am:ohGCDanish}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/AENoRoughDemoTraining.png}
+	\includegraphics[width=0.6\textwidth]{./images/AENoRoughDemoTraining.png}
 	\caption{Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}
 	\label{am:AENoRoughDemoTraining}
 \end{figure}

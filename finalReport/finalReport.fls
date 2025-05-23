@@ -428,6 +428,7 @@ OUTPUT finalReport.toc
 INPUT ./finalReport.lof
 INPUT ./finalReport.lof
 INPUT finalReport.lof
+OUTPUT finalReport.lof
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
@@ -439,7 +440,6 @@ INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-OUTPUT finalReport.lof
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
@@ -470,6 +470,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT ./images/f2cCellDecompL.png
+INPUT ./images/f2cCellDecompL.png
+INPUT ./images/f2cCellDecompL.png
+INPUT ./images/f2cCellDecompL.png
+INPUT ./images/f2cCellDecompL.png
 INPUT ./images/openCvCannyExample.jpg
 INPUT ./images/openCvCannyExample.jpg
 INPUT ./images/openCvCannyExample.jpg
