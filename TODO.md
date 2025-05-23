@@ -8,13 +8,18 @@ PE lay out
 Cell decomposition
 ML stuff
 Future work
-Summary
-Abstract
+- [x] Abstract
 
 FML
 I am cooked
 
 # Code
+
+Finaltesting
+
+mapOrientation / scaling
+
+^ Putting it all together.
 
 ## AE
 use maskRCNNModel2.py and testWeights.py

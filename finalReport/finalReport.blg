@@ -10,34 +10,34 @@ Warning--empty year in imow5
 Warning--empty year in labelme
 You've used 12 entries,
             1935 wiz_defined-function locations,
-            531 strings with 4958 characters,
-and the built_in function-call counts, 3941 in all, are:
-= -- 388
-> -- 170
-< -- 9
-+ -- 60
-- -- 56
-* -- 313
-:= -- 732
+            531 strings with 4830 characters,
+and the built_in function-call counts, 3761 in all, are:
+= -- 377
+> -- 140
+< -- 10
++ -- 48
+- -- 44
+* -- 289
+:= -- 696
 add.period$ -- 31
 call.type$ -- 12
-change.case$ -- 87
+change.case$ -- 81
 chr.to.int$ -- 12
 cite$ -- 17
 duplicate$ -- 139
 empty$ -- 247
-format.name$ -- 73
-if$ -- 733
+format.name$ -- 63
+if$ -- 705
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
 newline$ -- 58
 num.names$ -- 36
-pop$ -- 70
+pop$ -- 63
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 81
 quote$ -- 0
-skip$ -- 109
+skip$ -- 110
 stack$ -- 0
 substring$ -- 247
 swap$ -- 4

@@ -81,8 +81,13 @@
 %\confidential{The information contained in this document is confidential, privileged and only for the information of the intended recipient and may not be used, published or redistributed without the prior written consent of FruitName Ltd}
 
 \summary{
-The abstract of your report summarises your entire work () in no more than half a page. It should include the context of your work including its main objective, what methods you employed, how you implemented these, what the outcomes were and a final statement as a conclusion. It should not contain acronyms, abbreviations, elements of a literature review (though a statement of related work is permissible if it is crucial to your work) or future work. The abstract should be written when everything else has been written up and the project is finished! is this workng
+The "Robot Mower" is a self-contained lawn mower unit aimed at maintaining golf courses. 
+This project is a redesign of the movement planning systems, enhancing and automating the map generation and complete coverage path planning techniques through external libraries and machine learning methods.
+The complete coverage path planning module adapts a powerful C++ library designed for agricultural use complete with obstacle avoidance, to the golf course use case.
+Map generation is now comprised of an orthophoto or drone image input to a custom MaskRCNN PyTorch machine learning model trained on golf courses from around the world to ensure consistent and accurate results correctly idenifying all classes.
+In conclusion, the complete coverage path planning and aerial image map generation successfully automates the route planning issues of the Robot Mower.
 }
+
 
 \acknowledgements{
     Edwin Ren, Eden Attlebourgh
@@ -375,7 +380,7 @@ Random transformations are used to increase the robustness of the model, these c
 \end{itemize}
 Using the same images with slight adjustments increases reliability and should allow the model to work well on images with varying quality but also real world factors like shadowing or sun angle, without needing a great increase in the size of the dataset.
 
-The model starts with PyTorch's \textbf{maskrcnn_resnet50_fpn} architecture with pretrained weights on the COCO \citep{coco} dataset.
+The model starts with PyTorch's \textbf{maskrcnn\_resnet50\_fpn} architecture with pretrained weights on the COCO \citep{coco} dataset.
 This model serves as a strong backbone as it produces high accuracy in segmentation tasks while simultaneously being able to quickly learn on new domains.
 Its RoIAlign layer features pixel to pixel mapping between input images and masks predictions resulting in much finer boundaries that previous generations.
 
@@ -713,7 +718,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./images/AEEnglishCoursePlain.png}
+	\includegraphics[width=0.5\textwidth]{./images/AEEnglishCoursePlain.png}
 	\caption{Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}
 	\label{am:AEEnglishCoursePlain}
 \end{figure}
@@ -728,13 +733,14 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 
 
+\clearpage
 \section{Performance and Evaluation}
 \subsection{Mapping}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselineRT.png}
+	\includegraphics[width=0.45\textwidth]{./images/mapGenBaselineRT.png}
 	\caption{Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}
 	\label{PE:mg:baselineRT}
 \end{figure}
@@ -742,7 +748,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsRT.png}
+	\includegraphics[width=0.45\textwidth]{./images/mapGenPointsRT.png}
 	\caption{Runtime of the map generation algorithm with variable points, 400 range, 0 holes}
 	\label{PE:mg:points}
 \end{figure}
@@ -792,10 +798,11 @@ Another essential section that should keep its title as suggested. Briefly discu
 \end{figure}
 
 
+\clearpage
 \subsection{Pathing}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingBaseLineRT.png}
+	\includegraphics[width=0.45\textwidth]{./images/pathingBaseLineRT.png}
 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
 	\label{PE:p:BaselineRT}
 \end{figure}
@@ -803,7 +810,7 @@ Another essential section that should keep its title as suggested. Briefly discu
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingSizeRt.png}
+	\includegraphics[width=0.45\textwidth]{./images/pathingSizeRt.png}
 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
 	\label{PE:p:SizeRT}
 \end{figure}

@@ -312,7 +312,7 @@ def process_and_show_all_images(
     print("\nAll images processed.")
 
 
-def main():
+def genMap(img):
     # Set parameters
     model_path = (
         # "./models/golf_course_model_bestFROM1.pth"  # Path to your trained model
@@ -347,4 +347,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    genMap("./imgs/testingdata/AIgenerated.png")

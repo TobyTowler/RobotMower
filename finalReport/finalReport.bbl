@@ -9,8 +9,7 @@ Bradski, G., Kaehler, A., and Pisarevsky, V. (2023).
 \bibitem[Canny, 1986]{canny1986computational}
 Canny, J. (1986).
 \newblock A computational approach to edge detection.
-\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
-  PAMI-8(6):679--698.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, PAMI-8(6):679--698.
 
 \bibitem[ECOVACS, ]{goata3000}
 ECOVACS.
@@ -18,13 +17,11 @@ ECOVACS.
 
 \bibitem[Graham, 1972]{graham1972efficient}
 Graham, R.~L. (1972).
-\newblock An efficient algorithm for determining the convex hull of a finite
-  planar set.
+\newblock An efficient algorithm for determining the convex hull of a finite planar set.
 \newblock {\em Information Processing Letters}, 1(4):132--133.
 
-\bibitem[Lin et~al., 2014]{coco}
-Lin, T.-Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D.,
-  Doll{\'a}r, P., and Zitnick, C.~L. (2014).
+\bibitem[Lin and Maire, 2014]{coco}
+Lin, T.-Y. and Maire (2014).
 \newblock Microsoft coco: Common objects in context.
 
 \bibitem[Macenski et~al., 2022]{ros}
@@ -55,8 +52,7 @@ wkentaro.
 
 \bibitem[Zhao and Hwang, 2023]{zhao2023complete}
 Zhao, S. and Hwang, S.-H. (2023).
-\newblock Complete coverage path planning scheme for autonomous navigation
-  ros-based robots.
+\newblock Complete coverage path planning scheme for autonomous navigation ros-based robots.
 \newblock {\em ICT Express}, 9(3):361--366.
 
 \end{thebibliography}

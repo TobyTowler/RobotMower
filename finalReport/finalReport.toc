@@ -49,7 +49,7 @@
 \contentsline {section}{References}{24}{section*.43}%
 \contentsline {section}{\numberline {A}Map Generation}{25}{appendix.A}%
 \contentsline {section}{\numberline {B}Aerial Mapping}{27}{appendix.B}%
-\contentsline {section}{\numberline {C}Performance and Evaluation}{27}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Mapping}{27}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Pathing}{27}{subsection.C.2}%
+\contentsline {section}{\numberline {C}Performance and Evaluation}{31}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Mapping}{31}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Pathing}{35}{subsection.C.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
