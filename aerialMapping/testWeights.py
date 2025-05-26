@@ -11,7 +11,7 @@ from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
 import traceback
 
 # Your dataset class (from training script)
-from maskRCNNmodel import GolfCourseDataset, get_transform, get_model
+from aerialMapping.maskRCNNmodel import GolfCourseDataset, get_transform, get_model
 
 
 def load_model(model_path, num_classes):
@@ -226,27 +226,6 @@ def create_outline_image(result, output_path=None):
     return outlines
 
 
-# def main():
-#     # Set parameters
-#     model_path = "golf_course_model_epoch_10.pth"  # Path to your trained model
-#     test_image_dir = "./imgs/testingdata/"  # Directory with test images
-#     output_dir = "predictions"  # Directory to save predictions
-#
-#     # Define class names (must match training)
-#     class_names = ["rough", "green", "fairway", "bunker", "water"]
-#     # class_names = ["background", "green", "fairway", "bunker", "rough", "water"]
-#
-#     # Load model
-#     model = load_model(model_path, len(class_names))
-#
-#     # Test on directory
-#     test_model_on_directory(model, test_image_dir, class_names, output_dir)
-#
-#     # Or test on a single image
-#     test_image = "./imgs/testingdata/AdobeGold.jpg"
-#     result = predict_image(model, test_image, class_names)
-#     visualize_prediction(result, "single_prediction.png")
-#
 def process_and_show_all_images(
     model, image_dir, class_names, output_dir=None, confidence_threshold=0.7
 ):
@@ -313,13 +292,9 @@ def process_and_show_all_images(
 
 
 def genMap(img):
-    # Set parameters
     model_path = (
-        # "./models/golf_course_model_bestFROM1.pth"  # Path to your trained model
-        "./models/golf_course_model_best.pth"  # Path to your trained model
+        "aerialMapping/models/golf_course_model_best.pth"  # Path to your trained model
     )
-    test_image_dir = "./imgs/testingdata/"  # Directory with test images
-    output_dir = "predictions"  # Directory to save predictions
 
     # Define correct class names for your model
     # The model expects 6 classes (including background), but your list only has 5
@@ -337,9 +312,10 @@ def genMap(img):
 
     # Also process a specific image
     print("\nProcessing individual image...")
-    test_image = "./imgs/testingdata/AIgenerated.png"
+    # test_image = "./imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg"
     # test_image = "./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_04_01.jpg"
     # test_image = "./imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg"
+    test_image = img
     result = predict_image(model, test_image, class_names, confidence_threshold=0.6)
     visualize_prediction(
         result, "single_prediction.png", show=True

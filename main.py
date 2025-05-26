@@ -1,7 +1,12 @@
 import argparse
 import os
 
-from aerialMapping.testWeights import genMap
+from aerialMapping.runModel import run_model_and_get_outlines
+from aerialMapping.utils import save_outlines_to_json
+
+# import sys
+# sys.path.append(os.path.join(os.path.dirname(__file__), 'aerialMapping'))
+# from testWeights import genMap
 
 
 def main():
@@ -14,16 +19,17 @@ def main():
         print(f"Error: Image file '{args.image_path}' not found")
         return
 
-    if args.verbose:
-        print(f"Processing image: {args.image_path}")
-        if args.output:
-            print(f"Output will be saved to: {args.output}")
-
     img = args.image_path
 
     print("Welcome!")
-    print(f"Image {img} detected")
-    genMap(img)
+    # print(f"Image {img} detected")
+    outline = run_model_and_get_outlines(img)
+
+    print(outline)
+
+    path = save_outlines_to_json(outline, img)
+
+    print(path)
 
 
 if __name__ == "__main__":
