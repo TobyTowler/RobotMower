@@ -11,7 +11,12 @@ from aerialMapping.utils import save_outlines_to_json
 
 def main():
     parser = argparse.ArgumentParser(description="Process an image file")
-    parser.add_argument("image_path", help="Path to the image file")
+    parser.add_argument(
+        "image_path",
+        nargs="?",
+        default="./aerialMapping/imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg",
+        help="Path to the image file",
+    )
 
     args = parser.parse_args()
 

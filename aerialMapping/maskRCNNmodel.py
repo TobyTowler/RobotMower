@@ -468,7 +468,6 @@ def evaluate(model, data_loader, device):
     return mean_accuracy, class_accuracy
 
 
-# Main training script
 def main():
     # Set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -483,41 +482,78 @@ def main():
         torch.backends.cudnn.deterministic = False
 
     # Create dataset with class weights calculation
-    dataset = GolfCourseDataset(
+    full_dataset = GolfCourseDataset(
         img_dir="./imgs/rawImgs/",
         json_dir="./imgs/annotationsTesting/",
-        transforms=get_transform(train=True),
-        compute_class_weights=True,  # Compute class weights
+        transforms=None,  # Don't apply transforms yet
+        compute_class_weights=True,
     )
 
     # Get class weights for loss function
-    class_weights = getattr(dataset, "class_weights", None)
+    class_weights = getattr(full_dataset, "class_weights", None)
     if class_weights is not None:
         class_weights = class_weights.to(device)
         print(f"Using class weights: {class_weights}")
 
-    # Split into train/validation
-    indices = torch.randperm(len(dataset)).tolist()
-    train_size = int(0.8 * len(dataset))
+    # Split into train/validation indices
+    indices = torch.randperm(len(full_dataset)).tolist()
+    train_size = int(0.8 * len(full_dataset))
     train_indices = indices[:train_size]
     val_indices = indices[train_size:]
 
+    print(f"Total samples: {len(full_dataset)}")
+    print(f"Train samples: {len(train_indices)}")
+    print(f"Validation samples: {len(val_indices)}")
+
+    # Create training dataset with transforms
+    train_dataset_with_transforms = GolfCourseDataset(
+        img_dir="./imgs/rawImgs/",
+        json_dir="./imgs/annotationsTesting/",
+        transforms=get_transform(train=True),
+        compute_class_weights=False,  # Already computed
+    )
+
+    # Create validation dataset with transforms
+    val_dataset_with_transforms = GolfCourseDataset(
+        img_dir="./imgs/rawImgs/",
+        json_dir="./imgs/annotationsTesting/",  # Same directory!
+        transforms=get_transform(train=False),
+        compute_class_weights=False,  # Already computed
+    )
+
+    # Create subsets using the same indices
+    train_dataset = torch.utils.data.Subset(
+        train_dataset_with_transforms, train_indices
+    )
+    val_dataset = torch.utils.data.Subset(val_dataset_with_transforms, val_indices)
+
     # Create weighted sampler for training set to address class imbalance
+    train_sample_weights = [full_dataset.sample_weights[i] for i in train_indices]
     train_sampler = WeightedRandomSampler(
-        weights=[dataset.sample_weights[i] for i in train_indices],
+        weights=train_sample_weights,
         num_samples=len(train_indices),
         replacement=True,
     )
 
-    train_dataset = torch.utils.data.Subset(dataset, train_indices)
-    val_dataset = torch.utils.data.Subset(
-        GolfCourseDataset(
-            img_dir="./imgs/rawImgs/",
-            json_dir="./imgs/annotations/",
-            transforms=get_transform(train=False),
-        ),
-        val_indices,
-    )
+    # Test the datasets before training
+    print("Testing dataset access...")
+    try:
+        # Test train dataset
+        train_sample = train_dataset[0]
+        print(f"✓ Train dataset working - first sample loaded")
+
+        # Test val dataset
+        val_sample = val_dataset[0]
+        print(f"✓ Val dataset working - first sample loaded")
+
+        # Test last sample
+        if len(val_dataset) > 0:
+            val_sample = val_dataset[len(val_dataset) - 1]
+            print(f"✓ Val dataset working - last sample loaded")
+
+    except Exception as e:
+        print(f"✗ Dataset test failed: {e}")
+        return
 
     # Create data loaders with multiple workers for CPU parallelism
     train_loader = DataLoader(
@@ -539,7 +575,7 @@ def main():
     )
 
     # Create model with reduced complexity if needed
-    num_classes = len(dataset.class_names)
+    num_classes = len(full_dataset.class_names)
     model = get_model(num_classes)
     model.to(device)
 

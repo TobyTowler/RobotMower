@@ -1,7 +1,8 @@
 # Ask Edwin
 
-ML Dataset
-PE lay out
+ML PE
+Abstract
+
 
 # Report
 
@@ -9,15 +10,16 @@ PE lay out
 - [-] ML stuff
 Future work
 - [x] Abstract
+- [ ] Redo all graphs - remove title
 
 FML
 I am cooked
 
 # Code
 
-Finaltesting
+- Finaltesting
 
-- [-] mapOrientation / scaling
+- [t] mapOrientation / scaling
 
 #### golf course path
     * avoid holes

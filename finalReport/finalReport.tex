@@ -293,12 +293,12 @@ This method of abstraction is responsible for huge saving in both processing mow
 \subsection{Aerial Map Generation}
 Previously, for the program to take in a real world map from an image of the real world, the user would have to upload the picture and manually trace the outline, this could cause some problems.
 For example, the outline is only as accurate as the user's mouse placement, likely skipping some smaller corners to save time or due to inability to be accurate to the necessary degree.
-Automating this labourious and time consuming task would positively increase user experience and usability, this can be done using algorithmic and machine learning approaches.
+Automating this laborious and time-consuming task would positively increase user experience and usability, this can be done using algorithmic and machine learning approaches.
 
 \subsubsection{Algorithmic Approaches}
-There are several algorithmic methods that try to achieve this task from several different librarys. A popular library for image processing is scikit-image.
+There are several algorithmic methods that try to achieve this task from several different librarys. A popular library for image processing is OpenCV\citep{opencv_library}.
 
-OpenCV's Canny edge detection implementation \citep{opencv_library} follows the classic algorithm developed by Canny \citep{canny1986computational}.
+OpenCV's Canny edge detection implementation follows the classic algorithm developed by Canny \citep{canny1986computational}.
 The algorithm works through several steps to detect edges in images:
 \begin{itemize}
 	\item \textbf{Gaussian Blur}: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
@@ -339,38 +339,38 @@ This type of model is ideal for golf courses since they can distinguish between 
 
 \paragraph{Data Set} \
 
-A models training data needs to be closely related to its real world input data, for the Robot Mower that is satelite images or orthophotos from above the desired mowing area.
+A models training data needs to be closely related to its real world input data, for the Robot Mower that is satellite and drone images or orthophotos from above the desired mowing area.
 Training data also needs to be clearly and consistently annotated to produce accurate, reliable results in practice.
-The only orthophoto data set publicly available is the danish golf course data set, a dataset produced by the Danish government, however common annotations lack quality and consistency; the outlines do not cover the whole area of single sections and often are missing entirely.
-Upon testing the data with theses annotations, it produced faulty results including both true negative and false positives ~\Crefrange{am:AGDanish}{am:ohGCDanish}.
-
-Since the raw orthophotos are still highquality images, they are suitable but to avoid over training on specific regions a mix of golf course images will be used in training data this will include some images form the Danish date set, Google Earth and various other sources.
-This should also promote more diverse predictions from data with different shadow angles, grass colour and design.
-Creating this larger, more diverse dataset means custom annotations can be created for all images with more consistent and higher quality boundaries than those found on the Danish data set.
+The only orthophoto data set publicly available is the danish golf course data set \citep{danishgolf}, a dataset produced by the Danish government, however common annotations lack quality and consistency; the outlines do not cover the whole area of single sections and often are missing entirely.
+Upon testing the data with these annotations, it produced faulty results including both true negative and false positives ~\Crefrange{am:AGDanish}{am:ohGCDanish}.
+However, since the raw orthophotos are still highquality images, they are still suitable inputs but will require custom annotations.
 
 Labelme \citep{labelme} is an open source python adaptation of an older tool produced originally by MIT allowing users to draw around parts of an image creating boundaries and saving them as a list of points in a \textbf{.JSON} format.
 
+To avoid over training on specific regions a mix of golf course images were going to be used in the training data including some images form the Danish date set, Google Earth and various other sources.
+This was in an attempt to promote more diverse predictions from data with different shadow angles, grass colour and design.
+However, in practice the vast range of shades and colours was a weakness rather than a strength.
+Results with this larger dataset lead to unreliable results across all tests on data that was and was not used in the training phase, see ~\Cref{am:AEEnglishCourseResult}, the result of a golf course in England, featuring much darker greens than the large proportion Danish training data.
+To fix this it seemed that region specific specialisation was needed which for the reasons mentioned above made sense to be Denmark based golf courses.
 
-One prominent issue with this data set, and probably any data golf course image, is that bunkers are far more common than any other class.
-This can cause over prediction of bunkers and greater uncertainty for other classes.
-There are several possible fixes for this the most likely are more data or class weighting.
+One prominent issue with this data set, and probably any data golf course image for that matter, is that bunkers are far more common than any other class.
+This can cause overprediction of bunkers while causing unbalanced results and greater uncertainty for other classes.
+The remedies to this issue are simply more training data and to implement a class weighting system in training and prediction.
 
 Doubling the data count caused slightly more consistency while adding class weights was a game changer.
 Class weights adjusted for the less frequent classes like fairways and greens but still not enough for rough as seen in ~\Cref{am:AENoRoughDemoTraining}.
-The lack of rough is likely because in most cases, they are large single annotations unlike the frequent smaller bunkers which are predicted with very low uncertainty.
-Breaking up roughs into smaller sections covering the same area increases the frequency and diversifies the chaerectistics more.
-
-The model's performance also varied greatly depending on the shade of green in the area. For instance the Danish image above scores well as it shares lots of characteristics with the training data but for a golf course in England with darker greens it scores poorly in comparison ~\Cref{am:AEEnglishCourseResult}.
-
-The fix for this was more diverse training data, the model must understand that different shades or textures can mean the same class is needed while also being able to distunguish between neighbouring classes.
+The lack of rough in this instance was because in most cases, they are large single annotations unlike the frequent smaller bunkers which are predicted with very low uncertainty.
+Breaking up roughs into smaller sections covering the same area increases the frequency and diversifies the characteristics, progressing towards a more balanced situation for the same reason bunkers are predicted with high accuracy.
 
 \paragraph{Training} \
 
 % Tracks stats for each class(pixel area, count) > sample weights - boosts rare classes
-Each class' statistics are tracked such as number of occurances and total pixel area, these values are used to adjust the weighting during training to improve accuracy and reduce uncertainty of each class.
+The training process is important when considering a good model. 
+Appropriate parameters are needed to ensure good learning and correction, the following are some parameters used in this training loop.
+Each class' statistics are tracked such as number of occurrences and total pixel area, these values are used to adjust the weighting during training to improve accuracy and reduce uncertainty of each class.
 To account for the less common classes such as water features, images containing these are trained on more often with their weights boosted to ensure each class is well represented in the learning.
-Similar weighting is used in the loss function of each class to further emphasise their rarity, this is innacurate prediction of less frequent classes hold a greater penalty than more frequent ones.
-Boosting exposure to rarer classes like this means the model is well equipped to identify them if they do occur in real world use.
+Similar weighting is used in the loss function of each class to further emphasise their rarity, this is inaccurate prediction of less frequent classes hold a greater penalty than more frequent ones.
+Boosting exposure to rarer classes like this means the model is well-equipped to identify them if they do occur in real world use.
 The accuracy and loss of each class is also taken into consideration to further adjust things if needed.
 
 Random transformations are used to increase the robustness of the model, these can happen in a number of ways:
@@ -386,11 +386,84 @@ The model starts with PyTorch's \textbf{maskrcnn\_resnet50\_fpn} architecture wi
 This model serves as a strong backbone as it produces high accuracy in segmentation tasks while simultaneously being able to quickly learn on new domains.
 Its RoIAlign layer features pixel to pixel mapping between input images and masks predictions resulting in much finer boundaries that previous generations.
 
-As is typical for maching learning, the dataset is split into 2 parts for each epoch. 80\% for training and 20\% for validation to get a score of the current parameters.
+As is typical for machine learning, the dataset is split into 2 parts for each training epoch. 80\% for training and 20\% for validation to get an approximate score of the current parameters.
 This approach allows for constant iteration and adjustment on the fly resulting in faster training times and a better final model.
 
-The model uses an early stop method to save more time when possible, as mentioned before the loss of each epoch is tracked if they loss does not improve over a set number of epochs, in this case \textbf{20}.
-This prevents unnecessary training cycles aiming for a set number of epochs.
+The model uses an early stop method to save more time when possible, as mentioned before the loss of each epoch is tracked if the loss does not improve over a set number of epochs, in this case \textbf{20}, training is ceased and the best model is saved.
+This prevents unnecessary training cycles when aiming for a set number of epochs.
+
+
+\paragraph{Basic Evaluation} \
+
+With a complete data set and the outlines parameters above, these are some current performance metrics of the resulting model.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c}
+\hline
+\textbf{Overall Metric} & \textbf{Value} \\
+\hline
+\hline
+Overall Precision & 0.7035 \\
+Overall Recall & 0.7943 \\
+Overall F1-Score & 0.7462 \\
+Mean IoU & 0.7934 \\
+Pixel Accuracy & 0.7718 \\
+Total Detections & 1383 \\
+Total Ground Truth & 1225 \\
+\hline
+\end{tabular}
+\caption{Overall Model Performance Metrics}
+\label{tab:overall_metrics}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|c}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{IoU} & \textbf{TP} & \textbf{FP} & \textbf{FN} \\
+\hline
+\hline
+Green & 0.7449 & 0.8679 & 0.8017 & 0.8760 & 184 & 63 & 28 \\
+Fairway & 0.8092 & 0.8327 & 0.8208 & 0.7933 & 229 & 54 & 46 \\
+Bunker & 0.9197 & 0.8253 & 0.8700 & 0.8371 & 378 & 33 & 80 \\
+Rough & 0.3811 & 0.6230 & 0.4729 & 0.5743 & 157 & 255 & 95 \\
+Water & 0.8333 & 0.8929 & 0.8621 & 0.9025 & 25 & 5 & 3 \\
+\hline
+\end{tabular}
+\caption{Per-Class Detailed Performance Metrics}
+\label{tab:class_metrics}
+\end{table}
+
+
+Where each term is defined as follows:
+\begin{itemize}
+    \item \textbf{Precision}: The proportion of correctly predicted positive instances out of all instances predicted as positive.\\
+    Formula: $\displaystyle \text{Precision} = \frac{TP}{TP + FP}$
+
+    \item \textbf{Recall} (Sensitivity or True Positive Rate): The proportion of correctly predicted positive instances out of all actual positive instances.\\
+    Formula: $\displaystyle \text{Recall} = \frac{TP}{TP + FN}$
+
+    \item \textbf{F1-Score}: The harmonic mean of Precision and Recall, used to balance both metrics.\\
+    Formula: $\displaystyle \text{F1} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
+
+    \item \textbf{IoU (Intersection over Union)}: Measures the overlap between the predicted and actual bounding boxes in object detection.\\
+    Formula: $\displaystyle \text{IoU} = \frac{\text{Area of Overlap}}{\text{Area of Union}}$
+
+    \item \textbf{TP (True Positive)}: The model correctly predicts the positive class.
+
+    \item \textbf{FP (False Positive)}: The model incorrectly predicts the positive class.
+
+    \item \textbf{FN (False Negative)}: The model fails to predict the positive class when it should have.
+\end{itemize}
+
+
+
+% KEY INSIGHTS:
+%   Best performing class:  bunker (F1: 0.8700)
+%   Worst performing class: rough (F1: 0.4729)
+%   ✓ Excellent segmentation quality (IoU > 0.7)
 
 
 \section{Performance Evaluation}
@@ -487,7 +560,7 @@ This concludes the number of holes is irrelevant and the number of total points 
 
 \subsection{Complete Coverage Path Planning}
 \subsubsection{Runtime}
-\paragraph{Basaeline} \
+\paragraph{Baseline} \
 
 \Cref{PE:p:BaselineRT} shows a baseline runtime for the fields2cover library generating with:
 
@@ -548,39 +621,93 @@ The results of this test are negligable and can be considered consistent within 
 
 
 \paragraph{Route Planning Method} \
+
 \Cref{PE:p:RoutePlanningMem} displays the peak memory usage when using different route plannig methods. Yet again, memory usage is hardly changed by the selected method, this seems strange especially for the shortest route application since there are so many calculations and processing overheads.
 The short range is a big positive and allows the route planning decision can be made purely on runtime and physical factors without worrying about system limitations, aslong as processing runtime is not a huge concern, shortest route can be used bringing big benefits to the physical use.
 
 
 
 \paragraph{Number of holes} \
+
 \Cref{PE:p:HolesMem} shows the peak memory vartation with differing number of holes in the field.
 As mentioned in the runtime test the map for this test is slightly different, taking place on a 80x80 sqaure field with a number of sqaure holes, this approach is necessary to ensure consistent placement of holes in the field.
 The results show 2 things; the number of obstacles in a field do not affect memory and memory consumption is not directly affected by the shape of the field.
 Both of these are good results and show memory is largely similar accross any selection of parameters, consistently low memory usage is a very good trait for an embedded system such as this, meaining computation can be carried out on a variety of computers with differing specfications, specifically low spec end micro computers.
 
 \subsection{Aerail Map Generation}
+The metrics taken from the machine learning aerial mapping model were:
+\begin{itemize}
+    \item{\textbf{Pixel Accuracy:} the percentage of pixels assigned the correct class by the model}
+    \item{\textbf{Quality Detection Accuracy:} the percentage of objects in an image correctly predicted with good segmentation, e.g. number of bunkers or greens}
+\end{itemize}
+Both of these were tested against serveral parameters as follows.
 
-y axis - accuracy
-x axis - image size
+\subsubsection{Confidence Threshold} \label{confidenceThresholdEval}
 
-y axis - accuracy
-x axis - image resolution
+Confidence threshold is the needed degree of certainty for the outputs of the model to be considered.
 
-y axis - accuracy
-x axis - training data size
+\paragraph{Pixel Accuracy} \
 
-y axis - accuracy
-x axis - training epochs
+\Cref{AE:ConfidenceThreshold} Depicts the relationship between confidence threshold and pixel accuracy of the MaskRCNN machine learning model.
+If the confidence is below the threshold, the output is discarded.
+The graph shows a non linear relationship between the two peaking at around 0.6 confidence, this signifies the model is over estimating areas at the low end \textbf{0 - 0.4}, fairly accurate in the mid range \textbf{0.5-0.8} and too strict at the upper end \textbf{0.9 - 1}.
+The accuracy peaks at around \textbf{0.6} so this is the confidence level that will be used going forward.
 
-y axis - precision
-x axis - recall
+\paragraph{Detection Accuracy} \
+
+\Cref{AE:ConfidenceThresholdDetect}
+
+
+\subsection{Intersecion over Union (IoU)}
+Intersection over union is the overlap between the ground truth and area predicted by the model.
+There are 2 types of IoU measurement that can be used during evaluation of an image processing model:
+
+Bounding box IoU a box around the outer points of the ground truth and prediction.
+This concept helps to get direct overlapping area.
+
+Mask IoU that only counts the predicted area. This offers more precise calcutions and is the chosen option for the following tests.
+
+Note that the x axis on these graphs stop at \textbf{0.9}, this is because a IoU of \textbf{1} is nearly impossible for a task as complex as this so would nearly always equal \textbf{0}. For this reason it has been omitted to allow a higher detail reading of the graphs.
+
+\paragraph{Pixel Accuracy} \
+
+\Cref{AE:IOUThreshold} shows the pixel accuracy compared to IOU threshold. 
+As with the confidence threshold (\Cref{confidenceThresholdEval}) a non linear relationship can be seen with a peak around the mid range, in this case \textbf{0.6}, again likely due to this being the sweet spot where the model is close enough to the ground truth without being too restricted in its outputs.
+
+\paragraph{Decection Accuracy} \
+
+\Cref{AE:IOUThresholdDetect} shows the relationship the threshold of this has to detection accuracy. 
+The graph shows that lower IoU causes higher detection rates.
+This is most likely because lower IoU allows the model to be less precise in location with predictions, however this it is probable that this would cause lower pixel accuracy due to the more relaxed location. 
 
 
 \section{Conclusion and Future Work}
 
 
 Another essential section that should keep its title as suggested. Briefly discuss your main findings, outcomes, results; what worked and what could have been done differently. Then summarise your work in a concluding statement by comparing your outcomes against the main and sub-objectives and/or MoSCoW requirements (if used) and suggest potential future work that could be done if more time would be available.
+
+\subsection{Conclusion}
+This report outlines the development of a new route planning system for an automated golf course mowing robot. 
+
+The first step in this process is creating a map of an area from an aerial image using a maskRCNN machine leaning model trained.
+This phase currently specialises in Dansih golf courses due the abundance of high quality orthophotos for this region, since shades, colour and other patterns can vary a specialisation on one region was necessary.
+The output of the model is transformed to a real world orientation of the area based on several manual GPS coordinates.
+
+The next step is complete coverage path planning on the transformed area.
+This uses a brute force method to find optimal travel angles and hole detection is utilised to avoid areas that are untraversable for the robot such as sand bunkers or areas where the robot would need to use a different cutting setting for example on rough areas vs green that require a finer cut.
+
+The user interacts with this through a clean and minimal graphical user interface.
+
+
+\subsection{Future Work}
+
+The current state of the project is a good baseline for future development but still has room for several improvements.
+
+One such improvement could be collecting high quality training data representing other regions. UK golf courses typically consist of deeper greens with more distinct shades between the areas of a golf course. A seperate dataset could be developed, then allowing the user to manually select a region or automatically detect the better result.
+
+Another adaptation could be agricultural use. 
+Since Fields2Cover, the path planning library used in this project, is made with agriculture in mind if the mapping model was adapted the system could yield good results for a seperate use case to the current implementation.
+
 
 
 \clearpage
@@ -873,6 +1000,45 @@ Another essential section that should keep its title as suggested. Briefly discu
 	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
 	\label{PE:p:HolesMem}
 \end{figure}
+
+
+\clearpage
+\subsubsection{Aerial Mapping}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThreshold.png}
+	\caption{Pixel accuracy vs confidence threshold of maskRCNN model}
+	\label{AE:ConfidenceThreshold}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThresholdDetect.png}
+	\caption{Detection accuracy vs confidence threshold of maskRCNN model}
+	\label{AE:ConfidenceThresholdDetect}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./images/AEIOUThresholdPixel.png}
+	\caption{Pixel accuracy vs intersection over union of maskRCNN model}
+	\label{AE:IOUThreshold}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/AEIOUThresholdDetect.png}
+	\caption{Detection accuracy vs intersection over union of maskRCNN model}
+	\label{AE:IOUThresholdDetect}
+\end{figure}
+
+
+
+
+
+
+
 
 
 

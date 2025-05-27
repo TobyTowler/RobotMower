@@ -11,7 +11,7 @@ from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
 import traceback
 
 # Your dataset class (from training script)
-from aerialMapping.maskRCNNmodel import GolfCourseDataset, get_transform, get_model
+from maskRCNNmodel import GolfCourseDataset, get_transform, get_model
 
 
 def load_model(model_path, num_classes):
@@ -292,9 +292,7 @@ def process_and_show_all_images(
 
 
 def genMap(img):
-    model_path = (
-        "aerialMapping/models/golf_course_model_best.pth"  # Path to your trained model
-    )
+    model_path = "models/golf_course_model_best.pth"  # Path to your trained model
 
     # Define correct class names for your model
     # The model expects 6 classes (including background), but your list only has 5
@@ -323,4 +321,4 @@ def genMap(img):
 
 
 if __name__ == "__main__":
-    genMap("./imgs/testingdata/AIgenerated.png")
+    genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg")

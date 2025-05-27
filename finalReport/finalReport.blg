@@ -3,50 +3,52 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: finalReport.aux
 The style file: apalike.bst
 Database file #1: reportbib.bib
+Warning--entry type for "danishgolf" isn't style-file defined
+--line 8 of file reportbib.bib
 Warning--empty year in goata3000
 Warning--empty journal in pytorch
 Warning--empty year in ortools
 Warning--empty year in imow5
 Warning--empty year in labelme
-You've used 12 entries,
+You've used 13 entries,
             1935 wiz_defined-function locations,
-            531 strings with 4830 characters,
-and the built_in function-call counts, 3761 in all, are:
-= -- 377
-> -- 140
+            534 strings with 5030 characters,
+and the built_in function-call counts, 4156 in all, are:
+= -- 412
+> -- 173
 < -- 10
-+ -- 48
-- -- 44
-* -- 289
-:= -- 696
-add.period$ -- 31
-call.type$ -- 12
-change.case$ -- 81
-chr.to.int$ -- 12
-cite$ -- 17
-duplicate$ -- 139
-empty$ -- 247
-format.name$ -- 63
-if$ -- 705
++ -- 60
+- -- 56
+* -- 326
+:= -- 773
+add.period$ -- 33
+call.type$ -- 13
+change.case$ -- 92
+chr.to.int$ -- 13
+cite$ -- 18
+duplicate$ -- 149
+empty$ -- 262
+format.name$ -- 76
+if$ -- 774
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 58
-num.names$ -- 36
-pop$ -- 63
+newline$ -- 62
+num.names$ -- 39
+pop$ -- 73
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 92
 quote$ -- 0
-skip$ -- 110
+skip$ -- 118
 stack$ -- 0
-substring$ -- 247
+substring$ -- 259
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 78
 warning$ -- 5
-while$ -- 31
+while$ -- 33
 width$ -- 0
-write$ -- 136
-(There were 5 warnings)
+write$ -- 146
+(There were 6 warnings)

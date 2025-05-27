@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex finalReport"] 1747960416.32174 "finalReport.aux" "finalReport.bbl" "finalReport" 1747960807.07055 0
-  "./reportbib.bib" 1747956898.97084 3078 53f5b3c879e512574a1a37ce3110b383 ""
+["bibtex finalReport"] 1748387773.72438 "finalReport.aux" "finalReport.bbl" "finalReport" 1748388249.05318 0
+  "./reportbib.bib" 1748387096.16965 3485 9504f22328848dcafc5457bed1b47def ""
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1742685315 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "finalReport.aux" 1747960806.92234 30873 d057ad3f80750d7a9b1449b815e13f66 "pdflatex"
+  "finalReport.aux" 1748388248.8898 36213 c30b5c2cc94c61a739ea7c53bb14897e "pdflatex"
   (generated)
   "finalReport.bbl"
   "finalReport.blg"
   (rewritten before read)
-["pdflatex"] 1747960803.50437 "finalReport.tex" "finalReport.pdf" "finalReport" 1747960807.07074 2
+["pdflatex"] 1748388245.04634 "finalReport.tex" "finalReport.pdf" "finalReport" 1748388249.0534 2
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1742685315 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1742685315 4484 b828043cbd581d289d955903c1339981 ""
@@ -246,14 +246,19 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1742991339 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1742991310 2008241 e93febbe8ca80feb2b202f883b4aca41 ""
   "cmpreport_02.cls" 1742581251.67394 17624 591d37f2cd08cd551733c25dadaa5671 ""
-  "finalReport.aux" 1747960806.92234 30873 d057ad3f80750d7a9b1449b815e13f66 "pdflatex"
-  "finalReport.bbl" 1747960416.35631 1818 f64ed054f03cde478632af399761ab0e "bibtex finalReport"
-  "finalReport.lof" 1747960806.92634 4690 82b0f6a3e477830432ddcb11d5817a02 "pdflatex"
-  "finalReport.out" 1747960804.46834 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "finalReport.tex" 1747960801.50063 49317 61ad4d28aaa10b1cf716f8bee7df4ed6 ""
-  "finalReport.toc" 1747960806.92634 4522 aecde66ae5c467e409bea9d2d68c7bb3 "pdflatex"
+  "finalReport.aux" 1748388248.8898 36213 c30b5c2cc94c61a739ea7c53bb14897e "pdflatex"
+  "finalReport.bbl" 1748387773.76317 2022 660ce32e3183d7985d0f91821c415b4f "bibtex finalReport"
+  "finalReport.lof" 1748388248.8948 5252 f6c3c67d3a9d490af314b53a3680ac3d "pdflatex"
+  "finalReport.lot" 1748388248.8948 292 507dc51ca7203e2d66a708fdb4875c07 "pdflatex"
+  "finalReport.out" 1748388246.06704 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "finalReport.tex" 1748388244.02517 57791 b673e47fe51c81853fe3bfe919b1a74d ""
+  "finalReport.toc" 1748388248.8948 5353 b158c64bd37bfafa22c3c85990e3c373 "pdflatex"
+  "images/AEConfidenceThreshold.png" 1748370003.21877 57482 3dace8e109a93871b72588f92751c99b ""
+  "images/AEConfidenceThresholdDetect.png" 1748386407.90196 52553 60862480e7e831b8c5ad530a6073da8b ""
   "images/AEEnglishCoursePlain.png" 1747425915.80799 1296324 0880cdad026049456da0ffedc506d821 ""
   "images/AEEnglishCourseResult.png" 1747425915.80999 875992 9de8591246da630d1be5912e8bfda12b ""
+  "images/AEIOUThresholdDetect.png" 1748383277.67999 47248 f536c3585636f42e357be6f519cc351d ""
+  "images/AEIOUThresholdPixel.png" 1748381881.06539 53430 0147e1adc7d2de4fadd59eba49818d7f ""
   "images/AENoRoughDemoTraining.png" 1747246572.53039 583286 af717b5420b357df6073e5b6165a7505 ""
   "images/AdobeGolf_visualisation.png" 1745414287.42235 745396 14d7df503398a9ca449ece52bc564a44 ""
   "images/f2cCellDecompL.png" 1747960117.08392 9379 0dfba927f79a411f086cd2ccc45a24db ""
@@ -281,6 +286,7 @@
   "finalReport.aux"
   "finalReport.lof"
   "finalReport.log"
+  "finalReport.lot"
   "finalReport.out"
   "finalReport.pdf"
   "finalReport.toc"

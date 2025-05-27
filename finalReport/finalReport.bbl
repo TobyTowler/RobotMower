@@ -29,6 +29,10 @@ Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
 \newblock Robot operating system 2: Design, architecture, and uses in the wild.
 \newblock {\em Science Robotics}, 7(66):eabm6074.
 
+\bibitem[Mortensen et~al., 2023]{danishgolf}
+Mortensen, J.~K., Matthiesen, V.~S., de~Frutos, J.~G., Bujdoso, K., Christensen, J.~T., and Møgelmose, A. (2023).
+\newblock Danish golf courses orthophotos.
+
 \bibitem[Paszke et~al., 2019]{pytorch}
 Paszke, A. et~al. (2019).
 \newblock Pytorch.

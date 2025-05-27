@@ -1,25 +1,29 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Example of an L shaped field where cell decomposition is optimal, taken from Fields2Cover docs}}{27}{figure.caption.44}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs}}{27}{figure.caption.45}%
-\contentsline {figure}{\numberline {3}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{28}{figure.caption.46}%
-\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{28}{figure.caption.47}%
-\contentsline {figure}{\numberline {5}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{29}{figure.caption.48}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{29}{figure.caption.49}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{30}{figure.caption.50}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{30}{figure.caption.51}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{31}{figure.caption.52}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{31}{figure.caption.53}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{32}{figure.caption.54}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{32}{figure.caption.55}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{33}{figure.caption.56}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{33}{figure.caption.57}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{34}{figure.caption.58}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{34}{figure.caption.59}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{35}{figure.caption.60}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{35}{figure.caption.61}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{36}{figure.caption.62}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}}{36}{figure.caption.63}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{37}{figure.caption.64}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{37}{figure.caption.65}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{38}{figure.caption.66}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}}{38}{figure.caption.67}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Example of an L shaped field where cell decomposition is optimal, taken from Fields2Cover docs}}{32}{figure.caption.57}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Opencv example of canny detection, source \citep {opencv_library} docs}}{32}{figure.caption.58}%
+\contentsline {figure}{\numberline {3}{\ignorespaces OpenCV canny edge detection on an image of a golf course}}{33}{figure.caption.59}%
+\contentsline {figure}{\numberline {4}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{33}{figure.caption.60}%
+\contentsline {figure}{\numberline {5}{\ignorespaces An example ouput of pytorch model trained on the Danish Golf Course data set}}{34}{figure.caption.61}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{34}{figure.caption.62}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{35}{figure.caption.63}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Output of model trained on ~30 inputs with uncertainty at 0.7 and class weighting}}{35}{figure.caption.64}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}}{36}{figure.caption.65}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Runtime of the map generation algorithm with variable points, 400 range, 0 holes}}{36}{figure.caption.66}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Runtime of the map generation algorithm with 10 points, variable range, 0 holes}}{37}{figure.caption.67}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Runtime of the map generation algorithm with 10 points, 400 range, variable holes}}{37}{figure.caption.68}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, 0 holes}}{38}{figure.caption.69}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Memory usage of map generation algorith with variable points, 400 range, 0 holes}}{38}{figure.caption.70}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Memory usage of map generation algorith with 10 points, variable range, 0 holes}}{39}{figure.caption.71}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Memory usage of map generation algorith with 10 points, 400 range, variable holes}}{39}{figure.caption.72}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{40}{figure.caption.73}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{40}{figure.caption.74}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{41}{figure.caption.75}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}}{41}{figure.caption.76}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{42}{figure.caption.77}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}}{42}{figure.caption.78}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}}{43}{figure.caption.79}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}}{43}{figure.caption.80}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Pixel accuracy vs confidence threshold of maskRCNN model}}{44}{figure.caption.81}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Detection accuracy vs confidence threshold of maskRCNN model}}{44}{figure.caption.82}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Pixel accuracy vs intersection over union of maskRCNN model}}{45}{figure.caption.83}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Detection accuracy vs intersection over union of maskRCNN model}}{45}{figure.caption.84}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
