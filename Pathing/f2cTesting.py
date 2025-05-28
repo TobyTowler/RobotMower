@@ -28,3 +28,31 @@ def drawCell(field, headland):
 
 field, hl = headlandGen()
 drawCell(field, hl)
+
+if __name__ == "__main__":
+    outter_ring = f2c.LinearRing()
+    [
+        outter_ring.addGeometry(p)
+        for p in [
+            f2c.Point(0, 0),
+            f2c.Point(2, 0),
+            f2c.Point(2, 2),
+            f2c.Point(0, 2),
+            f2c.Point(0, 0),
+        ]
+    ]
+    inner_ring = f2c.LinearRing()
+    [
+        inner_ring.addGeometry(p)
+        for p in [
+            f2c.Point(0.5, 0.5),
+            f2c.Point(1.5, 0.5),
+            f2c.Point(1.5, 1.5),
+            f2c.Point(0.5, 1.5),
+            f2c.Point(0.5, 0.5),
+        ]
+    ]
+    cell = f2c.Cell()
+    cell.addRing(outter_ring)
+    cell.addRing(inner_ring)
+    print("The area of the cell is: ", cell.area(), "\n")
