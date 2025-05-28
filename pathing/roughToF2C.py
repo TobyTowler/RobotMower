@@ -128,7 +128,7 @@ def genRoughPath(json_file):
     cells = create_rough_cells_with_holes(json_file, scale=1)
     print(f"Created {len(cells)} fairway cells with holes")
 
-    robot = f2c.Robot(3, 5)
+    robot = f2c.Robot(5.0)
     print(f"Robot width: {robot.getWidth():.2f} meters")
     print(f"Robot coverage width: {robot.getCovWidth():.2f} meters")
 

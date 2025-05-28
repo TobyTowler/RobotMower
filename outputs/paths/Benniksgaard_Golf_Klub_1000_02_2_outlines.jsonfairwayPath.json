@@ -1,10 +1,8 @@
 {
   "metadata": {
-    "timestamp": "2025-05-28T22:06:16.926126",
+    "timestamp": "2025-05-28T22:24:09.857280",
     "total_waypoints": 1662,
     "route_length_meters": 59106.94672929375,
-    "num_swath_vectors": 418,
-    "total_swaths": 0,
     "num_connections": 418,
     "connections_processed": 414
   },
