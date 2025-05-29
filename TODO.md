@@ -7,10 +7,11 @@ Abstract
 # Report
 
 - [x] Cell decomposition
-- [-] ML stuff
-Future work
+- [x] ML stuff
+- [-] Future work
 - [x] Abstract
-- [ ] Redo all graphs - remove title
+- [x] Redo all graphs - remove title
+- [ ] GUI
 
 FML
 I am cooked
@@ -29,25 +30,32 @@ I am cooked
 ^ Putting it all together.
 
 ## AE
-use maskRCNNModel2.py and testWeights.py
- 
 
-Put it all together
-Training data
+- [x] Put it all together
+- [x] Training data
 
 
 ## Main.py
 
 - [x] load image
 - [x] run model
-- [ ] transform
+- [-] transform
+    * gen shape
+    * GPS from Google Maps
+        + HOW DO I KNOW WHICH CORNER IT IS
 - [x] save outputs
-- [ ] make path
-- [ ] save path
-- [ ] display path
+- [x] make path
+- [x] save path
+- [x] display path
 
 
+### Progress bar
 
+- updateProgress
+- during app.run
 
+import ui to app
+call update function when needed
+done
 
 

@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "image_path": "./aerialMapping/imgs/testingdata/Benniksgaard_Golf_Klub_1000_02_2.jpg",
+    "image_path": "/home/toby/Programming/RobotMower/aerialMapping/imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_2.jpg",
     "image_name": "Benniksgaard_Golf_Klub_1000_02_2.jpg",
-    "timestamp": "2025-05-28T23:14:44.077098",
+    "timestamp": "2025-05-29T20:39:15.331961",
     "total_detections": 27
   },
   "detections": [

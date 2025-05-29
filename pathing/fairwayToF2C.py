@@ -127,7 +127,7 @@ def genFairwayPath(json_file):
     cells = create_fairway_cells_with_holes(json_file, scale=1)
     print(f"Created {len(cells)} fairway cells with holes")
 
-    robot = f2c.Robot(5.0)
+    robot = f2c.Robot(7.0)
     print(f"Robot width: {robot.getWidth():.2f} meters")
     print(f"Robot coverage width: {robot.getCovWidth():.2f} meters")
 
@@ -163,7 +163,7 @@ def genFairwayPath(json_file):
 
     print("Drawing results...")
     try:
-        drawCell([cells, mid_hl, route])
+        # drawCell([cells, mid_hl, route])
         print("Visualization complete")
     except Exception as e:
         print(f"Error in visualization: {e}")

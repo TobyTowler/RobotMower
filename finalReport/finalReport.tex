@@ -80,15 +80,17 @@
 
 %\confidential{The information contained in this document is confidential, privileged and only for the information of the intended recipient and may not be used, published or redistributed without the prior written consent of FruitName Ltd}
 
+
 \summary{
 The "Robot Mower" is a self-contained lawn mower unit aimed at maintaining golf courses. 
 This project is a redesign of the movement planning systems, enhancing and automating the map generation and complete coverage path planning techniques through external libraries and machine learning methods.
 The complete coverage path planning module adapts a powerful C++ library designed for agricultural use complete with obstacle avoidance, to the golf course use case.
-Map generation is now comprised of an orthophoto or drone image input to a custom MaskRCNN PyTorch machine learning model trained on golf courses from around the world to ensure consistent and accurate results correctly idenifying all classes.
+Map generation is now comprised of an orthophoto or drone image input to a custom MaskRCNN PyTorch machine learning model trained on Danish golf courses to ensure consistent and accurate results correctly identifying all classes within this region.
 In conclusion, the complete coverage path planning and aerial image map generation successfully automates the route planning issues of the Robot Mower.
+\newpage
 }
 
-
+\clearpage
 \acknowledgements{
     Edwin Ren, Eden Attlebourgh
 }
@@ -124,44 +126,101 @@ In conclusion, the complete coverage path planning and aerial image map generati
 
 \section{Introduction}
 
+\subsection{Robot Mower}
 The robot mower is an already existing project developed by previous masters students from the University of East Anglia.
-Physically, the mower has 2 tracks for movement on the sides of a metal frame, it is controlled by raspberry pi 4 running the Robot Operating System \citep{ros}.
-Sensor wise, the robot is equipped with a 4G dongle, lidar and a GPS chip that was upgraded to an RTK chip in this iteration of the project.
-The existing code base was mostly written in python with very small amounts of C++.
-Because of this, all of my code will be written in python to slot into existing code without issue.
 
-My contribution to this project this year will be, regarding the overall movement and guidance of the robot.
+\subsubsection{Physical architecture}
+The physical footprint of the mower features a rigid metal frame with a single track at either side for movement.
+A central storage compartment houses the bulk of the computational units and a large single battery enabling wireless travel and removing the need for long power cables following the robot around.
+
+Also, there is excess room on top of the unit for additional sensors enabling clearer signals due to the lack of material shielding that comes with being at the highest point of the robot.
+
+A single track running the full length of the robot sits at either side of the chassis enabling full 360° movement and near on the spot turning capabilities.
+All large single battery 
+
+
+\subsubsection{Software and Sensors}
+The "brain" of the system is a Raspberry Pi 4 running the Robot Operating System \citep{ros}, a very popular, open source community driven framework for developing software on embedded robotic systems.
+The robot is equipped with an array of sensors:
+\begin{itemize}
+    \item{\textbf{4G dongle} for connection to a central server}
+    \item{\textbf{LiDAR} for detecting obstacles around the robot, both pre-planned and unknown}
+    \item{\textbf{RTK chip} for precise local positioning}
+\end{itemize}
+
+Previously a GPS chip used, but this was upgraded to an RTK version during this iteration of the project due to its much better precision taking the accuracy from 2 to 5 meters with GPS to within 2 centimeters with RTK.
+The LiDAR is used in conjunction with the RTK chip to determine positioning based on surrounding objects while also avoiding unplanned objects for example animals or lost golf balls that may be blocking the planned path.
+
+The majority of the existing code base was written in Python with very small segments of C++, for seamless integration all code produced during this project will be written in python allowing it to slot straight in to the existing code.
+
+\subsection{Software Changes}
+My contribution during this iteration of the project will be not with the physical aspects but a complete overhaul of the mapping and path planning systems.
 For ease of planning, I have broken this down into 3 sections:
 \begin{enumerate}
 	\item Basic map generation
-	\item complete coverage path planning
-	\item map generation from an aerial image
+	\item Complete coverage path planning
+	\item Map generation from an aerial image
 \end{enumerate}
 
-These sections are all modular meaning they can be developed, tested and function independently but still easily be integrated together for the final product.
-The specified use case of the robot will now be to cut golf courses, this is particularly relevant to the aerial map generation section of my work which will likely use a machine learning model and require relevant training data, while the other sections are not concerned with a real world use case as their algorithms will work be able to tweaked for any applicable use case of this robot.
+Basic map generation for quick, efficient testing of path planning algorithms and allowing for manipulation to create abstract of unusual area generation to test edge cases.
+
+Complete coverage path planning that ensures efficient yet robust coverage of an entire area
+
+Machine learning based map generation from an aerial image for automated map generation of a given area.
+
+All of these sections are modular meaning they can be developed, tested and function independently but still easily be integrated together for the final product.
+The specified use case of the robot will now be to cut golf courses, this is particularly relevant to the aerial map generation section of my work since a machine learning model requires relevant training data.
+How every this and all other sections can be improvised to adapt to new use cases.
+New training data can be attained for a new use case while other sections are largely independent of use cases.
 
 
 \section{Background and Related Work}
+\subsection{Background}
+Golf courses face significant overhead when it comes to up keeping their courses, vast areas entail high labour and time costs if done manually. 
+This often results in needing many employees which can be expensive and if not planned correctly, can dispute play time since it would be difficult to play while mowing the same area.
+An automated system could work constantly through closed hours without supervision while reducing labour costs, for these reasons it could also run more frequently meaning more consistent course quality.
 
-\subsection{ECOVACS GOAT A3000}
-The GOAT A3000 RTK \citep{goata3000} is a compact self contained lawn mower created by Ecovacs.
-It moves its 46 cm wide body on 4 wheels cutting 33cm wide areas at a time.
-Boundary detection is automated with dual Lidar and AI cameras allowing accuracy within 2cm, several maps and paths can be saved at once.
+Many golf courses are under increasing pressure to reduce their environmental footprint. Traditional gas-powered mowers contribute to noise pollution and carbon emissions, while their weight can cause soil compaction that affects turf health.
+An electric powered autonomous mower would operate almost silently, produce zero direct emissions, and be lighter minimising ground pressure. This aligns with the golf industry's growing emphasis on environmental stewardship and sustainable course management practices.
+
+Many larger golf courses already have infrastructure electricity powered golf carts used to get around the course.
+Already in place electronic charging stations for quick, easy charging and suitable tracks to navigate from course to course could be refactored for use with an electronic powered mowing unit.
+
+\subsection{Relate Work}
+\subsubsection{ECOVACS GOAT A3000}
+The GOAT A3000 RTK \citep{goata3000} is a compact self-contained lawn mower created by Ecovacs.
+It moves its 46 cm wide body on 4 wheels cutting 33 cm wide areas at a time.
+Boundary detection is automated with dual Lidar and AI cameras allowing accuracy within 2 cm, several maps and paths can be saved at once.
 This robot allows for complete edge detection covering a whole area with no user input required but can still connect to a mobile app to allow adding, editing, splitting and merging of virtual maps.
 Other options in the mobile app include mowing height, travel speed, obstacle avoidance height and scheduling.
 Many U-shaped paths are joined together to form a grid pattern ensuring all grass is cut.
 
-\subsection{STIHL iMOW 5}
-This robotic lawn mower \citep{imow5} can cover 28cm at once under a 52cm body, also on 4 wheels its physical desigin is similar to the ECOVACS product.
+This product features highly accurate locational precision and a large blade to effectively cover the area it is designated, path saving is also a big plus.
+However, where this design may fall short is the 4 wheel design; the front two wheels are week and do not receive power, rather are for stabilisation. This may not all steering or even traction in all conditions, specifically muddy areas after heavy rain.
+
+\subsubsection{STIHL iMOW 5}
+This robotic lawn mower \citep{imow5} can cover 28 cm at once under a 52 cm body, also on 4 wheels its physical design is similar to the ECOVACS product.
 STIHL also provide a mobile app to connect to the robot, many features are similar with the addition of definable starting points and priority zones.
-Additionaly this product has a rain sensor, since moisture can affect the mowing process the robot can determine if it should mow or not based on preferences by the user.
+Additionally this product has a rain sensor, since moisture can affect the mowing process the robot can determine if it should mow or not based on preferences by the user.
 It is also equipped with anti theft technology. If the robot detects it is picked up or removed from the desired area it locks all controls and alerts the owner.
+
+Some pros of this system are rain detection automatically detecting if it is optimal to mow or not in the current conditions. The iMow5 can also handle gradients upto 40\% making it suitable for any bumps around the borders of areas like greens.
+A large con of this mower are that it requires laying wire around or under obstacles and its charging point since it does utilise RTK or a cheaper GPS option, this would disrupt the flow of the golf course if placed around or fully disrupt the ground if dug underneath.
 
 
 \section{System Design}
 
 \subsection{Map Generation}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/mapGen.drawio.png}
+	\caption{Architecture of map generation}
+	\label{MG:arch}
+\end{figure}
+
+
 Map generation is an important part of testing this system, it is important to test on all scenarios that may occur in the real world.
 For this reason, random or parameter based map generation is very necessary to guarantee success in every environment.
 As the outputs of this section will mostly be used for testing the path planning algorithm on regions with differing area, number of corners and complexity, no excessive algorithmic complexity is needed.
@@ -195,6 +254,15 @@ For this reason, the algorithm used is not strictly a Graham Scan but rather hea
 Using this algorithm allows for consistent outlining of any set of points with no crossovers or intersections
 
 \subsection{Complete Coverage Path Planning}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/pathPlanning.drawio.png}
+	\caption{Architecture of path planning process}
+	\label{PP:arch}
+\end{figure}
+
+
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \citep{zhao2023complete}
 For this module, I have used the Fields2Cover library \citep{fields2cover}, this library is open source.
 During the course of this project, I contributed to his library, fixing a bug during the build process.
@@ -255,18 +323,18 @@ Since all of these have their specific use cases it would not make sense to pick
 
 \subsubsection{Path Planning}
 Path planning refers to the connection of all swaths in route order.
-There are a couple of ways the to link neighbouring swaths: the Dubins curve and the Reeds-Shepp curve.
+There are a couple of ways the to link neighbouring swaths: the \textbf{Dubins curve} and the \textbf{Reeds-Shepp curve}.
 
 % \begin{itemize}
 % 	\item{Dubins Curve}
 % 	\item{Reeds-Shepp curve}
 % \end{itemize}
 
-Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 being the robots ability to move backwards.
+Both of these compute the shortest path between the 2 points, with the deciding factor between the 2 being the robots' ability to move backwards.
 Reeds-Shepp allows backwards movement which can be helpful when headlands are not needed, allowing for mowing right to the edges of an area.
 
-There is a derivative of both of these featuring continous curvature, this substitutes a slightly longer path for a wider turning angle but higher average speed.
-The advantages of continous curvature are mainly for vehicles that have difficulty turning sharply.
+There is a derivative of both of these featuring continuous curvature, this substitutes a slightly longer path for a wider turning angle but higher average speed.
+The advantages of continuous curvature are mainly for vehicles that have difficulty turning sharply.
 
 However, since the robot moves on tracks, it can turn in place.
 This means the majority of benefits for path planning techniques are invalid, instead the most time is saved by having the shortest path and least angle to turn on the spot.
@@ -296,11 +364,23 @@ For example, the outline is only as accurate as the user's mouse placement, like
 Automating this laborious and time-consuming task would positively increase user experience and usability, this can be done using algorithmic and machine learning approaches.
 
 \subsubsection{Algorithmic Approaches}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{./images/openCV.drawio.png}
+	\caption{Architecture of map generation}
+	\label{AE:openCVarch}
+\end{figure}
+
+
+
 There are several algorithmic methods that try to achieve this task from several different librarys. A popular library for image processing is OpenCV\citep{opencv_library}.
 
 OpenCV's Canny edge detection implementation follows the classic algorithm developed by Canny \citep{canny1986computational}.
 The algorithm works through several steps to detect edges in images:
 \begin{itemize}
+	\item \textbf{Grayscale Conversion}: 
 	\item \textbf{Gaussian Blur}: First, the image is smoothed with a Gaussian filter to reduce noise, as edge detection is highly sensitive to noise.
 	\item \textbf{Gradient Calculation}: The algorithm calculates the intensity gradients of the image using Sobel filters in both horizontal and vertical directions:
 	\item \textbf{Non-maximum Suppression}: This step thins out the edges by keeping only the local maxima. For each pixel, it checks if it's a local maximum in the direction of the gradient. If not, it's suppressed (set to zero).
@@ -327,6 +407,14 @@ It may appear there is a simple solution to this problem; join the connected lin
 All of these means use of canny edge detection can often cause more problems than it solves, while it may have more accurate outlines in places, they may be connected to unwanted areas, Or they may not be complete and still require further user input to chose a selection or finish a shape.
 
 \subsubsection{Machine Learning Approach}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{./images/MLAE.drawio.png}
+	\caption{Architecture of map generation}
+	\label{AE:MLAE}
+\end{figure}
+
 Another possible solution to this problem is to use a machine learning network to predict the areas of the golf course.
 PyTorch \citep{pytorch} is a powerful open-source machine learning library and has become one of the most popular frameworks for deep learning research and production applications since its initial release in 2016.
 It was developed to show that usability and speed can both be present in a python implementation of machine learning making it the perfect tool for this task.
@@ -459,12 +547,29 @@ Where each term is defined as follows:
 \end{itemize}
 
 
+\subsection{Post Processing}
 
-% KEY INSIGHTS:
-%   Best performing class:  bunker (F1: 0.8700)
-%   Worst performing class: rough (F1: 0.4729)
-%   ✓ Excellent segmentation quality (IoU > 0.7)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{./images/postProcessing.drawio.png}
+	\caption{Architecture of map generation}
+	\label{PPr:arch}
+\end{figure}
 
+After the aerial map has been generated, there are a few more steps to take to ensure geographical accuracy.
+The map must align with the field for the path to be accurate.
+
+To do this some real world GPS or RTK coordinates are needed.
+The minimum number of required points is 2, representing the first 2 corners of the intended area, from just 2 points the rotation and scale can be determined.
+
+The map is corrected to real world bearing and size by matching coordinates to their corresponding vertices of the map.
+The bearing and distance between GPS points is translated to every point of the predicted map producing an accurate representation of the real area which is then saved.
+
+
+\subsection{User Interface}
+To bring all components listed in this report together, a simple graphical user interface is needed.
+
+This GUI features buttons to load images for the machine learning model and begin the process, a checkbox to scale with real coordinates and a progress bar displaying the progress of the system.
 
 \section{Performance Evaluation}
 

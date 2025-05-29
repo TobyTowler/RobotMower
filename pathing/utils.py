@@ -44,7 +44,7 @@ def mowerConfig(width, bladeWidth):
 
 
 def save_points_to_csv(points, filename):
-    with open("fields/" + filename + ".csv", "w") as file:
+    with open(filename + ".csv", "w") as file:
         file.write("point_id,x,y\n")
 
         for i, point in enumerate(points, 1):
@@ -176,7 +176,7 @@ def save_route_to_json(route, filename):
         print(f"   - {connections_processed} connections processed")
         return filename
     else:
-        print("❌ No waypoints extracted from route")
+        print("No waypoints extracted from route")
         return None
 
 

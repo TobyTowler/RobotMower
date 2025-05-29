@@ -1,66 +1,74 @@
-\contentsline {section}{\numberline {1}Introduction}{8}{section.1}%
-\contentsline {section}{\numberline {2}Background and Related Work}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}ECOVACS GOAT A3000}{8}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}STIHL iMOW 5}{9}{subsection.2.2}%
-\contentsline {section}{\numberline {3}System Design}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Map Generation}{9}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Corners}{10}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Obstacles}{10}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Graham Scan}{10}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Complete Coverage Path Planning}{10}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Robot Configuration}{11}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Headland Generation}{11}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Swath Generation}{11}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{12}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{13}{subsubsection.3.2.5}%
-\contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{13}{subsubsection.3.2.6}%
-\contentsline {subsubsection}{\numberline {3.2.7}Final Setup}{13}{subsubsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{14}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{14}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{15}{subsubsection.3.3.2}%
-\contentsline {paragraph}{\nonumberline Model}{16}{paragraph*.7}%
-\contentsline {paragraph}{\nonumberline Data Set}{16}{paragraph*.9}%
-\contentsline {paragraph}{\nonumberline Training}{17}{paragraph*.11}%
-\contentsline {paragraph}{\nonumberline Basic Evaluation}{18}{paragraph*.13}%
-\contentsline {section}{\numberline {4}Performance Evaluation}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map Generation}{20}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{20}{subsubsection.4.1.1}%
-\contentsline {paragraph}{\nonumberline BaseLine}{20}{paragraph*.17}%
-\contentsline {paragraph}{\nonumberline Number of points}{21}{paragraph*.19}%
-\contentsline {paragraph}{\nonumberline Range of points}{21}{paragraph*.21}%
-\contentsline {paragraph}{\nonumberline Number of holes}{21}{paragraph*.23}%
-\contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{22}{subsubsection.4.1.2}%
-\contentsline {paragraph}{\nonumberline Baseline}{22}{paragraph*.25}%
-\contentsline {paragraph}{\nonumberline Number of points}{22}{paragraph*.27}%
-\contentsline {paragraph}{\nonumberline Range of points}{22}{paragraph*.29}%
-\contentsline {paragraph}{\nonumberline Number of holes}{22}{paragraph*.31}%
-\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{23}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Runtime}{23}{subsubsection.4.2.1}%
-\contentsline {paragraph}{\nonumberline Baseline}{23}{paragraph*.33}%
-\contentsline {paragraph}{\nonumberline Map Size}{23}{paragraph*.35}%
-\contentsline {paragraph}{\nonumberline Route Planning Method}{24}{paragraph*.37}%
-\contentsline {paragraph}{\nonumberline Number of Holes}{24}{paragraph*.39}%
-\contentsline {subsubsection}{\numberline {4.2.2}Memory Usage}{24}{subsubsection.4.2.2}%
-\contentsline {paragraph}{\nonumberline Baseline}{24}{paragraph*.41}%
-\contentsline {paragraph}{\nonumberline Map Size}{24}{paragraph*.43}%
-\contentsline {paragraph}{\nonumberline Route Planning Method}{24}{paragraph*.45}%
-\contentsline {paragraph}{\nonumberline Number of holes}{25}{paragraph*.47}%
-\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{25}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Confidence Threshold}{25}{subsubsection.4.3.1}%
-\contentsline {paragraph}{\nonumberline Pixel Accuracy}{25}{paragraph*.49}%
-\contentsline {paragraph}{\nonumberline Detection Accuracy}{26}{paragraph*.51}%
-\contentsline {subsection}{\numberline {4.4}Intersecion over Union (IoU)}{26}{subsection.4.4}%
-\contentsline {paragraph}{\nonumberline Pixel Accuracy}{26}{paragraph*.53}%
-\contentsline {paragraph}{\nonumberline Decection Accuracy}{26}{paragraph*.55}%
-\contentsline {section}{\numberline {5}Conclusion and Future Work}{27}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Conclusion}{27}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Future Work}{27}{subsection.5.2}%
-\contentsline {section}{References}{29}{section*.56}%
-\contentsline {section}{\numberline {A}Map Generation}{30}{appendix.A}%
-\contentsline {section}{\numberline {B}Complete Coverage Path Planning}{32}{appendix.B}%
-\contentsline {section}{\numberline {C}Aerial Mapping}{32}{appendix.C}%
-\contentsline {section}{\numberline {D}Performance and Evaluation}{36}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}Mapping}{36}{subsection.D.1}%
-\contentsline {subsection}{\numberline {D.2}Pathing}{40}{subsection.D.2}%
-\contentsline {subsubsection}{\numberline {D.2.1}Aerial Mapping}{44}{subsubsection.D.2.1}%
+\contentsline {section}{\numberline {1}Introduction}{9}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Robot Mower}{9}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Physical architecture}{9}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Software and Sensors}{9}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Software Changes}{10}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Background and Related Work}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Background}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Relate Work}{11}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}ECOVACS GOAT A3000}{11}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}STIHL iMOW 5}{12}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}System Design}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Map Generation}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Corners}{14}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Obstacles}{14}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Graham Scan}{14}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Complete Coverage Path Planning}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Robot Configuration}{16}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Headland Generation}{16}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Swath Generation}{16}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Route Planning}{17}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Path Planning}{18}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Cell Decomposition}{18}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Final Setup}{18}{subsubsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.3}Aerial Map Generation}{19}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Algorithmic Approaches}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Machine Learning Approach}{22}{subsubsection.3.3.2}%
+\contentsline {paragraph}{\nonumberline Model}{23}{paragraph*.11}%
+\contentsline {paragraph}{\nonumberline Data Set}{23}{paragraph*.13}%
+\contentsline {paragraph}{\nonumberline Training}{24}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline Basic Evaluation}{25}{paragraph*.17}%
+\contentsline {subsection}{\numberline {3.4}Post Processing}{27}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}User Interface}{27}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Performance Evaluation}{28}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Map Generation}{28}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Run Time}{28}{subsubsection.4.1.1}%
+\contentsline {paragraph}{\nonumberline BaseLine}{28}{paragraph*.22}%
+\contentsline {paragraph}{\nonumberline Number of points}{29}{paragraph*.24}%
+\contentsline {paragraph}{\nonumberline Range of points}{29}{paragraph*.26}%
+\contentsline {paragraph}{\nonumberline Number of holes}{29}{paragraph*.28}%
+\contentsline {subsubsection}{\numberline {4.1.2}Memory Usage}{30}{subsubsection.4.1.2}%
+\contentsline {paragraph}{\nonumberline Baseline}{30}{paragraph*.30}%
+\contentsline {paragraph}{\nonumberline Number of points}{30}{paragraph*.32}%
+\contentsline {paragraph}{\nonumberline Range of points}{30}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline Number of holes}{30}{paragraph*.36}%
+\contentsline {subsection}{\numberline {4.2}Complete Coverage Path Planning}{31}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Runtime}{31}{subsubsection.4.2.1}%
+\contentsline {paragraph}{\nonumberline Baseline}{31}{paragraph*.38}%
+\contentsline {paragraph}{\nonumberline Map Size}{31}{paragraph*.40}%
+\contentsline {paragraph}{\nonumberline Route Planning Method}{32}{paragraph*.42}%
+\contentsline {paragraph}{\nonumberline Number of Holes}{32}{paragraph*.44}%
+\contentsline {subsubsection}{\numberline {4.2.2}Memory Usage}{32}{subsubsection.4.2.2}%
+\contentsline {paragraph}{\nonumberline Baseline}{32}{paragraph*.46}%
+\contentsline {paragraph}{\nonumberline Map Size}{32}{paragraph*.48}%
+\contentsline {paragraph}{\nonumberline Route Planning Method}{32}{paragraph*.50}%
+\contentsline {paragraph}{\nonumberline Number of holes}{33}{paragraph*.52}%
+\contentsline {subsection}{\numberline {4.3}Aerail Map Generation}{33}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Confidence Threshold}{33}{subsubsection.4.3.1}%
+\contentsline {paragraph}{\nonumberline Pixel Accuracy}{33}{paragraph*.54}%
+\contentsline {paragraph}{\nonumberline Detection Accuracy}{34}{paragraph*.56}%
+\contentsline {subsection}{\numberline {4.4}Intersecion over Union (IoU)}{34}{subsection.4.4}%
+\contentsline {paragraph}{\nonumberline Pixel Accuracy}{34}{paragraph*.58}%
+\contentsline {paragraph}{\nonumberline Decection Accuracy}{34}{paragraph*.60}%
+\contentsline {section}{\numberline {5}Conclusion and Future Work}{35}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Conclusion}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Future Work}{35}{subsection.5.2}%
+\contentsline {section}{References}{37}{section*.61}%
+\contentsline {section}{\numberline {A}Map Generation}{38}{appendix.A}%
+\contentsline {section}{\numberline {B}Complete Coverage Path Planning}{40}{appendix.B}%
+\contentsline {section}{\numberline {C}Aerial Mapping}{40}{appendix.C}%
+\contentsline {section}{\numberline {D}Performance and Evaluation}{44}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Mapping}{44}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}Pathing}{48}{subsection.D.2}%
+\contentsline {subsubsection}{\numberline {D.2.1}Aerial Mapping}{52}{subsubsection.D.2.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
