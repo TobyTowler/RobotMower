@@ -8,8 +8,11 @@ import matplotlib.pyplot as plt
 def main():
     # x = [1, 5, 10, 20, 30, 40, 50, 60, 80, 100, 125, 150, 175, 200]
     # x = [50, 100, 250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000]
-    x = [1, 1, 5, 10, 20, 30, 40, 50, 75, 100, 125, 150, 175, 200]
-    # x = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    # x = [1, 1, 5, 10, 20, 30, 40, 50, 75, 100, 125, 150, 175, 200]
+    # x = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    x = [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    x1 = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    x2 = [1, 4, 8, 12, 16, 20]
 
     memory_usages = []
 
@@ -25,10 +28,10 @@ def main():
             field = m.genPoints(10, origin, 400)
             hull.append(m.sortPoints(field, origin))
 
-            for y in range(i):  # holes
-                hole1Base = m.Point(100, 100)
-                hole1Points = m.genPoints(5, hole1Base, 50)
-                hull.append(m.sortPoints(hole1Points, hole1Base))
+            # for y in range(i):  # holes
+            #     hole1Base = m.Point(100, 100)
+            #     hole1Points = m.genPoints(5, hole1Base, 50)
+            #     hull.append(m.sortPoints(hole1Points, hole1Base))
 
             current, peak = tracemalloc.get_traced_memory()
             thisMemory.append(peak / 1024)  # KB

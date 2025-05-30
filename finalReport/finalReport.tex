@@ -14,7 +14,7 @@
 \usepackage{color}
 \usepackage{pdfpages}
 \usepackage{cleveref}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{algorithm}
@@ -200,18 +200,27 @@ The cons of this method are that it can require many sharp 180° turns and can b
 
 \paragraph{Controlled Traffic Farming} \
 
-Controlled Traffic Farming describes the idea of all vehicles travelling over the same paths, reducing the area subject to soil compaction - soil being pressed down due to heavy objects travelling over it.
+Controlled Traffic Farming \citep{chamen2015controlled} describes the idea of all vehicles travelling over the same paths, reducing the area subject to soil compaction - soil being pressed down due to heavy objects travelling over it.
 This method is primarily used for agriculture due to the very heavy machinery used and not wanting to travel over crops when avoidable.
 
 This method has various advantages as it can reduce soil compaction therefore increase soil health and can increase fuel efficiency.
 The drawbacks of this method are all equipment must be compatible with the same size tracks and track spacing.
+
+\paragraph{Deep Reinforcement Learning}
+This method \citep{chen2025complete} demonstrates using how rewarding and learning can be used to cover an area. 
+When a new section of the area is discovered, the algorithm recieves a reward, encouraging further exploration.
+This algorithm is always learning and completely automatic.
+
+This good sides of this approach are its high memory level; it can remember where it has been stuck before and avoids those areas and can actively adapt in new enivronments, always seeking new regions.
+
+The downsides are that it is very heavy computationally, requiring a good processor within the robot.
 
 
 \subsubsection{Aerial Image Mapping}
 Aerial image mapping is the process of producing outlines or maps of an area from aerial images.
 
 \paragraph{Semantic Segmentaion Neural Networks}
-This method using deep learning models to classify every pixel of an image into a specific predefined class.
+This method using deep learning models \citep{long2015fully} to classify every pixel of an image into a specific predefined class.
 This approach could be used to map an area by detecting areas of a golf course.
 
 This method can handle subtle boundaries between objects well while outlining entire areas not just outlining them.
@@ -221,7 +230,7 @@ Neural networks become less ideal when suitable training data is not available o
 
 \paragraph{Watershed Segmentation} \
 
-This is an algorithmic way to determine outlines and is a classical image processing technique.
+This \citep{beucher1979watersheds}  is an algorithmic way to determine outlines and is a classical image processing technique.
 Watershed treats pixel intensity as topographic surfaces, treating differences in elevation as boundaries.
 
 This algorithm is simple to implement and is computationally light when compared to a machine learning approach.
@@ -589,6 +598,14 @@ Where each term is defined as follows:
     \item \textbf{FN (False Negative)}: The model fails to predict the positive class when it should have.
 \end{itemize}
 
+Finally with a fully trained model and larger data set, this is the outcome
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./images/AEModelDone.png}
+	\caption{Architecture of map generation}
+	\label{AE:Done}
+\end{figure}
 
 \subsection{Post Processing}
 
@@ -649,18 +666,32 @@ For reference, these benchmarks were taken on a \textbf{Ryzen5 5600X} with \text
 
 \subsection{Map Generation}
 \subsubsection{Run Time}
-\paragraph{BaseLine} \
 
-\Cref{PE:mg:baselineRT} represents the baseline and tested with 10 corner points, 0-400 range and 0 holes.
-The runtime is fairly consistent having a very small range of 0.2 milleseconds, showing a very strong baseline to run further testing on.
+The testing results of this section are illustrated in \Cref{PE:mg:Combined}
+
+% \Cref{PE:mg:baselineRT} represents the baseline and tested with 10 corner points, 0-400 range and 0 holes.
+
+\paragraph{Baseline}\
+
+The runtime of the baselines runs with, 10 corner points, 0-400 range and 0 holes. 
+It is fairly consistent having a very small range of 0.2 milliseconds, showing a very strong baseline to run further testing on.
 
 
 \paragraph{Number of points} \
 
-\Cref{PE:mg:points} shows the impact of varying the number of points on runtime.
-The tests were run with a range or 0-400 and 0 holes.
+The tests for this section were run with a range or 0-400 and 0 holes.
 Clearly points are added in linear respect to execution time but are efficient in doing so, taking around 0.0075 milleseconds per point added.
 Points are added with O(n) complexity
+
+\paragraph{Number of holes} \
+
+The runs were carried out with 10 points in the main field, a range of 400 and 5 points in each hole.
+Similarly to the number of points, the number of holes has a linear effect on runtime, however runtime increaes in larger steps.
+This is likely because in this example, each hole has 5 points and an extra append operation, this is likely why the same number of points generated in the outside field, and in total considering holes differ in runtime.
+For instance, 200 points in a single field takes around 1.5ms but 210 points comprised of 10 in the outer field and 40, 5 point holes just under 2ms.
+This time increase does not line up and could be for a number of reasons such as the additional appending to the array or the random number generation process of the point generation function, or could be the extra overheads from the sorting of the points in each hole.
+Whichever of these is the cause, or if it is a combination of all 3, they are all needed operations so nothing can be done to improve this further, although they whole process still completes in an insignificant amount of time, even with 200 holes it only takes around 9 milliseconds.
+200 holes is likely far more than any real world application would need but still computes in excellent time.
 
 
 \paragraph{Range of points} \
@@ -671,54 +702,46 @@ There is no clear correlation between the range of points and the run time of th
 The quickest runtime from this test and all baseline runs actually occurs with a range 1200, three times the range in the baseline.
 This is a very good indication on top of everything else that range has no effect on runtime meaing the program should work for any size of field in good time.
 
-\paragraph{Number of holes} \
-
-\Cref{PE:mg:holes} demonstrates how the number of holes translate to runtime.
-The runs were carried out with 10 points in the main field, a range of 400 and 5 points in each hole.
-Similarly to the number of points, the number of holes has a linear effect on runtime, however runtime increaes in larger steps.
-This is likely because in this example, each hole has 5 points and an extra append operation, this is likely why the same number of points generated in the outside field, and in total considering holes differ in runtime.
-For instance, 200 points in a single field takes around 1.5ms but 210 points comprised of 10 in the outer field and 40, 5 point holes just under 2ms.
-This time increase does not line up and could be for a number of reasons such as the additional appending to the array or the random number generation process of the point generation function, or could be the extra overheads from the sorting of the points in each hole.
-Whichever of these is the cause, or if it is a combination of all 3, they are all needed operations so nothing can be done to improve this further, although they whole process still completes in an insignificant amount of time, even with 200 holes it only takes around 9 milleseconds.
-200 holes is likely far more than any real world appliaction would need but still computes in excellent time.
-
 
 \subsubsection{Memory Usage}
 
+\Cref{PE:mg:memBaselineRange}
+
 \paragraph{Baseline} \
 
-\Cref{PE:mg:memBaseline} is a baseline graph to show the memory usage of the map generation process with 10 points, 400 range and 0 holes.
-There memory usage is quite consisten except for the obvious outlier on run 1.
-There is no clear reason for this but it occured on every measurement taken, it is possible it is an issue with the measurement script although unlikely.
+The baseline graph shows the memory usage of the map generation process with 10 points, 400 range and 0 holes.
+There memory usage is quite concise at around 1.85 MB per run.
 
-
-\paragraph{Number of points} \
-
-\Cref{PE:mg:memPoints} shows the memory usage of the map generation process with variable points, 400 range and 0 holes.
-Points effect memory linearly which make sense as there is contasnt size need for each point.
-The amount of memory needed is very small and is almost guaranteed to be suitable for any computer system even a low end portable micro PC such as a raspberry Pi.
-
-
-\paragraph{Range of points} \
-
-\Cref{PE:mg:memRange} draws the memory usage of the map generation process with 10 points, variable range and 0 holes.
-Increasing the range of points does have a positively correlated effect on memory when compared to the baseline.
-This could be for a number of reasons but essentially comes down to the higher number possible coordinate values.
-That could be the data structure of the point takes more memory to store the greater value, because the random number generation process requires more memory or becuase the sorting algorithm needs to memory to sort the higher values.
 
 \paragraph{Number of holes} \
 
-\Cref{PE:mg:memHoles} demonstrates the memory usage of the map generation process with 10 points, 400 range and variable holes.
+The number of holes line demonstrates the memory usage of the map generation process with 10 points, 400 range and variable holes.
 As mentioned in the runtime section, holes are closely related to points, they effect memory linearly, but at a higher rate than points as they are a collection of points.
 Where memory differs to runtime however, is there are no overheads to having points as holes or a single field, since memory allocation is constant.
 This concludes the number of holes is irrelevant and the number of total points is all that needs to be considered.
 
+\paragraph{Number of points} \
+
+The memory usage of the map generation process was measured with variable points, 400 range and 0 holes.
+Points effect memory linearly which make sense as there is constant size need for each point.
+The amount of memory needed is very small and is almost guaranteed to be suitable for any computer system even a low end portable micro PC such as a Raspberry Pi.
+
+
+\paragraph{Range of points} \
+
+The memory usage of the map generation was processed with 10 points, variable range and 0 holes.
+Increasing the range of points does have a positively correlated effect on memory when compared to the baseline.
+This could be for a number of reasons but essentially comes down to the higher number possible coordinate values.
+That could be the data structure of the point takes more memory to store the greater value, because the random number generation process requires more memory or because the sorting algorithm needs more memory to sort the higher values.
+
 
 \subsection{Complete Coverage Path Planning}
 \subsubsection{Runtime}
+The results of testing for baseline and area are shown in \Cref{PE:p:BaselineAreaRT}, Number of holes and pathing method used in \Cref{PE:p:HolePathRT}
+
 \paragraph{Baseline} \
 
-\Cref{PE:p:BaselineRT} shows a baseline runtime for the fields2cover library generating with:
+The baseline parameters are:
 
 \begin{itemize}
 	\item{\textbf{Area}, $10^3\,\text{m}^2$ and 6 sides}
@@ -733,7 +756,6 @@ These paremters are all default, first mentioned or most simplistic to give a st
 
 \paragraph{Map Size} \
 
-\Cref{PE:p:SizeRT} shows how differing field size affects the runtime of algorithm.
 The graph shows an exponential relationship between the two, this makes sense because there are a number of components affected by field area:
 
 \begin{itemize}
@@ -748,28 +770,29 @@ While this is a long time to wait, it is unlikely that the program will have to 
 
 \paragraph{Route Planning Method} \
 
-\Cref{PE:p:RoutePlanningRT} shows how different route planning methods impact processing time.
 There is not much difference betwen the 3 known patterns, almost margin of error, but the shortest route method takes much longer.
 This is because, the 3 knowns requrie 0 calculations just simple array indexing in a set order.
 Where as the shortest route method uses a brute force approach and requires vast calculations to find the best sequence, this time increase is also likely to have a non linear affect when paired with larger fields.
 
 \paragraph{Number of Holes} \
 
-\Cref{PE:p:HolesRT} Shows how the number of holes in a field affect the overal run time, this test was conducted on an 80 x 80 square field with a varying number of holes.
+This test shows how the number of holes in a field affect the overal run time, this test was conducted on an 80 x 80 square field with a varying number of holes.
 When holes are present, the \textbf{Shortest Route} planning method must be used to connect the isolated swaths that border obstacles and as seen above this going to impact run time on its own, so it is expected that runtime will be longer than before.
 Holes have a linear effect on run time, this makes sense as field generation and swath placement is linear.
 
 
 \subsubsection{Memory Usage}
 
+All measurements of memory usage over the course of testing can be seen in \Cref{PE:p:Mem}
+
 \paragraph{Baseline} \
 
-The baseline graph \Cref{PE:p:BaselineMem} indicates constant memory usage across several executions of the pathing method.
+The baseline graph indicates constant memory usage across several executions of the pathing method.
 This consistency in results indicates a stable process for path generation that should be reliable and produce identical results each time it is required.
 
 \paragraph{Map Size} \
 
-According to \Cref{PE:p:SizeMem}, field area has very little impact on the memory consumption.
+From the map size line we can see that field area has very little impact on the memory consumption.
 There seems to be 3 levels of memory consumption but it is unclear which parameter causes the discrepancy since the results are not in distinct groups.
 The range is within 30 bytes of each other, this small variation is completely normal and is likely unavoidable due to the nature of python's memory allocation system.
 The results of this test are negligable and can be considered consistent within a working margin.
@@ -778,14 +801,13 @@ The results of this test are negligable and can be considered consistent within 
 
 \paragraph{Route Planning Method} \
 
-\Cref{PE:p:RoutePlanningMem} displays the peak memory usage when using different route plannig methods. Yet again, memory usage is hardly changed by the selected method, this seems strange especially for the shortest route application since there are so many calculations and processing overheads.
+Looking at the peak memory usage when using different route plannig methods, it shows yet again, memory usage is hardly changed by the selected method, this seems strange especially for the shortest route application since there are so many calculations and processing overheads.
 The short range is a big positive and allows the route planning decision can be made purely on runtime and physical factors without worrying about system limitations, aslong as processing runtime is not a huge concern, shortest route can be used bringing big benefits to the physical use.
 
 
 
 \paragraph{Number of holes} \
 
-\Cref{PE:p:HolesMem} shows the peak memory vartation with differing number of holes in the field.
 As mentioned in the runtime test the map for this test is slightly different, taking place on a 80x80 sqaure field with a number of sqaure holes, this approach is necessary to ensure consistent placement of holes in the field.
 The results show 2 things; the number of obstacles in a field do not affect memory and memory consumption is not directly affected by the shape of the field.
 Both of these are good results and show memory is largely similar accross any selection of parameters, consistently low memory usage is a very good trait for an embedded system such as this, meaining computation can be carried out on a variety of computers with differing specfications, specifically low spec end micro computers.
@@ -873,6 +895,7 @@ A more complex GUI would be a good addition in increase the user experience with
 \clearpage
 
 \bibliography{reportbib}
+% \bibliographystyle{plain}
 
 \appendix
 \clearpage
@@ -1036,130 +1059,177 @@ A more complex GUI would be a good addition in increase the user experience with
 \subsection{Mapping}
 
 
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./images/mapGenBaselineRT.png}
+% 	\caption{Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}
+% 	\label{PE:mg:baselineRT}
+% \end{figure}
+
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./images/mapGenPointsRT.png}
+% 	\caption{Runtime of the map generation algorithm with variable points, 400 range, 0 holes}
+% 	\label{PE:mg:points}
+% \end{figure}
+%
+
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./images/mapGenBaselineRT.png}
-	\caption{Runtime of the map generation algorithm with 10 points, 400 range, 0 holes}
-	\label{PE:mg:baselineRT}
+	\includegraphics[width=0.45\textwidth]{./images/mapGenRTCombined.png}
+	\caption{Runtime of the map generation algorithm}
+	\label{PE:mg:Combined}
 \end{figure}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./images/mapGenPointsRT.png}
-	\caption{Runtime of the map generation algorithm with variable points, 400 range, 0 holes}
-	\label{PE:mg:points}
-\end{figure}
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenRangeRT.png}
+	\includegraphics[width=0.45\textwidth]{./images/mapGenRangeRT.png}
 	\caption{Runtime of the map generation algorithm with 10 points, variable range, 0 holes}
-
 	\label{PE:mg:range}
 \end{figure}
 
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesRT.png}
+% 	\caption{Runtime of the map generation algorithm with 10 points, 400 range, variable holes}
+% 	\label{PE:mg:holes}
+% \end{figure}
+
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesRT.png}
-	\caption{Runtime of the map generation algorithm with 10 points, 400 range, variable holes}
-	\label{PE:mg:holes}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselneRangeMem.png}
+	\caption{Memory usage of map generation algorithm vs baseline average and range of the map}
+	\label{PE:mg:memBaselineRange}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselineMem.png}
-	\caption{Memory usage of map generation algorith with 10 points, 400 range, 0 holes}
-	\label{PE:mg:memBaseline}
+	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsHolesMem.png}
+	\caption{Memory usage of map generation algorithm vs number of holes and points}
+	\label{PE:mg:memHolesPoints}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsMem.png}
-	\caption{Memory usage of map generation algorith with variable points, 400 range, 0 holes}
-	\label{PE:mg:memPoints}
-\end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenRangeMem.png}
-	\caption{Memory usage of map generation algorith with 10 points, variable range, 0 holes}
-	\label{PE:mg:memRange}
-\end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesMem.png}
-	\caption{Memory usage of map generation algorith with 10 points, 400 range, variable holes}
-	\label{PE:mg:memHoles}
-\end{figure}
-
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/mapGenBaselineMem.png}
+% 	\caption{Memory usage of map generation algorith with 10 points, 400 range, 0 holes}
+% 	\label{PE:mg:memBaseline}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/mapGenPointsMem.png}
+% 	\caption{Memory usage of map generation algorith with variable points, 400 range, 0 holes}
+% 	\label{PE:mg:memPoints}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/mapGenRangeMem.png}
+% 	\caption{Memory usage of map generation algorith with 10 points, variable range, 0 holes}
+% 	\label{PE:mg:memRange}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/mapGenHolesMem.png}
+% 	\caption{Memory usage of map generation algorith with 10 points, 400 range, variable holes}
+% 	\label{PE:mg:memHoles}
+% \end{figure}
+%
 
 \clearpage
 \subsection{Pathing}
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./images/pathingBaseLineRT.png}
+	\includegraphics[width=0.45\textwidth]{./images/pathingBaselineAreaRT.png}
 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
-	\label{PE:p:BaselineRT}
+	\label{PE:p:BaselineAreaRT}
 \end{figure}
-
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{./images/pathingSizeRt.png}
+	\includegraphics[width=0.8\textwidth]{./images/pathingHolesPathingRT.png}
 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
-	\label{PE:p:SizeRT}
+	\label{PE:p:HolePathRT}
 \end{figure}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningRT.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
-	\label{PE:p:RoutePlanningRT}
+	\includegraphics[width=0.8\textwidth]{./images/pathingMem.png}
+	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+	\label{PE:p:Mem}
 \end{figure}
 
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
-	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}
-	\label{PE:p:HolesRT}
-\end{figure}
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./images/pathingBaseLineRT.png}
+% 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+% 	\label{PE:p:BaselineRT}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./images/pathingSizeRt.png}
+% 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+% 	\label{PE:p:SizeRT}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/pathingRoutePlanningRT.png}
+% 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+% 	\label{PE:p:RoutePlanningRT}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesRT.png}
+% 	\caption{Runtime of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable holes}
+% 	\label{PE:p:HolesRT}
+% \end{figure}
 
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./images/pathingBaseLineMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
-	\label{PE:p:BaselineMem}
-\end{figure}
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingSizeMem.png}
-	\caption{Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
-	\label{PE:p:SizeMem}
-\end{figure}
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./images/pathingRoutePlanningMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
-	\label{PE:p:RoutePlanningMem}
-\end{figure}
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/pathingHolesMem.png}
-	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
-	\label{PE:p:HolesMem}
-\end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.8\textwidth]{./images/pathingBaseLineMem.png}
+% 	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+% 	\label{PE:p:BaselineMem}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/pathingSizeMem.png}
+% 	\caption{Memory Usage of path planning system with variable area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing and shortest route planning}
+% 	\label{PE:p:SizeMem}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./images/pathingRoutePlanningMem.png}
+% 	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, variable pathing and shortest route planning}
+% 	\label{PE:p:RoutePlanningMem}
+% \end{figure}
+%
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/pathingHolesMem.png}
+% 	\caption{Memory Usage of path planning system with $10^3m^2$ area, 6 corners, accurate robot size, constant headland, brute force swath gen, Reeds-Shepp pathing, shortest route planning and variable number of holes}
+% 	\label{PE:p:HolesMem}
+% \end{figure}
 
 
 \clearpage

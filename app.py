@@ -10,6 +10,7 @@ from pathing.roughToF2C import genRoughPath
 from pathing.fairwayToF2C import genFairwayPath
 from pathing.greenToF2C import genGreenPath
 from pathing.utils import load_csv_points, save_route_to_json
+from pathing.mapTransform import transformPoints
 
 
 def run(img, gui_instance):
@@ -31,12 +32,15 @@ def process_with_progress(img, gui):
     print(outline)
 
     gui.updateProgress(25)
+    path = save_outlines_to_json(outline, img)
     gui.updateStep("Saved outlines")
-    if gui.useGPS:
-        path = load_csv_points("./outputs/transformedOutlines/" + filename + ".csv")
 
-    else:
-        path = save_outlines_to_json(outline, img)
+    if gui.useGPS:
+        # path = load_csv_points("./outputs/transformedOutlines/" + filename + ".csv")
+        gui.updateStep("Transforming with GPS")
+        gpsCoords = [gui.gps1.get(), gui.gps2.get()]
+        path = transformPoints(path, gpsCoords)
+
     gui.updateProgress(30)
 
     print(path)

@@ -84,7 +84,7 @@ def run_model_and_get_outlines(image_path):
 
 # Example usage function
 def main():
-    image_path = "./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_010.jpg"
+    image_path = "./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_2.jpg"
 
     try:
         outlines = run_model_and_get_outlines(image_path)

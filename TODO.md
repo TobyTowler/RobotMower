@@ -8,13 +8,11 @@ Abstract
 
 - [x] Cell decomposition
 - [x] ML stuff
-- [-] Future work
+- [x] Future work
 - [x] Abstract
 - [x] Redo all graphs - remove title
 - [x] GUI
 
-FML
-I am cooked
 
 # Code
 

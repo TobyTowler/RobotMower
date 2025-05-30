@@ -1,0 +1,915 @@
+{
+  "metadata": {
+    "timestamp": "2025-05-30T13:17:00.082021",
+    "total_waypoints": 113,
+    "route_length_meters": 2745.002844566875,
+    "num_connections": 32,
+    "connections_processed": 27
+  },
+  "waypoints": [
+    {
+      "index": 0,
+      "connection_id": 2,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 75.540944146138,
+      "y": 595.506376840293
+    },
+    {
+      "index": 1,
+      "connection_id": 2,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 69.88088033369286,
+      "y": 586.6625271333475
+    },
+    {
+      "index": 2,
+      "connection_id": 2,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 76.88088033369239,
+      "y": 582.1825271333478
+    },
+    {
+      "index": 3,
+      "connection_id": 2,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 82.540944146138,
+      "y": 591.026376840294
+    },
+    {
+      "index": 4,
+      "connection_id": 3,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 82.540944146138,
+      "y": 615.822531751264
+    },
+    {
+      "index": 5,
+      "connection_id": 3,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 76.27556509952028,
+      "y": 624.2483863311982
+    },
+    {
+      "index": 6,
+      "connection_id": 3,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 83.27556509952015,
+      "y": 629.4535145363263
+    },
+    {
+      "index": 7,
+      "connection_id": 3,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 89.540944146138,
+      "y": 621.027659956392
+    },
+    {
+      "index": 8,
+      "connection_id": 4,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 89.540944146138,
+      "y": 590.745910203339
+    },
+    {
+      "index": 9,
+      "connection_id": 4,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 90.18259981057275,
+      "y": 580.2655343509047
+    },
+    {
+      "index": 10,
+      "connection_id": 4,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 97.1825998105728,
+      "y": 580.6941057794761
+    },
+    {
+      "index": 11,
+      "connection_id": 4,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 96.540944146138,
+      "y": 591.174481631911
+    },
+    {
+      "index": 12,
+      "connection_id": 5,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 96.540944146138,
+      "y": 626.23278816152
+    },
+    {
+      "index": 13,
+      "connection_id": 5,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 90.27556509952008,
+      "y": 634.6586427414545
+    },
+    {
+      "index": 14,
+      "connection_id": 5,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 99.5868593481074,
+      "y": 641.5824256442502
+    },
+    {
+      "index": 15,
+      "connection_id": 5,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 103.29101497770198,
+      "y": 641.6706198259072
+    },
+    {
+      "index": 16,
+      "connection_id": 5,
+      "point_in_connection": 4,
+      "type": "connection_point",
+      "x": 103.540944146138,
+      "y": 631.173594751594
+    },
+    {
+      "index": 17,
+      "connection_id": 6,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 103.540944146138,
+      "y": 591.603053060482
+    },
+    {
+      "index": 18,
+      "connection_id": 6,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 104.18259981057278,
+      "y": 581.1226772080474
+    },
+    {
+      "index": 19,
+      "connection_id": 6,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 111.18259981057281,
+      "y": 581.5512486366189
+    },
+    {
+      "index": 20,
+      "connection_id": 6,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 110.540944146138,
+      "y": 592.031624489054
+    },
+    {
+      "index": 21,
+      "connection_id": 7,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 110.540944146138,
+      "y": 631.34026141826
+    },
+    {
+      "index": 22,
+      "connection_id": 7,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 110.29101497770196,
+      "y": 641.8372864925739
+    },
+    {
+      "index": 23,
+      "connection_id": 7,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 117.29101497770198,
+      "y": 642.0039531592405
+    },
+    {
+      "index": 24,
+      "connection_id": 7,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 117.540944146138,
+      "y": 631.506928084927
+    },
+    {
+      "index": 25,
+      "connection_id": 8,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 117.540944146138,
+      "y": 592.460195917625
+    },
+    {
+      "index": 26,
+      "connection_id": 8,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 118.18259981057278,
+      "y": 581.9798200651903
+    },
+    {
+      "index": 27,
+      "connection_id": 8,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 122.50510305653634,
+      "y": 582.2444631210657
+    },
+    {
+      "index": 28,
+      "connection_id": 8,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 131.8185856667819,
+      "y": 591.1997348616864
+    },
+    {
+      "index": 29,
+      "connection_id": 8,
+      "point_in_connection": 4,
+      "type": "connection_point",
+      "x": 124.540944146138,
+      "y": 598.768482043156
+    },
+    {
+      "index": 30,
+      "connection_id": 9,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 124.540944146138,
+      "y": 631.673594751594
+    },
+    {
+      "index": 31,
+      "connection_id": 9,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 124.29101497770199,
+      "y": 642.1706198259071
+    },
+    {
+      "index": 32,
+      "connection_id": 9,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 133.7548093321643,
+      "y": 642.3959482629182
+    },
+    {
+      "index": 33,
+      "connection_id": 9,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 138.96556534859675,
+      "y": 637.1851922464857
+    },
+    {
+      "index": 34,
+      "connection_id": 9,
+      "point_in_connection": 4,
+      "type": "connection_point",
+      "x": 131.540944146138,
+      "y": 629.760571044027
+    },
+    {
+      "index": 35,
+      "connection_id": 11,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 318.306447770753,
+      "y": 537.324165495215
+    },
+    {
+      "index": 36,
+      "connection_id": 11,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 308.4749914062779,
+      "y": 533.6373693585368
+    },
+    {
+      "index": 37,
+      "connection_id": 11,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 314.7443621905874,
+      "y": 516.9190472670449
+    },
+    {
+      "index": 38,
+      "connection_id": 11,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 327.20865328026076,
+      "y": 519.2151008888269
+    },
+    {
+      "index": 39,
+      "connection_id": 11,
+      "point_in_connection": 4,
+      "type": "connection_point",
+      "x": 325.306447770753,
+      "y": 529.541359369012
+    },
+    {
+      "index": 40,
+      "connection_id": 12,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 325.306447770753,
+      "y": 624.533762814164
+    },
+    {
+      "index": 41,
+      "connection_id": 12,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 316.17121481934254,
+      "y": 629.7103948199633
+    },
+    {
+      "index": 42,
+      "connection_id": 12,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 323.1712148193427,
+      "y": 642.0633359964343
+    },
+    {
+      "index": 43,
+      "connection_id": 12,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 332.306447770753,
+      "y": 636.886703990635
+    },
+    {
+      "index": 44,
+      "connection_id": 13,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 332.306447770753,
+      "y": 538.110774212738
+    },
+    {
+      "index": 45,
+      "connection_id": 13,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 342.30690131634583,
+      "y": 534.9106290781483
+    },
+    {
+      "index": 46,
+      "connection_id": 13,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 349.30690131634583,
+      "y": 556.7856290781483
+    },
+    {
+      "index": 47,
+      "connection_id": 13,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 339.306447770753,
+      "y": 559.985774212738
+    },
+    {
+      "index": 48,
+      "connection_id": 14,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 339.306447770753,
+      "y": 638.645407597061
+    },
+    {
+      "index": 49,
+      "connection_id": 14,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 337.24722835180205,
+      "y": 648.9415046918156
+    },
+    {
+      "index": 50,
+      "connection_id": 14,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 344.24722835180205,
+      "y": 650.3415046918155
+    },
+    {
+      "index": 51,
+      "connection_id": 14,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 346.306447770753,
+      "y": 640.045407597061
+    },
+    {
+      "index": 52,
+      "connection_id": 15,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 346.306447770753,
+      "y": 581.860774212738
+    },
+    {
+      "index": 53,
+      "connection_id": 15,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 356.30690131634583,
+      "y": 578.6606290781483
+    },
+    {
+      "index": 54,
+      "connection_id": 15,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 363.30690131634583,
+      "y": 600.5356290781483
+    },
+    {
+      "index": 55,
+      "connection_id": 15,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 353.306447770753,
+      "y": 603.735774212738
+    },
+    {
+      "index": 56,
+      "connection_id": 17,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 498.162787830446,
+      "y": 510.488608398005
+    },
+    {
+      "index": 57,
+      "connection_id": 17,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 491.64540691460746,
+      "y": 502.2561272411563
+    },
+    {
+      "index": 58,
+      "connection_id": 17,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 497.1597375994029,
+      "y": 497.8906154490266
+    },
+    {
+      "index": 59,
+      "connection_id": 17,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 506.2619780678855,
+      "y": 498.84874602465635
+    },
+    {
+      "index": 60,
+      "connection_id": 17,
+      "point_in_connection": 4,
+      "type": "connection_point",
+      "x": 505.162787830446,
+      "y": 509.291053280331
+    },
+    {
+      "index": 61,
+      "connection_id": 18,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 505.162787830446,
+      "y": 530.49629011415
+    },
+    {
+      "index": 62,
+      "connection_id": 18,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 502.4759159471249,
+      "y": 540.6466950066963
+    },
+    {
+      "index": 63,
+      "connection_id": 18,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 509.475915947125,
+      "y": 542.4996361831669
+    },
+    {
+      "index": 64,
+      "connection_id": 18,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 512.162787830446,
+      "y": 532.349231290621
+    },
+    {
+      "index": 65,
+      "connection_id": 19,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 512.162787830446,
+      "y": 510.027895385594
+    },
+    {
+      "index": 66,
+      "connection_id": 19,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 513.2619780678854,
+      "y": 499.58558812991953
+    },
+    {
+      "index": 67,
+      "connection_id": 19,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 520.2619780678854,
+      "y": 500.32243023518265
+    },
+    {
+      "index": 68,
+      "connection_id": 19,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 519.162787830446,
+      "y": 510.764737490857
+    },
+    {
+      "index": 69,
+      "connection_id": 20,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 519.162787830446,
+      "y": 534.202172467092
+    },
+    {
+      "index": 70,
+      "connection_id": 20,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 516.475915947125,
+      "y": 544.3525773596375
+    },
+    {
+      "index": 71,
+      "connection_id": 20,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 523.4759159471249,
+      "y": 546.2055185361081
+    },
+    {
+      "index": 72,
+      "connection_id": 20,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 526.162787830446,
+      "y": 536.055113643562
+    },
+    {
+      "index": 73,
+      "connection_id": 21,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 526.162787830446,
+      "y": 512.991668324781
+    },
+    {
+      "index": 74,
+      "connection_id": 21,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 532.5553850744058,
+      "y": 504.6619204008333
+    },
+    {
+      "index": 75,
+      "connection_id": 21,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 539.5553850744059,
+      "y": 510.0340134240892
+    },
+    {
+      "index": 76,
+      "connection_id": 21,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 533.162787830446,
+      "y": 518.363761348037
+    },
+    {
+      "index": 77,
+      "connection_id": 22,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 533.162787830446,
+      "y": 537.908054820033
+    },
+    {
+      "index": 78,
+      "connection_id": 22,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 530.475915947125,
+      "y": 548.0584597125787
+    },
+    {
+      "index": 79,
+      "connection_id": 22,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 537.4759159471249,
+      "y": 549.9114008890492
+    },
+    {
+      "index": 80,
+      "connection_id": 22,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 540.162787830446,
+      "y": 539.760995996503
+    },
+    {
+      "index": 81,
+      "connection_id": 23,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 540.162787830446,
+      "y": 523.735854371293
+    },
+    {
+      "index": 82,
+      "connection_id": 23,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 546.555385074406,
+      "y": 515.4061064473451
+    },
+    {
+      "index": 83,
+      "connection_id": 23,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 553.5553850744061,
+      "y": 520.778199470601
+    },
+    {
+      "index": 84,
+      "connection_id": 23,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 547.162787830446,
+      "y": 529.107947394549
+    },
+    {
+      "index": 85,
+      "connection_id": 24,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 547.162787830446,
+      "y": 541.613937172974
+    },
+    {
+      "index": 86,
+      "connection_id": 24,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 544.475915947125,
+      "y": 551.7643420655199
+    },
+    {
+      "index": 87,
+      "connection_id": 24,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 551.475915947125,
+      "y": 553.6172832419905
+    },
+    {
+      "index": 88,
+      "connection_id": 24,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 554.162787830446,
+      "y": 543.466878349445
+    },
+    {
+      "index": 89,
+      "connection_id": 26,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 761.026764078776,
+      "y": 875.381612555172
+    },
+    {
+      "index": 90,
+      "connection_id": 26,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 757.5117310290727,
+      "y": 865.4874454523035
+    },
+    {
+      "index": 91,
+      "connection_id": 26,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 764.5117310290726,
+      "y": 863.0006033470404
+    },
+    {
+      "index": 92,
+      "connection_id": 26,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 768.026764078776,
+      "y": 872.894770449909
+    },
+    {
+      "index": 93,
+      "connection_id": 27,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 768.026764078776,
+      "y": 876.728743545443
+    },
+    {
+      "index": 94,
+      "connection_id": 27,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 767.7934883372819,
+      "y": 887.2261519126746
+    },
+    {
+      "index": 95,
+      "connection_id": 27,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 774.7934883372819,
+      "y": 887.3817074682302
+    },
+    {
+      "index": 96,
+      "connection_id": 27,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 775.026764078776,
+      "y": 876.884299100998
+    },
+    {
+      "index": 97,
+      "connection_id": 28,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 775.026764078776,
+      "y": 870.407928344646
+    },
+    {
+      "index": 98,
+      "connection_id": 28,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 771.5117310290726,
+      "y": 860.5137612417773
+    },
+    {
+      "index": 99,
+      "connection_id": 28,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 778.5117310290725,
+      "y": 858.0269191365142
+    },
+    {
+      "index": 100,
+      "connection_id": 28,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 782.026764078776,
+      "y": 867.921086239383
+    },
+    {
+      "index": 101,
+      "connection_id": 29,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 782.026764078776,
+      "y": 877.039854656554
+    },
+    {
+      "index": 102,
+      "connection_id": 29,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 781.7934883372819,
+      "y": 887.5372630237856
+    },
+    {
+      "index": 103,
+      "connection_id": 29,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 788.7934883372819,
+      "y": 887.6928185793412
+    },
+    {
+      "index": 104,
+      "connection_id": 29,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 789.026764078776,
+      "y": 877.195410212109
+    },
+    {
+      "index": 105,
+      "connection_id": 30,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 789.026764078776,
+      "y": 869.220779143827
+    },
+    {
+      "index": 106,
+      "connection_id": 30,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 791.245758400315,
+      "y": 858.9579304067088
+    },
+    {
+      "index": 107,
+      "connection_id": 30,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 798.2457584003151,
+      "y": 860.4714439202223
+    },
+    {
+      "index": 108,
+      "connection_id": 30,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 796.026764078776,
+      "y": 870.734292657341
+    },
+    {
+      "index": 109,
+      "connection_id": 31,
+      "point_in_connection": 0,
+      "type": "connection_point",
+      "x": 796.026764078776,
+      "y": 877.350965767665
+    },
+    {
+      "index": 110,
+      "connection_id": 31,
+      "point_in_connection": 1,
+      "type": "connection_point",
+      "x": 795.7934883372819,
+      "y": 887.8483741348967
+    },
+    {
+      "index": 111,
+      "connection_id": 31,
+      "point_in_connection": 2,
+      "type": "connection_point",
+      "x": 802.7934883372819,
+      "y": 888.0039296904523
+    },
+    {
+      "index": 112,
+      "connection_id": 31,
+      "point_in_connection": 3,
+      "type": "connection_point",
+      "x": 803.026764078776,
+      "y": 877.50652132322
+    }
+  ]
+}

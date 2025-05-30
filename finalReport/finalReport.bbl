@@ -1,28 +1,53 @@
 \begin{thebibliography}{}
 
+\bibitem[Beucher and Lantu{\'e}joul, 1979]{beucher1979watersheds}
+Beucher, S. and Lantu{\'e}joul, C. (1979).
+\newblock Use of watersheds in contour detection.
+\newblock In {\em Proceedings of the International Workshop on Image Processing}, pages 17--21.
+
 \bibitem[Bradski et~al., 2023]{opencv_library}
 Bradski, G., Kaehler, A., and Pisarevsky, V. (2023).
-\newblock Opencv: Open source computer vision library.
+\newblock {OpenCV}: Open source computer vision library.
 \newblock \url{https://opencv.org/}.
 \newblock Accessed: 2025-04-13.
 
 \bibitem[Canny, 1986]{canny1986computational}
 Canny, J. (1986).
 \newblock A computational approach to edge detection.
-\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, PAMI-8(6):679--698.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, PAMI-8(6):679--698.
+
+\bibitem[Chamen et~al., 2015]{chamen2015controlled}
+Chamen, W., Moxey, A., Towers, W., Balana, B., and Hallett, P. (2015).
+\newblock Controlled traffic farming--from worldwide research to adoption in practice and policy implications.
+\newblock {\em Soil and Tillage Research}, 145:64--77.
+
+\bibitem[Chen et~al., 2025]{chen2025complete}
+Chen, Y., Lu, Z.-M., Cui, J.-L., Luo, H., and Zheng, Y.-M. (2025).
+\newblock A complete coverage path planning algorithm for lawn mowing robots based on deep reinforcement learning.
+\newblock {\em Sensors}, 25(2):416.
+
+\bibitem[Choset and Pignon, 1997]{boustrophedon}
+Choset, H. and Pignon, P. (1997).
+\newblock Boustrophedon decomposition.
+
+\bibitem[{Fields2Cover Team}, 2023]{fields2cover}
+{Fields2Cover Team} (2023).
+\newblock Fields2cover: Mission planning for agricultural vehicles.
+\newblock \url{https://fields2cover.github.io/}.
 
 \bibitem[Graham, 1972]{graham1972efficient}
 Graham, R.~L. (1972).
 \newblock An efficient algorithm for determining the convex hull of a finite planar set.
 \newblock {\em Information Processing Letters}, 1(4):132--133.
 
-\bibitem[Howie~Choset, ]{boustrophedon}
-Howie~Choset, P.~P.
-\newblock Boustrophedon decomposition.
+\bibitem[Lin et~al., 2014]{coco}
+Lin, T.-Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dollár, P., and Zitnick, C.~L. (2014).
+\newblock Microsoft {COCO}: Common objects in context.
 
-\bibitem[Lin and Maire, 2014]{coco}
-Lin, T.-Y. and Maire (2014).
-\newblock Microsoft coco: Common objects in context.
+\bibitem[Long et~al., 2015]{long2015fully}
+Long, J., Shelhamer, E., and Darrell, T. (2015).
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, pages 3431--3440.
 
 \bibitem[Macenski et~al., 2022]{ros}
 Macenski, S., Foote, T., Gerkey, B., Lalancette, C., and Woodall, W. (2022).
@@ -34,21 +59,16 @@ Mortensen, J.~K., Matthiesen, V.~S., de~Frutos, J.~G., Bujdoso, K., Christensen,
 \newblock Danish golf courses orthophotos.
 
 \bibitem[Paszke et~al., 2019]{pytorch}
-Paszke, A. et~al. (2019).
-\newblock Pytorch.
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., and Chintala, S. (2019).
+\newblock {PyTorch}.
 
-\bibitem[Perron and Furnon, ]{ortools}
-Perron, L. and Furnon, V.
-\newblock Or-tools.
+\bibitem[Perron and Furnon, 2024]{ortools}
+Perron, L. and Furnon, V. (2024).
+\newblock {OR-Tools}.
 
-\bibitem[Team, 2023]{fields2cover}
-Team, F. (2023).
-\newblock Fields2cover: Mission planning for agricultural vehicles.
-\newblock \url{https://fields2cover.github.io/}.
-
-\bibitem[wkentaro, ]{labelme}
-wkentaro.
-\newblock lableme.
+\bibitem[Wada, 2016]{labelme}
+Wada, K. (2016).
+\newblock labelme: Image polygonal annotation with python.
 
 \bibitem[Zhao and Hwang, 2023]{zhao2023complete}
 Zhao, S. and Hwang, S.-H. (2023).
