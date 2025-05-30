@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  29 MAY 2025 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  30 MAY 2025 02:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,17 +895,17 @@ Package: algpseudocode
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 125.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 124.
  (./finalReport.aux
 
-./finalReport.aux:269: Package natbib Error: Bibliography not compatible with author-year citations.
+./finalReport.aux:274: Package natbib Error: Bibliography not compatible with author-year citations.
 (natbib)                Press <return> to continue in numerical citation style.
 
 See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.269 ...and\NAT@force@numbers{}\NAT@force@numbers
+l.274 ...and\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -913,34 +913,34 @@ or select author-year BibTeX style, e.g. plainnat
 )
 \openout1 = `finalReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-Package scrbase Info: activating english \abstractname on input line 125.
-Package scrbase Info: activating english \partname on input line 125.
-Package scrbase Info: activating english \figurename on input line 125.
-Package scrbase Info: activating english \tablename on input line 125.
-Package scrbase Info: activating english \contentsname on input line 125.
-Package scrbase Info: activating english \listfigurename on input line 125.
-Package scrbase Info: activating english \listtablename on input line 125.
-Package scrbase Info: activating english \refname on input line 125.
-Package scrbase Info: activating english \indexname on input line 125.
-Package tocbasic Info: usage of `tocbibind' detected on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+Package scrbase Info: activating english \abstractname on input line 124.
+Package scrbase Info: activating english \partname on input line 124.
+Package scrbase Info: activating english \figurename on input line 124.
+Package scrbase Info: activating english \tablename on input line 124.
+Package scrbase Info: activating english \contentsname on input line 124.
+Package scrbase Info: activating english \listfigurename on input line 124.
+Package scrbase Info: activating english \listtablename on input line 124.
+Package scrbase Info: activating english \refname on input line 124.
+Package scrbase Info: activating english \indexname on input line 124.
+Package tocbasic Info: usage of `tocbibind' detected on input line 124.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -995,7 +995,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 125.
+Package hyperref Info: Link coloring OFF on input line 124.
  (./finalReport.out) (./finalReport.out)
 \@outlinefile=\write4
 \openout4 = `finalReport.out'.
@@ -1007,7 +1007,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 125.
+(scrartcl)           before \begin{document} on input line 124.
  (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1022,12 +1022,12 @@ Package caption Info: End \AtBeginDocument code.
  (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 125.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 124.
 
-./finalReport.tex:125: Undefined control sequence.
+./finalReport.tex:124: Undefined control sequence.
 <argument> \sf@counterlist 
                            
-l.125 \begin{document}
+l.124 \begin{document}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1036,7 +1036,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 125.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 124.
 
 (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -1082,7 +1082,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <uealogo.png, id=7, 112.9821pt x 53.4798pt>
 File: uealogo.png Graphic file (type png)
 <use uealogo.png>
-Package pdftex.def Info: uealogo.png  used on input line 125.
+Package pdftex.def Info: uealogo.png  used on input line 124.
 (pdftex.def)             Requested size: 85.35826pt x 40.40596pt.
 
 
@@ -1090,18 +1090,17 @@ Package pdftex.def Info: uealogo.png  used on input line 125.
 
 
 
-
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./uealogo.png>]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 125.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 124.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 125.
+(Font)              scaled to size 10.79993pt on input line 124.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 125.
+(Font)              scaled to size 10.79993pt on input line 124.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 125.
+(Font)              scaled to size 15.55188pt on input line 124.
 
 
 [2
@@ -1144,12 +1143,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 [5] (./finalReport.lof
-Overfull \hbox (4.55118pt too wide) in paragraph at lines 15--15
+Overfull \hbox (4.55118pt too wide) in paragraph at lines 16--16
  [][] [][]\T1/ptm/m/n/12 Runtime of the map gen-er-a-tion al-go-rithm with vari-able points, 400 range, 
  []
 
 
-Overfull \hbox (1.8634pt too wide) in paragraph at lines 20--20
+Overfull \hbox (1.8634pt too wide) in paragraph at lines 21--21
  [][] [][]\T1/ptm/m/n/12 Memory us-age of map gen-er-a-tion al-go-rith with 10 points, vari-able range, 
  []
 
@@ -1169,8 +1168,8 @@ Overfull \hbox (1.8634pt too wide) in paragraph at lines 20--20
 
 [8]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 129.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 138.
+(Font)              scaled to size 12.9599pt on input line 128.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 137.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -1180,20 +1179,20 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [10]
 
 [11]
-<./images/mapGen.drawio.png, id=275, 383.4325pt x 413.545pt>
+<./images/mapGen.drawio.png, id=279, 383.4325pt x 413.545pt>
 File: ./images/mapGen.drawio.png Graphic file (type png)
 <use ./images/mapGen.drawio.png>
-Package pdftex.def Info: ./images/mapGen.drawio.png  used on input line 218.
+Package pdftex.def Info: ./images/mapGen.drawio.png  used on input line 262.
 (pdftex.def)             Requested size: 209.12686pt x 225.55107pt.
 
 
 [12]
 
 [13 <./images/mapGen.drawio.png>]
-<./images/pathPlanning.drawio.png, id=290, 292.09125pt x 753.81625pt>
+<./images/pathPlanning.drawio.png, id=297, 292.09125pt x 753.81625pt>
 File: ./images/pathPlanning.drawio.png Graphic file (type png)
 <use ./images/pathPlanning.drawio.png>
-Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 260.
+Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 304.
 (pdftex.def)             Requested size: 167.29893pt x 431.77315pt.
 
 
@@ -1206,10 +1205,10 @@ Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 26
 [17]
 
 [18]
-<./images/openCV.drawio.png, id=323, 272.01625pt x 693.59125pt>
+<./images/openCV.drawio.png, id=328, 272.01625pt x 693.59125pt>
 File: ./images/openCV.drawio.png Graphic file (type png)
 <use ./images/openCV.drawio.png>
-Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 371.
+Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 414.
 (pdftex.def)             Requested size: 146.39134pt x 373.28487pt.
 
 
@@ -1218,10 +1217,10 @@ Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 371.
 [20 <./images/openCV.drawio.png>]
 
 [21]
-<./images/MLAE.drawio.png, id=345, 402.50375pt x 804.00375pt>
+<./images/MLAE.drawio.png, id=350, 402.50375pt x 804.00375pt>
 File: ./images/MLAE.drawio.png Graphic file (type png)
 <use ./images/MLAE.drawio.png>
-Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 413.
+Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 456.
 (pdftex.def)             Requested size: 146.39134pt x 292.41pt.
 
 
@@ -1232,33 +1231,43 @@ Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 413.
 [24]
 
 [25]
-<./images/postProcessing.drawio.png, id=385, 272.01625pt x 402.50375pt>
+<./images/postProcessing.drawio.png, id=390, 272.01625pt x 402.50375pt>
 File: ./images/postProcessing.drawio.png Graphic file (type png)
 <use ./images/postProcessing.drawio.png>
-Package pdftex.def Info: ./images/postProcessing.drawio.png  used on input line 554.
+Package pdftex.def Info: ./images/postProcessing.drawio.png  used on input line 597.
 (pdftex.def)             Requested size: 146.39134pt x 216.62405pt.
 
 
 [26]
+<./images/GUI.png, id=397, 709.65125pt x 252.945pt>
+File: ./images/GUI.png Graphic file (type png)
+<use ./images/GUI.png>
+Package pdftex.def Info: ./images/GUI.png  used on input line 620.
+(pdftex.def)             Requested size: 209.12686pt x 74.54092pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [27 <./images/postProcessing.drawio.png>]
 
-[28]
+[28 <./images/GUI.png (PNG copy)>]
 
 [29]
 
 [30]
-./finalReport.tex:694: Missing $ inserted.
+
+[31]
+./finalReport.tex:745: Missing $ inserted.
 <inserted text> 
                 $
-l.694 The graph shows upto 10^
+l.745 The graph shows upto 10^
                               5m^2$ which is about the size of 14 football p...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-
-[31]
 
 [32]
 
@@ -1276,7 +1285,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 [37
 
 ]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 828.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 883.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1298,61 +1307,61 @@ LaTeX Warning: Text page 39 contains only floats.
 
 
 [39]
-<./images/f2cCellDecompL.png, id=518, 562.1pt x 421.575pt>
+<./images/f2cCellDecompL.png, id=521, 562.1pt x 421.575pt>
 File: ./images/f2cCellDecompL.png Graphic file (type png)
 <use ./images/f2cCellDecompL.png>
-Package pdftex.def Info: ./images/f2cCellDecompL.png  used on input line 917.
+Package pdftex.def Info: ./images/f2cCellDecompL.png  used on input line 972.
 (pdftex.def)             Requested size: 250.95477pt x 188.2146pt.
-<./images/openCvCannyExample.jpg, id=519, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=522, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 927.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 982.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=521, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=524, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 935.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 990.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AdobeGolf_visualisation.png, id=522, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=525, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 942.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 997.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=523, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=526, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 949.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 1004.
 (pdftex.def)             Requested size: 250.95477pt x 209.1255pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AENoRoughDemoTraining.png, id=524, 691.6239pt x 726.3135pt>
+<./images/AENoRoughDemoTraining.png, id=527, 691.6239pt x 726.3135pt>
 File: ./images/AENoRoughDemoTraining.png Graphic file (type png)
 <use ./images/AENoRoughDemoTraining.png>
-Package pdftex.def Info: ./images/AENoRoughDemoTraining.png  used on input line 956.
+Package pdftex.def Info: ./images/AENoRoughDemoTraining.png  used on input line 1011.
 (pdftex.def)             Requested size: 250.95477pt x 263.54512pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AEEnglishCoursePlain.png, id=525, 749.04843pt x 639.89063pt>
+<./images/AEEnglishCoursePlain.png, id=528, 749.04843pt x 639.89063pt>
 File: ./images/AEEnglishCoursePlain.png Graphic file (type png)
 <use ./images/AEEnglishCoursePlain.png>
-Package pdftex.def Info: ./images/AEEnglishCoursePlain.png  used on input line 964.
+Package pdftex.def Info: ./images/AEEnglishCoursePlain.png  used on input line 1019.
 (pdftex.def)             Requested size: 209.12686pt x 178.65067pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AEEnglishCourseResult.png, id=526, 950.55125pt x 856.19875pt>
+<./images/AEEnglishCourseResult.png, id=529, 950.55125pt x 856.19875pt>
 File: ./images/AEEnglishCourseResult.png Graphic file (type png)
 <use ./images/AEEnglishCourseResult.png>
-Package pdftex.def Info: ./images/AEEnglishCourseResult.png  used on input line 972.
+Package pdftex.def Info: ./images/AEEnglishCourseResult.png  used on input line 1027.
 (pdftex.def)             Requested size: 292.77632pt x 263.70741pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1368,61 +1377,61 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [42 <./images/overheadGolfCourse_visualisation.png> <./images/AENoRoughDemoTraining.png>]
 
 [43 <./images/AEEnglishCoursePlain.png> <./images/AEEnglishCourseResult.png (PNG copy)>]
-<./images/mapGenBaselineRT.png, id=549, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselineRT.png, id=552, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselineRT.png Graphic file (type png)
 <use ./images/mapGenBaselineRT.png>
-Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 986.
+Package pdftex.def Info: ./images/mapGenBaselineRT.png  used on input line 1041.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/mapGenPointsRT.png, id=550, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsRT.png, id=553, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsRT.png Graphic file (type png)
 <use ./images/mapGenPointsRT.png>
-Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 994.
+Package pdftex.def Info: ./images/mapGenPointsRT.png  used on input line 1049.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/mapGenRangeRT.png, id=551, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeRT.png, id=554, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeRT.png Graphic file (type png)
 <use ./images/mapGenRangeRT.png>
-Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 1002.
+Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 1057.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenHolesRT.png, id=552, 691.6239pt x 726.3135pt>
+<./images/mapGenHolesRT.png, id=555, 691.6239pt x 726.3135pt>
 File: ./images/mapGenHolesRT.png Graphic file (type png)
 <use ./images/mapGenHolesRT.png>
-Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 1010.
+Package pdftex.def Info: ./images/mapGenHolesRT.png  used on input line 1065.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenBaselineMem.png, id=553, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselineMem.png, id=556, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselineMem.png Graphic file (type png)
 <use ./images/mapGenBaselineMem.png>
-Package pdftex.def Info: ./images/mapGenBaselineMem.png  used on input line 1017.
+Package pdftex.def Info: ./images/mapGenBaselineMem.png  used on input line 1072.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenPointsMem.png, id=554, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsMem.png, id=557, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsMem.png Graphic file (type png)
 <use ./images/mapGenPointsMem.png>
-Package pdftex.def Info: ./images/mapGenPointsMem.png  used on input line 1024.
+Package pdftex.def Info: ./images/mapGenPointsMem.png  used on input line 1079.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenRangeMem.png, id=555, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeMem.png, id=558, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeMem.png Graphic file (type png)
 <use ./images/mapGenRangeMem.png>
-Package pdftex.def Info: ./images/mapGenRangeMem.png  used on input line 1031.
+Package pdftex.def Info: ./images/mapGenRangeMem.png  used on input line 1086.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenHolesMem.png, id=556, 691.6239pt x 726.3135pt>
+<./images/mapGenHolesMem.png, id=559, 691.6239pt x 726.3135pt>
 File: ./images/mapGenHolesMem.png Graphic file (type png)
 <use ./images/mapGenHolesMem.png>
-Package pdftex.def Info: ./images/mapGenHolesMem.png  used on input line 1038.
+Package pdftex.def Info: ./images/mapGenHolesMem.png  used on input line 1093.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1438,61 +1447,61 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [46 <./images/mapGenBaselineMem.png> <./images/mapGenPointsMem.png>]
 
 [47 <./images/mapGenRangeMem.png> <./images/mapGenHolesMem.png>]
-<./images/pathingBaseLineRT.png, id=581, 691.6239pt x 726.3135pt>
+<./images/pathingBaseLineRT.png, id=584, 691.6239pt x 726.3135pt>
 File: ./images/pathingBaseLineRT.png Graphic file (type png)
 <use ./images/pathingBaseLineRT.png>
-Package pdftex.def Info: ./images/pathingBaseLineRT.png  used on input line 1048.
+Package pdftex.def Info: ./images/pathingBaseLineRT.png  used on input line 1103.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/pathingSizeRt.png, id=582, 691.6239pt x 726.3135pt>
+<./images/pathingSizeRt.png, id=585, 691.6239pt x 726.3135pt>
 File: ./images/pathingSizeRt.png Graphic file (type png)
 <use ./images/pathingSizeRt.png>
-Package pdftex.def Info: ./images/pathingSizeRt.png  used on input line 1056.
+Package pdftex.def Info: ./images/pathingSizeRt.png  used on input line 1111.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/pathingRoutePlanningRT.png, id=583, 691.6239pt x 726.3135pt>
+<./images/pathingRoutePlanningRT.png, id=586, 691.6239pt x 726.3135pt>
 File: ./images/pathingRoutePlanningRT.png Graphic file (type png)
 <use ./images/pathingRoutePlanningRT.png>
-Package pdftex.def Info: ./images/pathingRoutePlanningRT.png  used on input line 1064.
+Package pdftex.def Info: ./images/pathingRoutePlanningRT.png  used on input line 1119.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingHolesRT.png, id=584, 922.8879pt x 986.4855pt>
+<./images/pathingHolesRT.png, id=587, 922.8879pt x 986.4855pt>
 File: ./images/pathingHolesRT.png Graphic file (type png)
 <use ./images/pathingHolesRT.png>
-Package pdftex.def Info: ./images/pathingHolesRT.png  used on input line 1072.
+Package pdftex.def Info: ./images/pathingHolesRT.png  used on input line 1127.
 (pdftex.def)             Requested size: 209.12686pt x 223.53018pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingBaseLineMem.png, id=585, 922.8879pt x 477.7047pt>
+<./images/pathingBaseLineMem.png, id=588, 922.8879pt x 477.7047pt>
 File: ./images/pathingBaseLineMem.png Graphic file (type png)
 <use ./images/pathingBaseLineMem.png>
-Package pdftex.def Info: ./images/pathingBaseLineMem.png  used on input line 1080.
+Package pdftex.def Info: ./images/pathingBaseLineMem.png  used on input line 1135.
 (pdftex.def)             Requested size: 334.60425pt x 173.19814pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingSizeMem.png, id=586, 691.6239pt x 726.3135pt>
+<./images/pathingSizeMem.png, id=589, 691.6239pt x 726.3135pt>
 File: ./images/pathingSizeMem.png Graphic file (type png)
 <use ./images/pathingSizeMem.png>
-Package pdftex.def Info: ./images/pathingSizeMem.png  used on input line 1088.
+Package pdftex.def Info: ./images/pathingSizeMem.png  used on input line 1143.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingRoutePlanningMem.png, id=587, 1848.6666pt x 986.4855pt>
+<./images/pathingRoutePlanningMem.png, id=590, 1848.6666pt x 986.4855pt>
 File: ./images/pathingRoutePlanningMem.png Graphic file (type png)
 <use ./images/pathingRoutePlanningMem.png>
-Package pdftex.def Info: ./images/pathingRoutePlanningMem.png  used on input line 1096.
+Package pdftex.def Info: ./images/pathingRoutePlanningMem.png  used on input line 1151.
 (pdftex.def)             Requested size: 376.4258pt x 200.86105pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/pathingHolesMem.png, id=588, 691.6239pt x 726.3135pt>
+<./images/pathingHolesMem.png, id=591, 691.6239pt x 726.3135pt>
 File: ./images/pathingHolesMem.png Graphic file (type png)
 <use ./images/pathingHolesMem.png>
-Package pdftex.def Info: ./images/pathingHolesMem.png  used on input line 1104.
+Package pdftex.def Info: ./images/pathingHolesMem.png  used on input line 1159.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1508,40 +1517,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [50 <./images/pathingBaseLineMem.png> <./images/pathingSizeMem.png>]
 
 [51 <./images/pathingRoutePlanningMem.png> <./images/pathingHolesMem.png>]
-<./images/AEConfidenceThreshold.png, id=614, 691.6239pt x 726.3135pt>
-File: ./images/AEConfidenceThreshold.png Graphic file (type png)
-<use ./images/AEConfidenceThreshold.png>
-Package pdftex.def Info: ./images/AEConfidenceThreshold.png  used on input line 1115.
+<./images/AEConfidenceCombined.png, id=617, 691.6239pt x 726.3135pt>
+File: ./images/AEConfidenceCombined.png Graphic file (type png)
+<use ./images/AEConfidenceCombined.png>
+Package pdftex.def Info: ./images/AEConfidenceCombined.png  used on input line 1205.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
-<./images/AEConfidenceThresholdDetect.png, id=615, 691.6239pt x 726.3135pt>
-File: ./images/AEConfidenceThresholdDetect.png Graphic file (type png)
-<use ./images/AEConfidenceThresholdDetect.png>
-Package pdftex.def Info: ./images/AEConfidenceThresholdDetect.png  used on input line 1122.
+<./images/AEIOUCombined.png, id=618, 691.6239pt x 726.3135pt>
+File: ./images/AEIOUCombined.png Graphic file (type png)
+<use ./images/AEIOUCombined.png>
+Package pdftex.def Info: ./images/AEIOUCombined.png  used on input line 1212.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
-<./images/AEIOUThresholdPixel.png, id=616, 922.8879pt x 477.7047pt>
-File: ./images/AEIOUThresholdPixel.png Graphic file (type png)
-<use ./images/AEIOUThresholdPixel.png>
-Package pdftex.def Info: ./images/AEIOUThresholdPixel.png  used on input line 1129.
-(pdftex.def)             Requested size: 376.4258pt x 194.84698pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images/AEIOUThresholdDetect.png, id=617, 691.6239pt x 726.3135pt>
-File: ./images/AEIOUThresholdDetect.png Graphic file (type png)
-<use ./images/AEIOUThresholdDetect.png>
-Package pdftex.def Info: ./images/AEIOUThresholdDetect.png  used on input line 1136.
-(pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 
 
 [52
 
- <./images/AEConfidenceThreshold.png> <./images/AEConfidenceThresholdDetect.png>]
-
-[53 <./images/AEIOUThresholdPixel.png> <./images/AEIOUThresholdDetect.png>] (./finalReport.aux)
+ <./images/AEConfidenceCombined.png> <./images/AEIOUCombined.png>] (./finalReport.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1550,18 +1540,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38524 strings out of 475171
- 840810 string characters out of 5767095
- 1323772 words of memory out of 5000000
- 60728 multiletter control sequences out of 15000+600000
+ 38517 strings out of 475171
+ 840216 string characters out of 5767095
+ 1324771 words of memory out of 5000000
+ 60716 multiletter control sequences out of 15000+600000
  613564 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (53 pages, 7068904 bytes).
+Output written on finalReport.pdf (52 pages, 7052048 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 721 compressed objects within 8 object streams
- 215 named destinations out of 1000 (max. 500000)
- 575 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 724 compressed objects within 8 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 570 words of extra memory for PDF output out of 10000 (max. 10000000)
 

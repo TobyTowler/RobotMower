@@ -9,7 +9,7 @@ from aerialMapping.utils import save_outlines_to_json
 from pathing.roughToF2C import genRoughPath
 from pathing.fairwayToF2C import genFairwayPath
 from pathing.greenToF2C import genGreenPath
-from pathing.utils import save_route_to_json
+from pathing.utils import load_csv_points, save_route_to_json
 
 
 def run(img, gui_instance):
@@ -21,6 +21,7 @@ def run(img, gui_instance):
 def process_with_progress(img, gui):
     print("Welcome!")
     gui.updateStep("Welcome")
+    filename = os.path.basename(img)
 
     gui.updateProgress(5)
     gui.updateStep("Running model")
@@ -32,15 +33,13 @@ def process_with_progress(img, gui):
     gui.updateProgress(25)
     gui.updateStep("Saved outlines")
     if gui.useGPS:
-        path = 
+        path = load_csv_points("./outputs/transformedOutlines/" + filename + ".csv")
 
     else:
         path = save_outlines_to_json(outline, img)
     gui.updateProgress(30)
 
     print(path)
-
-    filename = os.path.basename(path)
 
     print("Generating fairway paths")
     gui.updateStep("Generating fairway paths")

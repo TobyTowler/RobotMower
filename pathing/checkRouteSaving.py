@@ -1,13 +1,9 @@
 import json
 import matplotlib.pyplot as plt
+import os
 
 
 def simple_route_plot(json_file):
-    """Simple route visualization"""
-
-    # Check if file exists first
-    import os
-
     if not os.path.exists(json_file):
         print(f"Error: File '{json_file}' not found!")
         print(f"Current directory: {os.getcwd()}")
@@ -40,8 +36,6 @@ def simple_route_plot(json_file):
     )
 
 
-# Fix the syntax error and use the correct path
 if __name__ == "__main__":
-    # Use the correct file path
     json_file = "../outputs/paths/Benniksgaard_Golf_Klub_1000_02_2_outlines.jsonfairwayPath.json"
     simple_route_plot(json_file)

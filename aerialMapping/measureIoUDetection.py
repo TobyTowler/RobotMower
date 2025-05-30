@@ -13,7 +13,6 @@ from maskRCNNmodel import GolfCourseDataset, get_transform
 def calculate_accuracy_with_iou_threshold(
     model, data_loader, device, iou_threshold=0.5, conf_threshold=0.5, show_images=False
 ):
-    """Calculate accuracy using different IoU thresholds for matching predictions to ground truth"""
     model.eval()
 
     correct_detections = 0
@@ -26,20 +25,16 @@ def calculate_accuracy_with_iou_threshold(
             images = list(image.to(device) for image in images)
             targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
-            # Get predictions
             predictions = model(images)
 
             for img_tensor, pred, target in zip(images, predictions, targets):
                 batch_count += 1
 
-                # Show image predictions for first few samples if requested
                 if show_images and batch_count <= 5:
                     print(f"\nShowing prediction for sample {batch_count}")
 
-                    # Convert tensor back to numpy for visualization
                     image_np = img_tensor.cpu().permute(1, 2, 0).numpy()
 
-                    # Create result dictionary for visualization (similar to testWeights)
                     result = {
                         "image": image_np,
                         "boxes": [],
@@ -48,7 +43,6 @@ def calculate_accuracy_with_iou_threshold(
                         "scores": [],
                     }
 
-                    # Filter predictions by confidence
                     if len(pred["scores"]) > 0:
                         high_conf_indices = pred["scores"] > conf_threshold
 
@@ -63,7 +57,6 @@ def calculate_accuracy_with_iou_threshold(
                             result["classes"].append(class_names[label.cpu().item()])
                             result["scores"].append(score.cpu().numpy())
 
-                    # Visualize the prediction
                     try:
                         visualize_prediction(result, output_path=None, show=True)
                     except Exception as e:
@@ -73,7 +66,6 @@ def calculate_accuracy_with_iou_threshold(
                         print(f"  Classes: {result['classes']}")
                         print(f"  Scores: {[f'{s:.3f}' for s in result['scores']]}")
 
-                # Continue with accuracy calculation
                 if len(pred["scores"]) > 0:
                     high_conf_indices = pred["scores"] > conf_threshold
                     pred_boxes = pred["boxes"][high_conf_indices]
@@ -82,16 +74,13 @@ def calculate_accuracy_with_iou_threshold(
                     pred_boxes = torch.empty((0, 4))
                     pred_labels = torch.empty(0, dtype=torch.long)
 
-                # Ground truth
                 true_boxes = target["boxes"]
                 true_labels = target["labels"]
                 total_ground_truth += len(true_labels)
 
-                # Calculate detection matches using box IoU
                 if len(pred_boxes) > 0 and len(true_boxes) > 0:
                     box_ious = box_iou(pred_boxes, true_boxes)
 
-                    # Match predictions to ground truth using IoU threshold
                     matched_pred = set()
 
                     for i, true_label in enumerate(true_labels):
@@ -118,7 +107,6 @@ def calculate_accuracy_with_iou_threshold(
 
 
 def print_detailed_results(thresholds, accuracies):
-    """Print detailed results in a nice format"""
     print("\n" + "=" * 50)
     print("DETAILED IoU THRESHOLD RESULTS")
     print("=" * 50)
@@ -150,16 +138,13 @@ def main():
     x = [i / 10.0 for i in range(1, 10)]
     accuracies = []
 
-    # Set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     print(f"Using device: {device}")
 
-    # Load model
     model_path = "./models/golf_course_model_best.pth"
     model = load_model(model_path, 6)
     model.to(device)
 
-    # Create test dataset
     test_dataset = GolfCourseDataset(
         img_dir="./imgs/rawImgs/",
         json_dir="./imgs/annotationsTesting/",
@@ -167,7 +152,6 @@ def main():
         compute_class_weights=False,
     )
 
-    # Create test loader
     test_loader = DataLoader(
         test_dataset,
         batch_size=1,
@@ -184,10 +168,9 @@ def main():
         thisAccuracies = []
         print(f"\nTesting IoU threshold: {threshold}")
 
-        for j in range(3):  # Run multiple times for averaging
+        for j in range(3):
             print(f"  Run {j + 1}/3...", end=" ")
 
-            # Show image predictions only for first threshold and first run
             show_images = i == 0 and j == 0
             if show_images:
                 print("\n  [Showing image predictions for first 5 samples]")
@@ -205,10 +188,8 @@ def main():
         accuracies.append(avg_accuracy)
         print(f"  Average accuracy: {avg_accuracy:.4f}")
 
-    # Print detailed results
     print_detailed_results(x, accuracies)
 
-    # Plot results
     plt.figure(figsize=(10, 10))
     plt.rcParams.update({"font.size": 16})
     plt.rcParams["savefig.directory"] = os.path.expanduser(

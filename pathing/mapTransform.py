@@ -41,11 +41,7 @@ def getAngle(gps):
 
 
 def rotateMap(points, gps):
-    # Bearing in radians
-
-    rotation_angle = -(
-        getAngle(gps)
-    )  # Negative because of different coordinate systems
+    rotation_angle = -(getAngle(gps))
 
     cos_angle = math.cos(rotation_angle)
     sin_angle = math.sin(rotation_angle)

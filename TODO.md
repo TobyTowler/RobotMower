@@ -11,7 +11,7 @@ Abstract
 - [-] Future work
 - [x] Abstract
 - [x] Redo all graphs - remove title
-- [ ] GUI
+- [x] GUI
 
 FML
 I am cooked
@@ -47,6 +47,7 @@ I am cooked
 - [x] make path
 - [x] save path
 - [x] display path
+- [ ] Show results at end
 
 
 ### Progress bar

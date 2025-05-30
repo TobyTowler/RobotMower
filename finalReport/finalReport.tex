@@ -90,7 +90,6 @@ In conclusion, the complete coverage path planning and aerial image map generati
 \newpage
 }
 
-\clearpage
 \acknowledgements{
     Edwin Ren, Eden Attlebourgh
 }
@@ -109,7 +108,7 @@ In conclusion, the complete coverage path planning and aerial image map generati
 % anywhere else in the document
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\nolist
+% \nolist
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -186,32 +185,77 @@ An electric powered autonomous mower would operate almost silently, produce zero
 Many larger golf courses already have infrastructure electricity powered golf carts used to get around the course.
 Already in place electronic charging stations for quick, easy charging and suitable tracks to navigate from course to course could be refactored for use with an electronic powered mowing unit.
 
-\subsection{Relate Work}
-\subsubsection{ECOVACS GOAT A3000}
-The GOAT A3000 RTK \citep{goata3000} is a compact self-contained lawn mower created by Ecovacs.
-It moves its 46 cm wide body on 4 wheels cutting 33 cm wide areas at a time.
-Boundary detection is automated with dual Lidar and AI cameras allowing accuracy within 2 cm, several maps and paths can be saved at once.
-This robot allows for complete edge detection covering a whole area with no user input required but can still connect to a mobile app to allow adding, editing, splitting and merging of virtual maps.
-Other options in the mobile app include mowing height, travel speed, obstacle avoidance height and scheduling.
-Many U-shaped paths are joined together to form a grid pattern ensuring all grass is cut.
+\subsection{Related Work}
+\subsubsection{Complete Coverage Path Planning}
+Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \citep{zhao2023complete}.
+This problem is common in applications such as vacuum cleaning, lawn mowing, agricultural field operations and all autonomous robotic applications.
 
-This product features highly accurate locational precision and a large blade to effectively cover the area it is designated, path saving is also a big plus.
-However, where this design may fall short is the 4 wheel design; the front two wheels are week and do not receive power, rather are for stabilisation. This may not all steering or even traction in all conditions, specifically muddy areas after heavy rain.
+\paragraph{Boustrophedon} \
 
-\subsubsection{STIHL iMOW 5}
-This robotic lawn mower \citep{imow5} can cover 28 cm at once under a 52 cm body, also on 4 wheels its physical design is similar to the ECOVACS product.
-STIHL also provide a mobile app to connect to the robot, many features are similar with the addition of definable starting points and priority zones.
-Additionally this product has a rain sensor, since moisture can affect the mowing process the robot can determine if it should mow or not based on preferences by the user.
-It is also equipped with anti theft technology. If the robot detects it is picked up or removed from the desired area it locks all controls and alerts the owner.
+The Boustrophedon pattern \citep{boustrophedon}, is a popular method to cover areas.
+Perpendicular lines are generated across the area and traversed in order, one by one from start to finish.
 
-Some pros of this system are rain detection automatically detecting if it is optimal to mow or not in the current conditions. The iMow5 can also handle gradients upto 40\% making it suitable for any bumps around the borders of areas like greens.
-A large con of this mower are that it requires laying wire around or under obstacles and its charging point since it does utilise RTK or a cheaper GPS option, this would disrupt the flow of the golf course if placed around or fully disrupt the ground if dug underneath.
+This method has several positives; simple implementation, low computational complexity and has predictable path lengths.
+The cons of this method are that it can require many sharp 180° turns and can be inefficient on complex shaped fields.
 
+\paragraph{Controlled Traffic Farming} \
+
+Controlled Traffic Farming describes the idea of all vehicles travelling over the same paths, reducing the area subject to soil compaction - soil being pressed down due to heavy objects travelling over it.
+This method is primarily used for agriculture due to the very heavy machinery used and not wanting to travel over crops when avoidable.
+
+This method has various advantages as it can reduce soil compaction therefore increase soil health and can increase fuel efficiency.
+The drawbacks of this method are all equipment must be compatible with the same size tracks and track spacing.
+
+
+\subsubsection{Aerial Image Mapping}
+Aerial image mapping is the process of producing outlines or maps of an area from aerial images.
+
+\paragraph{Semantic Segmentaion Neural Networks}
+This method using deep learning models to classify every pixel of an image into a specific predefined class.
+This approach could be used to map an area by detecting areas of a golf course.
+
+This method can handle subtle boundaries between objects well while outlining entire areas not just outlining them.
+Neural network approaches can be constantly improved with new training data.
+
+Neural networks become less ideal when suitable training data is not available or sufficient computation power to train and evaluate them as they require powerful graphics processing units to run in good time.
+
+\paragraph{Watershed Segmentation} \
+
+This is an algorithmic way to determine outlines and is a classical image processing technique.
+Watershed treats pixel intensity as topographic surfaces, treating differences in elevation as boundaries.
+
+This algorithm is simple to implement and is computationally light when compared to a machine learning approach.
+
+However, this process can require preprocessing and is sensitive to noise without careful parameter tweaking.
+
+
+
+
+
+
+% \subsubsection{ECOVACS GOAT A3000}
+% The GOAT A3000 RTK \citep{goata3000} is a compact self-contained lawn mower created by Ecovacs.
+% It moves its 46 cm wide body on 4 wheels cutting 33 cm wide areas at a time.
+% Boundary detection is automated with dual Lidar and AI cameras allowing accuracy within 2 cm, several maps and paths can be saved at once.
+% This robot allows for complete edge detection covering a whole area with no user input required but can still connect to a mobile app to allow adding, editing, splitting and merging of virtual maps.
+% Other options in the mobile app include mowing height, travel speed, obstacle avoidance height and scheduling.
+% Many U-shaped paths are joined together to form a grid pattern ensuring all grass is cut.
+%
+% This product features highly accurate locational precision and a large blade to effectively cover the area it is designated, path saving is also a big plus.
+% However, where this design may fall short is the 4 wheel design; the front two wheels are week and do not receive power, rather are for stabilisation. This may not all steering or even traction in all conditions, specifically muddy areas after heavy rain.
+%
+% \subsubsection{STIHL iMOW 5}
+% This robotic lawn mower \citep{imow5} can cover 28 cm at once under a 52 cm body, also on 4 wheels its physical design is similar to the ECOVACS product.
+% STIHL also provide a mobile app to connect to the robot, many features are similar with the addition of definable starting points and priority zones.
+% Additionally this product has a rain sensor, since moisture can affect the mowing process the robot can determine if it should mow or not based on preferences by the user.
+% It is also equipped with anti theft technology. If the robot detects it is picked up or removed from the desired area it locks all controls and alerts the owner.
+%
+% Some pros of this system are rain detection automatically detecting if it is optimal to mow or not in the current conditions. The iMow5 can also handle gradients upto 40\% making it suitable for any bumps around the borders of areas like greens.
+% A large con of this mower are that it requires laying wire around or under obstacles and its charging point since it does utilise RTK or a cheaper GPS option, this would disrupt the flow of the golf course if placed around or fully disrupt the ground if dug underneath.
+%
 
 \section{System Design}
-
 \subsection{Map Generation}
-
 
 \begin{figure}[H]
 	\centering
@@ -263,7 +307,6 @@ Using this algorithm allows for consistent outlining of any set of points with n
 \end{figure}
 
 
-Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \citep{zhao2023complete}
 For this module, I have used the Fields2Cover library \citep{fields2cover}, this library is open source.
 During the course of this project, I contributed to his library, fixing a bug during the build process.
 The library splits the task up into several sub-tasks.
@@ -571,6 +614,14 @@ To bring all components listed in this report together, a simple graphical user 
 
 This GUI features buttons to load images for the machine learning model and begin the process, a checkbox to scale with real coordinates and a progress bar displaying the progress of the system.
 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/GUI.png}
+	\caption{Screenshot of GUI for this program}
+	\label{GUI}
+\end{figure}
+
 \section{Performance Evaluation}
 
 Performance is a key part of user experience therefore is crucial to the real world performance of this product.
@@ -751,16 +802,18 @@ Both of these were tested against serveral parameters as follows.
 
 Confidence threshold is the needed degree of certainty for the outputs of the model to be considered.
 
+Results of this section are shown in (\Cref{AE:Confidence})
+
 \paragraph{Pixel Accuracy} \
 
-\Cref{AE:ConfidenceThreshold} Depicts the relationship between confidence threshold and pixel accuracy of the MaskRCNN machine learning model.
-If the confidence is below the threshold, the output is discarded.
-The graph shows a non linear relationship between the two peaking at around 0.6 confidence, this signifies the model is over estimating areas at the low end \textbf{0 - 0.4}, fairly accurate in the mid range \textbf{0.5-0.8} and too strict at the upper end \textbf{0.9 - 1}.
+The graph shows a non linear relationship between the pixel accuracy and confidence threshold, peaking at around 0.6 confidence, this signifies the model is over estimating areas at the low end \textbf{0 - 0.4}, fairly accurate in the mid range \textbf{0.5-0.8} and too strict at the upper end \textbf{0.9 - 1}.
 The accuracy peaks at around \textbf{0.6} so this is the confidence level that will be used going forward.
 
 \paragraph{Detection Accuracy} \
+The relationship between detection accuracy and confidence threshold is an almost linear negative correlation.
+The probable cause of this is as confidnce threshold increaes, less predicitions are passing the threshold.
+The sharp drop suggests the model is not very confident with the majority of its predictions, this is likely to be helped with additional training data.
 
-\Cref{AE:ConfidenceThresholdDetect}
 
 
 \subsection{Intersecion over Union (IoU)}
@@ -774,15 +827,15 @@ Mask IoU that only counts the predicted area. This offers more precise calcution
 
 Note that the x axis on these graphs stop at \textbf{0.9}, this is because a IoU of \textbf{1} is nearly impossible for a task as complex as this so would nearly always equal \textbf{0}. For this reason it has been omitted to allow a higher detail reading of the graphs.
 
+Results for this paremter can be seen in (\Cref{AE:IOU})
+
 \paragraph{Pixel Accuracy} \
 
-\Cref{AE:IOUThreshold} shows the pixel accuracy compared to IOU threshold. 
-As with the confidence threshold (\Cref{confidenceThresholdEval}) a non linear relationship can be seen with a peak around the mid range, in this case \textbf{0.6}, again likely due to this being the sweet spot where the model is close enough to the ground truth without being too restricted in its outputs.
+As with the confidence threshold a non linear relationship can be seen with a peak around the mid range, in this case \textbf{0.6}, again likely due to this being the sweet spot where the model is close enough to the ground truth without being too restricted in its outputs.
 
 \paragraph{Decection Accuracy} \
 
-\Cref{AE:IOUThresholdDetect} shows the relationship the threshold of this has to detection accuracy. 
-The graph shows that lower IoU causes higher detection rates.
+The relationship between the threshold  IOU to detection accuracy seen in the graph shows that lower IoU causes higher detection rates.
 This is most likely because lower IoU allows the model to be less precise in location with predictions, however this it is probable that this would cause lower pixel accuracy due to the more relaxed location. 
 
 
@@ -812,6 +865,8 @@ One such improvement could be collecting high quality training data representing
 
 Another adaptation could be agricultural use. 
 Since Fields2Cover, the path planning library used in this project, is made with agriculture in mind if the mapping model was adapted the system could yield good results for a seperate use case to the current implementation.
+
+A more complex GUI would be a good addition in increase the user experience with the product. The current one was rather an after thought than a core piece of the software but it is important that the user can interact with the program easily and intuitively.
 
 
 
@@ -1109,42 +1164,55 @@ Since Fields2Cover, the path planning library used in this project, is made with
 
 \clearpage
 \subsubsection{Aerial Mapping}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThreshold.png}
+% 	\caption{Pixel accuracy vs confidence threshold of maskRCNN model}
+% 	\label{AE:ConfidenceThreshold}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThresholdDetect.png}
+% 	\caption{Detection accuracy vs confidence threshold of maskRCNN model}
+% 	\label{AE:ConfidenceThresholdDetect}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./images/AEIOUThresholdPixel.png}
+% 	\caption{Pixel accuracy vs intersection over union of maskRCNN model}
+% 	\label{AE:IOUThreshold}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{./images/AEIOUThresholdDetect.png}
+% 	\caption{Detection accuracy vs intersection over union of maskRCNN model}
+% 	\label{AE:IOUThresholdDetect}
+% \end{figure}
+%
+%
+%
+%
+%
+
+
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThreshold.png}
-	\caption{Pixel accuracy vs confidence threshold of maskRCNN model}
-	\label{AE:ConfidenceThreshold}
+	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceCombined.png}
+	\caption{Pixel and detection accuracy vs confidence threshold of maskRCNN model}
+	\label{AE:Confidence}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/AEConfidenceThresholdDetect.png}
-	\caption{Detection accuracy vs confidence threshold of maskRCNN model}
-	\label{AE:ConfidenceThresholdDetect}
+	\includegraphics[width=0.5\textwidth]{./images/AEIOUCombined.png}
+	\caption{Pixel accuracy vs intersection over union threshold of maskRCNN model}
+	\label{AE:IOU}
 \end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./images/AEIOUThresholdPixel.png}
-	\caption{Pixel accuracy vs intersection over union of maskRCNN model}
-	\label{AE:IOUThreshold}
-\end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./images/AEIOUThresholdDetect.png}
-	\caption{Detection accuracy vs intersection over union of maskRCNN model}
-	\label{AE:IOUThresholdDetect}
-\end{figure}
-
-
-
-
-
-
-
-
 
 
 \end{document}
