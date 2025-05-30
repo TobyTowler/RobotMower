@@ -40,6 +40,11 @@ Graham, R.~L. (1972).
 \newblock An efficient algorithm for determining the convex hull of a finite planar set.
 \newblock {\em Information Processing Letters}, 1(4):132--133.
 
+\bibitem[He et~al., 2017]{he2017mask}
+He, K., Gkioxari, G., Dollár, P., and Girshick, R. (2017).
+\newblock Mask r-cnn.
+\newblock In {\em Proceedings of the IEEE International Conference on Computer Vision}, pages 2961--2969.
+
 \bibitem[Lin et~al., 2014]{coco}
 Lin, T.-Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dollár, P., and Zitnick, C.~L. (2014).
 \newblock Microsoft {COCO}: Common objects in context.
@@ -65,6 +70,11 @@ Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, 
 \bibitem[Perron and Furnon, 2024]{ortools}
 Perron, L. and Furnon, V. (2024).
 \newblock {OR-Tools}.
+
+\bibitem[Stombaugh et~al., 2003]{rtk_gps}
+Stombaugh, T., Shearer, S., Fulton, J., and Minor, H. (2003).
+\newblock Real-time kinematic gps and multisensor integration for precision farming.
+\newblock {\em Precision Agriculture}, 4:139--148.
 
 \bibitem[Wada, 2016]{labelme}
 Wada, K. (2016).

@@ -2,52 +2,48 @@ This is BibTeX, Version 0.99d (TeX Live 2026/dev/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: finalReport.aux
 The style file: apalike.bst
-Illegal, another \bibstyle command---line 185 of file finalReport.aux
- : \bibstyle
- :          {plain}
-I'm skipping whatever remains of this command
 Database file #1: reportbib.bib
 Warning--entry type for "danishgolf" isn't style-file defined
 --line 7 of file reportbib.bib
-You've used 16 entries,
+You've used 18 entries,
             1935 wiz_defined-function locations,
-            560 strings with 6445 characters,
-and the built_in function-call counts, 6692 in all, are:
-= -- 637
-> -- 384
-< -- 10
-+ -- 142
-- -- 136
-* -- 586
-:= -- 1204
-add.period$ -- 43
-call.type$ -- 16
-change.case$ -- 148
-chr.to.int$ -- 16
-cite$ -- 16
-duplicate$ -- 218
-empty$ -- 379
-format.name$ -- 160
-if$ -- 1260
+            572 strings with 6800 characters,
+and the built_in function-call counts, 7763 in all, are:
+= -- 746
+> -- 430
+< -- 11
++ -- 158
+- -- 152
+* -- 673
+:= -- 1374
+add.period$ -- 49
+call.type$ -- 18
+change.case$ -- 166
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 261
+empty$ -- 453
+format.name$ -- 178
+if$ -- 1481
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 8
-newline$ -- 78
-num.names$ -- 48
-pop$ -- 125
+missing$ -- 10
+newline$ -- 88
+num.names$ -- 54
+pop$ -- 145
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 166
 quote$ -- 0
-skip$ -- 175
+skip$ -- 209
 stack$ -- 0
-substring$ -- 389
-swap$ -- 26
-text.length$ -- 2
+substring$ -- 478
+swap$ -- 39
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 108
 warning$ -- 0
-while$ -- 48
+while$ -- 57
 width$ -- 0
-write$ -- 192
-(There was 1 error message)
+write$ -- 218
+(There was 1 warning)

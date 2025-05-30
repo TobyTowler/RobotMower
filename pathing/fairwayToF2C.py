@@ -8,7 +8,6 @@ from pathing.utils import drawCell
 
 
 def create_fairway_cells_with_holes(json_file_path, scale=0.1):
-    """Create fairway cells with holes using addRing for overlapping obstacles"""
     with open(json_file_path, "r") as f:
         data = json.load(f)
 
@@ -163,7 +162,7 @@ def genFairwayPath(json_file):
 
     print("Drawing results...")
     try:
-        # drawCell([cells, mid_hl, route])
+        drawCell([cells, mid_hl, route])
         print("Visualization complete")
     except Exception as e:
         print(f"Error in visualization: {e}")

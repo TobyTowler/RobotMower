@@ -14,7 +14,7 @@
 \usepackage{color}
 \usepackage{pdfpages}
 \usepackage{cleveref}
-\usepackage[numbers]{natbib}
+\usepackage{natbib}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{algorithm}
@@ -135,7 +135,6 @@ A central storage compartment houses the bulk of the computational units and a l
 Also, there is excess room on top of the unit for additional sensors enabling clearer signals due to the lack of material shielding that comes with being at the highest point of the robot.
 
 A single track running the full length of the robot sits at either side of the chassis enabling full 360° movement and near on the spot turning capabilities.
-All large single battery 
 
 
 \subsubsection{Software and Sensors}
@@ -147,14 +146,14 @@ The robot is equipped with an array of sensors:
     \item{\textbf{RTK chip} for precise local positioning}
 \end{itemize}
 
-Previously a GPS chip used, but this was upgraded to an RTK version during this iteration of the project due to its much better precision taking the accuracy from 2 to 5 meters with GPS to within 2 centimeters with RTK.
+Previously a GPS chip used, but this was upgraded to an RTK \citep{rtk_gps} version during this iteration of the project due to its much better precision taking the accuracy from 2 to 5 meters with GPS to within 2 centimeters with RTK.
 The LiDAR is used in conjunction with the RTK chip to determine positioning based on surrounding objects while also avoiding unplanned objects for example animals or lost golf balls that may be blocking the planned path.
 
 The majority of the existing code base was written in Python with very small segments of C++, for seamless integration all code produced during this project will be written in python allowing it to slot straight in to the existing code.
 
 \subsection{Software Changes}
-My contribution during this iteration of the project will be not with the physical aspects but a complete overhaul of the mapping and path planning systems.
-For ease of planning, I have broken this down into 3 sections:
+The contribution outlined in this paper will be not with the physical aspects but a complete overhaul of the mapping and path planning systems.
+For ease of planning, this has been broken this down into 3 sections:
 \begin{enumerate}
 	\item Basic map generation
 	\item Complete coverage path planning
@@ -169,24 +168,25 @@ Machine learning based map generation from an aerial image for automated map gen
 
 All of these sections are modular meaning they can be developed, tested and function independently but still easily be integrated together for the final product.
 The specified use case of the robot will now be to cut golf courses, this is particularly relevant to the aerial map generation section of my work since a machine learning model requires relevant training data.
-How every this and all other sections can be improvised to adapt to new use cases.
+However, this and all other sections can be improvised to adapt to new use cases.
 New training data can be attained for a new use case while other sections are largely independent of use cases.
 
 
 \section{Background and Related Work}
 \subsection{Background}
 Golf courses face significant overhead when it comes to up keeping their courses, vast areas entail high labour and time costs if done manually. 
-This often results in needing many employees which can be expensive and if not planned correctly, can dispute play time since it would be difficult to play while mowing the same area.
+This often results in needing many employees which can be expensive and if not planned correctly, can disrupt play time since it would be difficult to play while mowing the same area.
 An automated system could work constantly through closed hours without supervision while reducing labour costs, for these reasons it could also run more frequently meaning more consistent course quality.
 
 Many golf courses are under increasing pressure to reduce their environmental footprint. Traditional gas-powered mowers contribute to noise pollution and carbon emissions, while their weight can cause soil compaction that affects turf health.
 An electric powered autonomous mower would operate almost silently, produce zero direct emissions, and be lighter minimising ground pressure. This aligns with the golf industry's growing emphasis on environmental stewardship and sustainable course management practices.
 
-Many larger golf courses already have infrastructure electricity powered golf carts used to get around the course.
+Many larger golf courses already have infrastructure for electricity powered golf carts used to get around the course.
 Already in place electronic charging stations for quick, easy charging and suitable tracks to navigate from course to course could be refactored for use with an electronic powered mowing unit.
 
 \subsection{Related Work}
-\subsubsection{Complete Coverage Path Planning}
+\subsubsection{Complete Coverage Path Planning} \
+
 Complete coverage path planning(CCPP) is "the task of determining a path that passes over all points of an area or volume of interest while avoiding obstacles" \citep{zhao2023complete}.
 This problem is common in applications such as vacuum cleaning, lawn mowing, agricultural field operations and all autonomous robotic applications.
 
@@ -206,12 +206,13 @@ This method is primarily used for agriculture due to the very heavy machinery us
 This method has various advantages as it can reduce soil compaction therefore increase soil health and can increase fuel efficiency.
 The drawbacks of this method are all equipment must be compatible with the same size tracks and track spacing.
 
-\paragraph{Deep Reinforcement Learning}
+\paragraph{Deep Reinforcement Learning} \
+
 This method \citep{chen2025complete} demonstrates using how rewarding and learning can be used to cover an area. 
 When a new section of the area is discovered, the algorithm recieves a reward, encouraging further exploration.
 This algorithm is always learning and completely automatic.
 
-This good sides of this approach are its high memory level; it can remember where it has been stuck before and avoids those areas and can actively adapt in new enivronments, always seeking new regions.
+Some good sides of this approach are its high memory level; it can remember where it has been stuck before and avoids those areas and actively adapts in new environments, always seeking new regions.
 
 The downsides are that it is very heavy computationally, requiring a good processor within the robot.
 
@@ -219,8 +220,9 @@ The downsides are that it is very heavy computationally, requiring a good proces
 \subsubsection{Aerial Image Mapping}
 Aerial image mapping is the process of producing outlines or maps of an area from aerial images.
 
-\paragraph{Semantic Segmentaion Neural Networks}
-This method using deep learning models \citep{long2015fully} to classify every pixel of an image into a specific predefined class.
+\paragraph{Semantic Segmentation Neural Networks} \
+
+This method uses deep learning models \citep{long2015fully} to classify every pixel of an image into a specific predefined class.
 This approach could be used to map an area by detecting areas of a golf course.
 
 This method can handle subtle boundaries between objects well while outlining entire areas not just outlining them.
@@ -295,7 +297,7 @@ This leads to robust and intense testing ensuring reliability in practice.
 \subsubsection{Obstacles}
 Obstacles or holes, can be thought to represent real world obstructions for example trees or telephone poles in a real field.
 Generation of obstacles can be completed using the same function as the outer field generation, simply with different parameters.
-The algorithm \ref{mg:genPoints} takes 3 parameters, number of points in the shape, an origin point and the range new points.
+The algorithm (\Cref{mg:genPoints}) takes 3 parameters, number of points in the shape, an origin point and the range new points.
 This allows for variable size, positioning and complexity.
 
 
@@ -303,7 +305,7 @@ This allows for variable size, positioning and complexity.
 The Graham Scan \citep{graham1972efficient} is an algorithm to find convex hulls, that is from a set of points the outline which contains all inner points.
 This algorithm does this by sorting the points by their polar angle to the lowest point, since this is always in the hull.
 There is then further calculations based on the angle between adjacent points to omit inner points from the outline, however for this use case that is not necessary since all points will be vertexes in a field.
-For this reason, the algorithm used is not strictly a Graham Scan but rather heavily based on the first stage, as shown in \ref{mg:sortPoints}
+For this reason, the algorithm used is not strictly a Graham Scan but rather heavily based on the first stage, as shown in (\Cref{mg:sortPoints}).
 Using this algorithm allows for consistent outlining of any set of points with no crossovers or intersections
 
 \subsection{Complete Coverage Path Planning}
@@ -316,8 +318,8 @@ Using this algorithm allows for consistent outlining of any set of points with n
 \end{figure}
 
 
-For this module, I have used the Fields2Cover library \citep{fields2cover}, this library is open source.
-During the course of this project, I contributed to his library, fixing a bug during the build process.
+For this module, the Fields2Cover library \citep{fields2cover} was used, this library is open source.
+During the course of this project, I contributed to this library, fixing a bug during the build process.
 The library splits the task up into several sub-tasks.
 
 
@@ -368,10 +370,10 @@ Boustrophedon is the most efficient for rectangular shapes, traversing swaths in
 Snake order is the same as boustrophedon but provides a better solution when turning radius is large or multiple passes are needed to completely cover the area.
 
 
-Spiral order can be benificial in irregular or circular areas where back and forth patterns cause a large number of unnecessary turns.
+Spiral order can be beneficial in irregular or circular areas where back and forth patterns cause a large number of unnecessary turns.
 It also prevents going back over already covered areas which provides greater time efficiency.
 
-Since all of these have their specific use cases it would not make sense to pick one for all appliactions, instead it should be considered for each generation by the user.
+Since all of these have their specific use cases it would not make sense to pick one for all applications, instead it should be considered for each generation by the user.
 
 \subsubsection{Path Planning}
 Path planning refers to the connection of all swaths in route order.
@@ -522,7 +524,7 @@ Random transformations are used to increase the robustness of the model, these c
 \end{itemize}
 Using the same images with slight adjustments increases reliability and should allow the model to work well on images with varying quality but also real world factors like shadowing or sun angle, without needing a great increase in the size of the dataset.
 
-The model starts with PyTorch's \textbf{maskrcnn\_resnet50\_fpn} architecture with pretrained weights on the COCO \citep{coco} dataset.
+The model starts with PyTorch's \textbf{maskrcnn\_resnet50\_fpn} \citep{he2017mask} architecture with pretrained weights on the COCO \citep{coco} dataset.
 This model serves as a strong backbone as it produces high accuracy in segmentation tasks while simultaneously being able to quickly learn on new domains.
 Its RoIAlign layer features pixel to pixel mapping between input images and masks predictions resulting in much finer boundaries that previous generations.
 
@@ -752,7 +754,7 @@ The baseline parameters are:
 	\item{\textbf{Path planning}, dubins curve}
 	\item{\textbf{Cell decomposition}, none}
 \end{itemize}
-These paremters are all default, first mentioned or most simplistic to give a stable baseline.
+These parameters are all default, first mentioned or most simplistic to give a stable baseline.
 
 \paragraph{Map Size} \
 
@@ -812,7 +814,7 @@ As mentioned in the runtime test the map for this test is slightly different, ta
 The results show 2 things; the number of obstacles in a field do not affect memory and memory consumption is not directly affected by the shape of the field.
 Both of these are good results and show memory is largely similar accross any selection of parameters, consistently low memory usage is a very good trait for an embedded system such as this, meaining computation can be carried out on a variety of computers with differing specfications, specifically low spec end micro computers.
 
-\subsection{Aerail Map Generation}
+\subsection{Aerial Map Generation}
 The metrics taken from the machine learning aerial mapping model were:
 \begin{itemize}
     \item{\textbf{Pixel Accuracy:} the percentage of pixels assigned the correct class by the model}
@@ -833,19 +835,19 @@ The accuracy peaks at around \textbf{0.6} so this is the confidence level that w
 
 \paragraph{Detection Accuracy} \
 The relationship between detection accuracy and confidence threshold is an almost linear negative correlation.
-The probable cause of this is as confidnce threshold increaes, less predicitions are passing the threshold.
+The probable cause of this is as confidence threshold increases, less predicitions are passing the threshold.
 The sharp drop suggests the model is not very confident with the majority of its predictions, this is likely to be helped with additional training data.
 
 
 
-\subsection{Intersecion over Union (IoU)}
+\subsection{Intersection over Union (IoU)}
 Intersection over union is the overlap between the ground truth and area predicted by the model.
 There are 2 types of IoU measurement that can be used during evaluation of an image processing model:
 
 Bounding box IoU a box around the outer points of the ground truth and prediction.
 This concept helps to get direct overlapping area.
 
-Mask IoU that only counts the predicted area. This offers more precise calcutions and is the chosen option for the following tests.
+Mask IoU that only counts the predicted area. This offers more precise calculations and is the chosen option for the following tests.
 
 Note that the x axis on these graphs stop at \textbf{0.9}, this is because a IoU of \textbf{1} is nearly impossible for a task as complex as this so would nearly always equal \textbf{0}. For this reason it has been omitted to allow a higher detail reading of the graphs.
 
@@ -855,7 +857,7 @@ Results for this paremter can be seen in (\Cref{AE:IOU})
 
 As with the confidence threshold a non linear relationship can be seen with a peak around the mid range, in this case \textbf{0.6}, again likely due to this being the sweet spot where the model is close enough to the ground truth without being too restricted in its outputs.
 
-\paragraph{Decection Accuracy} \
+\paragraph{Detection Accuracy} \
 
 The relationship between the threshold  IOU to detection accuracy seen in the graph shows that lower IoU causes higher detection rates.
 This is most likely because lower IoU allows the model to be less precise in location with predictions, however this it is probable that this would cause lower pixel accuracy due to the more relaxed location. 
@@ -890,12 +892,13 @@ Since Fields2Cover, the path planning library used in this project, is made with
 
 A more complex GUI would be a good addition in increase the user experience with the product. The current one was rather an after thought than a core piece of the software but it is important that the user can interact with the program easily and intuitively.
 
+A better GPS system could be implemented, instead of the user manually entering coordinates, the robot could be placed manually or use its LiDAR to find the edge of a field and get coordinates straight from itself to transform the map wihtout any user input at all.
+
 
 
 \clearpage
 
 \bibliography{reportbib}
-% \bibliographystyle{plain}
 
 \appendix
 \clearpage

@@ -43,7 +43,7 @@ class PathPlannerGUI:
 
         self.gps1 = ctk.CTkEntry(
             self.app,
-            placeholder_text="First coord",  # Placeholder text
+            placeholder_text="First coord",
             width=200,
             height=30,
         )
@@ -51,7 +51,7 @@ class PathPlannerGUI:
 
         self.gps2 = ctk.CTkEntry(
             self.app,
-            placeholder_text="Second coord",  # Placeholder text
+            placeholder_text="Second coord",
             width=200,
             height=30,
         )

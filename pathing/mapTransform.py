@@ -1,7 +1,7 @@
 import math
 from pathing.utils import load_csv_points, genField, drawCell, save_points_to_csv
 
-# import geopy.distance
+import geopy.distance
 import json
 from datetime import datetime
 
@@ -86,7 +86,6 @@ def getLineLength(map: list[float]):
 def scaleMap(map, gps):
     gpsMeters = geopy.distance.geodesic(gps[0], gps[1]).m
 
-    # gpsLineLength = getLineLength([gps[0:2]])
     mapLineLength = getLineLength([map[0][0], map[0][1], map[1][0], map[1][1]])
 
     print("GPS ", gpsMeters, "MAP", mapLineLength)
@@ -123,7 +122,6 @@ def save_points_to_json(points, filename, point_class="fairway", confidence=0.95
     outline_points = []
     for point in points:
         if isinstance(point, (list, tuple)) and len(point) >= 2:
-            # Convert to integers and format as [x, y]
             outline_points.append([int(point[0]), int(point[1])])
 
     detection_data = {
@@ -158,30 +156,22 @@ def transformPoints(json_path, gps_coords):
         print(f"Error loading JSON file {json_path}: {e}")
         return None
 
-    # Validate GPS coordinates
     if len(gps_coords) < 2:
         print("Error: Need at least 2 GPS coordinates for transformation")
-        return json_path  # Return original path if GPS invalid
 
     print(f"Transforming detections using GPS coordinates: {gps_coords}")
 
-    # Transform each detection's outline points
     transformed_detections = []
     for i, detection in enumerate(json_data["detections"]):
         print(f"Transforming detection {i + 1}: {detection['class']}")
 
-        # Get original outline points
         original_points = detection["outline_points"]
 
-        # Apply transformations
         try:
-            # Rotate points based on GPS bearing
             rotated_points = rotateMap(original_points, gps_coords)
 
-            # Scale points based on GPS distance
             scaled_points = scaleMap(rotated_points, gps_coords)
 
-            # Create transformed detection
             transformed_detection = {
                 "class": detection["class"],
                 "confidence": detection["confidence"],
@@ -195,10 +185,8 @@ def transformPoints(json_path, gps_coords):
 
         except Exception as e:
             print(f"Error transforming detection {i + 1}: {e}")
-            # Keep original detection if transformation fails
             transformed_detections.append(detection)
 
-    # Create new JSON data with transformed detections
     transformed_json_data = {
         "metadata": {
             "image_path": json_data["metadata"]["image_path"],
@@ -212,11 +200,9 @@ def transformPoints(json_path, gps_coords):
         "detections": transformed_detections,
     }
 
-    # Generate output path for transformed JSON
     base_path = json_path.replace(".json", "")
-    output_path = f"{base_path}_gps_transformed.json"
+    output_path = "outputs/transformedOutlines/"
 
-    # Save transformed JSON
     try:
         with open(output_path, "w") as f:
             json.dump(transformed_json_data, f, indent=2)
@@ -228,28 +214,6 @@ def transformPoints(json_path, gps_coords):
 
     except Exception as e:
         print(f"Error saving transformed JSON: {e}")
-        return json_path  # Return original path if save fails
-
-
-#
-# def transformPoints(json_file_path, gps):
-#     # points = load_csv_points(points)
-#     with open(json_file_path, "r") as f:
-#         points = json.load(f)
-#
-#     field = genField(points)
-#     drawCell(field)
-#
-#     newPoints = rotateMap(points, gps)
-#
-#     # drawCell(genField(newPoints))
-#
-#     scaledPoints = scaleMap(points, gps)
-#     scaledField = genField(scaledPoints)
-#     # drawCell(scaledField)
-#
-#     # save_points_to_csv(newPoints, "rotatedField")
-#     return
 
 
 def main():

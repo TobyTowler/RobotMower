@@ -7,7 +7,6 @@ from pathing.utils import drawCell
 
 
 def create_rough_cells_with_holes(json_file_path, scale=0.1):
-    """Create fairway cells with holes using addRing for overlapping obstacles"""
     with open(json_file_path, "r") as f:
         data = json.load(f)
 

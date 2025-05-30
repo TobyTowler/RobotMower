@@ -36,7 +36,6 @@ def process_with_progress(img, gui):
     gui.updateStep("Saved outlines")
 
     if gui.useGPS:
-        # path = load_csv_points("./outputs/transformedOutlines/" + filename + ".csv")
         gui.updateStep("Transforming with GPS")
         gpsCoords = [gui.gps1.get(), gui.gps2.get()]
         path = transformPoints(path, gpsCoords)

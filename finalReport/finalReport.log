@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  30 MAY 2025 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.26)  30 MAY 2025 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -872,26 +872,7 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `subfig' support loaded on input line 3164.
-)
-
-./finalReport.tex:18: LaTeX Error: Option clash for package natbib.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \usepackage
-                {float}
-The package natbib has already been loaded with options:
-  []
-There has now been an attempt to load it with options
-  [numbers]
-Adding the global options:
-  ,numbers
-to your \documentclass declaration may fix this.
-Try typing  <return>  to proceed.
-
-(/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
+) (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
 \@float@every@algorithm=\toks45
 \c@algorithm=\count386
@@ -1176,22 +1157,22 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [11]
 
 [12]
-<./images/mapGen.drawio.png, id=264, 383.4325pt x 413.545pt>
+<./images/mapGen.drawio.png, id=274, 383.4325pt x 413.545pt>
 File: ./images/mapGen.drawio.png Graphic file (type png)
 <use ./images/mapGen.drawio.png>
-Package pdftex.def Info: ./images/mapGen.drawio.png  used on input line 271.
+Package pdftex.def Info: ./images/mapGen.drawio.png  used on input line 273.
 (pdftex.def)             Requested size: 209.12686pt x 225.55107pt.
 
 
 [13 <./images/mapGen.drawio.png>]
-<./images/pathPlanning.drawio.png, id=275, 292.09125pt x 753.81625pt>
-File: ./images/pathPlanning.drawio.png Graphic file (type png)
-<use ./images/pathPlanning.drawio.png>
-Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 313.
-(pdftex.def)             Requested size: 167.29893pt x 431.77315pt.
-
 
 [14]
+<./images/pathPlanning.drawio.png, id=295, 292.09125pt x 753.81625pt>
+File: ./images/pathPlanning.drawio.png Graphic file (type png)
+<use ./images/pathPlanning.drawio.png>
+Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 315.
+(pdftex.def)             Requested size: 167.29893pt x 431.77315pt.
+
 
 [15 <./images/pathPlanning.drawio.png>]
 
@@ -1200,10 +1181,10 @@ Package pdftex.def Info: ./images/pathPlanning.drawio.png  used on input line 31
 [17]
 
 [18]
-<./images/openCV.drawio.png, id=306, 272.01625pt x 693.59125pt>
+<./images/openCV.drawio.png, id=321, 272.01625pt x 693.59125pt>
 File: ./images/openCV.drawio.png Graphic file (type png)
 <use ./images/openCV.drawio.png>
-Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 423.
+Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 425.
 (pdftex.def)             Requested size: 146.39134pt x 373.28487pt.
 
 
@@ -1212,10 +1193,10 @@ Package pdftex.def Info: ./images/openCV.drawio.png  used on input line 423.
 [20 <./images/openCV.drawio.png>]
 
 [21]
-<./images/MLAE.drawio.png, id=328, 402.50375pt x 804.00375pt>
+<./images/MLAE.drawio.png, id=345, 402.50375pt x 804.00375pt>
 File: ./images/MLAE.drawio.png Graphic file (type png)
 <use ./images/MLAE.drawio.png>
-Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 465.
+Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 467.
 (pdftex.def)             Requested size: 146.39134pt x 292.41pt.
 
 
@@ -1226,26 +1207,26 @@ Package pdftex.def Info: ./images/MLAE.drawio.png  used on input line 465.
 [24]
 
 [25]
-<./images/AEModelDone.png, id=368, 691.6239pt x 726.3135pt>
+<./images/AEModelDone.png, id=392, 691.6239pt x 726.3135pt>
 File: ./images/AEModelDone.png Graphic file (type png)
 <use ./images/AEModelDone.png>
-Package pdftex.def Info: ./images/AEModelDone.png  used on input line 605.
+Package pdftex.def Info: ./images/AEModelDone.png  used on input line 607.
 (pdftex.def)             Requested size: 292.77632pt x 307.4656pt.
 
 
 [26]
-<./images/postProcessing.drawio.png, id=375, 272.01625pt x 402.50375pt>
+<./images/postProcessing.drawio.png, id=399, 272.01625pt x 402.50375pt>
 File: ./images/postProcessing.drawio.png Graphic file (type png)
 <use ./images/postProcessing.drawio.png>
-Package pdftex.def Info: ./images/postProcessing.drawio.png  used on input line 614.
+Package pdftex.def Info: ./images/postProcessing.drawio.png  used on input line 616.
 (pdftex.def)             Requested size: 146.39134pt x 216.62405pt.
 
 
 [27 <./images/AEModelDone.png>]
-<./images/GUI.png, id=381, 709.65125pt x 252.945pt>
+<./images/GUI.png, id=405, 709.65125pt x 252.945pt>
 File: ./images/GUI.png Graphic file (type png)
 <use ./images/GUI.png>
-Package pdftex.def Info: ./images/GUI.png  used on input line 637.
+Package pdftex.def Info: ./images/GUI.png  used on input line 639.
 (pdftex.def)             Requested size: 209.12686pt x 74.54092pt.
 
 
@@ -1262,10 +1243,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [31]
 
 [32]
-./finalReport.tex:767: Missing $ inserted.
+./finalReport.tex:769: Missing $ inserted.
 <inserted text> 
                 $
-l.767 The graph shows upto 10^
+l.769 The graph shows upto 10^
                               5m^2$ which is about the size of 14 football p...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1290,7 +1271,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 ])
 
 [39]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 906.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 909.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1312,61 +1293,61 @@ LaTeX Warning: Text page 41 contains only floats.
 
 
 [41]
-<./images/f2cCellDecompL.png, id=497, 562.1pt x 421.575pt>
+<./images/f2cCellDecompL.png, id=522, 562.1pt x 421.575pt>
 File: ./images/f2cCellDecompL.png Graphic file (type png)
 <use ./images/f2cCellDecompL.png>
-Package pdftex.def Info: ./images/f2cCellDecompL.png  used on input line 995.
+Package pdftex.def Info: ./images/f2cCellDecompL.png  used on input line 998.
 (pdftex.def)             Requested size: 250.95477pt x 188.2146pt.
-<./images/openCvCannyExample.jpg, id=498, 451.6875pt x 150.5625pt>
+<./images/openCvCannyExample.jpg, id=523, 451.6875pt x 150.5625pt>
 File: ./images/openCvCannyExample.jpg Graphic file (type jpg)
 <use ./images/openCvCannyExample.jpg>
-Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 1005.
+Package pdftex.def Info: ./images/openCvCannyExample.jpg  used on input line 1008.
 (pdftex.def)             Requested size: 292.77632pt x 97.59795pt.
-<./images/openCvCannyGolfCourse.png, id=500, 803.0pt x 580.1675pt>
+<./images/openCvCannyGolfCourse.png, id=526, 803.0pt x 580.1675pt>
 File: ./images/openCvCannyGolfCourse.png Graphic file (type png)
 <use ./images/openCvCannyGolfCourse.png>
-Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 1013.
+Package pdftex.def Info: ./images/openCvCannyGolfCourse.png  used on input line 1016.
 (pdftex.def)             Requested size: 292.77632pt x 211.53363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AdobeGolf_visualisation.png, id=501, 867.24pt x 722.7pt>
+<./images/AdobeGolf_visualisation.png, id=527, 867.24pt x 722.7pt>
 File: ./images/AdobeGolf_visualisation.png Graphic file (type png)
 <use ./images/AdobeGolf_visualisation.png>
-Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 1020.
+Package pdftex.def Info: ./images/AdobeGolf_visualisation.png  used on input line 1023.
 (pdftex.def)             Requested size: 292.77632pt x 243.98343pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/overheadGolfCourse_visualisation.png, id=502, 867.24pt x 722.7pt>
+<./images/overheadGolfCourse_visualisation.png, id=528, 867.24pt x 722.7pt>
 File: ./images/overheadGolfCourse_visualisation.png Graphic file (type png)
 <use ./images/overheadGolfCourse_visualisation.png>
-Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 1027.
+Package pdftex.def Info: ./images/overheadGolfCourse_visualisation.png  used on input line 1030.
 (pdftex.def)             Requested size: 250.95477pt x 209.1255pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AENoRoughDemoTraining.png, id=503, 691.6239pt x 726.3135pt>
+<./images/AENoRoughDemoTraining.png, id=529, 691.6239pt x 726.3135pt>
 File: ./images/AENoRoughDemoTraining.png Graphic file (type png)
 <use ./images/AENoRoughDemoTraining.png>
-Package pdftex.def Info: ./images/AENoRoughDemoTraining.png  used on input line 1034.
+Package pdftex.def Info: ./images/AENoRoughDemoTraining.png  used on input line 1037.
 (pdftex.def)             Requested size: 250.95477pt x 263.54512pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AEEnglishCoursePlain.png, id=504, 749.04843pt x 639.89063pt>
+<./images/AEEnglishCoursePlain.png, id=530, 749.04843pt x 639.89063pt>
 File: ./images/AEEnglishCoursePlain.png Graphic file (type png)
 <use ./images/AEEnglishCoursePlain.png>
-Package pdftex.def Info: ./images/AEEnglishCoursePlain.png  used on input line 1042.
+Package pdftex.def Info: ./images/AEEnglishCoursePlain.png  used on input line 1045.
 (pdftex.def)             Requested size: 209.12686pt x 178.65067pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/AEEnglishCourseResult.png, id=505, 950.55125pt x 856.19875pt>
+<./images/AEEnglishCourseResult.png, id=531, 950.55125pt x 856.19875pt>
 File: ./images/AEEnglishCourseResult.png Graphic file (type png)
 <use ./images/AEEnglishCourseResult.png>
-Package pdftex.def Info: ./images/AEEnglishCourseResult.png  used on input line 1050.
+Package pdftex.def Info: ./images/AEEnglishCourseResult.png  used on input line 1053.
 (pdftex.def)             Requested size: 292.77632pt x 263.70741pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1382,29 +1363,29 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [44 <./images/overheadGolfCourse_visualisation.png> <./images/AENoRoughDemoTraining.png>]
 
 [45 <./images/AEEnglishCoursePlain.png> <./images/AEEnglishCourseResult.png (PNG copy)>]
-<./images/mapGenRTCombined.png, id=529, 691.6239pt x 726.3135pt>
+<./images/mapGenRTCombined.png, id=554, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRTCombined.png Graphic file (type png)
 <use ./images/mapGenRTCombined.png>
-Package pdftex.def Info: ./images/mapGenRTCombined.png  used on input line 1081.
+Package pdftex.def Info: ./images/mapGenRTCombined.png  used on input line 1084.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/mapGenRangeRT.png, id=530, 691.6239pt x 726.3135pt>
+<./images/mapGenRangeRT.png, id=555, 691.6239pt x 726.3135pt>
 File: ./images/mapGenRangeRT.png Graphic file (type png)
 <use ./images/mapGenRangeRT.png>
-Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 1089.
+Package pdftex.def Info: ./images/mapGenRangeRT.png  used on input line 1092.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/mapGenBaselneRangeMem.png, id=531, 691.6239pt x 726.3135pt>
+<./images/mapGenBaselneRangeMem.png, id=556, 691.6239pt x 726.3135pt>
 File: ./images/mapGenBaselneRangeMem.png Graphic file (type png)
 <use ./images/mapGenBaselneRangeMem.png>
-Package pdftex.def Info: ./images/mapGenBaselneRangeMem.png  used on input line 1104.
+Package pdftex.def Info: ./images/mapGenBaselneRangeMem.png  used on input line 1107.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/mapGenPointsHolesMem.png, id=532, 691.6239pt x 726.3135pt>
+<./images/mapGenPointsHolesMem.png, id=557, 691.6239pt x 726.3135pt>
 File: ./images/mapGenPointsHolesMem.png Graphic file (type png)
 <use ./images/mapGenPointsHolesMem.png>
-Package pdftex.def Info: ./images/mapGenPointsHolesMem.png  used on input line 1111.
+Package pdftex.def Info: ./images/mapGenPointsHolesMem.png  used on input line 1114.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1416,20 +1397,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  <./images/mapGenRTCombined.png> <./images/mapGenRangeRT.png>]
 
 [47 <./images/mapGenBaselneRangeMem.png> <./images/mapGenPointsHolesMem.png>]
-<./images/pathingBaselineAreaRT.png, id=545, 691.6239pt x 726.3135pt>
+<./images/pathingBaselineAreaRT.png, id=570, 691.6239pt x 726.3135pt>
 File: ./images/pathingBaselineAreaRT.png Graphic file (type png)
 <use ./images/pathingBaselineAreaRT.png>
-Package pdftex.def Info: ./images/pathingBaselineAreaRT.png  used on input line 1150.
+Package pdftex.def Info: ./images/pathingBaselineAreaRT.png  used on input line 1153.
 (pdftex.def)             Requested size: 188.21289pt x 197.64775pt.
-<./images/pathingHolesPathingRT.png, id=546, 1386.1386pt x 726.3135pt>
+<./images/pathingHolesPathingRT.png, id=571, 1386.1386pt x 726.3135pt>
 File: ./images/pathingHolesPathingRT.png Graphic file (type png)
 <use ./images/pathingHolesPathingRT.png>
-Package pdftex.def Info: ./images/pathingHolesPathingRT.png  used on input line 1157.
+Package pdftex.def Info: ./images/pathingHolesPathingRT.png  used on input line 1160.
 (pdftex.def)             Requested size: 334.60425pt x 175.32732pt.
-<./images/pathingMem.png, id=547, 691.6239pt x 726.3135pt>
+<./images/pathingMem.png, id=572, 691.6239pt x 726.3135pt>
 File: ./images/pathingMem.png Graphic file (type png)
 <use ./images/pathingMem.png>
-Package pdftex.def Info: ./images/pathingMem.png  used on input line 1165.
+Package pdftex.def Info: ./images/pathingMem.png  used on input line 1168.
 (pdftex.def)             Requested size: 334.60425pt x 351.39719pt.
 
 
@@ -1442,15 +1423,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  <./images/pathingBaselineAreaRT.png> <./images/pathingHolesPathingRT.png>]
 
 [49 <./images/pathingMem.png>]
-<./images/AEConfidenceCombined.png, id=560, 691.6239pt x 726.3135pt>
+<./images/AEConfidenceCombined.png, id=585, 691.6239pt x 726.3135pt>
 File: ./images/AEConfidenceCombined.png Graphic file (type png)
 <use ./images/AEConfidenceCombined.png>
-Package pdftex.def Info: ./images/AEConfidenceCombined.png  used on input line 1275.
+Package pdftex.def Info: ./images/AEConfidenceCombined.png  used on input line 1278.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
-<./images/AEIOUCombined.png, id=561, 691.6239pt x 726.3135pt>
+<./images/AEIOUCombined.png, id=586, 691.6239pt x 726.3135pt>
 File: ./images/AEIOUCombined.png Graphic file (type png)
 <use ./images/AEIOUCombined.png>
-Package pdftex.def Info: ./images/AEIOUCombined.png  used on input line 1282.
+Package pdftex.def Info: ./images/AEIOUCombined.png  used on input line 1285.
 (pdftex.def)             Requested size: 209.12686pt x 219.61354pt.
 
 
@@ -1465,18 +1446,18 @@ Package rerunfilecheck Info: File `finalReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38453 strings out of 475171
- 838241 string characters out of 5767095
+ 38461 strings out of 475171
+ 838367 string characters out of 5767095
  1322772 words of memory out of 5000000
- 60656 multiletter control sequences out of 15000+600000
+ 60662 multiletter control sequences out of 15000+600000
  613564 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  122i,18n,121p,10962b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on finalReport.pdf (50 pages, 7591008 bytes).
+Output written on finalReport.pdf (50 pages, 7592664 bytes).
 PDF statistics:
- 804 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
- 216 named destinations out of 1000 (max. 500000)
+ 834 PDF objects out of 1000 (max. 8388607)
+ 710 compressed objects within 8 object streams
+ 218 named destinations out of 1000 (max. 500000)
  530 words of extra memory for PDF output out of 10000 (max. 10000000)
 
