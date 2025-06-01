@@ -22,7 +22,6 @@ class GolfCourseDataset(Dataset):
         self.transforms = transforms
         self.json_files = [f for f in os.listdir(json_dir) if f.endswith(".json")]
 
-        # Create class mapping
         self.class_names = [
             "background",
             "green",
@@ -40,7 +39,6 @@ class GolfCourseDataset(Dataset):
             "water": 5,
         }
 
-        # Track class statistics
         self.class_stats = {
             "background": {"count": 0, "pixel_area": 0},
             "green": {"count": 0, "pixel_area": 0},
@@ -50,14 +48,11 @@ class GolfCourseDataset(Dataset):
             "water": {"count": 0, "pixel_area": 0},
         }
 
-        # Track sample class weights for weighted sampling
         self.sample_weights = []
         self.sample_class_counts = []
 
-        # Cache the parsed data to avoid re-reading files
         self.parsed_data_cache = {}
 
-        # Build valid samples list more efficiently
         self.samples = []
         for json_file in self.json_files:
             json_path = os.path.join(json_dir, json_file)
@@ -69,7 +64,6 @@ class GolfCourseDataset(Dataset):
                 img_path = os.path.join(img_dir, os.path.basename(img_file))
 
                 if os.path.exists(img_path):
-                    # Count classes and compute weights in one pass
                     sample_classes = []
 
                     for shape in data.get("shapes", []):
@@ -77,47 +71,47 @@ class GolfCourseDataset(Dataset):
                             label = shape.get("label", "unknown")
                             if label in self.class_map:
                                 sample_classes.append(label)
-                                # Update class counts
                                 self.class_stats[label]["count"] += 1
 
-                                # Estimate pixel area (approximate)
                                 points = shape.get("points", [])
                                 if len(points) >= 3:
-                                    # Calculate rough polygon area without loading image
                                     polygon = np.array(points, dtype=np.int32).reshape(
                                         (-1, 2)
                                     )
                                     area = cv2.contourArea(polygon)
                                     self.class_stats[label]["pixel_area"] += area
 
-                    # Cache the parsed data
                     self.parsed_data_cache[json_path] = data
 
-                    # Record class counts for this sample
                     self.samples.append((img_path, json_path))
                     self.sample_class_counts.append(Counter(sample_classes))
 
-                    # Calculate sample weight (inverse frequency)
-                    # Higher weight for rare classes, especially water
+                    # IMPROVED SAMPLE WEIGHTING - Focus heavily on rough
                     sample_weight = 1.0
-                    if "water" in sample_classes:
-                        sample_weight *= 5.0  # Boost water samples significantly
                     if "rough" in sample_classes:
-                        sample_weight *= 1.5  # Boost rough samples
+                        sample_weight *= 10.0  # INCREASED from 1.5 to 10.0
+                    if "water" in sample_classes:
+                        sample_weight *= 5.0
+                    if "bunker" in sample_classes:
+                        sample_weight *= 3.0  # ADD bunker weighting too
+
+                    # EXTRA: If image has ONLY rough, boost it even more
+                    if sample_classes == ["rough"] or (
+                        "rough" in sample_classes and len(sample_classes) <= 2
+                    ):
+                        sample_weight *= 2.0
 
                     self.sample_weights.append(sample_weight)
 
             except Exception as e:
                 print(f"Error processing {json_file}: {e}")
 
-        # Normalize sample weights
         if self.sample_weights:
             total_weight = sum(self.sample_weights)
             self.sample_weights = [
                 w / total_weight * len(self.sample_weights) for w in self.sample_weights
             ]
 
-        # Compute class weights based on inverse frequency
         if compute_class_weights:
             self.compute_class_weights()
 
@@ -128,29 +122,38 @@ class GolfCourseDataset(Dataset):
         print(f"Class statistics: {self.class_stats}")
 
     def compute_class_weights(self):
-        """Compute class weights based on inverse frequency for loss function."""
+        """Compute class weights with special focus on rough."""
         class_counts = np.array(
             [self.class_stats[cls]["count"] for cls in self.class_names]
         )
         if np.min(class_counts) == 0:
-            # Avoid division by zero by adding a small constant
             class_counts = class_counts + 1
 
         # Inverse frequency weighting
         weights = 1.0 / class_counts
-
-        # Normalize weights
         weights = weights / np.sum(weights) * len(weights)
 
-        # Additional boost for rare classes
-        # This addresses the extreme imbalance for water class
-        if "water" in self.class_names:
-            water_idx = self.class_names.index("water")
-            weights[water_idx] *= 3.0  # Triple the weight for water
-
+        # AGGRESSIVE rough boosting
         if "rough" in self.class_names:
             rough_idx = self.class_names.index("rough")
-            weights[rough_idx] *= 1.5  # 50% boost for rough
+            weights[rough_idx] *= 15.0  # VERY HIGH boost for rough
+
+        if "water" in self.class_names:
+            water_idx = self.class_names.index("water")
+            weights[water_idx] *= 8.0  # Increased from 3.0
+
+        if "bunker" in self.class_names:
+            bunker_idx = self.class_names.index("bunker")
+            weights[bunker_idx] *= 5.0  # Add bunker boost
+
+        # Reduce dominant classes
+        if "fairway" in self.class_names:
+            fairway_idx = self.class_names.index("fairway")
+            weights[fairway_idx] *= 0.3  # Reduce fairway importance
+
+        if "green" in self.class_names:
+            green_idx = self.class_names.index("green")
+            weights[green_idx] *= 0.5  # Reduce green importance
 
         self.class_weights = torch.FloatTensor(weights)
         print(
@@ -163,20 +166,18 @@ class GolfCourseDataset(Dataset):
 
     def polygon_to_mask(self, polygon, img_height, img_width):
         mask = np.zeros((img_height, img_width), dtype=np.uint8)
-        # Convert polygon to numpy array
+
         polygon = np.array(polygon, dtype=np.int32).reshape((-1, 2))
-        # Fill polygon
+
         cv2.fillPoly(mask, [polygon], 1)
         return mask
 
     def __getitem__(self, idx):
         img_path, json_path = self.samples[idx]
 
-        # Load image
         img = Image.open(img_path).convert("RGB")
         width, height = img.size
 
-        # Load annotations (from cache if available)
         if json_path in self.parsed_data_cache:
             data = self.parsed_data_cache[json_path]
         else:
@@ -184,22 +185,18 @@ class GolfCourseDataset(Dataset):
                 data = json.load(f)
                 self.parsed_data_cache[json_path] = data
 
-        # Initialize lists for annotations
         boxes = []
         masks = []
         labels = []
 
-        # Process each shape
         for shape in data.get("shapes", []):
             if shape.get("shape_type") == "polygon":
                 points = shape.get("points", [])
-                if len(points) >= 3:  # Need at least 3 points for a polygon
+                if len(points) >= 3:
                     label = shape.get("label", "unknown")
                     if label in self.class_map:
-                        # Create mask
                         mask = self.polygon_to_mask(points, height, width)
 
-                        # Find bounding box (required by Mask R-CNN)
                         pos = np.where(mask)
                         if len(pos[0]) > 0 and len(pos[1]) > 0:
                             xmin = np.min(pos[1])
@@ -207,24 +204,20 @@ class GolfCourseDataset(Dataset):
                             ymin = np.min(pos[0])
                             ymax = np.max(pos[0])
 
-                            # Prevent degenerate boxes
                             if xmax > xmin and ymax > ymin:
                                 boxes.append([xmin, ymin, xmax, ymax])
                                 masks.append(mask)
                                 labels.append(self.class_map[label])
 
-        # Convert to tensors
         if len(boxes) > 0:
             boxes = torch.as_tensor(boxes, dtype=torch.float32)
             labels = torch.as_tensor(labels, dtype=torch.int64)
             masks = torch.as_tensor(np.array(masks), dtype=torch.uint8)
         else:
-            # Return empty tensors if no annotations
             boxes = torch.zeros((0, 4), dtype=torch.float32)
             labels = torch.zeros(0, dtype=torch.int64)
             masks = torch.zeros((0, height, width), dtype=torch.uint8)
 
-        # Create target dictionary
         target = {
             "boxes": boxes,
             "labels": labels,
@@ -236,14 +229,12 @@ class GolfCourseDataset(Dataset):
             "iscrowd": torch.zeros((len(boxes),), dtype=torch.int64),
         }
 
-        # Apply transformations
         if self.transforms is not None:
             img, target = self.transforms(img, target)
 
         return img, target
 
 
-# Custom transforms for both image and target
 class Compose:
     def __init__(self, transforms):
         self.transforms = transforms
@@ -256,7 +247,6 @@ class Compose:
 
 class ToTensor:
     def __call__(self, image, target):
-        # Convert PIL image to tensor
         image = torchvision.transforms.functional.to_tensor(image)
         return image, target
 
@@ -267,22 +257,18 @@ class RandomHorizontalFlip:
 
     def __call__(self, image, target):
         if random.random() < self.prob:
-            # Flip image
             image = torchvision.transforms.functional.hflip(image)
 
-            # Flip boxes
             h, w = image.shape[-2:]
             if target["boxes"].shape[0] > 0:
                 target["boxes"][:, [0, 2]] = w - target["boxes"][:, [2, 0]]
 
-            # Flip masks
             if "masks" in target:
                 target["masks"] = torch.flip(target["masks"], [2])
 
         return image, target
 
 
-# NEW: Additional augmentations to help with rare classes
 class RandomRotation:
     def __init__(self, degrees=10):
         self.degrees = degrees
@@ -290,13 +276,8 @@ class RandomRotation:
     def __call__(self, image, target):
         angle = random.uniform(-self.degrees, self.degrees)
 
-        # Rotate image
         image = torchvision.transforms.functional.rotate(image, angle, expand=True)
 
-        # For simplicity, we're not implementing the complex box/mask rotation
-        # This would require additional code to properly transform the boxes and masks
-        # Just return the rotated image and original target for now
-        # In a real implementation, you'd want to properly transform the targets too
         return image, target
 
 
@@ -311,48 +292,81 @@ class ColorJitter:
         )
 
     def __call__(self, image, target):
-        # Apply color jitter to image
         image = self.transform(image)
-        # Target remains unchanged
+
+        return image, target
+
+
+# ENHANCED AUGMENTATION FOR ROUGH DETECTION
+class EnhancedAugmentation:
+    def __init__(self, train=True):
+        self.train = train
+
+    def __call__(self, image, target):
+        image = torchvision.transforms.functional.to_tensor(image)
+
+        if not self.train:
+            return image, target
+
+        # Check if this sample contains rough
+        has_rough = any(
+            label.item() == 4 for label in target["labels"]
+        )  # rough = class 4
+
+        if has_rough:
+            # Extra augmentation for rough samples
+            if random.random() < 0.7:  # 70% chance
+                # Random brightness/contrast to simulate different rough conditions
+                brightness = random.uniform(0.7, 1.3)
+                contrast = random.uniform(0.8, 1.2)
+                image = torchvision.transforms.functional.adjust_brightness(
+                    image, brightness
+                )
+                image = torchvision.transforms.functional.adjust_contrast(
+                    image, contrast
+                )
+
+        # Standard horizontal flip
+        if random.random() < 0.5:
+            image = torchvision.transforms.functional.hflip(image)
+            if target["boxes"].shape[0] > 0:
+                h, w = image.shape[-2:]
+                target["boxes"][:, [0, 2]] = w - target["boxes"][:, [2, 0]]
+            if "masks" in target:
+                target["masks"] = torch.flip(target["masks"], [2])
+
         return image, target
 
 
 def get_transform(train):
-    transforms = []
-    # Convert PIL image to tensor
-    transforms.append(ToTensor())
     if train:
-        # Add data augmentation for training - use only the most efficient ones
-        transforms.append(RandomHorizontalFlip(0.5))
-        # Only apply color jitter to a subset of images to reduce overhead
-        if random.random() < 0.5:  # 50% chance of color jitter
-            transforms.append(
-                ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1)
-            )
-
-    return Compose(transforms)
+        return EnhancedAugmentation(train=True)
+    else:
+        transforms = []
+        transforms.append(ToTensor())
+        return Compose(transforms)
 
 
-# Create Mask R-CNN model
 def get_model(num_classes):
-    # Load pre-trained model
     model = maskrcnn_resnet50_fpn(weights="DEFAULT")
 
-    # Replace the classification head
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
 
-    # Replace the mask head
     in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
     hidden_layer = 256
     model.roi_heads.mask_predictor = MaskRCNNPredictor(
         in_features_mask, hidden_layer, num_classes
     )
 
+    # LOWER detection thresholds to catch more rough areas
+    model.roi_heads.score_thresh = 0.3  # Lower from default 0.5
+    model.roi_heads.nms_thresh = 0.3  # Lower NMS threshold
+    model.roi_heads.detections_per_img = 200  # More detections per image
+
     return model
 
 
-# NEW: Custom Focal Loss implementation for handling class imbalance
 class FocalLoss(torch.nn.Module):
     def __init__(self, alpha=0.25, gamma=2.0):
         super(FocalLoss, self).__init__()
@@ -360,54 +374,53 @@ class FocalLoss(torch.nn.Module):
         self.gamma = gamma
 
     def forward(self, inputs, targets):
-        # Compute cross entropy loss
         ce_loss = F.cross_entropy(inputs, targets, reduction="none")
 
-        # Compute probabilities
         pt = torch.exp(-ce_loss)
 
-        # Compute focal loss
         focal_loss = self.alpha * (1 - pt) ** self.gamma * ce_loss
 
         return focal_loss.mean()
 
 
-# NEW: Improved training function with class-weighted loss
 def train_one_epoch(model, optimizer, data_loader, device, class_weights=None):
     model.train()
     total_loss = 0
 
-    # Dict to track per-class statistics
     class_stats = {"loss": {}, "count": {}}
 
     for images, targets in data_loader:
         images = list(image.to(device) for image in images)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
-        # Forward pass
         loss_dict = model(images, targets)
 
-        # Apply class weighting if provided
+        # MUCH MORE AGGRESSIVE LOSS WEIGHTING
         if class_weights is not None:
-            # Extract relevant losses that would benefit from weighting
-            # This is specific to the Mask R-CNN implementation
+            # Boost classification loss heavily for rare classes
             if "loss_classifier" in loss_dict:
-                # Scale classification loss by class weights
-                # The exact implementation would depend on the model's loss structure
-                # For demonstration, we're just scaling the classifier loss
-                loss_dict["loss_classifier"] *= 1.2  # Boost classifier loss
+                loss_dict["loss_classifier"] *= 5.0  # Increased from 1.2
 
+            # Boost mask loss even more for rough detection
             if "loss_mask" in loss_dict:
-                # Scale mask loss by class weights
-                # For simplicity, just boost the mask loss more
-                loss_dict["loss_mask"] *= 1.5  # Boost mask loss
+                loss_dict["loss_mask"] *= 8.0  # Increased from 1.5
 
-        # Sum losses
+            # Boost objectness (helps with detection)
+            if "loss_objectness" in loss_dict:
+                loss_dict["loss_objectness"] *= 3.0
+
+            # Boost RPN classification
+            if "loss_rpn_cls" in loss_dict:
+                loss_dict["loss_rpn_cls"] *= 2.0
+
         losses = sum(loss for loss in loss_dict.values())
 
-        # Backpropagation
         optimizer.zero_grad()
         losses.backward()
+
+        # ADD: Gradient clipping to prevent exploding gradients
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
         optimizer.step()
 
         total_loss += losses.item()
@@ -415,12 +428,10 @@ def train_one_epoch(model, optimizer, data_loader, device, class_weights=None):
     return total_loss / len(data_loader)
 
 
-# Evaluation function to track per-class metrics
 def evaluate(model, data_loader, device):
     model.eval()
 
-    # Initialize metrics
-    class_correct = {i: 0 for i in range(6)}  # 6 classes (including background)
+    class_correct = {i: 0 for i in range(6)}
     class_total = {i: 0 for i in range(6)}
 
     with torch.no_grad():
@@ -428,24 +439,17 @@ def evaluate(model, data_loader, device):
             images = list(image.to(device) for image in images)
             targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
-            # For evaluation, the model returns predictions directly
             outputs = model(images)
 
-            # Analyze predictions vs targets
             for i, (output, target) in enumerate(zip(outputs, targets)):
-                # During evaluation, model returns a list of dicts with predictions
                 if isinstance(output, dict) and "labels" in output:
                     pred_labels = output["labels"]
                     true_labels = target["labels"]
 
-                    # Count per-class metrics
                     for j, label in enumerate(true_labels):
                         label_idx = label.item()
                         class_total[label_idx] = class_total.get(label_idx, 0) + 1
 
-                    # This is a simplified metric - in real-world you'd want more sophisticated
-                    # metrics like IoU for segmentation tasks
-                    # For demonstration purposes only
                     for j, label in enumerate(pred_labels):
                         if j < len(true_labels) and label == true_labels[j]:
                             label_idx = label.item()
@@ -453,7 +457,6 @@ def evaluate(model, data_loader, device):
                                 class_correct.get(label_idx, 0) + 1
                             )
 
-    # Calculate per-class accuracy
     class_accuracy = {}
     for cls_idx in class_total:
         if class_total[cls_idx] > 0:
@@ -462,40 +465,33 @@ def evaluate(model, data_loader, device):
             accuracy = 0
         class_accuracy[cls_idx] = accuracy
 
-    # Calculate mean accuracy
     mean_accuracy = sum(class_accuracy.values()) / len(class_accuracy)
 
     return mean_accuracy, class_accuracy
 
 
 def main():
-    # Set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     print(f"Using device: {device}")
 
-    # Set number of workers for data loading
     num_workers = 4 if torch.cuda.is_available() else 0
 
-    # Enable CUDA optimizations
     if torch.cuda.is_available():
         torch.backends.cudnn.benchmark = True
         torch.backends.cudnn.deterministic = False
 
-    # Create dataset with class weights calculation
     full_dataset = GolfCourseDataset(
         img_dir="./imgs/rawImgs/",
         json_dir="./imgs/annotationsTesting/",
-        transforms=None,  # Don't apply transforms yet
+        transforms=None,
         compute_class_weights=True,
     )
 
-    # Get class weights for loss function
     class_weights = getattr(full_dataset, "class_weights", None)
     if class_weights is not None:
         class_weights = class_weights.to(device)
         print(f"Using class weights: {class_weights}")
 
-    # Split into train/validation indices
     indices = torch.randperm(len(full_dataset)).tolist()
     train_size = int(0.8 * len(full_dataset))
     train_indices = indices[:train_size]
@@ -505,29 +501,25 @@ def main():
     print(f"Train samples: {len(train_indices)}")
     print(f"Validation samples: {len(val_indices)}")
 
-    # Create training dataset with transforms
     train_dataset_with_transforms = GolfCourseDataset(
         img_dir="./imgs/rawImgs/",
         json_dir="./imgs/annotationsTesting/",
         transforms=get_transform(train=True),
-        compute_class_weights=False,  # Already computed
+        compute_class_weights=False,
     )
 
-    # Create validation dataset with transforms
     val_dataset_with_transforms = GolfCourseDataset(
         img_dir="./imgs/rawImgs/",
-        json_dir="./imgs/annotationsTesting/",  # Same directory!
+        json_dir="./imgs/annotationsTesting/",
         transforms=get_transform(train=False),
-        compute_class_weights=False,  # Already computed
+        compute_class_weights=False,
     )
 
-    # Create subsets using the same indices
     train_dataset = torch.utils.data.Subset(
         train_dataset_with_transforms, train_indices
     )
     val_dataset = torch.utils.data.Subset(val_dataset_with_transforms, val_indices)
 
-    # Create weighted sampler for training set to address class imbalance
     train_sample_weights = [full_dataset.sample_weights[i] for i in train_indices]
     train_sampler = WeightedRandomSampler(
         weights=train_sample_weights,
@@ -535,30 +527,26 @@ def main():
         replacement=True,
     )
 
-    # Test the datasets before training
     print("Testing dataset access...")
     try:
-        # Test train dataset
         train_sample = train_dataset[0]
-        print(f"✓ Train dataset working - first sample loaded")
+        print(f"Train dataset working - first sample loaded")
 
-        # Test val dataset
         val_sample = val_dataset[0]
-        print(f"✓ Val dataset working - first sample loaded")
+        print(f"Val dataset working - first sample loaded")
 
-        # Test last sample
         if len(val_dataset) > 0:
             val_sample = val_dataset[len(val_dataset) - 1]
-            print(f"✓ Val dataset working - last sample loaded")
+            print(f"Val dataset working - last sample loaded")
 
     except Exception as e:
-        print(f"✗ Dataset test failed: {e}")
+        print(f"Dataset test failed: {e}")
         return
 
-    # Create data loaders with multiple workers for CPU parallelism
+    # SMALLER batch size for better gradient updates
     train_loader = DataLoader(
         train_dataset,
-        batch_size=2,
+        batch_size=1,  # Reduced from 2 for more frequent updates
         sampler=train_sampler,
         collate_fn=lambda x: tuple(zip(*x)),
         num_workers=num_workers,
@@ -574,29 +562,31 @@ def main():
         pin_memory=True if torch.cuda.is_available() else False,
     )
 
-    # Create model with reduced complexity if needed
     num_classes = len(full_dataset.class_names)
     model = get_model(num_classes)
     model.to(device)
 
-    # Set up optimizer with weight decay regularization
     params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.Adam(params, lr=0.0001, weight_decay=0.0001)
+    # LOWER learning rate for more careful training
+    optimizer = torch.optim.Adam(params, lr=0.00005, weight_decay=0.0005)  # Reduced LR
 
-    # Learning rate scheduler
+    # More patient learning rate scheduler
     lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="min", factor=0.5, patience=5, verbose=True
+        optimizer,
+        mode="min",
+        factor=0.3,
+        patience=8,
+        verbose=True,  # More conservative
     )
 
-    # Set training parameters
-    max_epochs = 100
-    early_stopping_patience = 20
+    # Longer training with more patience
+    max_epochs = 200  # Increased from 100
+    early_stopping_patience = 20  # Increased from 20
     best_loss = float("inf")
     best_epoch = 0
     no_improvement_count = 0
     validation_frequency = 1
 
-    # Track progress
     train_losses = []
     val_metrics = []
 
@@ -605,38 +595,30 @@ def main():
     )
 
     for epoch in range(max_epochs):
-        # Train for one epoch with weighted loss
         train_loss = train_one_epoch(
             model, optimizer, train_loader, device, class_weights=class_weights
         )
         train_losses.append(train_loss)
 
-        # Only validate every N epochs to speed up training
         if epoch % validation_frequency == 0:
-            # Evaluate on validation set
             model.eval()
             with torch.no_grad():
-                # Calculate validation loss
                 val_loss = 0
                 for images, targets in val_loader:
                     images = list(image.to(device) for image in images)
                     targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 
-                    # In evaluation mode, we need to manually set the model's training mode temporarily
                     model.train()
                     loss_dict = model(images, targets)
                     model.eval()
 
-                    # Sum up the losses
                     val_loss += sum(loss for loss in loss_dict.values())
 
                 val_loss = val_loss / len(val_loader)
 
-                # Calculate per-class metrics (less frequently to save time)
                 if epoch % (validation_frequency * 2) == 0:
                     mean_accuracy, class_accuracy = evaluate(model, val_loader, device)
                 else:
-                    # Reuse previous class accuracy to save time
                     mean_accuracy = (
                         val_metrics[-1]["mean_accuracy"] if val_metrics else 0
                     )
@@ -652,10 +634,8 @@ def main():
                     }
                 )
 
-            # Update learning rate based on validation loss
             lr_scheduler.step(val_loss)
 
-            # Print progress with detailed per-class metrics
             print(
                 f"Epoch {epoch + 1}/{max_epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}"
             )
@@ -663,14 +643,12 @@ def main():
             if epoch % (validation_frequency * 2) == 0:
                 print(f"Per-class accuracy: {class_accuracy}")
 
-            # Check if this is the best model so far
             if val_loss < best_loss:
                 improvement = best_loss - val_loss
                 best_loss = val_loss
                 best_epoch = epoch
                 no_improvement_count = 0
 
-                # Save best model (save less frequently to reduce I/O overhead)
                 torch.save(
                     {
                         "epoch": epoch,
@@ -690,7 +668,6 @@ def main():
                     f" (No improvement for {no_improvement_count}/{early_stopping_patience} epochs)"
                 )
 
-            # Save regular checkpoint (less frequently to reduce I/O overhead)
             if epoch % 5 == 0:
                 torch.save(
                     {
@@ -704,7 +681,6 @@ def main():
                     f"./models/checkpoints/golf_course_model_epoch_{epoch + 1}.pth",
                 )
 
-            # Early stopping check
             if no_improvement_count >= early_stopping_patience:
                 print(
                     f"\nEarly stopping triggered! No improvement for {early_stopping_patience} epochs."
@@ -712,7 +688,6 @@ def main():
                 print(f"Best loss was {best_loss:.6f} at epoch {best_epoch + 1}")
                 break
         else:
-            # For epochs without validation, just print training loss
             print(f"Epoch {epoch + 1}/{max_epochs}, Train Loss: {train_loss:.4f}")
 
     print("Training complete!")

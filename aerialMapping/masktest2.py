@@ -10,7 +10,29 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
 import traceback
 
-from maskRCNNmodel import GolfCourseDataset, get_transform, get_model
+# Remove the old import - we'll define get_model here to match the improved training
+# from maskRCNNmodel import GolfCourseDataset, get_transform, get_model
+
+
+def get_model(num_classes):
+    """IMPROVED model configuration matching the new training setup"""
+    model = maskrcnn_resnet50_fpn(weights="DEFAULT")
+
+    in_features = model.roi_heads.box_predictor.cls_score.in_features
+    model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+
+    in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
+    hidden_layer = 256
+    model.roi_heads.mask_predictor = MaskRCNNPredictor(
+        in_features_mask, hidden_layer, num_classes
+    )
+
+    # CRITICAL: Match the improved training configuration
+    model.roi_heads.score_thresh = 0.3  # Lower threshold for rough detection
+    model.roi_heads.nms_thresh = 0.3  # Lower NMS threshold
+    model.roi_heads.detections_per_img = 200  # More detections per image
+
+    return model
 
 
 def load_model(model_path, num_classes):
@@ -40,7 +62,7 @@ def load_model(model_path, num_classes):
     return model
 
 
-def predict_image(model, image_path, class_names, confidence_threshold=0.1):
+def predict_image(model, image_path, class_names, confidence_threshold=0.3):
     model.eval()
     device = next(model.parameters()).device
 
@@ -55,17 +77,37 @@ def predict_image(model, image_path, class_names, confidence_threshold=0.1):
 
     result = {"image": image_np, "boxes": [], "masks": [], "classes": [], "scores": []}
 
-    for box, mask, label, score in zip(
-        prediction["boxes"],
-        prediction["masks"],
-        prediction["labels"],
-        prediction["scores"],
+    print(f"Raw predictions found: {len(prediction['scores'])}")
+
+    # Debug: Show all predictions
+    for i, (box, mask, label, score) in enumerate(
+        zip(
+            prediction["boxes"],
+            prediction["masks"],
+            prediction["labels"],
+            prediction["scores"],
+        )
     ):
+        class_name = class_names[label.item()]
+        print(f"  {i}: {class_name} - {score:.3f}")
+
         if score >= confidence_threshold:
             result["boxes"].append(box.cpu().numpy())
             result["masks"].append(mask[0].cpu().numpy() > 0.5)
-            result["classes"].append(class_names[label])
+            result["classes"].append(class_name)
             result["scores"].append(score.cpu().numpy())
+
+    print(f"Filtered predictions (>= {confidence_threshold}): {len(result['boxes'])}")
+
+    # Special debug for rough
+    rough_predictions = [
+        (class_names[label.item()], score.item())
+        for label, score in zip(prediction["labels"], prediction["scores"])
+        if class_names[label.item()] == "rough"
+    ]
+    print(f"Rough predictions found: {len(rough_predictions)}")
+    for cls, score in rough_predictions:
+        print(f"  - {cls}: {score:.3f}")
 
     return result
 
@@ -78,7 +120,7 @@ def visualize_prediction(result, output_path=None, show=True):
         "green": (0, 200, 0),
         "fairway": (0, 100, 0),
         "bunker": (255, 255, 150),
-        "rough": (100, 150, 0),
+        "rough": (150, 75, 0),  # Changed to brown/orange for better visibility
         "water": (0, 100, 255),
     }
 
@@ -135,7 +177,7 @@ def visualize_prediction(result, output_path=None, show=True):
 
 
 def test_model_on_directory(
-    model, image_dir, class_names, output_dir=None, confidence_threshold=0.7
+    model, image_dir, class_names, output_dir=None, confidence_threshold=0.3
 ):
     os.makedirs(output_dir, exist_ok=True)
 
@@ -198,7 +240,7 @@ def create_outline_image(result, output_path=None):
 
 
 def process_and_show_all_images(
-    model, image_dir, class_names, output_dir=None, confidence_threshold=0.7
+    model, image_dir, class_names, output_dir=None, confidence_threshold=0.3
 ):
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
@@ -252,21 +294,50 @@ def process_and_show_all_images(
     print("\nAll images processed.")
 
 
+def debug_all_predictions(img):
+    """Debug function to see ALL predictions regardless of confidence"""
+    model_path = "models/golf_course_model_best.pth"
+    class_names = ["background", "green", "fairway", "bunker", "rough", "water"]
+
+    model = load_model(model_path, 6)
+
+    print("\n=== DEBUGGING ALL PREDICTIONS ===")
+    result = predict_image(model, img, class_names, confidence_threshold=0.1)
+
+    print(f"\nSUMMARY:")
+    print(f"Total detections (>0.1): {len(result['boxes'])}")
+
+    class_counts = {}
+    for cls in result["classes"]:
+        class_counts[cls] = class_counts.get(cls, 0) + 1
+
+    for cls, count in class_counts.items():
+        print(f"  {cls}: {count} detections")
+
+    return result
+
+
 def genMap(img):
     model_path = "models/golf_course_model_best.pth"
-    model_path = "./models/golf_course_model_best1.pth"
-
     class_names = ["background", "green", "fairway", "bunker", "rough", "water"]
 
     model = load_model(model_path, 6)
 
     print("\nProcessing individual image...")
 
-    test_image = img
-    result = predict_image(model, test_image, class_names, confidence_threshold=0.6)
+    # Lower confidence threshold for rough detection
+    result = predict_image(model, img, class_names, confidence_threshold=0.3)
     visualize_prediction(result, "single_prediction.png", show=True)
+
+    return result
 
 
 if __name__ == "__main__":
-    genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_010.jpg")  # water
-    genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg")
+    # Debug version to see what's happening
+    test_image = "./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg"
+
+    print("=== DEBUGGING MODE ===")
+    debug_result = debug_all_predictions(test_image)
+
+    print("\n=== NORMAL PREDICTION ===")
+    normal_result = genMap(test_image)

@@ -2,8 +2,13 @@ import customtkinter as ctk
 from tkinter import filedialog
 import sys
 import os
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import threading
 
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add current directory to path for imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from app import run
 
 
@@ -11,11 +16,14 @@ class PathPlannerGUI:
     def __init__(self):
         self.img = ""
         self.useGPS = False
+        self.outline_path = None
+        self.transformer = None
 
         ctk.set_appearance_mode("dark")
         self.app = ctk.CTk()
         self.app.title("Path Planner")
-        self.app.geometry("1800x1000")
+        self.app.geometry("1920x1000")
+        self.app.resizable(False, False)  # Disable resizing
 
         self.create_widgets()
 
@@ -26,7 +34,14 @@ class PathPlannerGUI:
         )
         self.imgButton.grid(row=0, column=0, padx=20, pady=20)
 
-        self.startButton = ctk.CTkButton(self.app, text="Run", command=self.startRun)
+        self.scanButton = ctk.CTkButton(
+            self.app, text="Scan Image", command=self.scanImage, state="disabled"
+        )
+        self.scanButton.grid(row=0, column=1, padx=20, pady=20)
+
+        self.startButton = ctk.CTkButton(
+            self.app, text="Continue", command=self.startRun, state="disabled"
+        )
         self.startButton.grid(row=0, column=2, padx=20, pady=20)
 
         self.gpsBox = ctk.CTkCheckBox(
@@ -41,21 +56,49 @@ class PathPlannerGUI:
         self.progressStep = ctk.CTkLabel(self.app, text="")
         self.progressStep.grid(row=2, column=2, padx=20, pady=20)
 
+        # GPS coordinate input fields with labels
+        self.gps1_label = ctk.CTkLabel(self.app, text="Top-left GPS (lat,lon):")
+        self.gps1_label.grid(row=1, column=1, padx=5, pady=20, sticky="e")
+
         self.gps1 = ctk.CTkEntry(
             self.app,
-            placeholder_text="First coord",
+            placeholder_text="53.889408,9.547150",
             width=200,
             height=30,
         )
-        self.gps1.grid(row=1, column=2, padx=20, pady=20, sticky="w")
+        self.gps1.grid(row=1, column=2, padx=5, pady=20, sticky="w")
+
+        self.gps2_label = ctk.CTkLabel(self.app, text="Top-right GPS (lat,lon):")
+        self.gps2_label.grid(row=1, column=3, padx=5, pady=20, sticky="e")
 
         self.gps2 = ctk.CTkEntry(
             self.app,
-            placeholder_text="Second coord",
+            placeholder_text="54.886907,9.546503",
             width=200,
             height=30,
         )
-        self.gps2.grid(row=1, column=4, padx=20, pady=20, sticky="w")
+        self.gps2.grid(row=1, column=4, padx=5, pady=20, sticky="w")
+
+        # Corner coordinates display
+        self.corner_frame = ctk.CTkFrame(self.app)
+        self.corner_frame.grid(
+            row=3, column=0, columnspan=5, padx=20, pady=20, sticky="ew"
+        )
+
+        self.corner_label = ctk.CTkLabel(
+            self.corner_frame, text="Detected Corner Points:"
+        )
+        self.corner_label.pack(pady=10)
+
+        self.corner_info = ctk.CTkLabel(
+            self.corner_frame, text="Scan image first to see corner points"
+        )
+        self.corner_info.pack(pady=5)
+
+        # Image display frame (sized for 1920x1000 window)
+        self.image_frame = ctk.CTkFrame(self.app, width=1850, height=780)
+        self.image_frame.grid(row=4, column=0, columnspan=5, padx=35, pady=20)
+        self.image_frame.grid_propagate(False)  # Prevent frame from resizing
 
     def updateProgress(self, progress_value):
         if progress_value > 1.0:
@@ -76,9 +119,223 @@ class PathPlannerGUI:
         if file_path:
             print(f"Selected: {file_path}")
             self.img = file_path
+            self.scanButton.configure(state="normal")
+
+    def scanImage(self):
+        """Scan the image and show detected corners"""
+        if not self.img:
+            return
+
+        threading.Thread(target=self._scan_image_thread, daemon=True).start()
+
+    def _scan_image_thread(self):
+        """Background thread for image scanning"""
+        try:
+            # Try importing the modules
+            try:
+                from aerialMapping.runModel import run_model_and_get_outlines
+                from aerialMapping.utils import save_outlines_to_json
+            except ImportError:
+                # If module import fails, try adding parent directory
+                parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                if parent_dir not in sys.path:
+                    sys.path.append(parent_dir)
+                from aerialMapping.runModel import run_model_and_get_outlines
+                from aerialMapping.utils import save_outlines_to_json
+
+            self.updateStep("Running detection model...")
+            self.updateProgress(20)
+
+            # Run model and get outlines
+            outline = run_model_and_get_outlines(self.img)
+            self.updateProgress(50)
+
+            # Save outlines
+            self.outline_path = save_outlines_to_json(outline, self.img)
+            self.updateProgress(70)
+
+            # Import transformer class
+            try:
+                from pathing.mapTransform2 import SimpleGPSTransformer
+            except ImportError:
+                # Use the class directly from the updated mapTransform
+                import json
+                import numpy as np
+
+                class SimpleGPSTransformer:
+                    def __init__(self, json_file_path):
+                        with open(json_file_path, "r") as f:
+                            self.data = json.load(f)
+
+                        all_points = []
+                        for detection in self.data["detections"]:
+                            all_points.extend(detection["outline_points"])
+                        all_points = np.array(all_points)
+
+                        min_x, min_y = np.min(all_points, axis=0)
+                        max_x, max_y = np.max(all_points, axis=0)
+
+                        top_left_target = [min_x, min_y]
+                        top_right_target = [max_x, min_y]
+
+                        distances_tl = np.sum(
+                            (all_points - top_left_target) ** 2, axis=1
+                        )
+                        closest_tl_idx = np.argmin(distances_tl)
+
+                        distances_tr = np.sum(
+                            (all_points - top_right_target) ** 2, axis=1
+                        )
+                        closest_tr_idx = np.argmin(distances_tr)
+
+                        self.corners = {
+                            "top_left": tuple(all_points[closest_tl_idx]),
+                            "top_right": tuple(all_points[closest_tr_idx]),
+                        }
+
+            # Initialize transformer to get corner points
+            self.transformer = SimpleGPSTransformer(self.outline_path)
+
+            # Update UI with corner information
+            self.app.after(0, self._update_corner_display)
+
+            self.updateProgress(100)
+            self.updateStep("Scan complete - Set GPS coordinates and click Continue")
+
+            # Enable continue button
+            self.app.after(0, lambda: self.startButton.configure(state="normal"))
+
+        except Exception as e:
+            print(f"Error during scanning: {e}")
+            import traceback
+
+            traceback.print_exc()
+            self.app.after(0, lambda: self.updateStep(f"Error: {e}"))
+
+    def _update_corner_display(self):
+        """Update the corner display with detected points"""
+        if not self.transformer:
+            return
+
+        corners = self.transformer.corners
+        corner_text = f"Top-left corner: {corners['top_left']}\nTop-right corner: {corners['top_right']}"
+        corner_text += (
+            f"\n\nEnter GPS coordinates for these points above, then click Continue"
+        )
+
+        self.corner_info.configure(text=corner_text)
+
+        # Show the detection visualization
+        self._show_corner_visualization()
+
+    def _show_corner_visualization(self):
+        """Show the corner detection visualization"""
+        if not self.transformer:
+            return
+
+        # Clear existing plot
+        for widget in self.image_frame.winfo_children():
+            widget.destroy()
+
+        # Create matplotlib figure optimized for 1920x1000 window
+        fig, ax = plt.subplots(1, 1, figsize=(18, 9))
+        fig.patch.set_facecolor("#2b2b2b")  # Dark theme
+        ax.set_facecolor("#2b2b2b")
+
+        # Colors for features
+        colors = {
+            "bunker": "#8B4513",
+            "green": "#228B22",
+            "fairway": "#90EE90",
+            "rough": "#556B2F",
+            "tee": "#FFD700",
+        }
+
+        # Draw all detections
+        for detection in self.transformer.data["detections"]:
+            feature_class = detection["class"]
+            outline_points = detection["outline_points"]
+
+            from matplotlib.patches import Polygon
+
+            polygon = Polygon(
+                outline_points,
+                facecolor=colors.get(feature_class, "#808080"),
+                edgecolor="white",
+                alpha=0.7,
+                linewidth=1,
+            )
+            ax.add_patch(polygon)
+
+        # Highlight the TOP 2 corners
+        corner_colors = ["red", "blue"]
+        corner_labels = ["TOP-LEFT", "TOP-RIGHT"]
+
+        for i, (name, (x, y)) in enumerate(self.transformer.corners.items()):
+            # Draw corner circle
+            circle = plt.Circle(
+                (x, y),
+                radius=25,
+                color=corner_colors[i],
+                fill=True,
+                alpha=0.8,
+                zorder=10,
+            )
+            ax.add_patch(circle)
+
+            # Add label
+            ax.text(
+                x,
+                y - 50,
+                f"{corner_labels[i]}\n({x}, {y})",
+                ha="center",
+                va="center",
+                fontsize=9,
+                fontweight="bold",
+                color="white",
+                bbox=dict(
+                    boxstyle="round,pad=0.3",
+                    facecolor=corner_colors[i],
+                    edgecolor="white",
+                    linewidth=2,
+                ),
+            )
+
+        # Set plot properties
+        all_points = [
+            p
+            for detection in self.transformer.data["detections"]
+            for p in detection["outline_points"]
+        ]
+        if all_points:
+            xs, ys = zip(*all_points)
+            ax.set_xlim(min(xs) - 50, max(xs) + 50)
+            ax.set_ylim(min(ys) - 50, max(ys) + 50)
+
+        ax.set_aspect("equal")
+        ax.invert_yaxis()
+        ax.set_title(
+            "Detected Features - Enter GPS for Red/Blue Corners",
+            fontsize=12,
+            fontweight="bold",
+            color="white",
+        )
+        ax.grid(True, alpha=0.3, color="white")
+        ax.tick_params(colors="white")
+
+        # Embed plot in tkinter with fixed size
+        canvas = FigureCanvasTkAgg(fig, self.image_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(padx=10, pady=10)
 
     def startRun(self):
-        run(self.img, self)
+        """Continue with the rest of the processing"""
+        if not self.outline_path:
+            print("No scanned data available")
+            return
+
+        # Continue with existing workflow
+        run(self.img, self, existing_outline_path=self.outline_path)
 
     def checkGPS(self):
         self.useGPS = not self.useGPS

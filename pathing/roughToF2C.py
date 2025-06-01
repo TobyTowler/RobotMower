@@ -3,7 +3,7 @@ import json
 import math
 from shapely.geometry import Polygon, Point
 
-from pathing.utils import drawCell
+# from pathing.utils import drawCell
 
 
 def create_rough_cells_with_holes(json_file_path, scale=0.1):
@@ -127,7 +127,7 @@ def genRoughPath(json_file):
     cells = create_rough_cells_with_holes(json_file, scale=1)
     print(f"Created {len(cells)} fairway cells with holes")
 
-    robot = f2c.Robot(7.0)
+    robot = f2c.Robot(5.5)
     print(f"Robot width: {robot.getWidth():.2f} meters")
     print(f"Robot coverage width: {robot.getCovWidth():.2f} meters")
 
@@ -173,5 +173,6 @@ def genRoughPath(json_file):
 
 
 if __name__ == "__main__":
-    json_file = "../outputs/outlines/Benniksgaard_Golf_Klub_1000_02_2_outlines.json"
+    # json_file = "../outputs/outlines/Benniksgaard_Golf_Klub_1000_02_1_outlines.json"
+    json_file = "../outputs/transformedOutlines/Benniksgaard_Golf_Klub_1000_02_1_outlines_transformed.json"
     genRoughPath(json_file)

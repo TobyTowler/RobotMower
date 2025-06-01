@@ -1,9 +1,12 @@
 import math
-from pathing.utils import load_csv_points, genField, drawCell, save_points_to_csv
+
+# from pathing.utils import load_csv_points, genField, drawCell, save_points_to_csv
+from utils import load_csv_points, genField, drawCell, save_points_to_csv
 
 import geopy.distance
 import json
 from datetime import datetime
+import os
 
 """
 get shape
@@ -201,19 +204,32 @@ def transformPoints(json_path, gps_coords):
     }
 
     base_path = json_path.replace(".json", "")
-    output_path = "outputs/transformedOutlines/"
+
+    output_dir = "outputs/transformedOutlines/"  # Directory path
+    base_name = os.path.basename(json_path).replace(".json", "")
+
+    # 54.887689, 9.546695
+    # 54.997671, 9.546987
+    try:
+        os.makedirs(output_dir, exist_ok=True)
+        print(f"Created/verified output directory: {output_dir}")
+    except Exception as e:
+        print(f"Error creating output directory: {e}")
+        return None
+
+    # Now create the full file path
+    output_path = os.path.join(output_dir, f"{base_name}_transformed.json")
+    print(f"Full output file path: {output_path}")
 
     try:
         with open(output_path, "w") as f:
             json.dump(transformed_json_data, f, indent=2)
-
         print(f"GPS-transformed detections saved to: {output_path}")
         print(f"Transformed {len(transformed_detections)} detections")
-
         return output_path
-
     except Exception as e:
         print(f"Error saving transformed JSON: {e}")
+        return None
 
 
 def main():

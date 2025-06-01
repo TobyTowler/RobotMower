@@ -162,7 +162,7 @@ def genFairwayPath(json_file):
 
     print("Drawing results...")
     try:
-        drawCell([cells, mid_hl, route])
+        # drawCell([cells, mid_hl, route])
         print("Visualization complete")
     except Exception as e:
         print(f"Error in visualization: {e}")

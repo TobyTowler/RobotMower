@@ -124,7 +124,7 @@ def genGreenPath(json_file):
     cells = create_green_cells_with_holes(json_file, scale=1)
     print(f"Created {len(cells)} fairway cells with holes")
 
-    robot = f2c.Robot(7.0)
+    robot = f2c.Robot(3.0)
     print(f"Robot width: {robot.getWidth():.2f} meters")
     print(f"Robot coverage width: {robot.getCovWidth():.2f} meters")
 

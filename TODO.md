@@ -58,3 +58,18 @@ call update function when needed
 done
 
 
+
+# Demo
+
+- [x] Gui
+    - [x] output pop ups 
+- [x] Outputs
+- [x] Holes
+- [x] GPS
+
+
+
+        "top_left",
+        53.889408, 9.547150
+        "top_right",
+        54.886907, 9.546503
