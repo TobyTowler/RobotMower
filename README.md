@@ -43,3 +43,14 @@ Options:
 
 - Default image is provided if path is not specified.
 - No GPS support
+
+## Ideas for future development
+- Training data
+    * More annotations from Danish Dataset
+    * New datasets for other regions
+    * Note - I tried mixing regions and got worse results with Danish inputs
+- Combining paths?
+    * 1 path instead of 3
+- Obstacle avoidance changes
+    * detect whether to avoid higher tier regions
+        + Could save time when mowing or could not it depends on each course.
