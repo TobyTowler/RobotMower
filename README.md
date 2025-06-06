@@ -31,6 +31,7 @@ python guimain.py
     * Can be found in `aerialMapping/imgs/rawImgs`
 - Chose GPS translation or not
     * GPS coordinates need to input to corresponding corners
+    * use Google Maps if not in Denmark :)
 
 For TUI:
 ```bash
