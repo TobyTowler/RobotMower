@@ -6,27 +6,20 @@ import matplotlib.patches as mpatches
 
 
 def visualize_golf_detections(json_file, image_path=None):
-    """
-    Visualize golf course detections from JSON file
-    """
-    # Load the JSON data
     with open(json_file, "r") as f:
         data = json.load(f)
 
-    # Color mapping for different golf course features
     color_map = {
-        "bunker": "#D2B48C",  # Sandy brown
-        "green": "#228B22",  # Forest green
-        "fairway": "#32CD32",  # Lime green
-        "rough": "#6B8E23",  # Olive drab
-        "water": "#4169E1",  # Royal blue
-        "background": "#808080",  # Gray
+        "bunker": "#D2B48C",
+        "green": "#228B22",
+        "fairway": "#32CD32",
+        "rough": "#6B8E23",
+        "water": "#4169E1",
+        "background": "#808080",
     }
 
-    # Create figure
     fig, ax = plt.subplots(1, 1, figsize=(15, 12))
 
-    # Load and display background image if provided
     if image_path:
         try:
             from PIL import Image
@@ -36,7 +29,6 @@ def visualize_golf_detections(json_file, image_path=None):
         except Exception as e:
             print(f"Could not load image: {e}")
 
-    # Draw each detection
     legend_elements = []
     classes_drawn = set()
 
@@ -46,21 +38,17 @@ def visualize_golf_detections(json_file, image_path=None):
         points = detection["outline_points"]
 
         if len(points) < 3:
-            continue  # Skip if not enough points for polygon
+            continue
 
-        # Convert points to numpy array
         polygon_points = np.array(points)
 
-        # Get color for this class
-        color = color_map.get(class_name, "#FF0000")  # Default to red if unknown
+        color = color_map.get(class_name, "#FF0000")
 
-        # Create polygon
         polygon = Polygon(
             polygon_points, facecolor=color, edgecolor="black", alpha=0.6, linewidth=1.5
         )
         ax.add_patch(polygon)
 
-        # Add label at centroid
         centroid_x = np.mean(polygon_points[:, 0])
         centroid_y = np.mean(polygon_points[:, 1])
 
@@ -80,21 +68,17 @@ def visualize_golf_detections(json_file, image_path=None):
             ),
         )
 
-        # Add to legend if not already added
         if class_name not in classes_drawn:
             legend_elements.append(
                 mpatches.Patch(color=color, label=class_name.title())
             )
             classes_drawn.add(class_name)
 
-    # Set equal aspect ratio and add grid
     ax.set_aspect("equal")
     ax.grid(True, alpha=0.3)
 
-    # Add legend
     ax.legend(handles=legend_elements, loc="upper right", bbox_to_anchor=(1.15, 1))
 
-    # Labels and title
     ax.set_xlabel("X Coordinates (pixels)", fontsize=12)
     ax.set_ylabel("Y Coordinates (pixels)", fontsize=12)
     ax.set_title(
@@ -102,13 +86,11 @@ def visualize_golf_detections(json_file, image_path=None):
         fontsize=14,
     )
 
-    # Invert y-axis to match image coordinates
     ax.invert_yaxis()
 
     plt.tight_layout()
     plt.show()
 
-    # Print summary
     print(f"\nDetection Summary:")
     print(f"Total detections: {len(data['detections'])}")
     class_counts = {}
@@ -136,10 +118,8 @@ def visualize_first_detection_vertices(json_file, image_path=None):
     class_name = first_detection["class"]
     confidence = first_detection["confidence"]
 
-    # Create figure
     fig, ax = plt.subplots(1, 1, figsize=(12, 10))
 
-    # Load background image if provided
     if image_path:
         try:
             from PIL import Image
@@ -149,7 +129,6 @@ def visualize_first_detection_vertices(json_file, image_path=None):
         except Exception as e:
             print(f"Could not load image: {e}")
 
-    # Draw the complete outline
     if len(points) > 2:
         polygon_points = np.array(points)
         polygon = Polygon(
@@ -161,7 +140,6 @@ def visualize_first_detection_vertices(json_file, image_path=None):
         )
         ax.add_patch(polygon)
 
-    # Highlight first 2 vertices
     if len(points) >= 1:
         x1, y1 = points[0]
         ax.scatter(
@@ -210,7 +188,6 @@ def visualize_first_detection_vertices(json_file, image_path=None):
             weight="bold",
         )
 
-        # Draw line between vertices
         ax.plot(
             [points[0][0], points[1][0]],
             [points[0][1], points[1][1]],
@@ -239,16 +216,12 @@ def visualize_first_detection_vertices(json_file, image_path=None):
         print(f"Vertex 2: {points[1]}")
 
 
-# Usage examples:
 if __name__ == "__main__":
-    # Update these paths to match your files
     json_file = "../outputs/transformedOutlines/Benniksgaard_Golf_Klub_1000_02_1_outlines_transformed.json"
-    image_file = "imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg"  # Optional
+    image_file = "imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg"
 
-    # Visualize all detections
     print("Visualizing all detections...")
     visualize_golf_detections(json_file, image_file)
 
-    # Visualize first detection's vertices
     print("\nVisualizing first detection vertices...")
     visualize_first_detection_vertices(json_file, image_file)

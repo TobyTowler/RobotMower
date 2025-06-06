@@ -16,8 +16,6 @@ if __name__ == "__main__":
 
     if not os.path.exists(args.image_path):
         print(f"Error: Image file '{args.image_path}' not found")
-        # app.run("")
-        # return
 
     img = args.image_path
     app.run(img)

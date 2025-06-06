@@ -268,5 +268,5 @@ def genMap(img):
 
 
 if __name__ == "__main__":
-    genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_010.jpg")  # water
+    genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_010.jpg")
     genMap("./imgs/rawImgs/Benniksgaard_Golf_Klub_1000_02_1.jpg")

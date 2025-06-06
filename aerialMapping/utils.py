@@ -34,7 +34,6 @@ def save_outlines_to_json(outlines, image_path):
 
 
 def save_route_to_json(route, filename):
-    """Save f2c.Route to JSON file"""
     if route is None:
         print("No route to save")
         return

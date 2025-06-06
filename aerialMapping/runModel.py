@@ -11,10 +11,8 @@ from aerialMapping.maskRCNNmodel import get_model
 
 
 def display_outlines(image_path, results, output_path=None, show=True):
-    # Load image
     image = np.array(Image.open(image_path).convert("RGB"))
 
-    # Color map matching your visualize_prediction function
     color_map = {
         "background": (0, 0, 0),
         "green": (0, 200, 0),
@@ -24,32 +22,26 @@ def display_outlines(image_path, results, output_path=None, show=True):
         "water": (0, 100, 255),
     }
 
-    # Create overlay
     overlay = np.zeros_like(image)
 
-    # Fill outline regions
     for result in results:
         class_name = result["class"]
         points = np.array(result["outline_points"], dtype=np.int32)
         color = color_map.get(class_name, (255, 0, 0))
         cv2.fillPoly(overlay, [points], color)
 
-    # Blend with same alpha as original
     alpha = 0.4
     blended = cv2.addWeighted(image, 1 - alpha, overlay, alpha, 0)
 
-    # Display with matplotlib like original
     plt.figure(figsize=(12, 10))
     plt.imshow(blended / 255)
 
-    # Add labels
     for result in results:
         points = np.array(result["outline_points"], dtype=np.int32)
         class_name = result["class"]
         confidence = result["confidence"]
         color = color_map.get(class_name, (255, 0, 0))
 
-        # Get bounding box for text placement
         x, y, w, h = cv2.boundingRect(points)
 
         plt.text(
@@ -59,36 +51,6 @@ def display_outlines(image_path, results, output_path=None, show=True):
             color="white",
             bbox=dict(facecolor=[c / 255 for c in color], alpha=0.8),
         )
-
-    # for i, result in enumerate(results):
-    #     points = result["outline_points"]
-    #     class_name = result["class"]
-    #
-    #     # Mark first 2 points with different colors
-    #     if len(points) >= 1:
-    #         plt.scatter(
-    #             points[0][0],
-    #             points[0][1],
-    #             c="yellow",
-    #             s=200,
-    #             marker="o",
-    #             edgecolors="black",
-    #             linewidth=2,
-    #             label=f"{class_name} Point 1" if i == 0 else "",
-    #         )
-    #     if len(points) >= 2:
-    #         plt.scatter(
-    #             points[1][0],
-    #             points[1][1],
-    #             c="orange",
-    #             s=200,
-    #             marker="s",
-    #             edgecolors="black",
-    #             linewidth=2,
-    #             label=f"{class_name} Point 2" if i == 0 else "",
-    #         )
-    #
-    # plt.legend()
 
     plt.title("Golf Course Feature Detection")
     plt.axis("off")
@@ -173,22 +135,19 @@ def run_model_and_get_outlines(image_path):
 
 
 def show_first_two_vertices_of_first_detection(image_path, results, zoom_padding=50):
-    # Load image
     image = np.array(Image.open(image_path).convert("RGB"))
 
     plt.figure(figsize=(12, 10))
     plt.imshow(image)
 
-    # Only process the first detection
     if results:
-        result = results[0]  # Get only the first detection
+        result = results[0]
         points = result["outline_points"]
         class_name = result["class"]
         confidence = result["confidence"]
 
         print(f"\nFirst detection: {class_name} (confidence: {confidence:.2f})")
 
-        # Show first vertex
         if len(points) >= 1:
             x1, y1 = points[0]
             plt.scatter(
@@ -213,7 +172,6 @@ def show_first_two_vertices_of_first_detection(image_path, results, zoom_padding
             )
             print(f"  Vertex 1: ({x1}, {y1})")
 
-        # Show second vertex
         if len(points) >= 2:
             x2, y2 = points[1]
             plt.scatter(
@@ -238,7 +196,6 @@ def show_first_two_vertices_of_first_detection(image_path, results, zoom_padding
             )
             print(f"  Vertex 2: ({x2}, {y2})")
 
-        # Draw a line between first 2 vertices if both exist
         if len(points) >= 2:
             plt.plot(
                 [points[0][0], points[1][0]],
@@ -249,32 +206,26 @@ def show_first_two_vertices_of_first_detection(image_path, results, zoom_padding
                 zorder=4,
             )
 
-        # Also draw the complete outline in light gray for context
         if len(points) > 2:
-            outline_x = [p[0] for p in points] + [points[0][0]]  # Close the shape
+            outline_x = [p[0] for p in points] + [points[0][0]]
             outline_y = [p[1] for p in points] + [points[0][1]]
             plt.plot(
                 outline_x, outline_y, "gray", linewidth=2, alpha=0.5, linestyle="--"
             )
 
-        # ZOOM IN on the first 2 vertices
         if len(points) >= 2:
-            # Get coordinates of first 2 points
             x_coords = [points[0][0], points[1][0]]
             y_coords = [points[0][1], points[1][1]]
 
-            # Calculate zoom boundaries
             min_x = min(x_coords) - zoom_padding
             max_x = max(x_coords) + zoom_padding
             min_y = min(y_coords) - zoom_padding
             max_y = max(y_coords) + zoom_padding
 
-            # Set the plot limits to zoom in
             plt.xlim(min_x, max_x)
-            plt.ylim(max_y, min_y)  # Note: reversed for image coordinates
+            plt.ylim(max_y, min_y)
 
         elif len(points) >= 1:
-            # If only one point, zoom around it
             x1, y1 = points[0]
             plt.xlim(x1 - zoom_padding, x1 + zoom_padding)
             plt.ylim(y1 + zoom_padding, y1 - zoom_padding)
